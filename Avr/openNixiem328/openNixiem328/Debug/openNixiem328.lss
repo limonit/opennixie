@@ -1,0 +1,3743 @@
+
+openNixiem328.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000018  00800100  0000172a  000017de  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000172a  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000043  00800118  00800118  000017f6  2**0
+                  ALLOC
+  3 .eeprom       00000005  00810000  00810000  000017f6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .comment      00000030  00000000  00000000  000017fb  2**0
+                  CONTENTS, READONLY
+  5 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000182c  2**2
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000350  00000000  00000000  00001870  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   000031d1  00000000  00000000  00001bc0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000013d6  00000000  00000000  00004d91  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00001cd2  00000000  00000000  00006167  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000650  00000000  00000000  00007e3c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    00000c18  00000000  00000000  0000848c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000f5b  00000000  00000000  000090a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000260  00000000  00000000  00009fff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+       4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+       8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+       c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      40:	0c 94 a4 03 	jmp	0x748	; 0x748 <__vector_16>
+      44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+      68:	11 24       	eor	r1, r1
+      6a:	1f be       	out	0x3f, r1	; 63
+      6c:	cf ef       	ldi	r28, 0xFF	; 255
+      6e:	d8 e0       	ldi	r29, 0x08	; 8
+      70:	de bf       	out	0x3e, r29	; 62
+      72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+      74:	11 e0       	ldi	r17, 0x01	; 1
+      76:	a0 e0       	ldi	r26, 0x00	; 0
+      78:	b1 e0       	ldi	r27, 0x01	; 1
+      7a:	ea e2       	ldi	r30, 0x2A	; 42
+      7c:	f7 e1       	ldi	r31, 0x17	; 23
+      7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+      80:	05 90       	lpm	r0, Z+
+      82:	0d 92       	st	X+, r0
+      84:	a8 31       	cpi	r26, 0x18	; 24
+      86:	b1 07       	cpc	r27, r17
+      88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+      8a:	21 e0       	ldi	r18, 0x01	; 1
+      8c:	a8 e1       	ldi	r26, 0x18	; 24
+      8e:	b1 e0       	ldi	r27, 0x01	; 1
+      90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+      92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+      94:	ab 35       	cpi	r26, 0x5B	; 91
+      96:	b2 07       	cpc	r27, r18
+      98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+      9a:	0e 94 22 03 	call	0x644	; 0x644 <main>
+      9e:	0c 94 93 0b 	jmp	0x1726	; 0x1726 <_exit>
+
+000000a2 <__bad_interrupt>:
+      a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <buttonInit>:
+ */ 
+#include "button.h"
+	
+void
+buttonInit(struct button *self, volatile unsigned char *portIn, volatile unsigned char* portDdr, unsigned char pin)
+{
+      a6:	fc 01       	movw	r30, r24
+	self->portIn = portIn;
+      a8:	71 83       	std	Z+1, r23	; 0x01
+      aa:	60 83       	st	Z, r22
+	self->pin = pin;
+      ac:	22 83       	std	Z+2, r18	; 0x02
+	self->ms_timer = 0;
+      ae:	14 82       	std	Z+4, r1	; 0x04
+      b0:	13 82       	std	Z+3, r1	; 0x03
+	self->keyPressed = 0;
+      b2:	15 82       	std	Z+5, r1	; 0x05
+	self->isKeyLongPressed = 0;
+      b4:	16 82       	std	Z+6, r1	; 0x06
+	
+	*portDdr &= ~(1<<self->pin);
+      b6:	fa 01       	movw	r30, r20
+      b8:	30 81       	ld	r19, Z
+      ba:	81 e0       	ldi	r24, 0x01	; 1
+      bc:	90 e0       	ldi	r25, 0x00	; 0
+      be:	02 c0       	rjmp	.+4      	; 0xc4 <buttonInit+0x1e>
+      c0:	88 0f       	add	r24, r24
+      c2:	99 1f       	adc	r25, r25
+      c4:	2a 95       	dec	r18
+      c6:	e2 f7       	brpl	.-8      	; 0xc0 <buttonInit+0x1a>
+      c8:	80 95       	com	r24
+      ca:	83 23       	and	r24, r19
+      cc:	80 83       	st	Z, r24
+      ce:	08 95       	ret
+
+000000d0 <button10MsStep>:
+}
+
+void
+button10MsStep(struct button *self)
+{
+      d0:	fc 01       	movw	r30, r24
+	if (!(*(self->portIn) & (1<<self->pin))) {
+      d2:	a0 81       	ld	r26, Z
+      d4:	b1 81       	ldd	r27, Z+1	; 0x01
+      d6:	8c 91       	ld	r24, X
+      d8:	90 e0       	ldi	r25, 0x00	; 0
+      da:	02 80       	ldd	r0, Z+2	; 0x02
+      dc:	02 c0       	rjmp	.+4      	; 0xe2 <button10MsStep+0x12>
+      de:	95 95       	asr	r25
+      e0:	87 95       	ror	r24
+      e2:	0a 94       	dec	r0
+      e4:	e2 f7       	brpl	.-8      	; 0xde <button10MsStep+0xe>
+      e6:	80 fd       	sbrc	r24, 0
+      e8:	16 c0       	rjmp	.+44     	; 0x116 <button10MsStep+0x46>
+		self->ms_timer++;
+      ea:	23 81       	ldd	r18, Z+3	; 0x03
+      ec:	34 81       	ldd	r19, Z+4	; 0x04
+      ee:	c9 01       	movw	r24, r18
+      f0:	01 96       	adiw	r24, 0x01	; 1
+      f2:	94 83       	std	Z+4, r25	; 0x04
+      f4:	83 83       	std	Z+3, r24	; 0x03
+		if (self->ms_timer == 2) {
+      f6:	02 97       	sbiw	r24, 0x02	; 2
+      f8:	31 f4       	brne	.+12     	; 0x106 <button10MsStep+0x36>
+			self->keyPressed = true;
+      fa:	81 e0       	ldi	r24, 0x01	; 1
+      fc:	85 83       	std	Z+5, r24	; 0x05
+			self->ms_timer++;
+      fe:	2e 5f       	subi	r18, 0xFE	; 254
+     100:	3f 4f       	sbci	r19, 0xFF	; 255
+     102:	34 83       	std	Z+4, r19	; 0x04
+     104:	23 83       	std	Z+3, r18	; 0x03
+		}
+		if (self->ms_timer > 80) {
+     106:	83 81       	ldd	r24, Z+3	; 0x03
+     108:	94 81       	ldd	r25, Z+4	; 0x04
+     10a:	81 35       	cpi	r24, 0x51	; 81
+     10c:	91 05       	cpc	r25, r1
+     10e:	30 f0       	brcs	.+12     	; 0x11c <button10MsStep+0x4c>
+			self->isKeyLongPressed = true;
+     110:	81 e0       	ldi	r24, 0x01	; 1
+     112:	86 83       	std	Z+6, r24	; 0x06
+     114:	08 95       	ret
+		}
+	} else {
+		self->ms_timer = 0;
+     116:	14 82       	std	Z+4, r1	; 0x04
+     118:	13 82       	std	Z+3, r1	; 0x03
+		self->isKeyLongPressed = false;
+     11a:	16 82       	std	Z+6, r1	; 0x06
+     11c:	08 95       	ret
+
+0000011e <buttonIsKeyPressed>:
+	}
+}
+
+bool
+buttonIsKeyPressed(struct button *self)
+{
+     11e:	fc 01       	movw	r30, r24
+	if (self->keyPressed) {
+     120:	85 81       	ldd	r24, Z+5	; 0x05
+     122:	81 11       	cpse	r24, r1
+		self->keyPressed = false;
+     124:	15 82       	std	Z+5, r1	; 0x05
+		return true;
+	}
+	return false;
+}
+     126:	08 95       	ret
+
+00000128 <buttonIsKeyLongPressed>:
+
+bool
+buttonIsKeyLongPressed(struct button *self)
+{
+	return self->isKeyLongPressed;
+     128:	fc 01       	movw	r30, r24
+     12a:	86 81       	ldd	r24, Z+6	; 0x06
+     12c:	08 95       	ret
+
+0000012e <displayHALTurnOff>:
+unsigned char stage = REFRESH_100US_INTERVAL_NUMBER;
+	
+void
+displayHALTurnOff()
+{
+	TUBE1PORT &= ~(1<<TUBE1PIN);
+     12e:	59 98       	cbi	0x0b, 1	; 11
+	TUBE2PORT &= ~(1<<TUBE2PIN);
+     130:	58 98       	cbi	0x0b, 0	; 11
+	TUBE3PORT &= ~(1<<TUBE3PIN);
+     132:	43 98       	cbi	0x08, 3	; 8
+	TUBE4PORT &= ~(1<<TUBE4PIN);
+     134:	42 98       	cbi	0x08, 2	; 8
+	
+	INPUTAPORT |= 1<<INPUTAPIN;
+     136:	28 9a       	sbi	0x05, 0	; 5
+	INPUTBPORT |= 1<<INPUTBPIN;
+     138:	2a 9a       	sbi	0x05, 2	; 5
+	INPUTCPORT |= 1<<INPUTCPIN;
+     13a:	2b 9a       	sbi	0x05, 3	; 5
+	INPUTDPORT |= 1<<INPUTDPIN;
+     13c:	29 9a       	sbi	0x05, 1	; 5
+     13e:	08 95       	ret
+
+00000140 <displayHALInit>:
+}
+
+void inline
+displayHALInit()
+{
+	TUBE1DDR |= 1<<TUBE1PIN;
+     140:	51 9a       	sbi	0x0a, 1	; 10
+	TUBE2DDR |= 1<<TUBE2PIN;
+     142:	50 9a       	sbi	0x0a, 0	; 10
+	TUBE3DDR |= 1<<TUBE3PIN;
+     144:	3b 9a       	sbi	0x07, 3	; 7
+	TUBE4DDR |= 1<<TUBE4PIN;
+     146:	3a 9a       	sbi	0x07, 2	; 7
+	
+	INPUTADDR |= 1<<INPUTAPIN;
+     148:	20 9a       	sbi	0x04, 0	; 4
+	INPUTBDDR |= 1<<INPUTBPIN;
+     14a:	22 9a       	sbi	0x04, 2	; 4
+	INPUTCDDR |= 1<<INPUTCPIN;
+     14c:	23 9a       	sbi	0x04, 3	; 4
+	INPUTDDDR |= 1<<INPUTDPIN;
+     14e:	21 9a       	sbi	0x04, 1	; 4
+	
+	displayHALTurnOff();
+     150:	0e 94 97 00 	call	0x12e	; 0x12e <displayHALTurnOff>
+     154:	08 95       	ret
+
+00000156 <displayHAL100usStep>:
+{
+	static unsigned char multiplexCounter = 0;
+	static unsigned char currentTube = 0;
+	static int stageCounter = 0;
+	
+	if (++multiplexCounter == REFRESH_100US_INTERVAL_NUMBER)
+     156:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <multiplexCounter.1888>
+     15a:	8f 5f       	subi	r24, 0xFF	; 255
+     15c:	80 93 1c 01 	sts	0x011C, r24	; 0x80011c <multiplexCounter.1888>
+     160:	81 31       	cpi	r24, 0x11	; 17
+     162:	59 f5       	brne	.+86     	; 0x1ba <displayHAL100usStep+0x64>
+	{
+		multiplexCounter = 0;
+     164:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <multiplexCounter.1888>
+		displayHALTurnOff();
+     168:	0e 94 97 00 	call	0x12e	; 0x12e <displayHALTurnOff>
+		
+		static unsigned char cntr = 0;
+		if (!dim || (++cntr & 1)) {
+     16c:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <dim>
+     170:	88 23       	and	r24, r24
+     172:	39 f0       	breq	.+14     	; 0x182 <displayHAL100usStep+0x2c>
+     174:	80 91 1b 01 	lds	r24, 0x011B	; 0x80011b <cntr.1891>
+     178:	8f 5f       	subi	r24, 0xFF	; 255
+     17a:	80 93 1b 01 	sts	0x011B, r24	; 0x80011b <cntr.1891>
+     17e:	80 ff       	sbrs	r24, 0
+     180:	1c c0       	rjmp	.+56     	; 0x1ba <displayHAL100usStep+0x64>
+			if(++currentTube > 3) currentTube=0;
+     182:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <currentTube.1889>
+     186:	8f 5f       	subi	r24, 0xFF	; 255
+     188:	80 93 1a 01 	sts	0x011A, r24	; 0x80011a <currentTube.1889>
+     18c:	84 30       	cpi	r24, 0x04	; 4
+     18e:	18 f0       	brcs	.+6      	; 0x196 <displayHAL100usStep+0x40>
+     190:	10 92 1a 01 	sts	0x011A, r1	; 0x80011a <currentTube.1889>
+     194:	02 c0       	rjmp	.+4      	; 0x19a <displayHAL100usStep+0x44>
+
+			if (currentTube == 0) {
+     196:	81 11       	cpse	r24, r1
+     198:	01 c0       	rjmp	.+2      	; 0x19c <displayHAL100usStep+0x46>
+				TUBE1PORT |= 1<<TUBE1PIN;
+     19a:	59 9a       	sbi	0x0b, 1	; 11
+			}
+			if (currentTube == 1) {
+     19c:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <currentTube.1889>
+     1a0:	81 30       	cpi	r24, 0x01	; 1
+     1a2:	09 f4       	brne	.+2      	; 0x1a6 <displayHAL100usStep+0x50>
+				TUBE2PORT |= 1<<TUBE2PIN;
+     1a4:	58 9a       	sbi	0x0b, 0	; 11
+			}
+			if (currentTube == 2) {
+     1a6:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <currentTube.1889>
+     1aa:	82 30       	cpi	r24, 0x02	; 2
+     1ac:	09 f4       	brne	.+2      	; 0x1b0 <displayHAL100usStep+0x5a>
+				TUBE3PORT |= 1<<TUBE3PIN;
+     1ae:	43 9a       	sbi	0x08, 3	; 8
+			}
+			if (currentTube == 3) {
+     1b0:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <currentTube.1889>
+     1b4:	83 30       	cpi	r24, 0x03	; 3
+     1b6:	09 f4       	brne	.+2      	; 0x1ba <displayHAL100usStep+0x64>
+				TUBE4PORT |= 1<<TUBE4PIN;
+     1b8:	42 9a       	sbi	0x08, 2	; 8
+			}
+		}
+	}
+
+	if (++stageCounter > CROSSFADE_100US_INTERVAL_NUMBER)
+     1ba:	80 91 18 01 	lds	r24, 0x0118	; 0x800118 <__data_end>
+     1be:	90 91 19 01 	lds	r25, 0x0119	; 0x800119 <__data_end+0x1>
+     1c2:	01 96       	adiw	r24, 0x01	; 1
+     1c4:	90 93 19 01 	sts	0x0119, r25	; 0x800119 <__data_end+0x1>
+     1c8:	80 93 18 01 	sts	0x0118, r24	; 0x800118 <__data_end>
+     1cc:	8d 34       	cpi	r24, 0x4D	; 77
+     1ce:	92 40       	sbci	r25, 0x02	; 2
+     1d0:	58 f0       	brcs	.+22     	; 0x1e8 <displayHAL100usStep+0x92>
+	{
+		if (stage <= REFRESH_100US_INTERVAL_NUMBER) {
+     1d2:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     1d6:	82 31       	cpi	r24, 0x12	; 18
+     1d8:	18 f4       	brcc	.+6      	; 0x1e0 <displayHAL100usStep+0x8a>
+			stage++;
+     1da:	8f 5f       	subi	r24, 0xFF	; 255
+     1dc:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+		}
+		stageCounter=0;
+     1e0:	10 92 19 01 	sts	0x0119, r1	; 0x800119 <__data_end+0x1>
+     1e4:	10 92 18 01 	sts	0x0118, r1	; 0x800118 <__data_end>
+	}
+	
+	unsigned char outputDigit;
+	
+	if (multiplexCounter >= stage)
+     1e8:	90 91 1c 01 	lds	r25, 0x011C	; 0x80011c <multiplexCounter.1888>
+     1ec:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+     1f0:	98 17       	cp	r25, r24
+     1f2:	58 f0       	brcs	.+22     	; 0x20a <displayHAL100usStep+0xb4>
+	{
+		outputDigit = lookUpTable[displayContent[currentTube]];
+     1f4:	e0 91 1a 01 	lds	r30, 0x011A	; 0x80011a <currentTube.1889>
+     1f8:	f0 e0       	ldi	r31, 0x00	; 0
+     1fa:	eb 5f       	subi	r30, 0xFB	; 251
+     1fc:	fe 4f       	sbci	r31, 0xFE	; 254
+     1fe:	e0 81       	ld	r30, Z
+     200:	f0 e0       	ldi	r31, 0x00	; 0
+     202:	e7 5f       	subi	r30, 0xF7	; 247
+     204:	fe 4f       	sbci	r31, 0xFE	; 254
+     206:	80 81       	ld	r24, Z
+     208:	0a c0       	rjmp	.+20     	; 0x21e <displayHAL100usStep+0xc8>
+	} else {
+		outputDigit = lookUpTable[displayContent2[currentTube]];
+     20a:	e0 91 1a 01 	lds	r30, 0x011A	; 0x80011a <currentTube.1889>
+     20e:	f0 e0       	ldi	r31, 0x00	; 0
+     210:	ef 5f       	subi	r30, 0xFF	; 255
+     212:	fe 4f       	sbci	r31, 0xFE	; 254
+     214:	e0 81       	ld	r30, Z
+     216:	f0 e0       	ldi	r31, 0x00	; 0
+     218:	e7 5f       	subi	r30, 0xF7	; 247
+     21a:	fe 4f       	sbci	r31, 0xFE	; 254
+     21c:	80 81       	ld	r24, Z
+	}
+		
+	if (!(outputDigit & 0x1)) {
+     21e:	80 fd       	sbrc	r24, 0
+     220:	02 c0       	rjmp	.+4      	; 0x226 <displayHAL100usStep+0xd0>
+		INPUTAPORT &= ~(1<<INPUTAPIN);
+     222:	28 98       	cbi	0x05, 0	; 5
+     224:	01 c0       	rjmp	.+2      	; 0x228 <displayHAL100usStep+0xd2>
+		} else {
+		INPUTAPORT |= 1<<INPUTAPIN;
+     226:	28 9a       	sbi	0x05, 0	; 5
+	}
+	if (!(outputDigit & 0x2)) {
+     228:	81 fd       	sbrc	r24, 1
+     22a:	02 c0       	rjmp	.+4      	; 0x230 <displayHAL100usStep+0xda>
+		INPUTBPORT &= ~(1<<INPUTBPIN);
+     22c:	2a 98       	cbi	0x05, 2	; 5
+     22e:	01 c0       	rjmp	.+2      	; 0x232 <displayHAL100usStep+0xdc>
+		} else {
+		INPUTBPORT |= 1<<INPUTBPIN;
+     230:	2a 9a       	sbi	0x05, 2	; 5
+	}
+	if (!(outputDigit & 0x4)) {
+     232:	82 fd       	sbrc	r24, 2
+     234:	02 c0       	rjmp	.+4      	; 0x23a <displayHAL100usStep+0xe4>
+		INPUTCPORT &= ~(1<<INPUTCPIN);
+     236:	2b 98       	cbi	0x05, 3	; 5
+     238:	01 c0       	rjmp	.+2      	; 0x23c <displayHAL100usStep+0xe6>
+		} else {
+		INPUTCPORT |= 1<<INPUTCPIN;
+     23a:	2b 9a       	sbi	0x05, 3	; 5
+	}
+	if (!(outputDigit & 0x8)) {
+     23c:	83 fd       	sbrc	r24, 3
+     23e:	02 c0       	rjmp	.+4      	; 0x244 <displayHAL100usStep+0xee>
+		INPUTDPORT &= ~(1<<INPUTDPIN);
+     240:	29 98       	cbi	0x05, 1	; 5
+     242:	08 95       	ret
+		} else {
+		INPUTDPORT |= 1<<INPUTDPIN;
+     244:	29 9a       	sbi	0x05, 1	; 5
+     246:	08 95       	ret
+
+00000248 <displayHALSetDim>:
+}
+
+void
+displayHALSetDim(bool _dim)
+{
+	dim = _dim;
+     248:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <dim>
+     24c:	08 95       	ret
+
+0000024e <displayHALToggleDim>:
+}
+
+void
+displayHALToggleDim()
+{
+	if (dim) {
+     24e:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <dim>
+     252:	88 23       	and	r24, r24
+     254:	19 f0       	breq	.+6      	; 0x25c <displayHALToggleDim+0xe>
+		dim = false;
+     256:	10 92 1d 01 	sts	0x011D, r1	; 0x80011d <dim>
+     25a:	08 95       	ret
+	} else {
+		dim = true;
+     25c:	81 e0       	ldi	r24, 0x01	; 1
+     25e:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <dim>
+     262:	08 95       	ret
+
+00000264 <displayHALSetCrossfade>:
+	}
+}
+
+void
+displayHALSetCrossfade(unsigned char a, unsigned char b, unsigned char c, unsigned char d)
+{
+     264:	cf 92       	push	r12
+     266:	df 92       	push	r13
+     268:	ef 92       	push	r14
+     26a:	ff 92       	push	r15
+	memcpy(displayContent, displayContent2, sizeof(displayContent));
+     26c:	e1 e0       	ldi	r30, 0x01	; 1
+     26e:	f1 e0       	ldi	r31, 0x01	; 1
+     270:	c0 80       	ld	r12, Z
+     272:	d1 80       	ldd	r13, Z+1	; 0x01
+     274:	e2 80       	ldd	r14, Z+2	; 0x02
+     276:	f3 80       	ldd	r15, Z+3	; 0x03
+     278:	c0 92 05 01 	sts	0x0105, r12	; 0x800105 <displayContent>
+     27c:	d0 92 06 01 	sts	0x0106, r13	; 0x800106 <displayContent+0x1>
+     280:	e0 92 07 01 	sts	0x0107, r14	; 0x800107 <displayContent+0x2>
+     284:	f0 92 08 01 	sts	0x0108, r15	; 0x800108 <displayContent+0x3>
+	displayContent2[0] = a;
+     288:	80 83       	st	Z, r24
+	displayContent2[1] = b;
+     28a:	61 83       	std	Z+1, r22	; 0x01
+	displayContent2[2] = c;
+     28c:	42 83       	std	Z+2, r20	; 0x02
+	displayContent2[3] = d;
+     28e:	23 83       	std	Z+3, r18	; 0x03
+	//if (!memcmp(displayContent2, displayContent, sizeof(displayContent))) {
+	    stage = 0;
+     290:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_start>
+	//}
+}
+     294:	ff 90       	pop	r15
+     296:	ef 90       	pop	r14
+     298:	df 90       	pop	r13
+     29a:	cf 90       	pop	r12
+     29c:	08 95       	ret
+
+0000029e <displayHALSetImmediatly>:
+
+void
+displayHALSetImmediatly(unsigned char a, unsigned char b, unsigned char c, unsigned char d)
+{
+	stage = REFRESH_100US_INTERVAL_NUMBER;
+     29e:	91 e1       	ldi	r25, 0x11	; 17
+     2a0:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__data_start>
+	displayContent2[0] = a;
+     2a4:	e1 e0       	ldi	r30, 0x01	; 1
+     2a6:	f1 e0       	ldi	r31, 0x01	; 1
+     2a8:	80 83       	st	Z, r24
+	displayContent2[1] = b;
+     2aa:	61 83       	std	Z+1, r22	; 0x01
+	displayContent2[2] = c;
+     2ac:	42 83       	std	Z+2, r20	; 0x02
+	displayContent2[3] = d;
+     2ae:	23 83       	std	Z+3, r18	; 0x03
+     2b0:	08 95       	ret
+
+000002b2 <displayHALTestNixies>:
+}
+
+void
+displayHALTestNixies()
+{
+     2b2:	0f 93       	push	r16
+     2b4:	1f 93       	push	r17
+     2b6:	cf 93       	push	r28
+     2b8:	df 93       	push	r29
+	displayHALTurnOff();
+     2ba:	0e 94 97 00 	call	0x12e	; 0x12e <displayHALTurnOff>
+	TUBE1PORT |= 1<<TUBE1PIN;
+     2be:	59 9a       	sbi	0x0b, 1	; 11
+     2c0:	09 e0       	ldi	r16, 0x09	; 9
+     2c2:	11 e0       	ldi	r17, 0x01	; 1
+     2c4:	c3 e1       	ldi	r28, 0x13	; 19
+     2c6:	d1 e0       	ldi	r29, 0x01	; 1
+     2c8:	f8 01       	movw	r30, r16
+	unsigned char i;
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     2ca:	81 91       	ld	r24, Z+
+		if (!(i & 0x1)) {
+     2cc:	80 fd       	sbrc	r24, 0
+     2ce:	02 c0       	rjmp	.+4      	; 0x2d4 <displayHALTestNixies+0x22>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     2d0:	28 98       	cbi	0x05, 0	; 5
+     2d2:	01 c0       	rjmp	.+2      	; 0x2d6 <displayHALTestNixies+0x24>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     2d4:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     2d6:	81 fd       	sbrc	r24, 1
+     2d8:	02 c0       	rjmp	.+4      	; 0x2de <displayHALTestNixies+0x2c>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     2da:	2a 98       	cbi	0x05, 2	; 5
+     2dc:	01 c0       	rjmp	.+2      	; 0x2e0 <displayHALTestNixies+0x2e>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     2de:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     2e0:	82 fd       	sbrc	r24, 2
+     2e2:	02 c0       	rjmp	.+4      	; 0x2e8 <displayHALTestNixies+0x36>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     2e4:	2b 98       	cbi	0x05, 3	; 5
+     2e6:	01 c0       	rjmp	.+2      	; 0x2ea <displayHALTestNixies+0x38>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     2e8:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     2ea:	83 fd       	sbrc	r24, 3
+     2ec:	02 c0       	rjmp	.+4      	; 0x2f2 <displayHALTestNixies+0x40>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     2ee:	29 98       	cbi	0x05, 1	; 5
+     2f0:	01 c0       	rjmp	.+2      	; 0x2f4 <displayHALTestNixies+0x42>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     2f2:	29 9a       	sbi	0x05, 1	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     2f4:	2f e7       	ldi	r18, 0x7F	; 127
+     2f6:	89 ea       	ldi	r24, 0xA9	; 169
+     2f8:	93 e0       	ldi	r25, 0x03	; 3
+     2fa:	21 50       	subi	r18, 0x01	; 1
+     2fc:	80 40       	sbci	r24, 0x00	; 0
+     2fe:	90 40       	sbci	r25, 0x00	; 0
+     300:	e1 f7       	brne	.-8      	; 0x2fa <displayHALTestNixies+0x48>
+     302:	00 c0       	rjmp	.+0      	; 0x304 <displayHALTestNixies+0x52>
+     304:	00 00       	nop
+displayHALTestNixies()
+{
+	displayHALTurnOff();
+	TUBE1PORT |= 1<<TUBE1PIN;
+	unsigned char i;
+	for (unsigned char j=0; j<10; j++) {
+     306:	ce 17       	cp	r28, r30
+     308:	df 07       	cpc	r29, r31
+     30a:	f9 f6       	brne	.-66     	; 0x2ca <displayHALTestNixies+0x18>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     30c:	0e 94 97 00 	call	0x12e	; 0x12e <displayHALTurnOff>
+	TUBE2PORT |= 1<<TUBE2PIN;
+     310:	58 9a       	sbi	0x0b, 0	; 11
+     312:	e9 e0       	ldi	r30, 0x09	; 9
+     314:	f1 e0       	ldi	r31, 0x01	; 1
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     316:	81 91       	ld	r24, Z+
+		if (!(i & 0x1)) {
+     318:	80 fd       	sbrc	r24, 0
+     31a:	02 c0       	rjmp	.+4      	; 0x320 <displayHALTestNixies+0x6e>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     31c:	28 98       	cbi	0x05, 0	; 5
+     31e:	01 c0       	rjmp	.+2      	; 0x322 <displayHALTestNixies+0x70>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     320:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     322:	81 fd       	sbrc	r24, 1
+     324:	02 c0       	rjmp	.+4      	; 0x32a <displayHALTestNixies+0x78>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     326:	2a 98       	cbi	0x05, 2	; 5
+     328:	01 c0       	rjmp	.+2      	; 0x32c <displayHALTestNixies+0x7a>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     32a:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     32c:	82 fd       	sbrc	r24, 2
+     32e:	02 c0       	rjmp	.+4      	; 0x334 <displayHALTestNixies+0x82>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     330:	2b 98       	cbi	0x05, 3	; 5
+     332:	01 c0       	rjmp	.+2      	; 0x336 <displayHALTestNixies+0x84>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     334:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     336:	83 fd       	sbrc	r24, 3
+     338:	02 c0       	rjmp	.+4      	; 0x33e <displayHALTestNixies+0x8c>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     33a:	29 98       	cbi	0x05, 1	; 5
+     33c:	01 c0       	rjmp	.+2      	; 0x340 <displayHALTestNixies+0x8e>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     33e:	29 9a       	sbi	0x05, 1	; 5
+     340:	2f e7       	ldi	r18, 0x7F	; 127
+     342:	89 ea       	ldi	r24, 0xA9	; 169
+     344:	93 e0       	ldi	r25, 0x03	; 3
+     346:	21 50       	subi	r18, 0x01	; 1
+     348:	80 40       	sbci	r24, 0x00	; 0
+     34a:	90 40       	sbci	r25, 0x00	; 0
+     34c:	e1 f7       	brne	.-8      	; 0x346 <displayHALTestNixies+0x94>
+     34e:	00 c0       	rjmp	.+0      	; 0x350 <displayHALTestNixies+0x9e>
+     350:	00 00       	nop
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+	TUBE2PORT |= 1<<TUBE2PIN;
+	for (unsigned char j=0; j<10; j++) {
+     352:	ce 17       	cp	r28, r30
+     354:	df 07       	cpc	r29, r31
+     356:	f9 f6       	brne	.-66     	; 0x316 <displayHALTestNixies+0x64>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     358:	0e 94 97 00 	call	0x12e	; 0x12e <displayHALTurnOff>
+	TUBE3PORT |= 1<<TUBE3PIN;
+     35c:	43 9a       	sbi	0x08, 3	; 8
+     35e:	e9 e0       	ldi	r30, 0x09	; 9
+     360:	f1 e0       	ldi	r31, 0x01	; 1
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     362:	81 91       	ld	r24, Z+
+		if (!(i & 0x1)) {
+     364:	80 fd       	sbrc	r24, 0
+     366:	02 c0       	rjmp	.+4      	; 0x36c <displayHALTestNixies+0xba>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     368:	28 98       	cbi	0x05, 0	; 5
+     36a:	01 c0       	rjmp	.+2      	; 0x36e <displayHALTestNixies+0xbc>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     36c:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     36e:	81 fd       	sbrc	r24, 1
+     370:	02 c0       	rjmp	.+4      	; 0x376 <displayHALTestNixies+0xc4>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     372:	2a 98       	cbi	0x05, 2	; 5
+     374:	01 c0       	rjmp	.+2      	; 0x378 <displayHALTestNixies+0xc6>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     376:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     378:	82 fd       	sbrc	r24, 2
+     37a:	02 c0       	rjmp	.+4      	; 0x380 <displayHALTestNixies+0xce>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     37c:	2b 98       	cbi	0x05, 3	; 5
+     37e:	01 c0       	rjmp	.+2      	; 0x382 <displayHALTestNixies+0xd0>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     380:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     382:	83 fd       	sbrc	r24, 3
+     384:	02 c0       	rjmp	.+4      	; 0x38a <displayHALTestNixies+0xd8>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     386:	29 98       	cbi	0x05, 1	; 5
+     388:	01 c0       	rjmp	.+2      	; 0x38c <displayHALTestNixies+0xda>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     38a:	29 9a       	sbi	0x05, 1	; 5
+     38c:	2f e7       	ldi	r18, 0x7F	; 127
+     38e:	89 ea       	ldi	r24, 0xA9	; 169
+     390:	93 e0       	ldi	r25, 0x03	; 3
+     392:	21 50       	subi	r18, 0x01	; 1
+     394:	80 40       	sbci	r24, 0x00	; 0
+     396:	90 40       	sbci	r25, 0x00	; 0
+     398:	e1 f7       	brne	.-8      	; 0x392 <displayHALTestNixies+0xe0>
+     39a:	00 c0       	rjmp	.+0      	; 0x39c <displayHALTestNixies+0xea>
+     39c:	00 00       	nop
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+	TUBE3PORT |= 1<<TUBE3PIN;
+	for (unsigned char j=0; j<10; j++) {
+     39e:	ce 17       	cp	r28, r30
+     3a0:	df 07       	cpc	r29, r31
+     3a2:	f9 f6       	brne	.-66     	; 0x362 <displayHALTestNixies+0xb0>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     3a4:	0e 94 97 00 	call	0x12e	; 0x12e <displayHALTurnOff>
+	TUBE4PORT |= 1<<TUBE4PIN;
+     3a8:	42 9a       	sbi	0x08, 2	; 8
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     3aa:	f8 01       	movw	r30, r16
+     3ac:	81 91       	ld	r24, Z+
+     3ae:	8f 01       	movw	r16, r30
+		if (!(i & 0x1)) {
+     3b0:	80 fd       	sbrc	r24, 0
+     3b2:	02 c0       	rjmp	.+4      	; 0x3b8 <displayHALTestNixies+0x106>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     3b4:	28 98       	cbi	0x05, 0	; 5
+     3b6:	01 c0       	rjmp	.+2      	; 0x3ba <displayHALTestNixies+0x108>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     3b8:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     3ba:	81 fd       	sbrc	r24, 1
+     3bc:	02 c0       	rjmp	.+4      	; 0x3c2 <displayHALTestNixies+0x110>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     3be:	2a 98       	cbi	0x05, 2	; 5
+     3c0:	01 c0       	rjmp	.+2      	; 0x3c4 <displayHALTestNixies+0x112>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     3c2:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     3c4:	82 fd       	sbrc	r24, 2
+     3c6:	02 c0       	rjmp	.+4      	; 0x3cc <displayHALTestNixies+0x11a>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     3c8:	2b 98       	cbi	0x05, 3	; 5
+     3ca:	01 c0       	rjmp	.+2      	; 0x3ce <displayHALTestNixies+0x11c>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     3cc:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     3ce:	83 fd       	sbrc	r24, 3
+     3d0:	02 c0       	rjmp	.+4      	; 0x3d6 <displayHALTestNixies+0x124>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     3d2:	29 98       	cbi	0x05, 1	; 5
+     3d4:	01 c0       	rjmp	.+2      	; 0x3d8 <displayHALTestNixies+0x126>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     3d6:	29 9a       	sbi	0x05, 1	; 5
+     3d8:	ff e7       	ldi	r31, 0x7F	; 127
+     3da:	29 ea       	ldi	r18, 0xA9	; 169
+     3dc:	83 e0       	ldi	r24, 0x03	; 3
+     3de:	f1 50       	subi	r31, 0x01	; 1
+     3e0:	20 40       	sbci	r18, 0x00	; 0
+     3e2:	80 40       	sbci	r24, 0x00	; 0
+     3e4:	e1 f7       	brne	.-8      	; 0x3de <displayHALTestNixies+0x12c>
+     3e6:	00 c0       	rjmp	.+0      	; 0x3e8 <displayHALTestNixies+0x136>
+     3e8:	00 00       	nop
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+	TUBE4PORT |= 1<<TUBE4PIN;
+	for (unsigned char j=0; j<10; j++) {
+     3ea:	0c 17       	cp	r16, r28
+     3ec:	1d 07       	cpc	r17, r29
+     3ee:	e9 f6       	brne	.-70     	; 0x3aa <displayHALTestNixies+0xf8>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     3f0:	0e 94 97 00 	call	0x12e	; 0x12e <displayHALTurnOff>
+     3f4:	df 91       	pop	r29
+     3f6:	cf 91       	pop	r28
+     3f8:	1f 91       	pop	r17
+     3fa:	0f 91       	pop	r16
+     3fc:	08 95       	ret
+
+000003fe <ds1307getTime>:
+static inline void ds1307setTime(char *time);
+*/
+
+
+void ds1307getTime(char *time)
+{
+     3fe:	0f 93       	push	r16
+     400:	1f 93       	push	r17
+     402:	cf 93       	push	r28
+     404:	df 93       	push	r29
+     406:	00 d0       	rcall	.+0      	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
+     408:	00 d0       	rcall	.+0      	; 0x40a <__LOCK_REGION_LENGTH__+0xa>
+     40a:	cd b7       	in	r28, 0x3d	; 61
+     40c:	de b7       	in	r29, 0x3e	; 62
+     40e:	8c 01       	movw	r16, r24
+	char getTimeMessage[3] = {0,0,0};
+     410:	19 82       	std	Y+1, r1	; 0x01
+     412:	1a 82       	std	Y+2, r1	; 0x02
+     414:	1b 82       	std	Y+3, r1	; 0x03
+	char addressSetMessage[1] = {0x0};
+     416:	1c 82       	std	Y+4, r1	; 0x04
+	
+	i2c_init();
+     418:	0e 94 5e 02 	call	0x4bc	; 0x4bc <i2c_init>
+	i2c_transmit(ds1307_W, addressSetMessage, 1);
+     41c:	41 e0       	ldi	r20, 0x01	; 1
+     41e:	50 e0       	ldi	r21, 0x00	; 0
+     420:	be 01       	movw	r22, r28
+     422:	6c 5f       	subi	r22, 0xFC	; 252
+     424:	7f 4f       	sbci	r23, 0xFF	; 255
+     426:	80 ed       	ldi	r24, 0xD0	; 208
+     428:	0e 94 af 02 	call	0x55e	; 0x55e <i2c_transmit>
+	i2c_receive(ds1307_R, getTimeMessage, 3);
+     42c:	43 e0       	ldi	r20, 0x03	; 3
+     42e:	50 e0       	ldi	r21, 0x00	; 0
+     430:	be 01       	movw	r22, r28
+     432:	6f 5f       	subi	r22, 0xFF	; 255
+     434:	7f 4f       	sbci	r23, 0xFF	; 255
+     436:	81 ed       	ldi	r24, 0xD1	; 209
+     438:	0e 94 dd 02 	call	0x5ba	; 0x5ba <i2c_receive>
+	
+	time[0] = getTimeMessage[0];
+     43c:	89 81       	ldd	r24, Y+1	; 0x01
+     43e:	f8 01       	movw	r30, r16
+     440:	80 83       	st	Z, r24
+	time[1] = getTimeMessage[1];
+     442:	8a 81       	ldd	r24, Y+2	; 0x02
+     444:	81 83       	std	Z+1, r24	; 0x01
+	time[2] = getTimeMessage[2];
+     446:	8b 81       	ldd	r24, Y+3	; 0x03
+     448:	82 83       	std	Z+2, r24	; 0x02
+}
+     44a:	0f 90       	pop	r0
+     44c:	0f 90       	pop	r0
+     44e:	0f 90       	pop	r0
+     450:	0f 90       	pop	r0
+     452:	df 91       	pop	r29
+     454:	cf 91       	pop	r28
+     456:	1f 91       	pop	r17
+     458:	0f 91       	pop	r16
+     45a:	08 95       	ret
+
+0000045c <ds1307setTime>:
+
+void ds1307setTime(char *time)
+{
+     45c:	cf 93       	push	r28
+     45e:	df 93       	push	r29
+     460:	00 d0       	rcall	.+0      	; 0x462 <ds1307setTime+0x6>
+     462:	00 d0       	rcall	.+0      	; 0x464 <ds1307setTime+0x8>
+     464:	00 d0       	rcall	.+0      	; 0x466 <ds1307setTime+0xa>
+     466:	cd b7       	in	r28, 0x3d	; 61
+     468:	de b7       	in	r29, 0x3e	; 62
+     46a:	fc 01       	movw	r30, r24
+	char s_time[4] = {0, time[0], time[1], time[2]};
+     46c:	19 82       	std	Y+1, r1	; 0x01
+     46e:	80 81       	ld	r24, Z
+     470:	8a 83       	std	Y+2, r24	; 0x02
+     472:	81 81       	ldd	r24, Z+1	; 0x01
+     474:	8b 83       	std	Y+3, r24	; 0x03
+     476:	82 81       	ldd	r24, Z+2	; 0x02
+     478:	8c 83       	std	Y+4, r24	; 0x04
+	i2c_init();
+     47a:	0e 94 5e 02 	call	0x4bc	; 0x4bc <i2c_init>
+	i2c_transmit(ds1307_W, s_time, 4);
+     47e:	44 e0       	ldi	r20, 0x04	; 4
+     480:	50 e0       	ldi	r21, 0x00	; 0
+     482:	be 01       	movw	r22, r28
+     484:	6f 5f       	subi	r22, 0xFF	; 255
+     486:	7f 4f       	sbci	r23, 0xFF	; 255
+     488:	80 ed       	ldi	r24, 0xD0	; 208
+     48a:	0e 94 af 02 	call	0x55e	; 0x55e <i2c_transmit>
+	
+	char control[] = {0xE, 0b00011100};
+     48e:	8e e0       	ldi	r24, 0x0E	; 14
+     490:	8d 83       	std	Y+5, r24	; 0x05
+     492:	8c e1       	ldi	r24, 0x1C	; 28
+     494:	8e 83       	std	Y+6, r24	; 0x06
+		
+	i2c_init();
+     496:	0e 94 5e 02 	call	0x4bc	; 0x4bc <i2c_init>
+	i2c_transmit(ds1307_W, control, 2);
+     49a:	42 e0       	ldi	r20, 0x02	; 2
+     49c:	50 e0       	ldi	r21, 0x00	; 0
+     49e:	be 01       	movw	r22, r28
+     4a0:	6b 5f       	subi	r22, 0xFB	; 251
+     4a2:	7f 4f       	sbci	r23, 0xFF	; 255
+     4a4:	80 ed       	ldi	r24, 0xD0	; 208
+     4a6:	0e 94 af 02 	call	0x55e	; 0x55e <i2c_transmit>
+}
+     4aa:	26 96       	adiw	r28, 0x06	; 6
+     4ac:	0f b6       	in	r0, 0x3f	; 63
+     4ae:	f8 94       	cli
+     4b0:	de bf       	out	0x3e, r29	; 62
+     4b2:	0f be       	out	0x3f, r0	; 63
+     4b4:	cd bf       	out	0x3d, r28	; 61
+     4b6:	df 91       	pop	r29
+     4b8:	cf 91       	pop	r28
+     4ba:	08 95       	ret
+
+000004bc <i2c_init>:
+#define Prescaler 1
+#define TWBR_val ((((F_CPU / F_SCL) / Prescaler) - 16 ) / 2)
+
+void i2c_init(void)
+{
+	TWBR = (char)TWBR_val;
+     4bc:	88 e8       	ldi	r24, 0x88	; 136
+     4be:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__DATA_REGION_ORIGIN__+0x58>
+     4c2:	08 95       	ret
+
+000004c4 <i2c_start>:
+}
+
+char i2c_start(char address)
+{
+	// reset TWI control register
+	TWCR = 0;
+     4c4:	ec eb       	ldi	r30, 0xBC	; 188
+     4c6:	f0 e0       	ldi	r31, 0x00	; 0
+     4c8:	10 82       	st	Z, r1
+	// transmit START condition
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+     4ca:	94 ea       	ldi	r25, 0xA4	; 164
+     4cc:	90 83       	st	Z, r25
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     4ce:	90 81       	ld	r25, Z
+     4d0:	99 23       	and	r25, r25
+     4d2:	ec f7       	brge	.-6      	; 0x4ce <i2c_start+0xa>
+	
+	// check if the start condition was successfully transmitted
+	if((TWSR & 0xF8) != TW_START){ return 1; }
+     4d4:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__DATA_REGION_ORIGIN__+0x59>
+     4d8:	98 7f       	andi	r25, 0xF8	; 248
+     4da:	98 30       	cpi	r25, 0x08	; 8
+     4dc:	a1 f4       	brne	.+40     	; 0x506 <i2c_start+0x42>
+	
+	// load slave address into data register
+	TWDR = address;
+     4de:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+	// start transmission of address
+	TWCR = (1<<TWINT) | (1<<TWEN);
+     4e2:	84 e8       	ldi	r24, 0x84	; 132
+     4e4:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     4e8:	ec eb       	ldi	r30, 0xBC	; 188
+     4ea:	f0 e0       	ldi	r31, 0x00	; 0
+     4ec:	80 81       	ld	r24, Z
+     4ee:	88 23       	and	r24, r24
+     4f0:	ec f7       	brge	.-6      	; 0x4ec <i2c_start+0x28>
+	
+	// check if the device has acknowledged the READ / WRITE mode
+	char twst = TW_STATUS & 0xF8;
+     4f2:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__DATA_REGION_ORIGIN__+0x59>
+     4f6:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+     4f8:	98 31       	cpi	r25, 0x18	; 24
+     4fa:	39 f0       	breq	.+14     	; 0x50a <i2c_start+0x46>
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+	
+	// check if the start condition was successfully transmitted
+	if((TWSR & 0xF8) != TW_START){ return 1; }
+     4fc:	81 e0       	ldi	r24, 0x01	; 1
+     4fe:	90 34       	cpi	r25, 0x40	; 64
+     500:	29 f4       	brne	.+10     	; 0x50c <i2c_start+0x48>
+     502:	80 e0       	ldi	r24, 0x00	; 0
+     504:	08 95       	ret
+     506:	81 e0       	ldi	r24, 0x01	; 1
+     508:	08 95       	ret
+	
+	// check if the device has acknowledged the READ / WRITE mode
+	char twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+	
+	return 0;
+     50a:	80 e0       	ldi	r24, 0x00	; 0
+}
+     50c:	08 95       	ret
+
+0000050e <i2c_write>:
+
+char i2c_write(char data)
+{
+	// load data into data register
+	TWDR = data;
+     50e:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+	// start transmission of data
+	TWCR = (1<<TWINT) | (1<<TWEN);
+     512:	84 e8       	ldi	r24, 0x84	; 132
+     514:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     518:	ec eb       	ldi	r30, 0xBC	; 188
+     51a:	f0 e0       	ldi	r31, 0x00	; 0
+     51c:	80 81       	ld	r24, Z
+     51e:	88 23       	and	r24, r24
+     520:	ec f7       	brge	.-6      	; 0x51c <i2c_write+0xe>
+	
+	if( (TWSR & 0xF8) != TW_MT_DATA_ACK ){ return 1; }
+     522:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__DATA_REGION_ORIGIN__+0x59>
+     526:	98 7f       	andi	r25, 0xF8	; 248
+     528:	81 e0       	ldi	r24, 0x01	; 1
+     52a:	98 32       	cpi	r25, 0x28	; 40
+     52c:	09 f4       	brne	.+2      	; 0x530 <i2c_write+0x22>
+     52e:	80 e0       	ldi	r24, 0x00	; 0
+	
+	return 0;
+}
+     530:	08 95       	ret
+
+00000532 <i2c_read_ack>:
+
+char i2c_read_ack(void)
+{
+	
+	// start TWI module and acknowledge data after reception
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+     532:	84 ec       	ldi	r24, 0xC4	; 196
+     534:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     538:	ec eb       	ldi	r30, 0xBC	; 188
+     53a:	f0 e0       	ldi	r31, 0x00	; 0
+     53c:	80 81       	ld	r24, Z
+     53e:	88 23       	and	r24, r24
+     540:	ec f7       	brge	.-6      	; 0x53c <i2c_read_ack+0xa>
+	// return received data from TWDR
+	return TWDR;
+     542:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+}
+     546:	08 95       	ret
+
+00000548 <i2c_read_nack>:
+
+char i2c_read_nack(void)
+{
+	
+	// start receiving without acknowledging reception
+	TWCR = (1<<TWINT) | (1<<TWEN);
+     548:	84 e8       	ldi	r24, 0x84	; 132
+     54a:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     54e:	ec eb       	ldi	r30, 0xBC	; 188
+     550:	f0 e0       	ldi	r31, 0x00	; 0
+     552:	80 81       	ld	r24, Z
+     554:	88 23       	and	r24, r24
+     556:	ec f7       	brge	.-6      	; 0x552 <i2c_read_nack+0xa>
+	// return received data from TWDR
+	return TWDR;
+     558:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+}
+     55c:	08 95       	ret
+
+0000055e <i2c_transmit>:
+
+char i2c_transmit(char address, char* data, int length)
+{
+     55e:	cf 92       	push	r12
+     560:	df 92       	push	r13
+     562:	ff 92       	push	r15
+     564:	0f 93       	push	r16
+     566:	1f 93       	push	r17
+     568:	cf 93       	push	r28
+     56a:	df 93       	push	r29
+     56c:	6b 01       	movw	r12, r22
+     56e:	8a 01       	movw	r16, r20
+	if (i2c_start(address | I2C_WRITE)) return 1;
+     570:	0e 94 62 02 	call	0x4c4	; 0x4c4 <i2c_start>
+     574:	f8 2e       	mov	r15, r24
+     576:	81 11       	cpse	r24, r1
+     578:	12 c0       	rjmp	.+36     	; 0x59e <i2c_transmit+0x40>
+	
+	for (uint16_t i = 0; i < length; i++)
+     57a:	01 15       	cp	r16, r1
+     57c:	11 05       	cpc	r17, r1
+     57e:	59 f0       	breq	.+22     	; 0x596 <i2c_transmit+0x38>
+     580:	e6 01       	movw	r28, r12
+     582:	0c 0d       	add	r16, r12
+     584:	1d 1d       	adc	r17, r13
+	{
+		if (i2c_write(data[i])) return 1;
+     586:	89 91       	ld	r24, Y+
+     588:	0e 94 87 02 	call	0x50e	; 0x50e <i2c_write>
+     58c:	81 11       	cpse	r24, r1
+     58e:	0a c0       	rjmp	.+20     	; 0x5a4 <i2c_transmit+0x46>
+
+char i2c_transmit(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_WRITE)) return 1;
+	
+	for (uint16_t i = 0; i < length; i++)
+     590:	0c 17       	cp	r16, r28
+     592:	1d 07       	cpc	r17, r29
+     594:	c1 f7       	brne	.-16     	; 0x586 <i2c_transmit+0x28>
+}
+
+void i2c_stop(void)
+{
+	// transmit STOP condition
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+     596:	84 e9       	ldi	r24, 0x94	; 148
+     598:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+     59c:	05 c0       	rjmp	.+10     	; 0x5a8 <i2c_transmit+0x4a>
+	return TWDR;
+}
+
+char i2c_transmit(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_WRITE)) return 1;
+     59e:	ff 24       	eor	r15, r15
+     5a0:	f3 94       	inc	r15
+     5a2:	02 c0       	rjmp	.+4      	; 0x5a8 <i2c_transmit+0x4a>
+	
+	for (uint16_t i = 0; i < length; i++)
+	{
+		if (i2c_write(data[i])) return 1;
+     5a4:	ff 24       	eor	r15, r15
+     5a6:	f3 94       	inc	r15
+	}
+	
+	i2c_stop();
+	
+	return 0;
+}
+     5a8:	8f 2d       	mov	r24, r15
+     5aa:	df 91       	pop	r29
+     5ac:	cf 91       	pop	r28
+     5ae:	1f 91       	pop	r17
+     5b0:	0f 91       	pop	r16
+     5b2:	ff 90       	pop	r15
+     5b4:	df 90       	pop	r13
+     5b6:	cf 90       	pop	r12
+     5b8:	08 95       	ret
+
+000005ba <i2c_receive>:
+
+char i2c_receive(char address, char* data, int length)
+{
+     5ba:	bf 92       	push	r11
+     5bc:	cf 92       	push	r12
+     5be:	df 92       	push	r13
+     5c0:	ef 92       	push	r14
+     5c2:	ff 92       	push	r15
+     5c4:	0f 93       	push	r16
+     5c6:	1f 93       	push	r17
+     5c8:	cf 93       	push	r28
+     5ca:	df 93       	push	r29
+     5cc:	6b 01       	movw	r12, r22
+     5ce:	7a 01       	movw	r14, r20
+	if (i2c_start(address | I2C_READ)) return 1;
+     5d0:	81 60       	ori	r24, 0x01	; 1
+     5d2:	0e 94 62 02 	call	0x4c4	; 0x4c4 <i2c_start>
+     5d6:	b8 2e       	mov	r11, r24
+     5d8:	81 11       	cpse	r24, r1
+     5da:	1d c0       	rjmp	.+58     	; 0x616 <i2c_receive+0x5c>
+	
+	for (uint16_t i = 0; i < (length-1); i++)
+     5dc:	81 e0       	ldi	r24, 0x01	; 1
+     5de:	e8 16       	cp	r14, r24
+     5e0:	f1 04       	cpc	r15, r1
+     5e2:	61 f0       	breq	.+24     	; 0x5fc <i2c_receive+0x42>
+     5e4:	e6 01       	movw	r28, r12
+     5e6:	87 01       	movw	r16, r14
+     5e8:	01 50       	subi	r16, 0x01	; 1
+     5ea:	11 09       	sbc	r17, r1
+     5ec:	0c 0d       	add	r16, r12
+     5ee:	1d 1d       	adc	r17, r13
+	{
+		data[i] = i2c_read_ack();
+     5f0:	0e 94 99 02 	call	0x532	; 0x532 <i2c_read_ack>
+     5f4:	89 93       	st	Y+, r24
+
+char i2c_receive(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_READ)) return 1;
+	
+	for (uint16_t i = 0; i < (length-1); i++)
+     5f6:	0c 17       	cp	r16, r28
+     5f8:	1d 07       	cpc	r17, r29
+     5fa:	d1 f7       	brne	.-12     	; 0x5f0 <i2c_receive+0x36>
+	{
+		data[i] = i2c_read_ack();
+	}
+	data[(length-1)] = i2c_read_nack();
+     5fc:	81 e0       	ldi	r24, 0x01	; 1
+     5fe:	e8 1a       	sub	r14, r24
+     600:	f1 08       	sbc	r15, r1
+     602:	e6 01       	movw	r28, r12
+     604:	ce 0d       	add	r28, r14
+     606:	df 1d       	adc	r29, r15
+     608:	0e 94 a4 02 	call	0x548	; 0x548 <i2c_read_nack>
+     60c:	88 83       	st	Y, r24
+}
+
+void i2c_stop(void)
+{
+	// transmit STOP condition
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+     60e:	84 e9       	ldi	r24, 0x94	; 148
+     610:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+     614:	02 c0       	rjmp	.+4      	; 0x61a <i2c_receive+0x60>
+	return 0;
+}
+
+char i2c_receive(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_READ)) return 1;
+     616:	bb 24       	eor	r11, r11
+     618:	b3 94       	inc	r11
+	data[(length-1)] = i2c_read_nack();
+	
+	i2c_stop();
+	
+	return 0;
+}
+     61a:	8b 2d       	mov	r24, r11
+     61c:	df 91       	pop	r29
+     61e:	cf 91       	pop	r28
+     620:	1f 91       	pop	r17
+     622:	0f 91       	pop	r16
+     624:	ff 90       	pop	r15
+     626:	ef 90       	pop	r14
+     628:	df 90       	pop	r13
+     62a:	cf 90       	pop	r12
+     62c:	bf 90       	pop	r11
+     62e:	08 95       	ret
+
+00000630 <ledHALon>:
+	LEDPORT |= 1<<LEDPIN;
+}
+
+inline void ledHALoff()
+{
+	LEDPORT &= ~(1<<LEDPIN);	
+     630:	5d 9a       	sbi	0x0b, 5	; 11
+     632:	08 95       	ret
+
+00000634 <ledHALoff>:
+     634:	5d 98       	cbi	0x0b, 5	; 11
+     636:	08 95       	ret
+
+00000638 <ledHALToggle>:
+}
+
+void
+ledHALToggle()
+{
+	if (LEDPORT & (1<<LEDPIN)) {
+     638:	5d 9b       	sbis	0x0b, 5	; 11
+     63a:	02 c0       	rjmp	.+4      	; 0x640 <ledHALToggle+0x8>
+	LEDPORT |= 1<<LEDPIN;
+}
+
+inline void ledHALoff()
+{
+	LEDPORT &= ~(1<<LEDPIN);	
+     63c:	5d 98       	cbi	0x0b, 5	; 11
+     63e:	08 95       	ret
+    LEDPORT &= ~(1<<LEDPIN);
+}
+
+inline void ledHALon()
+{
+	LEDPORT |= 1<<LEDPIN;
+     640:	5d 9a       	sbi	0x0b, 5	; 11
+     642:	08 95       	ret
+
+00000644 <main>:
+void displayDigit(size_t digit);
+
+
+int main(void)
+{
+	MCUSR = 0;
+     644:	14 be       	out	0x34, r1	; 52
+	wdt_reset();
+     646:	a8 95       	wdr
+		);
+	}
+	else
+	{
+        uint8_t register temp_reg;
+		__asm__ __volatile__ (
+     648:	0f b6       	in	r0, 0x3f	; 63
+     64a:	f8 94       	cli
+     64c:	a8 95       	wdr
+     64e:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+     652:	88 61       	ori	r24, 0x18	; 24
+     654:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+     658:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+     65c:	0f be       	out	0x3f, r0	; 63
+	wdt_disable();
+		
+	displayHALInit();
+     65e:	0e 94 a0 00 	call	0x140	; 0x140 <displayHALInit>
+	TCCR0B |=  1<<CS00;
+     662:	85 b5       	in	r24, 0x25	; 37
+     664:	81 60       	ori	r24, 0x01	; 1
+     666:	85 bd       	out	0x25, r24	; 37
+	TIMSK0 |= 1;
+     668:	ee e6       	ldi	r30, 0x6E	; 110
+     66a:	f0 e0       	ldi	r31, 0x00	; 0
+     66c:	80 81       	ld	r24, Z
+     66e:	81 60       	ori	r24, 0x01	; 1
+     670:	80 83       	st	Z, r24
+	
+	buttonInit(&buttonIn, &PINB, &DDRB, 7);
+     672:	27 e0       	ldi	r18, 0x07	; 7
+     674:	44 e2       	ldi	r20, 0x24	; 36
+     676:	50 e0       	ldi	r21, 0x00	; 0
+     678:	63 e2       	ldi	r22, 0x23	; 35
+     67a:	70 e0       	ldi	r23, 0x00	; 0
+     67c:	8a e3       	ldi	r24, 0x3A	; 58
+     67e:	91 e0       	ldi	r25, 0x01	; 1
+     680:	0e 94 53 00 	call	0xa6	; 0xa6 <buttonInit>
+	buttonInit(&buttonUp, &PIND, &DDRD, 3);
+     684:	23 e0       	ldi	r18, 0x03	; 3
+     686:	4a e2       	ldi	r20, 0x2A	; 42
+     688:	50 e0       	ldi	r21, 0x00	; 0
+     68a:	69 e2       	ldi	r22, 0x29	; 41
+     68c:	70 e0       	ldi	r23, 0x00	; 0
+     68e:	83 e4       	ldi	r24, 0x43	; 67
+     690:	91 e0       	ldi	r25, 0x01	; 1
+     692:	0e 94 53 00 	call	0xa6	; 0xa6 <buttonInit>
+	buttonInit(&buttonDown, &PIND, &DDRD, 2);
+     696:	22 e0       	ldi	r18, 0x02	; 2
+     698:	4a e2       	ldi	r20, 0x2A	; 42
+     69a:	50 e0       	ldi	r21, 0x00	; 0
+     69c:	69 e2       	ldi	r22, 0x29	; 41
+     69e:	70 e0       	ldi	r23, 0x00	; 0
+     6a0:	8c e4       	ldi	r24, 0x4C	; 76
+     6a2:	91 e0       	ldi	r25, 0x01	; 1
+     6a4:	0e 94 53 00 	call	0xa6	; 0xa6 <buttonInit>
+	
+	i2c_init();
+     6a8:	0e 94 5e 02 	call	0x4bc	; 0x4bc <i2c_init>
+
+	displayHALTestNixies();
+     6ac:	0e 94 59 01 	call	0x2b2	; 0x2b2 <displayHALTestNixies>
+
+	sei();
+     6b0:	78 94       	sei
+	mode = DISPLAY_TIME;
+     6b2:	10 92 39 01 	sts	0x0139, r1	; 0x800139 <mode>
+	
+    while (1) 
+    {
+		displayTimeModeOnEnter();
+     6b6:	0e 94 33 04 	call	0x866	; 0x866 <displayTimeModeOnEnter>
+		while (mode == DISPLAY_TIME) {
+     6ba:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     6be:	81 11       	cpse	r24, r1
+     6c0:	06 c0       	rjmp	.+12     	; 0x6ce <main+0x8a>
+			displayTimeModeLoop();
+     6c2:	0e 94 fc 04 	call	0x9f8	; 0x9f8 <displayTimeModeLoop>
+	mode = DISPLAY_TIME;
+	
+    while (1) 
+    {
+		displayTimeModeOnEnter();
+		while (mode == DISPLAY_TIME) {
+     6c6:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     6ca:	88 23       	and	r24, r24
+     6cc:	d1 f3       	breq	.-12     	; 0x6c2 <main+0x7e>
+			displayTimeModeLoop();
+		}
+		displayTimeModeOnExit();
+     6ce:	0e 94 f6 06 	call	0xdec	; 0xdec <displayTimeModeOnExit>
+		
+		setTimeModeOnEnter();
+     6d2:	0e 94 6d 09 	call	0x12da	; 0x12da <setTimeModeOnEnter>
+		while (mode == SET_TIME || mode == SET_TIME_HACK) {
+     6d6:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     6da:	81 50       	subi	r24, 0x01	; 1
+     6dc:	82 30       	cpi	r24, 0x02	; 2
+     6de:	38 f4       	brcc	.+14     	; 0x6ee <main+0xaa>
+			setTimeModeLoop();
+     6e0:	0e 94 6e 09 	call	0x12dc	; 0x12dc <setTimeModeLoop>
+			displayTimeModeLoop();
+		}
+		displayTimeModeOnExit();
+		
+		setTimeModeOnEnter();
+		while (mode == SET_TIME || mode == SET_TIME_HACK) {
+     6e4:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     6e8:	81 50       	subi	r24, 0x01	; 1
+     6ea:	82 30       	cpi	r24, 0x02	; 2
+     6ec:	c8 f3       	brcs	.-14     	; 0x6e0 <main+0x9c>
+			setTimeModeLoop();
+		}
+		setTimeModeOnExit();
+     6ee:	0e 94 9c 0a 	call	0x1538	; 0x1538 <setTimeModeOnExit>
+
+		setDimModeOnEnter();
+     6f2:	0e 94 87 07 	call	0xf0e	; 0xf0e <setDimModeOnEnter>
+		while (mode == SET_DIM) {
+     6f6:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     6fa:	83 30       	cpi	r24, 0x03	; 3
+     6fc:	31 f4       	brne	.+12     	; 0x70a <main+0xc6>
+			setDimModeLoop();
+     6fe:	0e 94 b6 07 	call	0xf6c	; 0xf6c <setDimModeLoop>
+			setTimeModeLoop();
+		}
+		setTimeModeOnExit();
+
+		setDimModeOnEnter();
+		while (mode == SET_DIM) {
+     702:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     706:	83 30       	cpi	r24, 0x03	; 3
+     708:	d1 f3       	breq	.-12     	; 0x6fe <main+0xba>
+			setDimModeLoop();
+		}
+		setDimModeOnExit();	
+     70a:	0e 94 6c 08 	call	0x10d8	; 0x10d8 <setDimModeOnExit>
+		
+		setLedModeOnEnter();
+     70e:	0e 94 79 08 	call	0x10f2	; 0x10f2 <setLedModeOnEnter>
+		while (mode == SET_LED) {
+     712:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     716:	84 30       	cpi	r24, 0x04	; 4
+     718:	31 f4       	brne	.+12     	; 0x726 <main+0xe2>
+			setLedModeLoop();
+     71a:	0e 94 a8 08 	call	0x1150	; 0x1150 <setLedModeLoop>
+			setDimModeLoop();
+		}
+		setDimModeOnExit();	
+		
+		setLedModeOnEnter();
+		while (mode == SET_LED) {
+     71e:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     722:	84 30       	cpi	r24, 0x04	; 4
+     724:	d1 f3       	breq	.-12     	; 0x71a <main+0xd6>
+			setLedModeLoop();
+		}
+		setLedModeOnExit();	
+     726:	0e 94 60 09 	call	0x12c0	; 0x12c0 <setLedModeOnExit>
+		
+		setCrossfadeModeOnEnter();
+     72a:	0e 94 06 07 	call	0xe0c	; 0xe0c <setCrossfadeModeOnEnter>
+		while (mode == SET_CROSSFADE) {
+     72e:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     732:	85 30       	cpi	r24, 0x05	; 5
+     734:	31 f4       	brne	.+12     	; 0x742 <main+0xfe>
+			setCrossfadeModeLoop();
+     736:	0e 94 16 07 	call	0xe2c	; 0xe2c <setCrossfadeModeLoop>
+			setLedModeLoop();
+		}
+		setLedModeOnExit();	
+		
+		setCrossfadeModeOnEnter();
+		while (mode == SET_CROSSFADE) {
+     73a:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     73e:	85 30       	cpi	r24, 0x05	; 5
+     740:	d1 f3       	breq	.-12     	; 0x736 <main+0xf2>
+			setCrossfadeModeLoop();
+		}
+		setCrossfadeModeOnExit();
+     742:	0e 94 80 07 	call	0xf00	; 0xf00 <setCrossfadeModeOnExit>
+    }
+     746:	b7 cf       	rjmp	.-146    	; 0x6b6 <main+0x72>
+
+00000748 <__vector_16>:
+}
+
+
+ISR(TIMER0_OVF_vect)
+{
+     748:	1f 92       	push	r1
+     74a:	0f 92       	push	r0
+     74c:	0f b6       	in	r0, 0x3f	; 63
+     74e:	0f 92       	push	r0
+     750:	11 24       	eor	r1, r1
+     752:	2f 93       	push	r18
+     754:	3f 93       	push	r19
+     756:	4f 93       	push	r20
+     758:	5f 93       	push	r21
+     75a:	6f 93       	push	r22
+     75c:	7f 93       	push	r23
+     75e:	8f 93       	push	r24
+     760:	9f 93       	push	r25
+     762:	af 93       	push	r26
+     764:	bf 93       	push	r27
+     766:	ef 93       	push	r30
+     768:	ff 93       	push	r31
+	static unsigned int intCntr = 0;
+	static unsigned sysTickCntr = 0;
+	static unsigned int sysTick50msCntr = 0;
+	static unsigned int buttonCntr;
+	
+	if (++intCntr == 3)
+     76a:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <intCntr.2032>
+     76e:	90 91 25 01 	lds	r25, 0x0125	; 0x800125 <intCntr.2032+0x1>
+     772:	01 96       	adiw	r24, 0x01	; 1
+     774:	90 93 25 01 	sts	0x0125, r25	; 0x800125 <intCntr.2032+0x1>
+     778:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <intCntr.2032>
+     77c:	03 97       	sbiw	r24, 0x03	; 3
+     77e:	31 f4       	brne	.+12     	; 0x78c <__vector_16+0x44>
+	{
+		displayHAL100usStep();
+     780:	0e 94 ab 00 	call	0x156	; 0x156 <displayHAL100usStep>
+		intCntr = 0;
+     784:	10 92 25 01 	sts	0x0125, r1	; 0x800125 <intCntr.2032+0x1>
+     788:	10 92 24 01 	sts	0x0124, r1	; 0x800124 <intCntr.2032>
+	}
+	
+	++sysTickCntr;
+     78c:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <sysTickCntr.2033>
+     790:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <sysTickCntr.2033+0x1>
+     794:	01 96       	adiw	r24, 0x01	; 1
+     796:	90 93 23 01 	sts	0x0123, r25	; 0x800123 <sysTickCntr.2033+0x1>
+     79a:	80 93 22 01 	sts	0x0122, r24	; 0x800122 <sysTickCntr.2033>
+	if (sysTickCntr >= sysTickLimit) {
+     79e:	20 91 14 01 	lds	r18, 0x0114	; 0x800114 <sysTickLimit>
+     7a2:	30 91 15 01 	lds	r19, 0x0115	; 0x800115 <sysTickLimit+0x1>
+     7a6:	82 17       	cp	r24, r18
+     7a8:	93 07       	cpc	r25, r19
+     7aa:	98 f0       	brcs	.+38     	; 0x7d2 <__vector_16+0x8a>
+		sysTickCntr = 0;
+     7ac:	10 92 23 01 	sts	0x0123, r1	; 0x800123 <sysTickCntr.2033+0x1>
+     7b0:	10 92 22 01 	sts	0x0122, r1	; 0x800122 <sysTickCntr.2033>
+		sysTick++;
+     7b4:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     7b8:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     7bc:	01 96       	adiw	r24, 0x01	; 1
+     7be:	90 93 4b 01 	sts	0x014B, r25	; 0x80014b <sysTick+0x1>
+     7c2:	80 93 4a 01 	sts	0x014A, r24	; 0x80014a <sysTick>
+//		wdt_reset();
+		if (mode != SET_TIME_HACK) {
+     7c6:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+     7ca:	82 30       	cpi	r24, 0x02	; 2
+     7cc:	11 f0       	breq	.+4      	; 0x7d2 <__vector_16+0x8a>
+		    openNixieTimeTick();
+     7ce:	0e 94 2f 0b 	call	0x165e	; 0x165e <openNixieTimeTick>
+		}
+	}
+	
+	if (++sysTick50msCntr == 1562) {
+     7d2:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <sysTick50msCntr.2034>
+     7d6:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <sysTick50msCntr.2034+0x1>
+     7da:	01 96       	adiw	r24, 0x01	; 1
+     7dc:	8a 31       	cpi	r24, 0x1A	; 26
+     7de:	26 e0       	ldi	r18, 0x06	; 6
+     7e0:	92 07       	cpc	r25, r18
+     7e2:	29 f0       	breq	.+10     	; 0x7ee <__vector_16+0xa6>
+     7e4:	90 93 21 01 	sts	0x0121, r25	; 0x800121 <sysTick50msCntr.2034+0x1>
+     7e8:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <sysTick50msCntr.2034>
+     7ec:	0d c0       	rjmp	.+26     	; 0x808 <__vector_16+0xc0>
+		sysTick50msCntr = 0;
+     7ee:	10 92 21 01 	sts	0x0121, r1	; 0x800121 <sysTick50msCntr.2034+0x1>
+     7f2:	10 92 20 01 	sts	0x0120, r1	; 0x800120 <sysTick50msCntr.2034>
+		sysTick50ms++;
+     7f6:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+     7fa:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+     7fe:	01 96       	adiw	r24, 0x01	; 1
+     800:	90 93 42 01 	sts	0x0142, r25	; 0x800142 <sysTick50ms+0x1>
+     804:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <sysTick50ms>
+	}
+	
+	if (++buttonCntr == 312) {
+     808:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <buttonCntr.2035>
+     80c:	90 91 1f 01 	lds	r25, 0x011F	; 0x80011f <buttonCntr.2035+0x1>
+     810:	01 96       	adiw	r24, 0x01	; 1
+     812:	88 33       	cpi	r24, 0x38	; 56
+     814:	21 e0       	ldi	r18, 0x01	; 1
+     816:	92 07       	cpc	r25, r18
+     818:	29 f0       	breq	.+10     	; 0x824 <__vector_16+0xdc>
+     81a:	90 93 1f 01 	sts	0x011F, r25	; 0x80011f <buttonCntr.2035+0x1>
+     81e:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <buttonCntr.2035>
+     822:	10 c0       	rjmp	.+32     	; 0x844 <__vector_16+0xfc>
+		buttonCntr = 0;
+     824:	10 92 1f 01 	sts	0x011F, r1	; 0x80011f <buttonCntr.2035+0x1>
+     828:	10 92 1e 01 	sts	0x011E, r1	; 0x80011e <buttonCntr.2035>
+		button10MsStep(&buttonUp);
+     82c:	83 e4       	ldi	r24, 0x43	; 67
+     82e:	91 e0       	ldi	r25, 0x01	; 1
+     830:	0e 94 68 00 	call	0xd0	; 0xd0 <button10MsStep>
+		button10MsStep(&buttonDown);
+     834:	8c e4       	ldi	r24, 0x4C	; 76
+     836:	91 e0       	ldi	r25, 0x01	; 1
+     838:	0e 94 68 00 	call	0xd0	; 0xd0 <button10MsStep>
+		button10MsStep(&buttonIn);
+     83c:	8a e3       	ldi	r24, 0x3A	; 58
+     83e:	91 e0       	ldi	r25, 0x01	; 1
+     840:	0e 94 68 00 	call	0xd0	; 0xd0 <button10MsStep>
+	}
+}
+     844:	ff 91       	pop	r31
+     846:	ef 91       	pop	r30
+     848:	bf 91       	pop	r27
+     84a:	af 91       	pop	r26
+     84c:	9f 91       	pop	r25
+     84e:	8f 91       	pop	r24
+     850:	7f 91       	pop	r23
+     852:	6f 91       	pop	r22
+     854:	5f 91       	pop	r21
+     856:	4f 91       	pop	r20
+     858:	3f 91       	pop	r19
+     85a:	2f 91       	pop	r18
+     85c:	0f 90       	pop	r0
+     85e:	0f be       	out	0x3f, r0	; 63
+     860:	0f 90       	pop	r0
+     862:	1f 90       	pop	r1
+     864:	18 95       	reti
+
+00000866 <displayTimeModeOnEnter>:
+unsigned char crossfade_ram;
+
+static void displayTimeModeCorrectTickLimit();
+
+void displayTimeModeOnEnter()
+{
+     866:	1f 93       	push	r17
+     868:	cf 93       	push	r28
+     86a:	df 93       	push	r29
+	openNixieTimeGetHAL();
+     86c:	0e 94 9d 0a 	call	0x153a	; 0x153a <openNixieTimeGetHAL>
+	displayHALSetCrossfade(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+     870:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     874:	cd ec       	ldi	r28, 0xCD	; 205
+     876:	8c 9f       	mul	r24, r28
+     878:	d1 2d       	mov	r29, r1
+     87a:	11 24       	eor	r1, r1
+     87c:	d6 95       	lsr	r29
+     87e:	d6 95       	lsr	r29
+     880:	d6 95       	lsr	r29
+     882:	dd 0f       	add	r29, r29
+     884:	9d 2f       	mov	r25, r29
+     886:	99 0f       	add	r25, r25
+     888:	99 0f       	add	r25, r25
+     88a:	d9 0f       	add	r29, r25
+     88c:	8d 1b       	sub	r24, r29
+     88e:	d8 2f       	mov	r29, r24
+     890:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     894:	8c 9f       	mul	r24, r28
+     896:	11 2d       	mov	r17, r1
+     898:	11 24       	eor	r1, r1
+     89a:	16 95       	lsr	r17
+     89c:	16 95       	lsr	r17
+     89e:	16 95       	lsr	r17
+     8a0:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     8a4:	8c 9f       	mul	r24, r28
+     8a6:	c1 2d       	mov	r28, r1
+     8a8:	11 24       	eor	r1, r1
+     8aa:	c6 95       	lsr	r28
+     8ac:	c6 95       	lsr	r28
+     8ae:	c6 95       	lsr	r28
+     8b0:	cc 0f       	add	r28, r28
+     8b2:	9c 2f       	mov	r25, r28
+     8b4:	99 0f       	add	r25, r25
+     8b6:	99 0f       	add	r25, r25
+     8b8:	c9 0f       	add	r28, r25
+     8ba:	8c 1b       	sub	r24, r28
+     8bc:	c8 2f       	mov	r28, r24
+     8be:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     8c2:	8a 30       	cpi	r24, 0x0A	; 10
+     8c4:	50 f0       	brcs	.+20     	; 0x8da <displayTimeModeOnEnter+0x74>
+     8c6:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     8ca:	9d ec       	ldi	r25, 0xCD	; 205
+     8cc:	89 9f       	mul	r24, r25
+     8ce:	81 2d       	mov	r24, r1
+     8d0:	11 24       	eor	r1, r1
+     8d2:	86 95       	lsr	r24
+     8d4:	86 95       	lsr	r24
+     8d6:	86 95       	lsr	r24
+     8d8:	01 c0       	rjmp	.+2      	; 0x8dc <displayTimeModeOnEnter+0x76>
+     8da:	8a e0       	ldi	r24, 0x0A	; 10
+     8dc:	2d 2f       	mov	r18, r29
+     8de:	41 2f       	mov	r20, r17
+     8e0:	6c 2f       	mov	r22, r28
+     8e2:	0e 94 32 01 	call	0x264	; 0x264 <displayHALSetCrossfade>
+	dimStartHour_ram = eeprom_read_byte(&dimStartHour);
+     8e6:	84 e0       	ldi	r24, 0x04	; 4
+     8e8:	90 e0       	ldi	r25, 0x00	; 0
+     8ea:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     8ee:	80 93 56 01 	sts	0x0156, r24	; 0x800156 <dimStartHour_ram>
+	dimEndHour_ram = eeprom_read_byte(&dimEndHour);
+     8f2:	83 e0       	ldi	r24, 0x03	; 3
+     8f4:	90 e0       	ldi	r25, 0x00	; 0
+     8f6:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     8fa:	80 93 53 01 	sts	0x0153, r24	; 0x800153 <dimEndHour_ram>
+	ledStartHour_ram = eeprom_read_byte(&ledStartHour);
+     8fe:	82 e0       	ldi	r24, 0x02	; 2
+     900:	90 e0       	ldi	r25, 0x00	; 0
+     902:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     906:	80 93 57 01 	sts	0x0157, r24	; 0x800157 <ledStartHour_ram>
+	ledEndHour_ram = eeprom_read_byte(&ledEndHour);
+     90a:	81 e0       	ldi	r24, 0x01	; 1
+     90c:	90 e0       	ldi	r25, 0x00	; 0
+     90e:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     912:	80 93 54 01 	sts	0x0154, r24	; 0x800154 <ledEndHour_ram>
+	crossfade_ram = eeprom_read_byte(&crossfade);
+     916:	80 e0       	ldi	r24, 0x00	; 0
+     918:	90 e0       	ldi	r25, 0x00	; 0
+     91a:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     91e:	80 93 55 01 	sts	0x0155, r24	; 0x800155 <crossfade_ram>
+				: "r0"
+		);
+	}
+	else
+	{
+		__asm__ __volatile__ (
+     922:	99 e2       	ldi	r25, 0x29	; 41
+     924:	88 e1       	ldi	r24, 0x18	; 24
+     926:	0f b6       	in	r0, 0x3f	; 63
+     928:	f8 94       	cli
+     92a:	a8 95       	wdr
+     92c:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+     930:	0f be       	out	0x3f, r0	; 63
+     932:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__DATA_REGION_ORIGIN__>
+	wdt_enable(WDTO_8S);
+	wdt_reset();
+     936:	a8 95       	wdr
+}
+     938:	df 91       	pop	r29
+     93a:	cf 91       	pop	r28
+     93c:	1f 91       	pop	r17
+     93e:	08 95       	ret
+
+00000940 <displayTimeModeHandleLed>:
+
+void displayTimeModeHandleLed()
+{
+	if (ledEndHour_ram - ledStartHour_ram >= 0) {
+     940:	80 91 54 01 	lds	r24, 0x0154	; 0x800154 <ledEndHour_ram>
+     944:	90 e0       	ldi	r25, 0x00	; 0
+     946:	20 91 57 01 	lds	r18, 0x0157	; 0x800157 <ledStartHour_ram>
+     94a:	82 1b       	sub	r24, r18
+     94c:	91 09       	sbc	r25, r1
+     94e:	92 f0       	brmi	.+36     	; 0x974 <displayTimeModeHandleLed+0x34>
+		if (openNixieTimeGetHours() >= ledStartHour_ram && openNixieTimeGetHours() < ledEndHour_ram) {
+     950:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     954:	90 91 57 01 	lds	r25, 0x0157	; 0x800157 <ledStartHour_ram>
+     958:	89 17       	cp	r24, r25
+     95a:	48 f0       	brcs	.+18     	; 0x96e <displayTimeModeHandleLed+0x2e>
+     95c:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     960:	90 91 54 01 	lds	r25, 0x0154	; 0x800154 <ledEndHour_ram>
+     964:	89 17       	cp	r24, r25
+     966:	18 f4       	brcc	.+6      	; 0x96e <displayTimeModeHandleLed+0x2e>
+			    ledHALon();
+     968:	0e 94 18 03 	call	0x630	; 0x630 <ledHALon>
+     96c:	08 95       	ret
+			} else {
+			    ledHALoff();
+     96e:	0e 94 1a 03 	call	0x634	; 0x634 <ledHALoff>
+     972:	08 95       	ret
+		}
+		} else {
+		if (openNixieTimeGetHours() >= ledEndHour_ram && openNixieTimeGetHours() < ledStartHour_ram) {
+     974:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     978:	90 91 54 01 	lds	r25, 0x0154	; 0x800154 <ledEndHour_ram>
+     97c:	89 17       	cp	r24, r25
+     97e:	48 f0       	brcs	.+18     	; 0x992 <displayTimeModeHandleLed+0x52>
+     980:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     984:	90 91 57 01 	lds	r25, 0x0157	; 0x800157 <ledStartHour_ram>
+     988:	89 17       	cp	r24, r25
+     98a:	18 f4       	brcc	.+6      	; 0x992 <displayTimeModeHandleLed+0x52>
+			    ledHALoff();
+     98c:	0e 94 1a 03 	call	0x634	; 0x634 <ledHALoff>
+     990:	08 95       	ret
+			} else {
+			    ledHALon();
+     992:	0e 94 18 03 	call	0x630	; 0x630 <ledHALon>
+     996:	08 95       	ret
+
+00000998 <displayTimeModeHandleDim>:
+	}
+}
+
+void displayTimeModeHandleDim()
+{
+	if (dimEndHour_ram - dimStartHour_ram >= 0) {
+     998:	80 91 53 01 	lds	r24, 0x0153	; 0x800153 <dimEndHour_ram>
+     99c:	90 e0       	ldi	r25, 0x00	; 0
+     99e:	20 91 56 01 	lds	r18, 0x0156	; 0x800156 <dimStartHour_ram>
+     9a2:	82 1b       	sub	r24, r18
+     9a4:	91 09       	sbc	r25, r1
+     9a6:	a2 f0       	brmi	.+40     	; 0x9d0 <displayTimeModeHandleDim+0x38>
+		if (openNixieTimeGetHours() >= dimStartHour_ram && openNixieTimeGetHours() < dimEndHour_ram) {
+     9a8:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     9ac:	90 91 56 01 	lds	r25, 0x0156	; 0x800156 <dimStartHour_ram>
+     9b0:	89 17       	cp	r24, r25
+     9b2:	50 f0       	brcs	.+20     	; 0x9c8 <displayTimeModeHandleDim+0x30>
+     9b4:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     9b8:	90 91 53 01 	lds	r25, 0x0153	; 0x800153 <dimEndHour_ram>
+     9bc:	89 17       	cp	r24, r25
+     9be:	20 f4       	brcc	.+8      	; 0x9c8 <displayTimeModeHandleDim+0x30>
+			displayHALSetDim(true);
+     9c0:	81 e0       	ldi	r24, 0x01	; 1
+     9c2:	0e 94 24 01 	call	0x248	; 0x248 <displayHALSetDim>
+     9c6:	08 95       	ret
+			} else {
+			displayHALSetDim(false);
+     9c8:	80 e0       	ldi	r24, 0x00	; 0
+     9ca:	0e 94 24 01 	call	0x248	; 0x248 <displayHALSetDim>
+     9ce:	08 95       	ret
+		}
+		} else {
+		if(openNixieTimeGetHours() >= dimEndHour_ram && openNixieTimeGetHours() < dimStartHour_ram) {
+     9d0:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     9d4:	90 91 53 01 	lds	r25, 0x0153	; 0x800153 <dimEndHour_ram>
+     9d8:	89 17       	cp	r24, r25
+     9da:	50 f0       	brcs	.+20     	; 0x9f0 <displayTimeModeHandleDim+0x58>
+     9dc:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     9e0:	90 91 56 01 	lds	r25, 0x0156	; 0x800156 <dimStartHour_ram>
+     9e4:	89 17       	cp	r24, r25
+     9e6:	20 f4       	brcc	.+8      	; 0x9f0 <displayTimeModeHandleDim+0x58>
+			displayHALSetDim(false);
+     9e8:	80 e0       	ldi	r24, 0x00	; 0
+     9ea:	0e 94 24 01 	call	0x248	; 0x248 <displayHALSetDim>
+     9ee:	08 95       	ret
+			} else {
+			displayHALSetDim(true);
+     9f0:	81 e0       	ldi	r24, 0x01	; 1
+     9f2:	0e 94 24 01 	call	0x248	; 0x248 <displayHALSetDim>
+     9f6:	08 95       	ret
+
+000009f8 <displayTimeModeLoop>:
+		}
+	}
+}
+
+void displayTimeModeLoop()
+{
+     9f8:	ff 92       	push	r15
+     9fa:	0f 93       	push	r16
+     9fc:	1f 93       	push	r17
+     9fe:	cf 93       	push	r28
+     a00:	df 93       	push	r29
+	static unsigned timeUpdate = 0;
+	
+	if (sysTick - timeUpdate > 5) {
+     a02:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     a06:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     a0a:	20 91 26 01 	lds	r18, 0x0126	; 0x800126 <timeUpdate.1741>
+     a0e:	30 91 27 01 	lds	r19, 0x0127	; 0x800127 <timeUpdate.1741+0x1>
+     a12:	82 1b       	sub	r24, r18
+     a14:	93 0b       	sbc	r25, r19
+     a16:	06 97       	sbiw	r24, 0x06	; 6
+     a18:	08 f4       	brcc	.+2      	; 0xa1c <displayTimeModeLoop+0x24>
+     a1a:	eb c0       	rjmp	.+470    	; 0xbf2 <displayTimeModeLoop+0x1fa>
+		wdt_reset();
+     a1c:	a8 95       	wdr
+		timeUpdate = sysTick;
+     a1e:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     a22:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     a26:	90 93 27 01 	sts	0x0127, r25	; 0x800127 <timeUpdate.1741+0x1>
+     a2a:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <timeUpdate.1741>
+		if (crossfade_ram)
+     a2e:	80 91 55 01 	lds	r24, 0x0155	; 0x800155 <crossfade_ram>
+     a32:	88 23       	and	r24, r24
+     a34:	e1 f1       	breq	.+120    	; 0xaae <displayTimeModeLoop+0xb6>
+		    displayHALSetCrossfade(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+     a36:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     a3a:	cd ec       	ldi	r28, 0xCD	; 205
+     a3c:	8c 9f       	mul	r24, r28
+     a3e:	d1 2d       	mov	r29, r1
+     a40:	11 24       	eor	r1, r1
+     a42:	d6 95       	lsr	r29
+     a44:	d6 95       	lsr	r29
+     a46:	d6 95       	lsr	r29
+     a48:	dd 0f       	add	r29, r29
+     a4a:	9d 2f       	mov	r25, r29
+     a4c:	99 0f       	add	r25, r25
+     a4e:	99 0f       	add	r25, r25
+     a50:	d9 0f       	add	r29, r25
+     a52:	8d 1b       	sub	r24, r29
+     a54:	d8 2f       	mov	r29, r24
+     a56:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     a5a:	8c 9f       	mul	r24, r28
+     a5c:	11 2d       	mov	r17, r1
+     a5e:	11 24       	eor	r1, r1
+     a60:	16 95       	lsr	r17
+     a62:	16 95       	lsr	r17
+     a64:	16 95       	lsr	r17
+     a66:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     a6a:	8c 9f       	mul	r24, r28
+     a6c:	c1 2d       	mov	r28, r1
+     a6e:	11 24       	eor	r1, r1
+     a70:	c6 95       	lsr	r28
+     a72:	c6 95       	lsr	r28
+     a74:	c6 95       	lsr	r28
+     a76:	cc 0f       	add	r28, r28
+     a78:	9c 2f       	mov	r25, r28
+     a7a:	99 0f       	add	r25, r25
+     a7c:	99 0f       	add	r25, r25
+     a7e:	c9 0f       	add	r28, r25
+     a80:	8c 1b       	sub	r24, r28
+     a82:	c8 2f       	mov	r28, r24
+     a84:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     a88:	8a 30       	cpi	r24, 0x0A	; 10
+     a8a:	50 f0       	brcs	.+20     	; 0xaa0 <displayTimeModeLoop+0xa8>
+     a8c:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     a90:	9d ec       	ldi	r25, 0xCD	; 205
+     a92:	89 9f       	mul	r24, r25
+     a94:	81 2d       	mov	r24, r1
+     a96:	11 24       	eor	r1, r1
+     a98:	86 95       	lsr	r24
+     a9a:	86 95       	lsr	r24
+     a9c:	86 95       	lsr	r24
+     a9e:	01 c0       	rjmp	.+2      	; 0xaa2 <displayTimeModeLoop+0xaa>
+     aa0:	8a e0       	ldi	r24, 0x0A	; 10
+     aa2:	2d 2f       	mov	r18, r29
+     aa4:	41 2f       	mov	r20, r17
+     aa6:	6c 2f       	mov	r22, r28
+     aa8:	0e 94 32 01 	call	0x264	; 0x264 <displayHALSetCrossfade>
+     aac:	3b c0       	rjmp	.+118    	; 0xb24 <displayTimeModeLoop+0x12c>
+		else
+		    displayHALSetImmediatly(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+     aae:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     ab2:	cd ec       	ldi	r28, 0xCD	; 205
+     ab4:	8c 9f       	mul	r24, r28
+     ab6:	d1 2d       	mov	r29, r1
+     ab8:	11 24       	eor	r1, r1
+     aba:	d6 95       	lsr	r29
+     abc:	d6 95       	lsr	r29
+     abe:	d6 95       	lsr	r29
+     ac0:	dd 0f       	add	r29, r29
+     ac2:	9d 2f       	mov	r25, r29
+     ac4:	99 0f       	add	r25, r25
+     ac6:	99 0f       	add	r25, r25
+     ac8:	d9 0f       	add	r29, r25
+     aca:	8d 1b       	sub	r24, r29
+     acc:	d8 2f       	mov	r29, r24
+     ace:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     ad2:	8c 9f       	mul	r24, r28
+     ad4:	11 2d       	mov	r17, r1
+     ad6:	11 24       	eor	r1, r1
+     ad8:	16 95       	lsr	r17
+     ada:	16 95       	lsr	r17
+     adc:	16 95       	lsr	r17
+     ade:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     ae2:	8c 9f       	mul	r24, r28
+     ae4:	c1 2d       	mov	r28, r1
+     ae6:	11 24       	eor	r1, r1
+     ae8:	c6 95       	lsr	r28
+     aea:	c6 95       	lsr	r28
+     aec:	c6 95       	lsr	r28
+     aee:	cc 0f       	add	r28, r28
+     af0:	9c 2f       	mov	r25, r28
+     af2:	99 0f       	add	r25, r25
+     af4:	99 0f       	add	r25, r25
+     af6:	c9 0f       	add	r28, r25
+     af8:	8c 1b       	sub	r24, r28
+     afa:	c8 2f       	mov	r28, r24
+     afc:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     b00:	8a 30       	cpi	r24, 0x0A	; 10
+     b02:	50 f0       	brcs	.+20     	; 0xb18 <displayTimeModeLoop+0x120>
+     b04:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     b08:	9d ec       	ldi	r25, 0xCD	; 205
+     b0a:	89 9f       	mul	r24, r25
+     b0c:	81 2d       	mov	r24, r1
+     b0e:	11 24       	eor	r1, r1
+     b10:	86 95       	lsr	r24
+     b12:	86 95       	lsr	r24
+     b14:	86 95       	lsr	r24
+     b16:	01 c0       	rjmp	.+2      	; 0xb1a <displayTimeModeLoop+0x122>
+     b18:	8a e0       	ldi	r24, 0x0A	; 10
+     b1a:	2d 2f       	mov	r18, r29
+     b1c:	41 2f       	mov	r20, r17
+     b1e:	6c 2f       	mov	r22, r28
+     b20:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+
+static void displayTimeModeCorrectTickLimit()
+{
+	static unsigned char lastCorrectionHour_20 = 90;
+	static unsigned char lastCorrectionHour_50 = 90;
+	unsigned char lastHour = openNixieTimeGetHours();
+     b24:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     b28:	c8 2f       	mov	r28, r24
+	unsigned char lastMinute = openNixieTimeGetMinutes();
+     b2a:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     b2e:	d8 2f       	mov	r29, r24
+	unsigned char lastSecond = openNixieTimeGetSeconds();
+     b30:	0e 94 59 0b 	call	0x16b2	; 0x16b2 <openNixieTimeGetSeconds>
+     b34:	08 2f       	mov	r16, r24
+	
+	if (((lastCorrectionHour_20 != lastHour) && (lastMinute == 20)) || ((lastCorrectionHour_50 != lastHour) && (lastMinute == 50))) {
+     b36:	80 91 17 01 	lds	r24, 0x0117	; 0x800117 <lastCorrectionHour_20.1746>
+     b3a:	c8 17       	cp	r28, r24
+     b3c:	11 f0       	breq	.+4      	; 0xb42 <displayTimeModeLoop+0x14a>
+     b3e:	d4 31       	cpi	r29, 0x14	; 20
+     b40:	49 f0       	breq	.+18     	; 0xb54 <displayTimeModeLoop+0x15c>
+     b42:	80 91 16 01 	lds	r24, 0x0116	; 0x800116 <lastCorrectionHour_50.1747>
+     b46:	c8 17       	cp	r28, r24
+     b48:	09 f4       	brne	.+2      	; 0xb4c <displayTimeModeLoop+0x154>
+     b4a:	4f c0       	rjmp	.+158    	; 0xbea <displayTimeModeLoop+0x1f2>
+     b4c:	d2 33       	cpi	r29, 0x32	; 50
+     b4e:	09 f0       	breq	.+2      	; 0xb52 <displayTimeModeLoop+0x15a>
+     b50:	4c c0       	rjmp	.+152    	; 0xbea <displayTimeModeLoop+0x1f2>
+     b52:	03 c0       	rjmp	.+6      	; 0xb5a <displayTimeModeLoop+0x162>
+		if (lastMinute == 20)
+		lastCorrectionHour_20 = lastHour;
+     b54:	c0 93 17 01 	sts	0x0117, r28	; 0x800117 <lastCorrectionHour_20.1746>
+     b58:	02 c0       	rjmp	.+4      	; 0xb5e <displayTimeModeLoop+0x166>
+		if (lastMinute == 50)
+		lastCorrectionHour_50 = lastHour;
+     b5a:	c0 93 16 01 	sts	0x0116, r28	; 0x800116 <lastCorrectionHour_50.1747>
+		openNixieTimeGetHAL();
+     b5e:	0e 94 9d 0a 	call	0x153a	; 0x153a <openNixieTimeGetHAL>
+		unsigned char currentHour = openNixieTimeGetHours();
+     b62:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+     b66:	f8 2e       	mov	r15, r24
+		unsigned char currentMinute = openNixieTimeGetMinutes();
+     b68:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     b6c:	18 2f       	mov	r17, r24
+		unsigned char currentSecond = openNixieTimeGetSeconds();
+     b6e:	0e 94 59 0b 	call	0x16b2	; 0x16b2 <openNixieTimeGetSeconds>
+		
+		if (currentHour != lastHour) {
+     b72:	cf 15       	cp	r28, r15
+     b74:	39 f0       	breq	.+14     	; 0xb84 <displayTimeModeLoop+0x18c>
+			sysTickLimit = 31250;  // reset...
+     b76:	82 e1       	ldi	r24, 0x12	; 18
+     b78:	9a e7       	ldi	r25, 0x7A	; 122
+     b7a:	90 93 15 01 	sts	0x0115, r25	; 0x800115 <sysTickLimit+0x1>
+     b7e:	80 93 14 01 	sts	0x0114, r24	; 0x800114 <sysTickLimit>
+     b82:	33 c0       	rjmp	.+102    	; 0xbea <displayTimeModeLoop+0x1f2>
+			return;    // ...too big difference, something is wrong
+		}
+		
+		int diff = ((signed char)currentSecond - (signed char)lastSecond) + 60 * ((signed char)currentMinute - (signed char)lastMinute);
+		sysTickLimit -= 18 * diff;
+     b84:	41 2f       	mov	r20, r17
+     b86:	11 0f       	add	r17, r17
+     b88:	55 0b       	sbc	r21, r21
+     b8a:	4d 1b       	sub	r20, r29
+     b8c:	51 09       	sbc	r21, r1
+     b8e:	d7 fd       	sbrc	r29, 7
+     b90:	53 95       	inc	r21
+     b92:	9c e3       	ldi	r25, 0x3C	; 60
+     b94:	94 9f       	mul	r25, r20
+     b96:	90 01       	movw	r18, r0
+     b98:	95 9f       	mul	r25, r21
+     b9a:	30 0d       	add	r19, r0
+     b9c:	11 24       	eor	r1, r1
+     b9e:	08 2e       	mov	r0, r24
+     ba0:	00 0c       	add	r0, r0
+     ba2:	99 0b       	sbc	r25, r25
+     ba4:	80 1b       	sub	r24, r16
+     ba6:	91 09       	sbc	r25, r1
+     ba8:	07 fd       	sbrc	r16, 7
+     baa:	93 95       	inc	r25
+     bac:	28 0f       	add	r18, r24
+     bae:	39 1f       	adc	r19, r25
+     bb0:	6e ee       	ldi	r22, 0xEE	; 238
+     bb2:	62 03       	mulsu	r22, r18
+     bb4:	a0 01       	movw	r20, r0
+     bb6:	63 9f       	mul	r22, r19
+     bb8:	50 0d       	add	r21, r0
+     bba:	11 24       	eor	r1, r1
+     bbc:	80 91 14 01 	lds	r24, 0x0114	; 0x800114 <sysTickLimit>
+     bc0:	90 91 15 01 	lds	r25, 0x0115	; 0x800115 <sysTickLimit+0x1>
+     bc4:	84 0f       	add	r24, r20
+     bc6:	95 1f       	adc	r25, r21
+		
+		if (sysTickLimit > 40000 || sysTickLimit < 20000) {
+     bc8:	9c 01       	movw	r18, r24
+     bca:	20 52       	subi	r18, 0x20	; 32
+     bcc:	3e 44       	sbci	r19, 0x4E	; 78
+     bce:	21 32       	cpi	r18, 0x21	; 33
+     bd0:	3e 44       	sbci	r19, 0x4E	; 78
+     bd2:	28 f4       	brcc	.+10     	; 0xbde <displayTimeModeLoop+0x1e6>
+			sysTickLimit = 31250;  // reset...
+			return;    // ...too big difference, something is wrong
+		}
+		
+		int diff = ((signed char)currentSecond - (signed char)lastSecond) + 60 * ((signed char)currentMinute - (signed char)lastMinute);
+		sysTickLimit -= 18 * diff;
+     bd4:	90 93 15 01 	sts	0x0115, r25	; 0x800115 <sysTickLimit+0x1>
+     bd8:	80 93 14 01 	sts	0x0114, r24	; 0x800114 <sysTickLimit>
+     bdc:	06 c0       	rjmp	.+12     	; 0xbea <displayTimeModeLoop+0x1f2>
+		
+		if (sysTickLimit > 40000 || sysTickLimit < 20000) {
+			sysTickLimit = 31250;  // reset, something is wrong.
+     bde:	82 e1       	ldi	r24, 0x12	; 18
+     be0:	9a e7       	ldi	r25, 0x7A	; 122
+     be2:	90 93 15 01 	sts	0x0115, r25	; 0x800115 <sysTickLimit+0x1>
+     be6:	80 93 14 01 	sts	0x0114, r24	; 0x800114 <sysTickLimit>
+		    displayHALSetCrossfade(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+		else
+		    displayHALSetImmediatly(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+		displayTimeModeCorrectTickLimit();
+		
+		displayTimeModeHandleDim();
+     bea:	0e 94 cc 04 	call	0x998	; 0x998 <displayTimeModeHandleDim>
+		displayTimeModeHandleLed();
+     bee:	0e 94 a0 04 	call	0x940	; 0x940 <displayTimeModeHandleLed>
+	}
+	
+	if(buttonIsKeyPressed(&buttonUp) || buttonIsKeyLongPressed(&buttonUp)) {
+     bf2:	83 e4       	ldi	r24, 0x43	; 67
+     bf4:	91 e0       	ldi	r25, 0x01	; 1
+     bf6:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+     bfa:	81 11       	cpse	r24, r1
+     bfc:	07 c0       	rjmp	.+14     	; 0xc0c <displayTimeModeLoop+0x214>
+     bfe:	83 e4       	ldi	r24, 0x43	; 67
+     c00:	91 e0       	ldi	r25, 0x01	; 1
+     c02:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+     c06:	88 23       	and	r24, r24
+     c08:	09 f4       	brne	.+2      	; 0xc0c <displayTimeModeLoop+0x214>
+     c0a:	95 c0       	rjmp	.+298    	; 0xd36 <displayTimeModeLoop+0x33e>
+		timeUpdate = sysTick - 5;
+     c0c:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     c10:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     c14:	05 97       	sbiw	r24, 0x05	; 5
+     c16:	90 93 27 01 	sts	0x0127, r25	; 0x800127 <timeUpdate.1741+0x1>
+     c1a:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <timeUpdate.1741>
+		displayHALSetImmediatly(
+		sysTickLimit/10000,
+		(sysTickLimit - (sysTickLimit/10000) * 10000) / 1000,
+		(sysTickLimit - (sysTickLimit/1000) * 1000) / 100,
+		(sysTickLimit - (sysTickLimit/100) * 100) / 10
+     c1e:	e0 91 14 01 	lds	r30, 0x0114	; 0x800114 <sysTickLimit>
+     c22:	f0 91 15 01 	lds	r31, 0x0115	; 0x800115 <sysTickLimit+0x1>
+		displayTimeModeHandleLed();
+	}
+	
+	if(buttonIsKeyPressed(&buttonUp) || buttonIsKeyLongPressed(&buttonUp)) {
+		timeUpdate = sysTick - 5;
+		displayHALSetImmediatly(
+     c26:	9f 01       	movw	r18, r30
+     c28:	36 95       	lsr	r19
+     c2a:	27 95       	ror	r18
+     c2c:	36 95       	lsr	r19
+     c2e:	27 95       	ror	r18
+     c30:	ab e7       	ldi	r26, 0x7B	; 123
+     c32:	b4 e1       	ldi	r27, 0x14	; 20
+     c34:	0e 94 5c 0b 	call	0x16b8	; 0x16b8 <__umulhisi3>
+     c38:	96 95       	lsr	r25
+     c3a:	87 95       	ror	r24
+     c3c:	44 e6       	ldi	r20, 0x64	; 100
+     c3e:	48 9f       	mul	r20, r24
+     c40:	90 01       	movw	r18, r0
+     c42:	49 9f       	mul	r20, r25
+     c44:	30 0d       	add	r19, r0
+     c46:	11 24       	eor	r1, r1
+     c48:	cf 01       	movw	r24, r30
+     c4a:	82 1b       	sub	r24, r18
+     c4c:	93 0b       	sbc	r25, r19
+     c4e:	9c 01       	movw	r18, r24
+     c50:	ad ec       	ldi	r26, 0xCD	; 205
+     c52:	bc ec       	ldi	r27, 0xCC	; 204
+     c54:	0e 94 5c 0b 	call	0x16b8	; 0x16b8 <__umulhisi3>
+     c58:	8c 01       	movw	r16, r24
+     c5a:	16 95       	lsr	r17
+     c5c:	07 95       	ror	r16
+     c5e:	16 95       	lsr	r17
+     c60:	07 95       	ror	r16
+     c62:	16 95       	lsr	r17
+     c64:	07 95       	ror	r16
+     c66:	9f 01       	movw	r18, r30
+     c68:	36 95       	lsr	r19
+     c6a:	27 95       	ror	r18
+     c6c:	36 95       	lsr	r19
+     c6e:	27 95       	ror	r18
+     c70:	36 95       	lsr	r19
+     c72:	27 95       	ror	r18
+     c74:	a5 ec       	ldi	r26, 0xC5	; 197
+     c76:	b0 e2       	ldi	r27, 0x20	; 32
+     c78:	0e 94 5c 0b 	call	0x16b8	; 0x16b8 <__umulhisi3>
+     c7c:	92 95       	swap	r25
+     c7e:	82 95       	swap	r24
+     c80:	8f 70       	andi	r24, 0x0F	; 15
+     c82:	89 27       	eor	r24, r25
+     c84:	9f 70       	andi	r25, 0x0F	; 15
+     c86:	89 27       	eor	r24, r25
+     c88:	48 ee       	ldi	r20, 0xE8	; 232
+     c8a:	53 e0       	ldi	r21, 0x03	; 3
+     c8c:	84 9f       	mul	r24, r20
+     c8e:	90 01       	movw	r18, r0
+     c90:	85 9f       	mul	r24, r21
+     c92:	30 0d       	add	r19, r0
+     c94:	94 9f       	mul	r25, r20
+     c96:	30 0d       	add	r19, r0
+     c98:	11 24       	eor	r1, r1
+     c9a:	cf 01       	movw	r24, r30
+     c9c:	82 1b       	sub	r24, r18
+     c9e:	93 0b       	sbc	r25, r19
+     ca0:	9c 01       	movw	r18, r24
+     ca2:	36 95       	lsr	r19
+     ca4:	27 95       	ror	r18
+     ca6:	36 95       	lsr	r19
+     ca8:	27 95       	ror	r18
+     caa:	ab e7       	ldi	r26, 0x7B	; 123
+     cac:	b4 e1       	ldi	r27, 0x14	; 20
+     cae:	0e 94 5c 0b 	call	0x16b8	; 0x16b8 <__umulhisi3>
+     cb2:	ac 01       	movw	r20, r24
+     cb4:	56 95       	lsr	r21
+     cb6:	47 95       	ror	r20
+     cb8:	ef 01       	movw	r28, r30
+     cba:	d2 95       	swap	r29
+     cbc:	c2 95       	swap	r28
+     cbe:	cf 70       	andi	r28, 0x0F	; 15
+     cc0:	cd 27       	eor	r28, r29
+     cc2:	df 70       	andi	r29, 0x0F	; 15
+     cc4:	cd 27       	eor	r28, r29
+     cc6:	9e 01       	movw	r18, r28
+     cc8:	a7 e4       	ldi	r26, 0x47	; 71
+     cca:	b3 e0       	ldi	r27, 0x03	; 3
+     ccc:	0e 94 5c 0b 	call	0x16b8	; 0x16b8 <__umulhisi3>
+     cd0:	96 95       	lsr	r25
+     cd2:	87 95       	ror	r24
+     cd4:	96 95       	lsr	r25
+     cd6:	87 95       	ror	r24
+     cd8:	96 95       	lsr	r25
+     cda:	87 95       	ror	r24
+     cdc:	60 e1       	ldi	r22, 0x10	; 16
+     cde:	77 e2       	ldi	r23, 0x27	; 39
+     ce0:	86 9f       	mul	r24, r22
+     ce2:	90 01       	movw	r18, r0
+     ce4:	87 9f       	mul	r24, r23
+     ce6:	30 0d       	add	r19, r0
+     ce8:	96 9f       	mul	r25, r22
+     cea:	30 0d       	add	r19, r0
+     cec:	11 24       	eor	r1, r1
+     cee:	cf 01       	movw	r24, r30
+     cf0:	82 1b       	sub	r24, r18
+     cf2:	93 0b       	sbc	r25, r19
+     cf4:	9c 01       	movw	r18, r24
+     cf6:	36 95       	lsr	r19
+     cf8:	27 95       	ror	r18
+     cfa:	36 95       	lsr	r19
+     cfc:	27 95       	ror	r18
+     cfe:	36 95       	lsr	r19
+     d00:	27 95       	ror	r18
+     d02:	a5 ec       	ldi	r26, 0xC5	; 197
+     d04:	b0 e2       	ldi	r27, 0x20	; 32
+     d06:	0e 94 5c 0b 	call	0x16b8	; 0x16b8 <__umulhisi3>
+     d0a:	fc 01       	movw	r30, r24
+     d0c:	f2 95       	swap	r31
+     d0e:	e2 95       	swap	r30
+     d10:	ef 70       	andi	r30, 0x0F	; 15
+     d12:	ef 27       	eor	r30, r31
+     d14:	ff 70       	andi	r31, 0x0F	; 15
+     d16:	ef 27       	eor	r30, r31
+     d18:	9e 01       	movw	r18, r28
+     d1a:	a7 e4       	ldi	r26, 0x47	; 71
+     d1c:	b3 e0       	ldi	r27, 0x03	; 3
+     d1e:	0e 94 5c 0b 	call	0x16b8	; 0x16b8 <__umulhisi3>
+     d22:	96 95       	lsr	r25
+     d24:	87 95       	ror	r24
+     d26:	96 95       	lsr	r25
+     d28:	87 95       	ror	r24
+     d2a:	96 95       	lsr	r25
+     d2c:	87 95       	ror	r24
+     d2e:	20 2f       	mov	r18, r16
+     d30:	6e 2f       	mov	r22, r30
+     d32:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		(sysTickLimit - (sysTickLimit/1000) * 1000) / 100,
+		(sysTickLimit - (sysTickLimit/100) * 100) / 10
+		);
+	}
+	
+	if(buttonIsKeyLongPressed(&buttonDown)) {
+     d36:	8c e4       	ldi	r24, 0x4C	; 76
+     d38:	91 e0       	ldi	r25, 0x01	; 1
+     d3a:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+     d3e:	88 23       	and	r24, r24
+     d40:	09 f4       	brne	.+2      	; 0xd44 <displayTimeModeLoop+0x34c>
+     d42:	45 c0       	rjmp	.+138    	; 0xdce <displayTimeModeLoop+0x3d6>
+		timeUpdate = sysTick;
+     d44:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     d48:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     d4c:	90 93 27 01 	sts	0x0127, r25	; 0x800127 <timeUpdate.1741+0x1>
+     d50:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <timeUpdate.1741>
+		displayHALSetImmediatly(openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10 ,openNixieTimeGetSeconds()/10, openNixieTimeGetSeconds()%10);
+     d54:	0e 94 59 0b 	call	0x16b2	; 0x16b2 <openNixieTimeGetSeconds>
+     d58:	18 2f       	mov	r17, r24
+     d5a:	0e 94 59 0b 	call	0x16b2	; 0x16b2 <openNixieTimeGetSeconds>
+     d5e:	c8 2f       	mov	r28, r24
+     d60:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     d64:	d8 2f       	mov	r29, r24
+     d66:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+     d6a:	3d ec       	ldi	r19, 0xCD	; 205
+     d6c:	13 9f       	mul	r17, r19
+     d6e:	91 2d       	mov	r25, r1
+     d70:	11 24       	eor	r1, r1
+     d72:	96 95       	lsr	r25
+     d74:	96 95       	lsr	r25
+     d76:	96 95       	lsr	r25
+     d78:	99 0f       	add	r25, r25
+     d7a:	29 2f       	mov	r18, r25
+     d7c:	22 0f       	add	r18, r18
+     d7e:	22 0f       	add	r18, r18
+     d80:	92 0f       	add	r25, r18
+     d82:	21 2f       	mov	r18, r17
+     d84:	29 1b       	sub	r18, r25
+     d86:	c3 9f       	mul	r28, r19
+     d88:	41 2d       	mov	r20, r1
+     d8a:	11 24       	eor	r1, r1
+     d8c:	46 95       	lsr	r20
+     d8e:	46 95       	lsr	r20
+     d90:	46 95       	lsr	r20
+     d92:	d3 9f       	mul	r29, r19
+     d94:	91 2d       	mov	r25, r1
+     d96:	11 24       	eor	r1, r1
+     d98:	96 95       	lsr	r25
+     d9a:	96 95       	lsr	r25
+     d9c:	96 95       	lsr	r25
+     d9e:	99 0f       	add	r25, r25
+     da0:	59 2f       	mov	r21, r25
+     da2:	55 0f       	add	r21, r21
+     da4:	55 0f       	add	r21, r21
+     da6:	95 0f       	add	r25, r21
+     da8:	6d 2f       	mov	r22, r29
+     daa:	69 1b       	sub	r22, r25
+     dac:	83 9f       	mul	r24, r19
+     dae:	81 2d       	mov	r24, r1
+     db0:	11 24       	eor	r1, r1
+     db2:	86 95       	lsr	r24
+     db4:	86 95       	lsr	r24
+     db6:	86 95       	lsr	r24
+     db8:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		timeUpdate = sysTick - 9;
+     dbc:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     dc0:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     dc4:	09 97       	sbiw	r24, 0x09	; 9
+     dc6:	90 93 27 01 	sts	0x0127, r25	; 0x800127 <timeUpdate.1741+0x1>
+     dca:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <timeUpdate.1741>
+	}
+
+	if (buttonIsKeyPressed(&buttonIn)) {
+     dce:	8a e3       	ldi	r24, 0x3A	; 58
+     dd0:	91 e0       	ldi	r25, 0x01	; 1
+     dd2:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+     dd6:	88 23       	and	r24, r24
+     dd8:	19 f0       	breq	.+6      	; 0xde0 <displayTimeModeLoop+0x3e8>
+		mode = SET_TIME;
+     dda:	81 e0       	ldi	r24, 0x01	; 1
+     ddc:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <mode>
+	}
+}
+     de0:	df 91       	pop	r29
+     de2:	cf 91       	pop	r28
+     de4:	1f 91       	pop	r17
+     de6:	0f 91       	pop	r16
+     de8:	ff 90       	pop	r15
+     dea:	08 95       	ret
+
+00000dec <displayTimeModeOnExit>:
+		);
+	}
+	else
+	{
+        uint8_t register temp_reg;
+		__asm__ __volatile__ (
+     dec:	0f b6       	in	r0, 0x3f	; 63
+     dee:	f8 94       	cli
+     df0:	a8 95       	wdr
+     df2:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+     df6:	88 61       	ori	r24, 0x18	; 24
+     df8:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+     dfc:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+     e00:	0f be       	out	0x3f, r0	; 63
+
+void displayTimeModeOnExit()
+{
+	wdt_disable();
+	buttonIsKeyPressed(&buttonDown);  //consume pending event
+     e02:	8c e4       	ldi	r24, 0x4C	; 76
+     e04:	91 e0       	ldi	r25, 0x01	; 1
+     e06:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+     e0a:	08 95       	ret
+
+00000e0c <setCrossfadeModeOnEnter>:
+extern volatile unsigned int sysTick;
+
+void
+setCrossfadeModeOnEnter()
+{
+    crossfade_ram = eeprom_read_byte(&crossfade);
+     e0c:	80 e0       	ldi	r24, 0x00	; 0
+     e0e:	90 e0       	ldi	r25, 0x00	; 0
+     e10:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     e14:	80 93 55 01 	sts	0x0155, r24	; 0x800155 <crossfade_ram>
+	displayHALSetCrossfade(10, 10, 10, 10);
+     e18:	2a e0       	ldi	r18, 0x0A	; 10
+     e1a:	4a e0       	ldi	r20, 0x0A	; 10
+     e1c:	6a e0       	ldi	r22, 0x0A	; 10
+     e1e:	8a e0       	ldi	r24, 0x0A	; 10
+     e20:	0e 94 32 01 	call	0x264	; 0x264 <displayHALSetCrossfade>
+	displayHALSetDim(false);
+     e24:	80 e0       	ldi	r24, 0x00	; 0
+     e26:	0e 94 24 01 	call	0x248	; 0x248 <displayHALSetDim>
+     e2a:	08 95       	ret
+
+00000e2c <setCrossfadeModeLoop>:
+setCrossfadeModeLoop()
+{
+	static unsigned char numberDisplayed = 0;
+	static unsigned timeUpdate = 0;
+	
+	if (sysTick - timeUpdate > 2) {
+     e2c:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     e30:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     e34:	20 91 29 01 	lds	r18, 0x0129	; 0x800129 <timeUpdate.1721>
+     e38:	30 91 2a 01 	lds	r19, 0x012A	; 0x80012a <timeUpdate.1721+0x1>
+     e3c:	82 1b       	sub	r24, r18
+     e3e:	93 0b       	sbc	r25, r19
+     e40:	03 97       	sbiw	r24, 0x03	; 3
+     e42:	08 f4       	brcc	.+2      	; 0xe46 <setCrossfadeModeLoop+0x1a>
+     e44:	3f c0       	rjmp	.+126    	; 0xec4 <setCrossfadeModeLoop+0x98>
+		timeUpdate = sysTick;
+     e46:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+     e4a:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+     e4e:	90 93 2a 01 	sts	0x012A, r25	; 0x80012a <timeUpdate.1721+0x1>
+     e52:	80 93 29 01 	sts	0x0129, r24	; 0x800129 <timeUpdate.1721>
+		numberDisplayed++;
+     e56:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <numberDisplayed.1720>
+     e5a:	8f 5f       	subi	r24, 0xFF	; 255
+		if (numberDisplayed > 99) {
+     e5c:	84 36       	cpi	r24, 0x64	; 100
+     e5e:	18 f4       	brcc	.+6      	; 0xe66 <setCrossfadeModeLoop+0x3a>
+	static unsigned char numberDisplayed = 0;
+	static unsigned timeUpdate = 0;
+	
+	if (sysTick - timeUpdate > 2) {
+		timeUpdate = sysTick;
+		numberDisplayed++;
+     e60:	80 93 28 01 	sts	0x0128, r24	; 0x800128 <numberDisplayed.1720>
+     e64:	02 c0       	rjmp	.+4      	; 0xe6a <setCrossfadeModeLoop+0x3e>
+		if (numberDisplayed > 99) {
+			numberDisplayed = 0;
+     e66:	10 92 28 01 	sts	0x0128, r1	; 0x800128 <numberDisplayed.1720>
+		}
+		
+		if (crossfade_ram) {
+     e6a:	80 91 55 01 	lds	r24, 0x0155	; 0x800155 <crossfade_ram>
+     e6e:	88 23       	and	r24, r24
+     e70:	a9 f0       	breq	.+42     	; 0xe9c <setCrossfadeModeLoop+0x70>
+			displayHALSetCrossfade(10, 10, numberDisplayed/10, numberDisplayed%10);
+     e72:	20 91 28 01 	lds	r18, 0x0128	; 0x800128 <numberDisplayed.1720>
+     e76:	4d ec       	ldi	r20, 0xCD	; 205
+     e78:	24 9f       	mul	r18, r20
+     e7a:	41 2d       	mov	r20, r1
+     e7c:	11 24       	eor	r1, r1
+     e7e:	46 95       	lsr	r20
+     e80:	46 95       	lsr	r20
+     e82:	46 95       	lsr	r20
+     e84:	94 2f       	mov	r25, r20
+     e86:	99 0f       	add	r25, r25
+     e88:	89 2f       	mov	r24, r25
+     e8a:	88 0f       	add	r24, r24
+     e8c:	88 0f       	add	r24, r24
+     e8e:	89 0f       	add	r24, r25
+     e90:	28 1b       	sub	r18, r24
+     e92:	6a e0       	ldi	r22, 0x0A	; 10
+     e94:	8a e0       	ldi	r24, 0x0A	; 10
+     e96:	0e 94 32 01 	call	0x264	; 0x264 <displayHALSetCrossfade>
+     e9a:	14 c0       	rjmp	.+40     	; 0xec4 <setCrossfadeModeLoop+0x98>
+			} else {
+			displayHALSetImmediatly(10, 10, numberDisplayed/10, numberDisplayed%10);
+     e9c:	20 91 28 01 	lds	r18, 0x0128	; 0x800128 <numberDisplayed.1720>
+     ea0:	4d ec       	ldi	r20, 0xCD	; 205
+     ea2:	24 9f       	mul	r18, r20
+     ea4:	41 2d       	mov	r20, r1
+     ea6:	11 24       	eor	r1, r1
+     ea8:	46 95       	lsr	r20
+     eaa:	46 95       	lsr	r20
+     eac:	46 95       	lsr	r20
+     eae:	94 2f       	mov	r25, r20
+     eb0:	99 0f       	add	r25, r25
+     eb2:	89 2f       	mov	r24, r25
+     eb4:	88 0f       	add	r24, r24
+     eb6:	88 0f       	add	r24, r24
+     eb8:	89 0f       	add	r24, r25
+     eba:	28 1b       	sub	r18, r24
+     ebc:	6a e0       	ldi	r22, 0x0A	; 10
+     ebe:	8a e0       	ldi	r24, 0x0A	; 10
+     ec0:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		}
+			
+	}
+	
+	if (buttonIsKeyPressed(&buttonUp) || buttonIsKeyPressed(&buttonDown)) {
+     ec4:	83 e4       	ldi	r24, 0x43	; 67
+     ec6:	91 e0       	ldi	r25, 0x01	; 1
+     ec8:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+     ecc:	81 11       	cpse	r24, r1
+     ece:	06 c0       	rjmp	.+12     	; 0xedc <setCrossfadeModeLoop+0xb0>
+     ed0:	8c e4       	ldi	r24, 0x4C	; 76
+     ed2:	91 e0       	ldi	r25, 0x01	; 1
+     ed4:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+     ed8:	88 23       	and	r24, r24
+     eda:	51 f0       	breq	.+20     	; 0xef0 <setCrossfadeModeLoop+0xc4>
+		if (crossfade_ram) {
+     edc:	80 91 55 01 	lds	r24, 0x0155	; 0x800155 <crossfade_ram>
+     ee0:	88 23       	and	r24, r24
+     ee2:	19 f0       	breq	.+6      	; 0xeea <setCrossfadeModeLoop+0xbe>
+			crossfade_ram = 0;
+     ee4:	10 92 55 01 	sts	0x0155, r1	; 0x800155 <crossfade_ram>
+     ee8:	03 c0       	rjmp	.+6      	; 0xef0 <setCrossfadeModeLoop+0xc4>
+			} else {
+			crossfade_ram = 1;
+     eea:	81 e0       	ldi	r24, 0x01	; 1
+     eec:	80 93 55 01 	sts	0x0155, r24	; 0x800155 <crossfade_ram>
+		}
+	}
+	
+	if (buttonIsKeyPressed(&buttonIn)) {
+     ef0:	8a e3       	ldi	r24, 0x3A	; 58
+     ef2:	91 e0       	ldi	r25, 0x01	; 1
+     ef4:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+     ef8:	81 11       	cpse	r24, r1
+		mode = DISPLAY_TIME;
+     efa:	10 92 39 01 	sts	0x0139, r1	; 0x800139 <mode>
+     efe:	08 95       	ret
+
+00000f00 <setCrossfadeModeOnExit>:
+}
+
+void
+setCrossfadeModeOnExit()
+{
+	eeprom_write_byte(&crossfade, crossfade_ram);
+     f00:	60 91 55 01 	lds	r22, 0x0155	; 0x800155 <crossfade_ram>
+     f04:	80 e0       	ldi	r24, 0x00	; 0
+     f06:	90 e0       	ldi	r25, 0x00	; 0
+     f08:	0e 94 85 0b 	call	0x170a	; 0x170a <eeprom_write_byte>
+     f0c:	08 95       	ret
+
+00000f0e <setDimModeOnEnter>:
+extern unsigned char dimStartHour_ram;
+extern unsigned char dimEndHour_ram;
+
+void
+setDimModeOnEnter()
+{
+     f0e:	cf 93       	push	r28
+	dimStartHour_ram = eeprom_read_byte(&dimStartHour);
+     f10:	84 e0       	ldi	r24, 0x04	; 4
+     f12:	90 e0       	ldi	r25, 0x00	; 0
+     f14:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     f18:	c8 2f       	mov	r28, r24
+     f1a:	80 93 56 01 	sts	0x0156, r24	; 0x800156 <dimStartHour_ram>
+	dimEndHour_ram = eeprom_read_byte(&dimEndHour);
+     f1e:	83 e0       	ldi	r24, 0x03	; 3
+     f20:	90 e0       	ldi	r25, 0x00	; 0
+     f22:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+     f26:	80 93 53 01 	sts	0x0153, r24	; 0x800153 <dimEndHour_ram>
+	
+	displayHALSetImmediatly(dimStartHour_ram/10, dimStartHour_ram%10 ,dimEndHour_ram/10,dimEndHour_ram%10);
+     f2a:	9d ec       	ldi	r25, 0xCD	; 205
+     f2c:	89 9f       	mul	r24, r25
+     f2e:	41 2d       	mov	r20, r1
+     f30:	11 24       	eor	r1, r1
+     f32:	46 95       	lsr	r20
+     f34:	46 95       	lsr	r20
+     f36:	46 95       	lsr	r20
+     f38:	34 2f       	mov	r19, r20
+     f3a:	33 0f       	add	r19, r19
+     f3c:	23 2f       	mov	r18, r19
+     f3e:	22 0f       	add	r18, r18
+     f40:	22 0f       	add	r18, r18
+     f42:	23 0f       	add	r18, r19
+     f44:	82 1b       	sub	r24, r18
+     f46:	28 2f       	mov	r18, r24
+     f48:	c9 9f       	mul	r28, r25
+     f4a:	81 2d       	mov	r24, r1
+     f4c:	11 24       	eor	r1, r1
+     f4e:	86 95       	lsr	r24
+     f50:	86 95       	lsr	r24
+     f52:	86 95       	lsr	r24
+     f54:	38 2f       	mov	r19, r24
+     f56:	33 0f       	add	r19, r19
+     f58:	93 2f       	mov	r25, r19
+     f5a:	99 0f       	add	r25, r25
+     f5c:	99 0f       	add	r25, r25
+     f5e:	93 0f       	add	r25, r19
+     f60:	6c 2f       	mov	r22, r28
+     f62:	69 1b       	sub	r22, r25
+     f64:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+	
+}
+     f68:	cf 91       	pop	r28
+     f6a:	08 95       	ret
+
+00000f6c <setDimModeLoop>:
+setDimModeLoop()
+{
+	static int dimInterval = 0;
+	static int buttonCheck = 0;
+	
+	if (sysTick50ms - dimInterval > 5) {
+     f6c:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+     f70:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+     f74:	20 91 2d 01 	lds	r18, 0x012D	; 0x80012d <dimInterval.1718>
+     f78:	30 91 2e 01 	lds	r19, 0x012E	; 0x80012e <dimInterval.1718+0x1>
+     f7c:	82 1b       	sub	r24, r18
+     f7e:	93 0b       	sbc	r25, r19
+     f80:	06 97       	sbiw	r24, 0x06	; 6
+     f82:	60 f0       	brcs	.+24     	; 0xf9c <setDimModeLoop+0x30>
+		dimInterval = sysTick50ms;
+     f84:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+     f88:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+     f8c:	90 93 2e 01 	sts	0x012E, r25	; 0x80012e <dimInterval.1718+0x1>
+     f90:	80 93 2d 01 	sts	0x012D, r24	; 0x80012d <dimInterval.1718>
+		displayHALToggleDim(true);
+     f94:	81 e0       	ldi	r24, 0x01	; 1
+     f96:	90 e0       	ldi	r25, 0x00	; 0
+     f98:	0e 94 27 01 	call	0x24e	; 0x24e <displayHALToggleDim>
+	}
+	
+	if((buttonIsKeyPressed(&buttonDown) || buttonIsKeyLongPressed(&buttonDown)) && (buttonCheck != sysTick50ms)) {
+     f9c:	8c e4       	ldi	r24, 0x4C	; 76
+     f9e:	91 e0       	ldi	r25, 0x01	; 1
+     fa0:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+     fa4:	81 11       	cpse	r24, r1
+     fa6:	06 c0       	rjmp	.+12     	; 0xfb4 <setDimModeLoop+0x48>
+     fa8:	8c e4       	ldi	r24, 0x4C	; 76
+     faa:	91 e0       	ldi	r25, 0x01	; 1
+     fac:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+     fb0:	88 23       	and	r24, r24
+     fb2:	f1 f1       	breq	.+124    	; 0x1030 <setDimModeLoop+0xc4>
+     fb4:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+     fb8:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+     fbc:	20 91 2b 01 	lds	r18, 0x012B	; 0x80012b <buttonCheck.1719>
+     fc0:	30 91 2c 01 	lds	r19, 0x012C	; 0x80012c <buttonCheck.1719+0x1>
+     fc4:	28 17       	cp	r18, r24
+     fc6:	39 07       	cpc	r19, r25
+     fc8:	99 f1       	breq	.+102    	; 0x1030 <setDimModeLoop+0xc4>
+		dimEndHour_ram++;
+     fca:	80 91 53 01 	lds	r24, 0x0153	; 0x800153 <dimEndHour_ram>
+     fce:	8f 5f       	subi	r24, 0xFF	; 255
+		if (dimEndHour_ram > 23) dimEndHour_ram = 0;
+     fd0:	88 31       	cpi	r24, 0x18	; 24
+     fd2:	18 f4       	brcc	.+6      	; 0xfda <setDimModeLoop+0x6e>
+		dimInterval = sysTick50ms;
+		displayHALToggleDim(true);
+	}
+	
+	if((buttonIsKeyPressed(&buttonDown) || buttonIsKeyLongPressed(&buttonDown)) && (buttonCheck != sysTick50ms)) {
+		dimEndHour_ram++;
+     fd4:	80 93 53 01 	sts	0x0153, r24	; 0x800153 <dimEndHour_ram>
+     fd8:	02 c0       	rjmp	.+4      	; 0xfde <setDimModeLoop+0x72>
+		if (dimEndHour_ram > 23) dimEndHour_ram = 0;
+     fda:	10 92 53 01 	sts	0x0153, r1	; 0x800153 <dimEndHour_ram>
+		displayHALSetImmediatly(dimStartHour_ram/10, dimStartHour_ram%10 ,dimEndHour_ram/10,dimEndHour_ram%10);
+     fde:	20 91 53 01 	lds	r18, 0x0153	; 0x800153 <dimEndHour_ram>
+     fe2:	60 91 56 01 	lds	r22, 0x0156	; 0x800156 <dimStartHour_ram>
+     fe6:	8d ec       	ldi	r24, 0xCD	; 205
+     fe8:	28 9f       	mul	r18, r24
+     fea:	41 2d       	mov	r20, r1
+     fec:	11 24       	eor	r1, r1
+     fee:	46 95       	lsr	r20
+     ff0:	46 95       	lsr	r20
+     ff2:	46 95       	lsr	r20
+     ff4:	34 2f       	mov	r19, r20
+     ff6:	33 0f       	add	r19, r19
+     ff8:	93 2f       	mov	r25, r19
+     ffa:	99 0f       	add	r25, r25
+     ffc:	99 0f       	add	r25, r25
+     ffe:	93 0f       	add	r25, r19
+    1000:	29 1b       	sub	r18, r25
+    1002:	68 9f       	mul	r22, r24
+    1004:	81 2d       	mov	r24, r1
+    1006:	11 24       	eor	r1, r1
+    1008:	86 95       	lsr	r24
+    100a:	86 95       	lsr	r24
+    100c:	86 95       	lsr	r24
+    100e:	38 2f       	mov	r19, r24
+    1010:	33 0f       	add	r19, r19
+    1012:	93 2f       	mov	r25, r19
+    1014:	99 0f       	add	r25, r25
+    1016:	99 0f       	add	r25, r25
+    1018:	93 0f       	add	r25, r19
+    101a:	69 1b       	sub	r22, r25
+    101c:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		buttonCheck = sysTick50ms;
+    1020:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    1024:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1028:	90 93 2c 01 	sts	0x012C, r25	; 0x80012c <buttonCheck.1719+0x1>
+    102c:	80 93 2b 01 	sts	0x012B, r24	; 0x80012b <buttonCheck.1719>
+	}
+	
+	if((buttonIsKeyPressed(&buttonUp) || buttonIsKeyLongPressed(&buttonUp)) && (buttonCheck != sysTick50ms)) {
+    1030:	83 e4       	ldi	r24, 0x43	; 67
+    1032:	91 e0       	ldi	r25, 0x01	; 1
+    1034:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    1038:	81 11       	cpse	r24, r1
+    103a:	06 c0       	rjmp	.+12     	; 0x1048 <setDimModeLoop+0xdc>
+    103c:	83 e4       	ldi	r24, 0x43	; 67
+    103e:	91 e0       	ldi	r25, 0x01	; 1
+    1040:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+    1044:	88 23       	and	r24, r24
+    1046:	f1 f1       	breq	.+124    	; 0x10c4 <setDimModeLoop+0x158>
+    1048:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    104c:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1050:	20 91 2b 01 	lds	r18, 0x012B	; 0x80012b <buttonCheck.1719>
+    1054:	30 91 2c 01 	lds	r19, 0x012C	; 0x80012c <buttonCheck.1719+0x1>
+    1058:	28 17       	cp	r18, r24
+    105a:	39 07       	cpc	r19, r25
+    105c:	99 f1       	breq	.+102    	; 0x10c4 <setDimModeLoop+0x158>
+		dimStartHour_ram++;
+    105e:	80 91 56 01 	lds	r24, 0x0156	; 0x800156 <dimStartHour_ram>
+    1062:	8f 5f       	subi	r24, 0xFF	; 255
+		if (dimStartHour_ram > 23) dimStartHour_ram = 0;
+    1064:	88 31       	cpi	r24, 0x18	; 24
+    1066:	18 f4       	brcc	.+6      	; 0x106e <setDimModeLoop+0x102>
+		displayHALSetImmediatly(dimStartHour_ram/10, dimStartHour_ram%10 ,dimEndHour_ram/10,dimEndHour_ram%10);
+		buttonCheck = sysTick50ms;
+	}
+	
+	if((buttonIsKeyPressed(&buttonUp) || buttonIsKeyLongPressed(&buttonUp)) && (buttonCheck != sysTick50ms)) {
+		dimStartHour_ram++;
+    1068:	80 93 56 01 	sts	0x0156, r24	; 0x800156 <dimStartHour_ram>
+    106c:	02 c0       	rjmp	.+4      	; 0x1072 <setDimModeLoop+0x106>
+		if (dimStartHour_ram > 23) dimStartHour_ram = 0;
+    106e:	10 92 56 01 	sts	0x0156, r1	; 0x800156 <dimStartHour_ram>
+		displayHALSetImmediatly(dimStartHour_ram/10, dimStartHour_ram%10 ,dimEndHour_ram/10,dimEndHour_ram%10);
+    1072:	20 91 53 01 	lds	r18, 0x0153	; 0x800153 <dimEndHour_ram>
+    1076:	60 91 56 01 	lds	r22, 0x0156	; 0x800156 <dimStartHour_ram>
+    107a:	8d ec       	ldi	r24, 0xCD	; 205
+    107c:	28 9f       	mul	r18, r24
+    107e:	41 2d       	mov	r20, r1
+    1080:	11 24       	eor	r1, r1
+    1082:	46 95       	lsr	r20
+    1084:	46 95       	lsr	r20
+    1086:	46 95       	lsr	r20
+    1088:	34 2f       	mov	r19, r20
+    108a:	33 0f       	add	r19, r19
+    108c:	93 2f       	mov	r25, r19
+    108e:	99 0f       	add	r25, r25
+    1090:	99 0f       	add	r25, r25
+    1092:	93 0f       	add	r25, r19
+    1094:	29 1b       	sub	r18, r25
+    1096:	68 9f       	mul	r22, r24
+    1098:	81 2d       	mov	r24, r1
+    109a:	11 24       	eor	r1, r1
+    109c:	86 95       	lsr	r24
+    109e:	86 95       	lsr	r24
+    10a0:	86 95       	lsr	r24
+    10a2:	38 2f       	mov	r19, r24
+    10a4:	33 0f       	add	r19, r19
+    10a6:	93 2f       	mov	r25, r19
+    10a8:	99 0f       	add	r25, r25
+    10aa:	99 0f       	add	r25, r25
+    10ac:	93 0f       	add	r25, r19
+    10ae:	69 1b       	sub	r22, r25
+    10b0:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		buttonCheck = sysTick50ms;
+    10b4:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    10b8:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    10bc:	90 93 2c 01 	sts	0x012C, r25	; 0x80012c <buttonCheck.1719+0x1>
+    10c0:	80 93 2b 01 	sts	0x012B, r24	; 0x80012b <buttonCheck.1719>
+	}
+
+	if (buttonIsKeyPressed(&buttonIn)) {
+    10c4:	8a e3       	ldi	r24, 0x3A	; 58
+    10c6:	91 e0       	ldi	r25, 0x01	; 1
+    10c8:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    10cc:	88 23       	and	r24, r24
+    10ce:	19 f0       	breq	.+6      	; 0x10d6 <setDimModeLoop+0x16a>
+		mode = SET_LED;
+    10d0:	84 e0       	ldi	r24, 0x04	; 4
+    10d2:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <mode>
+    10d6:	08 95       	ret
+
+000010d8 <setDimModeOnExit>:
+}
+
+void
+setDimModeOnExit()
+{
+	eeprom_update_byte(&dimStartHour, dimStartHour_ram);
+    10d8:	60 91 56 01 	lds	r22, 0x0156	; 0x800156 <dimStartHour_ram>
+    10dc:	84 e0       	ldi	r24, 0x04	; 4
+    10de:	90 e0       	ldi	r25, 0x00	; 0
+    10e0:	0e 94 73 0b 	call	0x16e6	; 0x16e6 <eeprom_update_byte>
+	eeprom_update_byte(&dimEndHour, dimEndHour_ram);
+    10e4:	60 91 53 01 	lds	r22, 0x0153	; 0x800153 <dimEndHour_ram>
+    10e8:	83 e0       	ldi	r24, 0x03	; 3
+    10ea:	90 e0       	ldi	r25, 0x00	; 0
+    10ec:	0e 94 73 0b 	call	0x16e6	; 0x16e6 <eeprom_update_byte>
+    10f0:	08 95       	ret
+
+000010f2 <setLedModeOnEnter>:
+extern struct button buttonIn;
+extern enum Mode mode;
+
+void
+setLedModeOnEnter()
+{
+    10f2:	cf 93       	push	r28
+	ledStartHour_ram = eeprom_read_byte(&ledStartHour);
+    10f4:	82 e0       	ldi	r24, 0x02	; 2
+    10f6:	90 e0       	ldi	r25, 0x00	; 0
+    10f8:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+    10fc:	c8 2f       	mov	r28, r24
+    10fe:	80 93 57 01 	sts	0x0157, r24	; 0x800157 <ledStartHour_ram>
+	ledEndHour_ram = eeprom_read_byte(&ledEndHour);
+    1102:	81 e0       	ldi	r24, 0x01	; 1
+    1104:	90 e0       	ldi	r25, 0x00	; 0
+    1106:	0e 94 6b 0b 	call	0x16d6	; 0x16d6 <eeprom_read_byte>
+    110a:	80 93 54 01 	sts	0x0154, r24	; 0x800154 <ledEndHour_ram>
+	
+	displayHALSetImmediatly(ledStartHour_ram/10, ledStartHour_ram%10 ,ledEndHour_ram/10,ledEndHour_ram%10);
+    110e:	9d ec       	ldi	r25, 0xCD	; 205
+    1110:	89 9f       	mul	r24, r25
+    1112:	41 2d       	mov	r20, r1
+    1114:	11 24       	eor	r1, r1
+    1116:	46 95       	lsr	r20
+    1118:	46 95       	lsr	r20
+    111a:	46 95       	lsr	r20
+    111c:	34 2f       	mov	r19, r20
+    111e:	33 0f       	add	r19, r19
+    1120:	23 2f       	mov	r18, r19
+    1122:	22 0f       	add	r18, r18
+    1124:	22 0f       	add	r18, r18
+    1126:	23 0f       	add	r18, r19
+    1128:	82 1b       	sub	r24, r18
+    112a:	28 2f       	mov	r18, r24
+    112c:	c9 9f       	mul	r28, r25
+    112e:	81 2d       	mov	r24, r1
+    1130:	11 24       	eor	r1, r1
+    1132:	86 95       	lsr	r24
+    1134:	86 95       	lsr	r24
+    1136:	86 95       	lsr	r24
+    1138:	38 2f       	mov	r19, r24
+    113a:	33 0f       	add	r19, r19
+    113c:	93 2f       	mov	r25, r19
+    113e:	99 0f       	add	r25, r25
+    1140:	99 0f       	add	r25, r25
+    1142:	93 0f       	add	r25, r19
+    1144:	6c 2f       	mov	r22, r28
+    1146:	69 1b       	sub	r22, r25
+    1148:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+}
+    114c:	cf 91       	pop	r28
+    114e:	08 95       	ret
+
+00001150 <setLedModeLoop>:
+setLedModeLoop()
+{
+	static int dimInterval = 0;
+	static int buttonCheck = 0;
+	
+	if (sysTick50ms - dimInterval > 5) {
+    1150:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    1154:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1158:	20 91 31 01 	lds	r18, 0x0131	; 0x800131 <dimInterval.1724>
+    115c:	30 91 32 01 	lds	r19, 0x0132	; 0x800132 <dimInterval.1724+0x1>
+    1160:	82 1b       	sub	r24, r18
+    1162:	93 0b       	sbc	r25, r19
+    1164:	06 97       	sbiw	r24, 0x06	; 6
+    1166:	70 f0       	brcs	.+28     	; 0x1184 <setLedModeLoop+0x34>
+		dimInterval = sysTick50ms;
+    1168:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    116c:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1170:	90 93 32 01 	sts	0x0132, r25	; 0x800132 <dimInterval.1724+0x1>
+    1174:	80 93 31 01 	sts	0x0131, r24	; 0x800131 <dimInterval.1724>
+		displayHALToggleDim(true);
+    1178:	81 e0       	ldi	r24, 0x01	; 1
+    117a:	90 e0       	ldi	r25, 0x00	; 0
+    117c:	0e 94 27 01 	call	0x24e	; 0x24e <displayHALToggleDim>
+		ledHALToggle();
+    1180:	0e 94 1c 03 	call	0x638	; 0x638 <ledHALToggle>
+	}
+	
+	if((buttonIsKeyPressed(&buttonDown) || buttonIsKeyLongPressed(&buttonDown)) && (buttonCheck != sysTick50ms)) {
+    1184:	8c e4       	ldi	r24, 0x4C	; 76
+    1186:	91 e0       	ldi	r25, 0x01	; 1
+    1188:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    118c:	81 11       	cpse	r24, r1
+    118e:	06 c0       	rjmp	.+12     	; 0x119c <setLedModeLoop+0x4c>
+    1190:	8c e4       	ldi	r24, 0x4C	; 76
+    1192:	91 e0       	ldi	r25, 0x01	; 1
+    1194:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+    1198:	88 23       	and	r24, r24
+    119a:	f1 f1       	breq	.+124    	; 0x1218 <setLedModeLoop+0xc8>
+    119c:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    11a0:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    11a4:	20 91 2f 01 	lds	r18, 0x012F	; 0x80012f <buttonCheck.1725>
+    11a8:	30 91 30 01 	lds	r19, 0x0130	; 0x800130 <buttonCheck.1725+0x1>
+    11ac:	28 17       	cp	r18, r24
+    11ae:	39 07       	cpc	r19, r25
+    11b0:	99 f1       	breq	.+102    	; 0x1218 <setLedModeLoop+0xc8>
+		ledEndHour_ram++;
+    11b2:	80 91 54 01 	lds	r24, 0x0154	; 0x800154 <ledEndHour_ram>
+    11b6:	8f 5f       	subi	r24, 0xFF	; 255
+		if (ledEndHour_ram > 23) ledEndHour_ram = 0;
+    11b8:	88 31       	cpi	r24, 0x18	; 24
+    11ba:	18 f4       	brcc	.+6      	; 0x11c2 <setLedModeLoop+0x72>
+		displayHALToggleDim(true);
+		ledHALToggle();
+	}
+	
+	if((buttonIsKeyPressed(&buttonDown) || buttonIsKeyLongPressed(&buttonDown)) && (buttonCheck != sysTick50ms)) {
+		ledEndHour_ram++;
+    11bc:	80 93 54 01 	sts	0x0154, r24	; 0x800154 <ledEndHour_ram>
+    11c0:	02 c0       	rjmp	.+4      	; 0x11c6 <setLedModeLoop+0x76>
+		if (ledEndHour_ram > 23) ledEndHour_ram = 0;
+    11c2:	10 92 54 01 	sts	0x0154, r1	; 0x800154 <ledEndHour_ram>
+		displayHALSetImmediatly(ledStartHour_ram/10, ledStartHour_ram%10, ledEndHour_ram/10, ledEndHour_ram%10);
+    11c6:	20 91 54 01 	lds	r18, 0x0154	; 0x800154 <ledEndHour_ram>
+    11ca:	60 91 57 01 	lds	r22, 0x0157	; 0x800157 <ledStartHour_ram>
+    11ce:	8d ec       	ldi	r24, 0xCD	; 205
+    11d0:	28 9f       	mul	r18, r24
+    11d2:	41 2d       	mov	r20, r1
+    11d4:	11 24       	eor	r1, r1
+    11d6:	46 95       	lsr	r20
+    11d8:	46 95       	lsr	r20
+    11da:	46 95       	lsr	r20
+    11dc:	34 2f       	mov	r19, r20
+    11de:	33 0f       	add	r19, r19
+    11e0:	93 2f       	mov	r25, r19
+    11e2:	99 0f       	add	r25, r25
+    11e4:	99 0f       	add	r25, r25
+    11e6:	93 0f       	add	r25, r19
+    11e8:	29 1b       	sub	r18, r25
+    11ea:	68 9f       	mul	r22, r24
+    11ec:	81 2d       	mov	r24, r1
+    11ee:	11 24       	eor	r1, r1
+    11f0:	86 95       	lsr	r24
+    11f2:	86 95       	lsr	r24
+    11f4:	86 95       	lsr	r24
+    11f6:	38 2f       	mov	r19, r24
+    11f8:	33 0f       	add	r19, r19
+    11fa:	93 2f       	mov	r25, r19
+    11fc:	99 0f       	add	r25, r25
+    11fe:	99 0f       	add	r25, r25
+    1200:	93 0f       	add	r25, r19
+    1202:	69 1b       	sub	r22, r25
+    1204:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		buttonCheck = sysTick50ms;
+    1208:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    120c:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1210:	90 93 30 01 	sts	0x0130, r25	; 0x800130 <buttonCheck.1725+0x1>
+    1214:	80 93 2f 01 	sts	0x012F, r24	; 0x80012f <buttonCheck.1725>
+	}
+	
+	if((buttonIsKeyPressed(&buttonUp) || buttonIsKeyLongPressed(&buttonUp)) && (buttonCheck != sysTick50ms)) {
+    1218:	83 e4       	ldi	r24, 0x43	; 67
+    121a:	91 e0       	ldi	r25, 0x01	; 1
+    121c:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    1220:	81 11       	cpse	r24, r1
+    1222:	06 c0       	rjmp	.+12     	; 0x1230 <setLedModeLoop+0xe0>
+    1224:	83 e4       	ldi	r24, 0x43	; 67
+    1226:	91 e0       	ldi	r25, 0x01	; 1
+    1228:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+    122c:	88 23       	and	r24, r24
+    122e:	f1 f1       	breq	.+124    	; 0x12ac <setLedModeLoop+0x15c>
+    1230:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    1234:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1238:	20 91 2f 01 	lds	r18, 0x012F	; 0x80012f <buttonCheck.1725>
+    123c:	30 91 30 01 	lds	r19, 0x0130	; 0x800130 <buttonCheck.1725+0x1>
+    1240:	28 17       	cp	r18, r24
+    1242:	39 07       	cpc	r19, r25
+    1244:	99 f1       	breq	.+102    	; 0x12ac <setLedModeLoop+0x15c>
+		ledStartHour_ram++;
+    1246:	80 91 57 01 	lds	r24, 0x0157	; 0x800157 <ledStartHour_ram>
+    124a:	8f 5f       	subi	r24, 0xFF	; 255
+		if (ledStartHour_ram > 23) ledStartHour_ram = 0;
+    124c:	88 31       	cpi	r24, 0x18	; 24
+    124e:	18 f4       	brcc	.+6      	; 0x1256 <setLedModeLoop+0x106>
+		displayHALSetImmediatly(ledStartHour_ram/10, ledStartHour_ram%10, ledEndHour_ram/10, ledEndHour_ram%10);
+		buttonCheck = sysTick50ms;
+	}
+	
+	if((buttonIsKeyPressed(&buttonUp) || buttonIsKeyLongPressed(&buttonUp)) && (buttonCheck != sysTick50ms)) {
+		ledStartHour_ram++;
+    1250:	80 93 57 01 	sts	0x0157, r24	; 0x800157 <ledStartHour_ram>
+    1254:	02 c0       	rjmp	.+4      	; 0x125a <setLedModeLoop+0x10a>
+		if (ledStartHour_ram > 23) ledStartHour_ram = 0;
+    1256:	10 92 57 01 	sts	0x0157, r1	; 0x800157 <ledStartHour_ram>
+		displayHALSetImmediatly(ledStartHour_ram/10, ledStartHour_ram%10, ledEndHour_ram/10, ledEndHour_ram%10);
+    125a:	20 91 54 01 	lds	r18, 0x0154	; 0x800154 <ledEndHour_ram>
+    125e:	60 91 57 01 	lds	r22, 0x0157	; 0x800157 <ledStartHour_ram>
+    1262:	8d ec       	ldi	r24, 0xCD	; 205
+    1264:	28 9f       	mul	r18, r24
+    1266:	41 2d       	mov	r20, r1
+    1268:	11 24       	eor	r1, r1
+    126a:	46 95       	lsr	r20
+    126c:	46 95       	lsr	r20
+    126e:	46 95       	lsr	r20
+    1270:	34 2f       	mov	r19, r20
+    1272:	33 0f       	add	r19, r19
+    1274:	93 2f       	mov	r25, r19
+    1276:	99 0f       	add	r25, r25
+    1278:	99 0f       	add	r25, r25
+    127a:	93 0f       	add	r25, r19
+    127c:	29 1b       	sub	r18, r25
+    127e:	68 9f       	mul	r22, r24
+    1280:	81 2d       	mov	r24, r1
+    1282:	11 24       	eor	r1, r1
+    1284:	86 95       	lsr	r24
+    1286:	86 95       	lsr	r24
+    1288:	86 95       	lsr	r24
+    128a:	38 2f       	mov	r19, r24
+    128c:	33 0f       	add	r19, r19
+    128e:	93 2f       	mov	r25, r19
+    1290:	99 0f       	add	r25, r25
+    1292:	99 0f       	add	r25, r25
+    1294:	93 0f       	add	r25, r19
+    1296:	69 1b       	sub	r22, r25
+    1298:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		buttonCheck = sysTick50ms;
+    129c:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    12a0:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    12a4:	90 93 30 01 	sts	0x0130, r25	; 0x800130 <buttonCheck.1725+0x1>
+    12a8:	80 93 2f 01 	sts	0x012F, r24	; 0x80012f <buttonCheck.1725>
+	}
+	
+	if (buttonIsKeyPressed(&buttonIn)) {
+    12ac:	8a e3       	ldi	r24, 0x3A	; 58
+    12ae:	91 e0       	ldi	r25, 0x01	; 1
+    12b0:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    12b4:	88 23       	and	r24, r24
+    12b6:	19 f0       	breq	.+6      	; 0x12be <setLedModeLoop+0x16e>
+		mode = SET_CROSSFADE;
+    12b8:	85 e0       	ldi	r24, 0x05	; 5
+    12ba:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <mode>
+    12be:	08 95       	ret
+
+000012c0 <setLedModeOnExit>:
+}
+
+void
+setLedModeOnExit()
+{
+	eeprom_update_byte(&ledStartHour, ledStartHour_ram);
+    12c0:	60 91 57 01 	lds	r22, 0x0157	; 0x800157 <ledStartHour_ram>
+    12c4:	82 e0       	ldi	r24, 0x02	; 2
+    12c6:	90 e0       	ldi	r25, 0x00	; 0
+    12c8:	0e 94 73 0b 	call	0x16e6	; 0x16e6 <eeprom_update_byte>
+	eeprom_update_byte(&ledEndHour, ledEndHour_ram);	
+    12cc:	60 91 54 01 	lds	r22, 0x0154	; 0x800154 <ledEndHour_ram>
+    12d0:	81 e0       	ldi	r24, 0x01	; 1
+    12d2:	90 e0       	ldi	r25, 0x00	; 0
+    12d4:	0e 94 73 0b 	call	0x16e6	; 0x16e6 <eeprom_update_byte>
+    12d8:	08 95       	ret
+
+000012da <setTimeModeOnEnter>:
+extern struct button buttonDown;
+extern struct button buttonIn;
+extern enum Mode mode;
+
+void setTimeModeOnEnter()
+{
+    12da:	08 95       	ret
+
+000012dc <setTimeModeLoop>:
+	
+}
+void setTimeModeLoop()
+{
+    12dc:	1f 93       	push	r17
+    12de:	cf 93       	push	r28
+    12e0:	df 93       	push	r29
+	static unsigned timeUpdate = 0;
+	static int dimInterval = 0;
+	static int buttonCheck = 0;
+	
+	if (sysTick50ms - dimInterval > 5) {
+    12e2:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    12e6:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    12ea:	20 91 37 01 	lds	r18, 0x0137	; 0x800137 <dimInterval.1666>
+    12ee:	30 91 38 01 	lds	r19, 0x0138	; 0x800138 <dimInterval.1666+0x1>
+    12f2:	82 1b       	sub	r24, r18
+    12f4:	93 0b       	sbc	r25, r19
+    12f6:	06 97       	sbiw	r24, 0x06	; 6
+    12f8:	60 f0       	brcs	.+24     	; 0x1312 <setTimeModeLoop+0x36>
+		dimInterval = sysTick50ms;
+    12fa:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    12fe:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1302:	90 93 38 01 	sts	0x0138, r25	; 0x800138 <dimInterval.1666+0x1>
+    1306:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <dimInterval.1666>
+		displayHALToggleDim(true);
+    130a:	81 e0       	ldi	r24, 0x01	; 1
+    130c:	90 e0       	ldi	r25, 0x00	; 0
+    130e:	0e 94 27 01 	call	0x24e	; 0x24e <displayHALToggleDim>
+	}
+
+	if (sysTick - timeUpdate > 10) {
+    1312:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+    1316:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+    131a:	20 91 35 01 	lds	r18, 0x0135	; 0x800135 <timeUpdate.1665>
+    131e:	30 91 36 01 	lds	r19, 0x0136	; 0x800136 <timeUpdate.1665+0x1>
+    1322:	82 1b       	sub	r24, r18
+    1324:	93 0b       	sbc	r25, r19
+    1326:	0b 97       	sbiw	r24, 0x0b	; 11
+    1328:	e0 f1       	brcs	.+120    	; 0x13a2 <setTimeModeLoop+0xc6>
+		timeUpdate = sysTick;
+    132a:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <sysTick>
+    132e:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <sysTick+0x1>
+    1332:	90 93 36 01 	sts	0x0136, r25	; 0x800136 <timeUpdate.1665+0x1>
+    1336:	80 93 35 01 	sts	0x0135, r24	; 0x800135 <timeUpdate.1665>
+		displayHALSetCrossfade(openNixieTimeGetHours()/10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+    133a:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+    133e:	18 2f       	mov	r17, r24
+    1340:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+    1344:	c8 2f       	mov	r28, r24
+    1346:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+    134a:	d8 2f       	mov	r29, r24
+    134c:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+    1350:	3d ec       	ldi	r19, 0xCD	; 205
+    1352:	13 9f       	mul	r17, r19
+    1354:	91 2d       	mov	r25, r1
+    1356:	11 24       	eor	r1, r1
+    1358:	96 95       	lsr	r25
+    135a:	96 95       	lsr	r25
+    135c:	96 95       	lsr	r25
+    135e:	99 0f       	add	r25, r25
+    1360:	29 2f       	mov	r18, r25
+    1362:	22 0f       	add	r18, r18
+    1364:	22 0f       	add	r18, r18
+    1366:	92 0f       	add	r25, r18
+    1368:	21 2f       	mov	r18, r17
+    136a:	29 1b       	sub	r18, r25
+    136c:	c3 9f       	mul	r28, r19
+    136e:	41 2d       	mov	r20, r1
+    1370:	11 24       	eor	r1, r1
+    1372:	46 95       	lsr	r20
+    1374:	46 95       	lsr	r20
+    1376:	46 95       	lsr	r20
+    1378:	d3 9f       	mul	r29, r19
+    137a:	91 2d       	mov	r25, r1
+    137c:	11 24       	eor	r1, r1
+    137e:	96 95       	lsr	r25
+    1380:	96 95       	lsr	r25
+    1382:	96 95       	lsr	r25
+    1384:	99 0f       	add	r25, r25
+    1386:	59 2f       	mov	r21, r25
+    1388:	55 0f       	add	r21, r21
+    138a:	55 0f       	add	r21, r21
+    138c:	95 0f       	add	r25, r21
+    138e:	6d 2f       	mov	r22, r29
+    1390:	69 1b       	sub	r22, r25
+    1392:	83 9f       	mul	r24, r19
+    1394:	81 2d       	mov	r24, r1
+    1396:	11 24       	eor	r1, r1
+    1398:	86 95       	lsr	r24
+    139a:	86 95       	lsr	r24
+    139c:	86 95       	lsr	r24
+    139e:	0e 94 32 01 	call	0x264	; 0x264 <displayHALSetCrossfade>
+	}
+	
+	if((buttonIsKeyPressed(&buttonDown) || buttonIsKeyLongPressed(&buttonDown)) && (buttonCheck != sysTick50ms)) {
+    13a2:	8c e4       	ldi	r24, 0x4C	; 76
+    13a4:	91 e0       	ldi	r25, 0x01	; 1
+    13a6:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    13aa:	81 11       	cpse	r24, r1
+    13ac:	07 c0       	rjmp	.+14     	; 0x13bc <setTimeModeLoop+0xe0>
+    13ae:	8c e4       	ldi	r24, 0x4C	; 76
+    13b0:	91 e0       	ldi	r25, 0x01	; 1
+    13b2:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+    13b6:	88 23       	and	r24, r24
+    13b8:	09 f4       	brne	.+2      	; 0x13bc <setTimeModeLoop+0xe0>
+    13ba:	4f c0       	rjmp	.+158    	; 0x145a <setTimeModeLoop+0x17e>
+    13bc:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    13c0:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    13c4:	20 91 33 01 	lds	r18, 0x0133	; 0x800133 <buttonCheck.1667>
+    13c8:	30 91 34 01 	lds	r19, 0x0134	; 0x800134 <buttonCheck.1667+0x1>
+    13cc:	28 17       	cp	r18, r24
+    13ce:	39 07       	cpc	r19, r25
+    13d0:	09 f4       	brne	.+2      	; 0x13d4 <setTimeModeLoop+0xf8>
+    13d2:	43 c0       	rjmp	.+134    	; 0x145a <setTimeModeLoop+0x17e>
+		mode = SET_TIME_HACK;
+    13d4:	82 e0       	ldi	r24, 0x02	; 2
+    13d6:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <mode>
+		openNixieTimeResetSeconds();
+    13da:	0e 94 50 0b 	call	0x16a0	; 0x16a0 <openNixieTimeResetSeconds>
+		openNixieDecrementTime();	
+    13de:	0e 94 3c 0b 	call	0x1678	; 0x1678 <openNixieDecrementTime>
+		displayHALSetImmediatly(openNixieTimeGetHours()/10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+    13e2:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+    13e6:	18 2f       	mov	r17, r24
+    13e8:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+    13ec:	c8 2f       	mov	r28, r24
+    13ee:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+    13f2:	d8 2f       	mov	r29, r24
+    13f4:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+    13f8:	3d ec       	ldi	r19, 0xCD	; 205
+    13fa:	13 9f       	mul	r17, r19
+    13fc:	91 2d       	mov	r25, r1
+    13fe:	11 24       	eor	r1, r1
+    1400:	96 95       	lsr	r25
+    1402:	96 95       	lsr	r25
+    1404:	96 95       	lsr	r25
+    1406:	99 0f       	add	r25, r25
+    1408:	29 2f       	mov	r18, r25
+    140a:	22 0f       	add	r18, r18
+    140c:	22 0f       	add	r18, r18
+    140e:	92 0f       	add	r25, r18
+    1410:	21 2f       	mov	r18, r17
+    1412:	29 1b       	sub	r18, r25
+    1414:	c3 9f       	mul	r28, r19
+    1416:	41 2d       	mov	r20, r1
+    1418:	11 24       	eor	r1, r1
+    141a:	46 95       	lsr	r20
+    141c:	46 95       	lsr	r20
+    141e:	46 95       	lsr	r20
+    1420:	d3 9f       	mul	r29, r19
+    1422:	91 2d       	mov	r25, r1
+    1424:	11 24       	eor	r1, r1
+    1426:	96 95       	lsr	r25
+    1428:	96 95       	lsr	r25
+    142a:	96 95       	lsr	r25
+    142c:	99 0f       	add	r25, r25
+    142e:	59 2f       	mov	r21, r25
+    1430:	55 0f       	add	r21, r21
+    1432:	55 0f       	add	r21, r21
+    1434:	95 0f       	add	r25, r21
+    1436:	6d 2f       	mov	r22, r29
+    1438:	69 1b       	sub	r22, r25
+    143a:	83 9f       	mul	r24, r19
+    143c:	81 2d       	mov	r24, r1
+    143e:	11 24       	eor	r1, r1
+    1440:	86 95       	lsr	r24
+    1442:	86 95       	lsr	r24
+    1444:	86 95       	lsr	r24
+    1446:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		buttonCheck = sysTick50ms;
+    144a:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    144e:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    1452:	90 93 34 01 	sts	0x0134, r25	; 0x800134 <buttonCheck.1667+0x1>
+    1456:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <buttonCheck.1667>
+	}
+	
+	if((buttonIsKeyPressed(&buttonUp) || buttonIsKeyLongPressed(&buttonUp)) && (buttonCheck != sysTick50ms)) {
+    145a:	83 e4       	ldi	r24, 0x43	; 67
+    145c:	91 e0       	ldi	r25, 0x01	; 1
+    145e:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    1462:	81 11       	cpse	r24, r1
+    1464:	07 c0       	rjmp	.+14     	; 0x1474 <setTimeModeLoop+0x198>
+    1466:	83 e4       	ldi	r24, 0x43	; 67
+    1468:	91 e0       	ldi	r25, 0x01	; 1
+    146a:	0e 94 94 00 	call	0x128	; 0x128 <buttonIsKeyLongPressed>
+    146e:	88 23       	and	r24, r24
+    1470:	09 f4       	brne	.+2      	; 0x1474 <setTimeModeLoop+0x198>
+    1472:	4f c0       	rjmp	.+158    	; 0x1512 <setTimeModeLoop+0x236>
+    1474:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    1478:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    147c:	20 91 33 01 	lds	r18, 0x0133	; 0x800133 <buttonCheck.1667>
+    1480:	30 91 34 01 	lds	r19, 0x0134	; 0x800134 <buttonCheck.1667+0x1>
+    1484:	28 17       	cp	r18, r24
+    1486:	39 07       	cpc	r19, r25
+    1488:	09 f4       	brne	.+2      	; 0x148c <setTimeModeLoop+0x1b0>
+    148a:	43 c0       	rjmp	.+134    	; 0x1512 <setTimeModeLoop+0x236>
+		mode = SET_TIME_HACK;
+    148c:	82 e0       	ldi	r24, 0x02	; 2
+    148e:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <mode>
+		openNixieTimeResetSeconds();
+    1492:	0e 94 50 0b 	call	0x16a0	; 0x16a0 <openNixieTimeResetSeconds>
+		openNixieIncrementTime();			
+    1496:	0e 94 1d 0b 	call	0x163a	; 0x163a <openNixieIncrementTime>
+		displayHALSetImmediatly(openNixieTimeGetHours()/10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+    149a:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+    149e:	18 2f       	mov	r17, r24
+    14a0:	0e 94 53 0b 	call	0x16a6	; 0x16a6 <openNixieTimeGetMinutes>
+    14a4:	c8 2f       	mov	r28, r24
+    14a6:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+    14aa:	d8 2f       	mov	r29, r24
+    14ac:	0e 94 56 0b 	call	0x16ac	; 0x16ac <openNixieTimeGetHours>
+    14b0:	3d ec       	ldi	r19, 0xCD	; 205
+    14b2:	13 9f       	mul	r17, r19
+    14b4:	91 2d       	mov	r25, r1
+    14b6:	11 24       	eor	r1, r1
+    14b8:	96 95       	lsr	r25
+    14ba:	96 95       	lsr	r25
+    14bc:	96 95       	lsr	r25
+    14be:	99 0f       	add	r25, r25
+    14c0:	29 2f       	mov	r18, r25
+    14c2:	22 0f       	add	r18, r18
+    14c4:	22 0f       	add	r18, r18
+    14c6:	92 0f       	add	r25, r18
+    14c8:	21 2f       	mov	r18, r17
+    14ca:	29 1b       	sub	r18, r25
+    14cc:	c3 9f       	mul	r28, r19
+    14ce:	41 2d       	mov	r20, r1
+    14d0:	11 24       	eor	r1, r1
+    14d2:	46 95       	lsr	r20
+    14d4:	46 95       	lsr	r20
+    14d6:	46 95       	lsr	r20
+    14d8:	d3 9f       	mul	r29, r19
+    14da:	91 2d       	mov	r25, r1
+    14dc:	11 24       	eor	r1, r1
+    14de:	96 95       	lsr	r25
+    14e0:	96 95       	lsr	r25
+    14e2:	96 95       	lsr	r25
+    14e4:	99 0f       	add	r25, r25
+    14e6:	59 2f       	mov	r21, r25
+    14e8:	55 0f       	add	r21, r21
+    14ea:	55 0f       	add	r21, r21
+    14ec:	95 0f       	add	r25, r21
+    14ee:	6d 2f       	mov	r22, r29
+    14f0:	69 1b       	sub	r22, r25
+    14f2:	83 9f       	mul	r24, r19
+    14f4:	81 2d       	mov	r24, r1
+    14f6:	11 24       	eor	r1, r1
+    14f8:	86 95       	lsr	r24
+    14fa:	86 95       	lsr	r24
+    14fc:	86 95       	lsr	r24
+    14fe:	0e 94 4f 01 	call	0x29e	; 0x29e <displayHALSetImmediatly>
+		buttonCheck = sysTick50ms;
+    1502:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <sysTick50ms>
+    1506:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <sysTick50ms+0x1>
+    150a:	90 93 34 01 	sts	0x0134, r25	; 0x800134 <buttonCheck.1667+0x1>
+    150e:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <buttonCheck.1667>
+	}
+	
+	if (buttonIsKeyPressed(&buttonIn)) {
+    1512:	8a e3       	ldi	r24, 0x3A	; 58
+    1514:	91 e0       	ldi	r25, 0x01	; 1
+    1516:	0e 94 8f 00 	call	0x11e	; 0x11e <buttonIsKeyPressed>
+    151a:	88 23       	and	r24, r24
+    151c:	49 f0       	breq	.+18     	; 0x1530 <setTimeModeLoop+0x254>
+		if (mode == SET_TIME_HACK) {
+    151e:	80 91 39 01 	lds	r24, 0x0139	; 0x800139 <mode>
+    1522:	82 30       	cpi	r24, 0x02	; 2
+    1524:	11 f4       	brne	.+4      	; 0x152a <setTimeModeLoop+0x24e>
+			openNixieTimeStoreHAL();
+    1526:	0e 94 d3 0a 	call	0x15a6	; 0x15a6 <openNixieTimeStoreHAL>
+		}
+		mode = SET_DIM;
+    152a:	83 e0       	ldi	r24, 0x03	; 3
+    152c:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <mode>
+	}
+}
+    1530:	df 91       	pop	r29
+    1532:	cf 91       	pop	r28
+    1534:	1f 91       	pop	r17
+    1536:	08 95       	ret
+
+00001538 <setTimeModeOnExit>:
+void setTimeModeOnExit()
+{
+    1538:	08 95       	ret
+
+0000153a <openNixieTimeGetHAL>:
+	signed char minutes;
+	signed char hours;
+};
+
+void openNixieTimeGetHAL()
+{
+    153a:	cf 93       	push	r28
+    153c:	df 93       	push	r29
+    153e:	00 d0       	rcall	.+0      	; 0x1540 <openNixieTimeGetHAL+0x6>
+    1540:	1f 92       	push	r1
+    1542:	cd b7       	in	r28, 0x3d	; 61
+    1544:	de b7       	in	r29, 0x3e	; 62
+	char time[3];
+	ds1307getTime(time);
+    1546:	ce 01       	movw	r24, r28
+    1548:	01 96       	adiw	r24, 0x01	; 1
+    154a:	0e 94 ff 01 	call	0x3fe	; 0x3fe <ds1307getTime>
+	
+	openNixieTime.seconds = time[0] / 16 * 10 + time[0] % 16;
+    154e:	89 81       	ldd	r24, Y+1	; 0x01
+    1550:	98 2f       	mov	r25, r24
+    1552:	92 95       	swap	r25
+    1554:	9f 70       	andi	r25, 0x0F	; 15
+    1556:	99 0f       	add	r25, r25
+    1558:	29 2f       	mov	r18, r25
+    155a:	22 0f       	add	r18, r18
+    155c:	22 0f       	add	r18, r18
+    155e:	92 0f       	add	r25, r18
+    1560:	8f 70       	andi	r24, 0x0F	; 15
+    1562:	89 0f       	add	r24, r25
+    1564:	e8 e5       	ldi	r30, 0x58	; 88
+    1566:	f1 e0       	ldi	r31, 0x01	; 1
+    1568:	80 83       	st	Z, r24
+	openNixieTime.minutes = time[1] / 16 * 10 + time[1] % 16;
+    156a:	8a 81       	ldd	r24, Y+2	; 0x02
+    156c:	98 2f       	mov	r25, r24
+    156e:	92 95       	swap	r25
+    1570:	9f 70       	andi	r25, 0x0F	; 15
+    1572:	99 0f       	add	r25, r25
+    1574:	29 2f       	mov	r18, r25
+    1576:	22 0f       	add	r18, r18
+    1578:	22 0f       	add	r18, r18
+    157a:	92 0f       	add	r25, r18
+    157c:	8f 70       	andi	r24, 0x0F	; 15
+    157e:	89 0f       	add	r24, r25
+    1580:	81 83       	std	Z+1, r24	; 0x01
+	openNixieTime.hours = time[2] / 16 * 10 + time[2] % 16;
+    1582:	8b 81       	ldd	r24, Y+3	; 0x03
+    1584:	98 2f       	mov	r25, r24
+    1586:	92 95       	swap	r25
+    1588:	9f 70       	andi	r25, 0x0F	; 15
+    158a:	99 0f       	add	r25, r25
+    158c:	29 2f       	mov	r18, r25
+    158e:	22 0f       	add	r18, r18
+    1590:	22 0f       	add	r18, r18
+    1592:	92 0f       	add	r25, r18
+    1594:	8f 70       	andi	r24, 0x0F	; 15
+    1596:	89 0f       	add	r24, r25
+    1598:	82 83       	std	Z+2, r24	; 0x02
+}
+    159a:	0f 90       	pop	r0
+    159c:	0f 90       	pop	r0
+    159e:	0f 90       	pop	r0
+    15a0:	df 91       	pop	r29
+    15a2:	cf 91       	pop	r28
+    15a4:	08 95       	ret
+
+000015a6 <openNixieTimeStoreHAL>:
+
+void openNixieTimeStoreHAL()
+{
+    15a6:	cf 93       	push	r28
+    15a8:	df 93       	push	r29
+    15aa:	00 d0       	rcall	.+0      	; 0x15ac <openNixieTimeStoreHAL+0x6>
+    15ac:	1f 92       	push	r1
+    15ae:	cd b7       	in	r28, 0x3d	; 61
+    15b0:	de b7       	in	r29, 0x3e	; 62
+	char time[3];
+	time[0] = 0;
+    15b2:	19 82       	std	Y+1, r1	; 0x01
+	time[1] = (openNixieTime.minutes / 10) * 16 + openNixieTime.minutes % 10;
+    15b4:	e8 e5       	ldi	r30, 0x58	; 88
+    15b6:	f1 e0       	ldi	r31, 0x01	; 1
+    15b8:	91 81       	ldd	r25, Z+1	; 0x01
+    15ba:	21 81       	ldd	r18, Z+1	; 0x01
+    15bc:	87 e6       	ldi	r24, 0x67	; 103
+    15be:	98 02       	muls	r25, r24
+    15c0:	31 2d       	mov	r19, r1
+    15c2:	11 24       	eor	r1, r1
+    15c4:	35 95       	asr	r19
+    15c6:	35 95       	asr	r19
+    15c8:	97 fd       	sbrc	r25, 7
+    15ca:	33 95       	inc	r19
+    15cc:	28 02       	muls	r18, r24
+    15ce:	91 2d       	mov	r25, r1
+    15d0:	11 24       	eor	r1, r1
+    15d2:	95 95       	asr	r25
+    15d4:	95 95       	asr	r25
+    15d6:	27 fd       	sbrc	r18, 7
+    15d8:	93 95       	inc	r25
+    15da:	99 0f       	add	r25, r25
+    15dc:	49 2f       	mov	r20, r25
+    15de:	44 0f       	add	r20, r20
+    15e0:	44 0f       	add	r20, r20
+    15e2:	94 0f       	add	r25, r20
+    15e4:	29 1b       	sub	r18, r25
+    15e6:	90 e1       	ldi	r25, 0x10	; 16
+    15e8:	39 9f       	mul	r19, r25
+    15ea:	20 0d       	add	r18, r0
+    15ec:	11 24       	eor	r1, r1
+    15ee:	2a 83       	std	Y+2, r18	; 0x02
+	time[2] = (openNixieTime.hours / 10) * 16 + openNixieTime.hours % 10;
+    15f0:	32 81       	ldd	r19, Z+2	; 0x02
+    15f2:	92 81       	ldd	r25, Z+2	; 0x02
+    15f4:	38 02       	muls	r19, r24
+    15f6:	21 2d       	mov	r18, r1
+    15f8:	11 24       	eor	r1, r1
+    15fa:	25 95       	asr	r18
+    15fc:	25 95       	asr	r18
+    15fe:	37 fd       	sbrc	r19, 7
+    1600:	23 95       	inc	r18
+    1602:	98 02       	muls	r25, r24
+    1604:	81 2d       	mov	r24, r1
+    1606:	11 24       	eor	r1, r1
+    1608:	85 95       	asr	r24
+    160a:	85 95       	asr	r24
+    160c:	97 fd       	sbrc	r25, 7
+    160e:	83 95       	inc	r24
+    1610:	88 0f       	add	r24, r24
+    1612:	38 2f       	mov	r19, r24
+    1614:	33 0f       	add	r19, r19
+    1616:	33 0f       	add	r19, r19
+    1618:	83 0f       	add	r24, r19
+    161a:	98 1b       	sub	r25, r24
+    161c:	80 e1       	ldi	r24, 0x10	; 16
+    161e:	28 9f       	mul	r18, r24
+    1620:	90 0d       	add	r25, r0
+    1622:	11 24       	eor	r1, r1
+    1624:	9b 83       	std	Y+3, r25	; 0x03
+	ds1307setTime(time);
+    1626:	ce 01       	movw	r24, r28
+    1628:	01 96       	adiw	r24, 0x01	; 1
+    162a:	0e 94 2e 02 	call	0x45c	; 0x45c <ds1307setTime>
+}
+    162e:	0f 90       	pop	r0
+    1630:	0f 90       	pop	r0
+    1632:	0f 90       	pop	r0
+    1634:	df 91       	pop	r29
+    1636:	cf 91       	pop	r28
+    1638:	08 95       	ret
+
+0000163a <openNixieIncrementTime>:
+
+void openNixieIncrementTime()
+{
+	openNixieTime.minutes++;
+    163a:	e8 e5       	ldi	r30, 0x58	; 88
+    163c:	f1 e0       	ldi	r31, 0x01	; 1
+    163e:	81 81       	ldd	r24, Z+1	; 0x01
+    1640:	8f 5f       	subi	r24, 0xFF	; 255
+    1642:	81 83       	std	Z+1, r24	; 0x01
+	if (openNixieTime.minutes >= 60) {
+    1644:	81 81       	ldd	r24, Z+1	; 0x01
+    1646:	8c 33       	cpi	r24, 0x3C	; 60
+    1648:	4c f0       	brlt	.+18     	; 0x165c <openNixieIncrementTime+0x22>
+		openNixieTime.minutes = 0;
+    164a:	11 82       	std	Z+1, r1	; 0x01
+		openNixieTime.hours++;
+    164c:	82 81       	ldd	r24, Z+2	; 0x02
+    164e:	8f 5f       	subi	r24, 0xFF	; 255
+    1650:	82 83       	std	Z+2, r24	; 0x02
+		if (openNixieTime.hours >= 24) {
+    1652:	82 81       	ldd	r24, Z+2	; 0x02
+    1654:	88 31       	cpi	r24, 0x18	; 24
+    1656:	14 f0       	brlt	.+4      	; 0x165c <openNixieIncrementTime+0x22>
+			openNixieTime.hours = 0;
+    1658:	10 92 5a 01 	sts	0x015A, r1	; 0x80015a <openNixieTime+0x2>
+    165c:	08 95       	ret
+
+0000165e <openNixieTimeTick>:
+	
+}
+
+void openNixieTimeTick()
+{
+	openNixieTime.seconds++;
+    165e:	e8 e5       	ldi	r30, 0x58	; 88
+    1660:	f1 e0       	ldi	r31, 0x01	; 1
+    1662:	80 81       	ld	r24, Z
+    1664:	8f 5f       	subi	r24, 0xFF	; 255
+    1666:	80 83       	st	Z, r24
+	if (openNixieTime.seconds >= 60) {
+    1668:	80 81       	ld	r24, Z
+    166a:	8c 33       	cpi	r24, 0x3C	; 60
+    166c:	24 f0       	brlt	.+8      	; 0x1676 <openNixieTimeTick+0x18>
+		openNixieTime.seconds = 0;
+    166e:	10 92 58 01 	sts	0x0158, r1	; 0x800158 <openNixieTime>
+		openNixieIncrementTime();
+    1672:	0e 94 1d 0b 	call	0x163a	; 0x163a <openNixieIncrementTime>
+    1676:	08 95       	ret
+
+00001678 <openNixieDecrementTime>:
+	}
+}
+
+void openNixieDecrementTime()
+{
+	openNixieTime.minutes--;
+    1678:	e8 e5       	ldi	r30, 0x58	; 88
+    167a:	f1 e0       	ldi	r31, 0x01	; 1
+    167c:	81 81       	ldd	r24, Z+1	; 0x01
+    167e:	81 50       	subi	r24, 0x01	; 1
+    1680:	81 83       	std	Z+1, r24	; 0x01
+	if (openNixieTime.minutes < 0) {
+    1682:	81 81       	ldd	r24, Z+1	; 0x01
+    1684:	88 23       	and	r24, r24
+    1686:	5c f4       	brge	.+22     	; 0x169e <openNixieDecrementTime+0x26>
+		openNixieTime.minutes = 59;
+    1688:	8b e3       	ldi	r24, 0x3B	; 59
+    168a:	81 83       	std	Z+1, r24	; 0x01
+		openNixieTime.hours--;
+    168c:	82 81       	ldd	r24, Z+2	; 0x02
+    168e:	81 50       	subi	r24, 0x01	; 1
+    1690:	82 83       	std	Z+2, r24	; 0x02
+		if (openNixieTime.hours < 0) {
+    1692:	82 81       	ldd	r24, Z+2	; 0x02
+    1694:	88 23       	and	r24, r24
+    1696:	1c f4       	brge	.+6      	; 0x169e <openNixieDecrementTime+0x26>
+			openNixieTime.hours = 23;
+    1698:	87 e1       	ldi	r24, 0x17	; 23
+    169a:	80 93 5a 01 	sts	0x015A, r24	; 0x80015a <openNixieTime+0x2>
+    169e:	08 95       	ret
+
+000016a0 <openNixieTimeResetSeconds>:
+	}
+}
+
+void openNixieTimeResetSeconds()
+{
+	openNixieTime.seconds = 0;
+    16a0:	10 92 58 01 	sts	0x0158, r1	; 0x800158 <openNixieTime>
+    16a4:	08 95       	ret
+
+000016a6 <openNixieTimeGetMinutes>:
+}
+
+char openNixieTimeGetMinutes()
+{
+	return openNixieTime.minutes;
+    16a6:	80 91 59 01 	lds	r24, 0x0159	; 0x800159 <openNixieTime+0x1>
+}
+    16aa:	08 95       	ret
+
+000016ac <openNixieTimeGetHours>:
+
+char openNixieTimeGetHours()
+{
+	return openNixieTime.hours;
+    16ac:	80 91 5a 01 	lds	r24, 0x015A	; 0x80015a <openNixieTime+0x2>
+}
+    16b0:	08 95       	ret
+
+000016b2 <openNixieTimeGetSeconds>:
+
+char openNixieTimeGetSeconds()
+{
+	return openNixieTime.seconds;
+    16b2:	80 91 58 01 	lds	r24, 0x0158	; 0x800158 <openNixieTime>
+    16b6:	08 95       	ret
+
+000016b8 <__umulhisi3>:
+    16b8:	a2 9f       	mul	r26, r18
+    16ba:	b0 01       	movw	r22, r0
+    16bc:	b3 9f       	mul	r27, r19
+    16be:	c0 01       	movw	r24, r0
+    16c0:	a3 9f       	mul	r26, r19
+    16c2:	70 0d       	add	r23, r0
+    16c4:	81 1d       	adc	r24, r1
+    16c6:	11 24       	eor	r1, r1
+    16c8:	91 1d       	adc	r25, r1
+    16ca:	b2 9f       	mul	r27, r18
+    16cc:	70 0d       	add	r23, r0
+    16ce:	81 1d       	adc	r24, r1
+    16d0:	11 24       	eor	r1, r1
+    16d2:	91 1d       	adc	r25, r1
+    16d4:	08 95       	ret
+
+000016d6 <eeprom_read_byte>:
+    16d6:	f9 99       	sbic	0x1f, 1	; 31
+    16d8:	fe cf       	rjmp	.-4      	; 0x16d6 <eeprom_read_byte>
+    16da:	92 bd       	out	0x22, r25	; 34
+    16dc:	81 bd       	out	0x21, r24	; 33
+    16de:	f8 9a       	sbi	0x1f, 0	; 31
+    16e0:	99 27       	eor	r25, r25
+    16e2:	80 b5       	in	r24, 0x20	; 32
+    16e4:	08 95       	ret
+
+000016e6 <eeprom_update_byte>:
+    16e6:	26 2f       	mov	r18, r22
+
+000016e8 <eeprom_update_r18>:
+    16e8:	f9 99       	sbic	0x1f, 1	; 31
+    16ea:	fe cf       	rjmp	.-4      	; 0x16e8 <eeprom_update_r18>
+    16ec:	92 bd       	out	0x22, r25	; 34
+    16ee:	81 bd       	out	0x21, r24	; 33
+    16f0:	f8 9a       	sbi	0x1f, 0	; 31
+    16f2:	01 97       	sbiw	r24, 0x01	; 1
+    16f4:	00 b4       	in	r0, 0x20	; 32
+    16f6:	02 16       	cp	r0, r18
+    16f8:	39 f0       	breq	.+14     	; 0x1708 <eeprom_update_r18+0x20>
+    16fa:	1f ba       	out	0x1f, r1	; 31
+    16fc:	20 bd       	out	0x20, r18	; 32
+    16fe:	0f b6       	in	r0, 0x3f	; 63
+    1700:	f8 94       	cli
+    1702:	fa 9a       	sbi	0x1f, 2	; 31
+    1704:	f9 9a       	sbi	0x1f, 1	; 31
+    1706:	0f be       	out	0x3f, r0	; 63
+    1708:	08 95       	ret
+
+0000170a <eeprom_write_byte>:
+    170a:	26 2f       	mov	r18, r22
+
+0000170c <eeprom_write_r18>:
+    170c:	f9 99       	sbic	0x1f, 1	; 31
+    170e:	fe cf       	rjmp	.-4      	; 0x170c <eeprom_write_r18>
+    1710:	1f ba       	out	0x1f, r1	; 31
+    1712:	92 bd       	out	0x22, r25	; 34
+    1714:	81 bd       	out	0x21, r24	; 33
+    1716:	20 bd       	out	0x20, r18	; 32
+    1718:	0f b6       	in	r0, 0x3f	; 63
+    171a:	f8 94       	cli
+    171c:	fa 9a       	sbi	0x1f, 2	; 31
+    171e:	f9 9a       	sbi	0x1f, 1	; 31
+    1720:	0f be       	out	0x3f, r0	; 63
+    1722:	01 96       	adiw	r24, 0x01	; 1
+    1724:	08 95       	ret
+
+00001726 <_exit>:
+    1726:	f8 94       	cli
+
+00001728 <__stop_program>:
+    1728:	ff cf       	rjmp	.-2      	; 0x1728 <__stop_program>

@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name open-nixie_displayModule)(type KiCad)(uri ${KIPRJMOD}/open-nixie_displayModule.pretty)(options "")(descr ""))
+)

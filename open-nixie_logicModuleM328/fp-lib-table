@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name open-nixie_logicModuleM328)(type KiCad)(uri ${KIPRJMOD}/open-nixie_logicModuleM328.pretty)(options "")(descr ""))
+  (lib (name logo)(type KiCad)(uri ${KIPRJMOD}/open_nixie_logo.pretty)(options "")(descr ""))
+)

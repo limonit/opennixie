@@ -1,0 +1,934 @@
+Archive member included to satisfy reference by file (symbol)
+
+d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                              D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o (exit)
+d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+                              displayHAL.o (__do_copy_data)
+d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                              displayHAL.o (__do_clear_bss)
+d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                              RC6.o (malloc)
+D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+                              modes/displayTimeMode.o (eeprom_read_byte)
+D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+                              modes/setDimMode.o (eeprom_update_byte)
+D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+                              modes/setCrossfadeMode.o (eeprom_write_byte)
+
+Allocating common symbols
+Common symbol       size              file
+
+dimEndHour_ram      0x1               modes/displayTimeMode.o
+openNixieTime       0x3               OpenNxieTime.o
+sysTickLimit        0x2               main.o
+crossfade_ram       0x1               modes/displayTimeMode.o
+__brkval            0x2               d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+mode                0x1               main.o
+sysTick100ms        0x2               main.o
+dimStartHour_ram    0x1               modes/displayTimeMode.o
+__flp               0x2               d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+sysTick             0x2               main.o
+
+Discarded input sections
+
+ .data          0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .bss           0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .text          0x00000000        0x0 displayHAL.o
+ .data          0x00000000        0x0 displayHAL.o
+ .bss           0x00000000        0x0 displayHAL.o
+ .text.displayHALToggleDim
+                0x00000000       0x16 displayHAL.o
+ .text          0x00000000        0x0 DS3231.o
+ .data          0x00000000        0x0 DS3231.o
+ .bss           0x00000000        0x0 DS3231.o
+ .text.ds1307getTemp
+                0x00000000       0x40 DS3231.o
+ .text          0x00000000        0x0 i2c_master.o
+ .data          0x00000000        0x0 i2c_master.o
+ .bss           0x00000000        0x0 i2c_master.o
+ .text.i2c_writeReg
+                0x00000000       0x64 i2c_master.o
+ .text.i2c_readReg
+                0x00000000       0x90 i2c_master.o
+ .text.i2c_stop
+                0x00000000        0x8 i2c_master.o
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 modes/displayTimeMode.o
+ .data          0x00000000        0x0 modes/displayTimeMode.o
+ .bss           0x00000000        0x0 modes/displayTimeMode.o
+ .text          0x00000000        0x0 modes/setCrossfadeMode.o
+ .data          0x00000000        0x0 modes/setCrossfadeMode.o
+ .bss           0x00000000        0x0 modes/setCrossfadeMode.o
+ .text          0x00000000        0x0 modes/setDimMode.o
+ .data          0x00000000        0x0 modes/setDimMode.o
+ .bss           0x00000000        0x0 modes/setDimMode.o
+ .text          0x00000000        0x0 modes/setTimeMode.o
+ .data          0x00000000        0x0 modes/setTimeMode.o
+ .bss           0x00000000        0x0 modes/setTimeMode.o
+ .text          0x00000000        0x0 OpenNxieTime.o
+ .data          0x00000000        0x0 OpenNxieTime.o
+ .bss           0x00000000        0x0 OpenNxieTime.o
+ .text.openNixieDecrementTime
+                0x00000000       0x28 OpenNxieTime.o
+ .text.openNixieTimeResetSeconds
+                0x00000000        0x6 OpenNxieTime.o
+ .text          0x00000000        0x0 RC6.o
+ .data          0x00000000        0x0 RC6.o
+ .bss           0x00000000        0x0 RC6.o
+ .text.RC6DecoderGetControl
+                0x00000000        0x6 RC6.o
+ .text          0x00000000        0x0 RC6HAL.o
+ .data          0x00000000        0x0 RC6HAL.o
+ .bss           0x00000000        0x0 RC6HAL.o
+ .text          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .data          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .bss           0x00000000        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .text          0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+ .data          0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+ .bss           0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+ .text          0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+ .data          0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+ .bss           0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+ .text          0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+ .data          0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+ .bss           0x00000000        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000003         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+LOAD displayHAL.o
+LOAD DS3231.o
+LOAD i2c_master.o
+LOAD main.o
+LOAD modes/displayTimeMode.o
+LOAD modes/setCrossfadeMode.o
+LOAD modes/setDimMode.o
+LOAD modes/setTimeMode.o
+LOAD OpenNxieTime.o
+LOAD RC6.o
+LOAD RC6HAL.o
+START GROUP
+LOAD d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
+END GROUP
+START GROUP
+LOAD d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a
+LOAD d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
+LOAD d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a
+LOAD D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a
+END GROUP
+                0x00000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                0x00800060                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
+                0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                0x0000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x00000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1928
+ *(.vectors)
+ .vectors       0x00000000       0x68 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000068        0x0 linker stubs
+ *(.trampolines*)
+                0x00000068                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+ *(.progmem*)
+                0x00000068                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000068                __ctors_start = .
+ *(.ctors)
+                0x00000068                __ctors_end = .
+                0x00000068                __dtors_start = .
+ *(.dtors)
+                0x00000068                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000068        0x0 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+                0x00000068                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000068        0xc D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000074       0x16 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+                0x00000074                __do_copy_data
+ .init4         0x0000008a       0x10 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                0x0000008a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000009a        0x8 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ *(.init9)
+ *(.text)
+ .text          0x000000a2        0x4 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+                0x000000a2                __vector_22
+                0x000000a2                __vector_1
+                0x000000a2                __vector_24
+                0x000000a2                __vector_12
+                0x000000a2                __bad_interrupt
+                0x000000a2                __vector_6
+                0x000000a2                __vector_3
+                0x000000a2                __vector_23
+                0x000000a2                __vector_25
+                0x000000a2                __vector_11
+                0x000000a2                __vector_13
+                0x000000a2                __vector_17
+                0x000000a2                __vector_19
+                0x000000a2                __vector_7
+                0x000000a2                __vector_5
+                0x000000a2                __vector_4
+                0x000000a2                __vector_9
+                0x000000a2                __vector_2
+                0x000000a2                __vector_21
+                0x000000a2                __vector_15
+                0x000000a2                __vector_8
+                0x000000a2                __vector_14
+                0x000000a2                __vector_10
+                0x000000a2                __vector_18
+                0x000000a2                __vector_20
+                0x000000a6                . = ALIGN (0x2)
+ *(.text.*)
+ .text.displayHALTurnOff
+                0x000000a6       0x12 displayHAL.o
+                0x000000a6                displayHALTurnOff
+ .text.displayHALInit
+                0x000000b8       0x16 displayHAL.o
+                0x000000b8                displayHALInit
+ .text.displayHAL100usStep
+                0x000000ce       0xf2 displayHAL.o
+                0x000000ce                displayHAL100usStep
+ .text.displayHALSetDim
+                0x000001c0        0x6 displayHAL.o
+                0x000001c0                displayHALSetDim
+ .text.displayHALSetCrossfade
+                0x000001c6       0x3a displayHAL.o
+                0x000001c6                displayHALSetCrossfade
+ .text.displayHALSetImmediatly
+                0x00000200       0x14 displayHAL.o
+                0x00000200                displayHALSetImmediatly
+ .text.displayHALTestNixies
+                0x00000214      0x14c displayHAL.o
+                0x00000214                displayHALTestNixies
+ .text.ds1307getTime
+                0x00000360       0x5e DS3231.o
+                0x00000360                ds1307getTime
+ .text.ds1307setTime
+                0x000003be       0x60 DS3231.o
+                0x000003be                ds1307setTime
+ .text.i2c_init
+                0x0000041e        0x8 i2c_master.o
+                0x0000041e                i2c_init
+ .text.i2c_start
+                0x00000426       0x4a i2c_master.o
+                0x00000426                i2c_start
+ .text.i2c_write
+                0x00000470       0x24 i2c_master.o
+                0x00000470                i2c_write
+ .text.i2c_read_ack
+                0x00000494       0x16 i2c_master.o
+                0x00000494                i2c_read_ack
+ .text.i2c_read_nack
+                0x000004aa       0x16 i2c_master.o
+                0x000004aa                i2c_read_nack
+ .text.i2c_transmit
+                0x000004c0       0x5c i2c_master.o
+                0x000004c0                i2c_transmit
+ .text.i2c_receive
+                0x0000051c       0x76 i2c_master.o
+                0x0000051c                i2c_receive
+ .text.rc6callback
+                0x00000592       0x34 main.o
+                0x00000592                rc6callback
+ .text.main     0x000005c6       0xf8 main.o
+                0x000005c6                main
+ .text.__vector_16
+                0x000006be       0xde main.o
+                0x000006be                __vector_16
+ .text.displayTimeModeOnEnter
+                0x0000079c       0xc2 modes/displayTimeMode.o
+                0x0000079c                displayTimeModeOnEnter
+ .text.displayTimeModeHandleDim
+                0x0000085e       0x60 modes/displayTimeMode.o
+                0x0000085e                displayTimeModeHandleDim
+ .text.displayTimeModeLoop
+                0x000008be      0x21e modes/displayTimeMode.o
+                0x000008be                displayTimeModeLoop
+ .text.displayTimeModeOnExit
+                0x00000adc       0x18 modes/displayTimeMode.o
+                0x00000adc                displayTimeModeOnExit
+ .text.displayTimeModeOnCommandReceived
+                0x00000af4       0x80 modes/displayTimeMode.o
+                0x00000af4                displayTimeModeOnCommandReceived
+ .text.setCrossfadeModeOnEnter
+                0x00000b74       0x30 modes/setCrossfadeMode.o
+                0x00000b74                setCrossfadeModeOnEnter
+ .text.setCrossfadeModeLoop
+                0x00000ba4      0x112 modes/setCrossfadeMode.o
+                0x00000ba4                setCrossfadeModeLoop
+ .text.setCrossfadeModeOnExit
+                0x00000cb6        0xe modes/setCrossfadeMode.o
+                0x00000cb6                setCrossfadeModeOnExit
+ .text.setCrossfadeModeOnCommandReceived
+                0x00000cc4       0x36 modes/setCrossfadeMode.o
+                0x00000cc4                setCrossfadeModeOnCommandReceived
+ .text.setDimModeOnEnter
+                0x00000cfa       0x84 modes/setDimMode.o
+                0x00000cfa                setDimModeOnEnter
+ .text.setDimModeLoop
+                0x00000d7e      0x19c modes/setDimMode.o
+                0x00000d7e                setDimModeLoop
+ .text.setDimModeOnExit
+                0x00000f1a       0x1a modes/setDimMode.o
+                0x00000f1a                setDimModeOnExit
+ .text.setDimModeOnCommandReceived
+                0x00000f34       0x36 modes/setDimMode.o
+                0x00000f34                setDimModeOnCommandReceived
+ .text.setTimeModeOnEnter
+                0x00000f6a       0x1e modes/setTimeMode.o
+                0x00000f6a                setTimeModeOnEnter
+ .text.setTimeModeLoop
+                0x00000f88      0x18a modes/setTimeMode.o
+                0x00000f88                setTimeModeLoop
+ .text.setTimeModeOnExit
+                0x00001112       0x18 modes/setTimeMode.o
+                0x00001112                setTimeModeOnExit
+ .text.setTimeModeOnCommandReceived
+                0x0000112a       0x36 modes/setTimeMode.o
+                0x0000112a                setTimeModeOnCommandReceived
+ .text.openNixieTimeGetHAL
+                0x00001160       0x6c OpenNxieTime.o
+                0x00001160                openNixieTimeGetHAL
+ .text.openNixieTimeStoreHAL
+                0x000011cc       0x94 OpenNxieTime.o
+                0x000011cc                openNixieTimeStoreHAL
+ .text.openNixieIncrementTime
+                0x00001260       0x24 OpenNxieTime.o
+                0x00001260                openNixieIncrementTime
+ .text.openNixieTimeTick
+                0x00001284       0x1a OpenNxieTime.o
+                0x00001284                openNixieTimeTick
+ .text.openNixieTimeGetMinutes
+                0x0000129e        0x6 OpenNxieTime.o
+                0x0000129e                openNixieTimeGetMinutes
+ .text.openNixieTimeGetHours
+                0x000012a4        0x6 OpenNxieTime.o
+                0x000012a4                openNixieTimeGetHours
+ .text.openNixieTimeGetSeconds
+                0x000012aa        0x6 OpenNxieTime.o
+                0x000012aa                openNixieTimeGetSeconds
+ .text.openNixieTimeSet
+                0x000012b0       0x1a OpenNxieTime.o
+                0x000012b0                openNixieTimeSet
+ .text.RC6idle  0x000012ca        0xe RC6.o
+ .text.RC6DecoderOnPinChange
+                0x000012d8      0x310 RC6.o
+                0x000012d8                RC6DecoderOnPinChange
+ .text.RC6DecoderCreate
+                0x000015e8       0x4e RC6.o
+                0x000015e8                RC6DecoderCreate
+ .text.RC6DecoderGetCommand
+                0x00001636        0x6 RC6.o
+                0x00001636                RC6DecoderGetCommand
+ .text.RC6DecoderIsRepeated
+                0x0000163c        0x6 RC6.o
+                0x0000163c                RC6DecoderIsRepeated
+ .text.RC6DecoderUnlock
+                0x00001642        0x6 RC6.o
+                0x00001642                RC6DecoderUnlock
+ .text.RC6HALInit
+                0x00001648        0xe RC6HAL.o
+                0x00001648                RC6HALInit
+ .text.RCHAL6GetPinState
+                0x00001656       0x10 RC6HAL.o
+                0x00001656                RCHAL6GetPinState
+ .text.RC6HALDecoderStep
+                0x00001666       0x22 RC6HAL.o
+                0x00001666                RC6HALDecoderStep
+ .text.RC6GetMicrosecondTimer
+                0x00001688        0xa RC6HAL.o
+                0x00001688                RC6GetMicrosecondTimer
+ .text.avr-libc
+                0x00001692      0x242 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00001692                malloc
+                0x000017c2                free
+ .text.avr-libc
+                0x000018d4       0x10 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+                0x000018d4                eeprom_read_byte
+ .text.avr-libc
+                0x000018e4       0x24 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+                0x000018e4                eeprom_update_byte
+                0x000018e6                eeprom_update_r18
+ .text.avr-libc
+                0x00001908       0x1c D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+                0x00001908                eeprom_write_byte
+                0x0000190a                eeprom_write_r18
+                0x00001924                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00001924        0x0 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00001924                _exit
+                0x00001924                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00001924        0x4 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001928                _etext = .
+
+.data           0x00800100       0x26 load address 0x00001928
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x6 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800100                __malloc_heap_end
+                0x00800102                __malloc_heap_start
+                0x00800104                __malloc_margin
+ *(.data*)
+ .data.stage    0x00800106        0x1 displayHAL.o
+                0x00800106                stage
+ .data.displayContent2
+                0x00800107        0x4 displayHAL.o
+                0x00800107                displayContent2
+ .data.displayContent
+                0x0080010b        0x4 displayHAL.o
+                0x0080010b                displayContent
+ .data.lookUpTable
+                0x0080010f        0xb displayHAL.o
+                0x0080010f                lookUpTable
+ .data.rc6CommandReceived
+                0x0080011a        0x1 main.o
+                0x0080011a                rc6CommandReceived
+ .data.lastCorrectionHour_50.1750
+                0x0080011b        0x1 modes/displayTimeMode.o
+ .data.lastCorrectionHour_20.1749
+                0x0080011c        0x1 modes/displayTimeMode.o
+ .data.hrEnd2   0x0080011d        0x1 modes/setDimMode.o
+ .data.hrEnd1   0x0080011e        0x1 modes/setDimMode.o
+ .data.hrStart2
+                0x0080011f        0x1 modes/setDimMode.o
+ .data.hrStart1
+                0x00800120        0x1 modes/setDimMode.o
+ .data.min2     0x00800121        0x1 modes/setTimeMode.o
+ .data.min1     0x00800122        0x1 modes/setTimeMode.o
+ .data.hr2      0x00800123        0x1 modes/setTimeMode.o
+ .data.hr1      0x00800124        0x1 modes/setTimeMode.o
+ .data.pinState.1632
+                0x00800125        0x1 RC6HAL.o
+ *(.gnu.linkonce.d*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.r*)
+                0x00800126                . = ALIGN (0x2)
+                0x00800126                _edata = .
+                0x00800126                PROVIDE (__data_end, .)
+
+.bss            0x00800126       0x31
+                0x00800126                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.stageCounter.1890
+                0x00800126        0x2 displayHAL.o
+ .bss.currentTube.1889
+                0x00800128        0x1 displayHAL.o
+ .bss.cntr.1891
+                0x00800129        0x1 displayHAL.o
+ .bss.multiplexCounter.1888
+                0x0080012a        0x1 displayHAL.o
+ .bss.dim       0x0080012b        0x1 displayHAL.o
+                0x0080012b                dim
+ .bss.sysTick100msCntr.2169
+                0x0080012c        0x2 main.o
+ .bss.sysTickCntr.2168
+                0x0080012e        0x2 main.o
+ .bss.intCntr.2167
+                0x00800130        0x2 main.o
+ .bss.rc6decoder
+                0x00800132        0x2 main.o
+                0x00800132                rc6decoder
+ .bss.timeUpdate.1744
+                0x00800134        0x2 modes/displayTimeMode.o
+ .bss.timeoutTimer
+                0x00800136        0x2 modes/displayTimeMode.o
+ .bss.subState  0x00800138        0x1 modes/displayTimeMode.o
+ .bss.timeUpdate.1721
+                0x00800139        0x2 modes/setCrossfadeMode.o
+ .bss.received  0x0080013b        0x1 modes/setCrossfadeMode.o
+ .bss.timeoutTimer
+                0x0080013c        0x2 modes/setCrossfadeMode.o
+ .bss.timeoutTimer
+                0x0080013e        0x2 modes/setDimMode.o
+ .bss.received  0x00800140        0x1 modes/setDimMode.o
+ .bss.subState  0x00800141        0x1 modes/setDimMode.o
+ .bss.timeoutTimer
+                0x00800142        0x2 modes/setTimeMode.o
+ .bss.received  0x00800144        0x1 modes/setTimeMode.o
+ .bss.subState  0x00800145        0x1 modes/setTimeMode.o
+ *(COMMON)
+ COMMON         0x00800146        0x7 main.o
+                0x00800146                sysTickLimit
+                0x00800148                mode
+                0x00800149                sysTick100ms
+                0x0080014b                sysTick
+ COMMON         0x0080014d        0x3 modes/displayTimeMode.o
+                0x0080014d                dimEndHour_ram
+                0x0080014e                crossfade_ram
+                0x0080014f                dimStartHour_ram
+ COMMON         0x00800150        0x3 OpenNxieTime.o
+                0x00800150                openNixieTime
+ COMMON         0x00800153        0x4 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800153                __brkval
+                0x00800155                __flp
+                0x00800157                PROVIDE (__bss_end, .)
+                0x00001928                __data_load_start = LOADADDR (.data)
+                0x0000194e                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800157        0x0
+                [!provide]                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                PROVIDE (__noinit_end, .)
+                0x00800157                _end = .
+                0x00800157                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x3
+ *(.eeprom*)
+ .eeprom        0x00810000        0x3 modes/displayTimeMode.o
+                0x00810000                crossfade
+                0x00810001                dimEndHour
+                0x00810002                dimStartHour
+                0x00810003                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x30
+ *(.comment)
+ .comment       0x00000000       0x30 displayHAL.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000030       0x31 DS3231.o
+ .comment       0x00000030       0x31 i2c_master.o
+ .comment       0x00000030       0x31 main.o
+ .comment       0x00000030       0x31 modes/displayTimeMode.o
+ .comment       0x00000030       0x31 modes/setCrossfadeMode.o
+ .comment       0x00000030       0x31 modes/setDimMode.o
+ .comment       0x00000030       0x31 modes/setTimeMode.o
+ .comment       0x00000030       0x31 OpenNxieTime.o
+ .comment       0x00000030       0x31 RC6.o
+ .comment       0x00000030       0x31 RC6HAL.o
+ .comment       0x00000030       0x31 d:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(malloc.o)
+
+.note.gnu.avr.deviceinfo
+                0x00000000       0x40
+ .note.gnu.avr.deviceinfo
+                0x00000000       0x40 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x358
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x58 displayHAL.o
+ .debug_aranges
+                0x00000058       0x30 DS3231.o
+ .debug_aranges
+                0x00000088       0x68 i2c_master.o
+ .debug_aranges
+                0x000000f0       0x30 main.o
+ .debug_aranges
+                0x00000120       0x40 modes/displayTimeMode.o
+ .debug_aranges
+                0x00000160       0x38 modes/setCrossfadeMode.o
+ .debug_aranges
+                0x00000198       0x38 modes/setDimMode.o
+ .debug_aranges
+                0x000001d0       0x38 modes/setTimeMode.o
+ .debug_aranges
+                0x00000208       0x68 OpenNxieTime.o
+ .debug_aranges
+                0x00000270       0x50 RC6.o
+ .debug_aranges
+                0x000002c0       0x38 RC6HAL.o
+ .debug_aranges
+                0x000002f8       0x20 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+ .debug_aranges
+                0x00000318       0x20 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+ .debug_aranges
+                0x00000338       0x20 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x30a3
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x5f4 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .debug_info    0x000005f4      0x458 displayHAL.o
+ .debug_info    0x00000a4c      0x2b2 DS3231.o
+ .debug_info    0x00000cfe      0x405 i2c_master.o
+ .debug_info    0x00001103      0x456 main.o
+ .debug_info    0x00001559      0x63e modes/displayTimeMode.o
+ .debug_info    0x00001b97      0x303 modes/setCrossfadeMode.o
+ .debug_info    0x00001e9a      0x3fa modes/setDimMode.o
+ .debug_info    0x00002294      0x397 modes/setTimeMode.o
+ .debug_info    0x0000262b      0x22b OpenNxieTime.o
+ .debug_info    0x00002856      0x541 RC6.o
+ .debug_info    0x00002d97      0x13d RC6HAL.o
+ .debug_info    0x00002ed4       0x9a D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+ .debug_info    0x00002f6e       0x9b D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+ .debug_info    0x00003009       0x9a D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+
+.debug_abbrev   0x00000000     0x14e8
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x5a2 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .debug_abbrev  0x000005a2      0x1bd displayHAL.o
+ .debug_abbrev  0x0000075f       0xdc DS3231.o
+ .debug_abbrev  0x0000083b      0x14c i2c_master.o
+ .debug_abbrev  0x00000987      0x168 main.o
+ .debug_abbrev  0x00000aef      0x1c6 modes/displayTimeMode.o
+ .debug_abbrev  0x00000cb5       0xfd modes/setCrossfadeMode.o
+ .debug_abbrev  0x00000db2      0x167 modes/setDimMode.o
+ .debug_abbrev  0x00000f19      0x18a modes/setTimeMode.o
+ .debug_abbrev  0x000010a3      0x140 OpenNxieTime.o
+ .debug_abbrev  0x000011e3      0x1fb RC6.o
+ .debug_abbrev  0x000013de       0xce RC6HAL.o
+ .debug_abbrev  0x000014ac       0x14 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+ .debug_abbrev  0x000014c0       0x14 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+ .debug_abbrev  0x000014d4       0x14 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+
+.debug_line     0x00000000     0x21cb
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000      0x133 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .debug_line    0x00000133      0x4e3 displayHAL.o
+ .debug_line    0x00000616       0xef DS3231.o
+ .debug_line    0x00000705      0x310 i2c_master.o
+ .debug_line    0x00000a15      0x330 main.o
+ .debug_line    0x00000d45      0x389 modes/displayTimeMode.o
+ .debug_line    0x000010ce      0x1bf modes/setCrossfadeMode.o
+ .debug_line    0x0000128d      0x345 modes/setDimMode.o
+ .debug_line    0x000015d2      0x2c2 modes/setTimeMode.o
+ .debug_line    0x00001894      0x1df OpenNxieTime.o
+ .debug_line    0x00001a73      0x484 RC6.o
+ .debug_line    0x00001ef7      0x106 RC6HAL.o
+ .debug_line    0x00001ffd       0x7a D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eerd_byte.o)
+ .debug_line    0x00002077       0xb6 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eeupd_byte.o)
+ .debug_line    0x0000212d       0x9e D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5\libatmega328p.a(eewr_byte.o)
+
+.debug_frame    0x00000000      0x6b0
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xbc displayHAL.o
+ .debug_frame   0x000000bc       0x80 DS3231.o
+ .debug_frame   0x0000013c      0x15c i2c_master.o
+ .debug_frame   0x00000298       0x8c main.o
+ .debug_frame   0x00000324       0x90 modes/displayTimeMode.o
+ .debug_frame   0x000003b4       0x5c modes/setCrossfadeMode.o
+ .debug_frame   0x00000410       0x5c modes/setDimMode.o
+ .debug_frame   0x0000046c       0x54 modes/setTimeMode.o
+ .debug_frame   0x000004c0       0xd4 OpenNxieTime.o
+ .debug_frame   0x00000594       0xc8 RC6.o
+ .debug_frame   0x0000065c       0x54 RC6HAL.o
+
+.debug_str      0x00000000      0xd71
+ *(.debug_str)
+ .debug_str     0x00000000      0x208 D:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .debug_str     0x00000208      0x29b displayHAL.o
+                                0x2d4 (size before relaxing)
+ .debug_str     0x000004a3       0x92 DS3231.o
+                                0x1f6 (size before relaxing)
+ .debug_str     0x00000535       0x95 i2c_master.o
+                                0x215 (size before relaxing)
+ .debug_str     0x000005ca      0x2ba main.o
+                                0x45d (size before relaxing)
+ .debug_str     0x00000884      0x1f3 modes/displayTimeMode.o
+                                0x494 (size before relaxing)
+ .debug_str     0x00000a77       0x37 modes/setCrossfadeMode.o
+                                0x32e (size before relaxing)
+ .debug_str     0x00000aae       0x6d modes/setDimMode.o
+                                0x37e (size before relaxing)
+ .debug_str     0x00000b1b       0x52 modes/setTimeMode.o
+                                0x31e (size before relaxing)
+ .debug_str     0x00000b6d       0x9e OpenNxieTime.o
+                                0x256 (size before relaxing)
+ .debug_str     0x00000c0b      0x13d RC6.o
+                                0x2c0 (size before relaxing)
+ .debug_str     0x00000d48       0x29 RC6HAL.o
+                                0x1fd (size before relaxing)
+
+.debug_loc      0x00000000     0x1358
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x360 displayHAL.o
+ .debug_loc     0x00000360      0x160 DS3231.o
+ .debug_loc     0x000004c0      0x6b8 i2c_master.o
+ .debug_loc     0x00000b78       0xf1 main.o
+ .debug_loc     0x00000c69      0x16a modes/displayTimeMode.o
+ .debug_loc     0x00000dd3       0x22 modes/setCrossfadeMode.o
+ .debug_loc     0x00000df5       0xfa modes/setDimMode.o
+ .debug_loc     0x00000eef       0xd8 modes/setTimeMode.o
+ .debug_loc     0x00000fc7       0x90 OpenNxieTime.o
+ .debug_loc     0x00001057      0x301 RC6.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x278
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x48 displayHAL.o
+ .debug_ranges  0x00000048       0x20 DS3231.o
+ .debug_ranges  0x00000068       0x88 i2c_master.o
+ .debug_ranges  0x000000f0       0x20 main.o
+ .debug_ranges  0x00000110       0x30 modes/displayTimeMode.o
+ .debug_ranges  0x00000140       0x28 modes/setCrossfadeMode.o
+ .debug_ranges  0x00000168       0x28 modes/setDimMode.o
+ .debug_ranges  0x00000190       0x28 modes/setTimeMode.o
+ .debug_ranges  0x000001b8       0x58 OpenNxieTime.o
+ .debug_ranges  0x00000210       0x40 RC6.o
+ .debug_ranges  0x00000250       0x28 RC6HAL.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(openNixiem328.elf elf32-avr)
+LOAD linker stubs

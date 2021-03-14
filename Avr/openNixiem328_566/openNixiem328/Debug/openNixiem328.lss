@@ -1,0 +1,3824 @@
+
+openNixiem328.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000026  00800100  00001928  000019dc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00001928  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000031  00800126  00800126  00001a02  2**0
+                  ALLOC
+  3 .eeprom       00000003  00810000  00810000  00001a02  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .comment      00000030  00000000  00000000  00001a05  2**0
+                  CONTENTS, READONLY
+  5 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00001a38  2**2
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000358  00000000  00000000  00001a78  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   000030a3  00000000  00000000  00001dd0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000014e8  00000000  00000000  00004e73  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   000021cb  00000000  00000000  0000635b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  000006b0  00000000  00000000  00008528  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    00000d71  00000000  00000000  00008bd8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00001358  00000000  00000000  00009949  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000278  00000000  00000000  0000aca1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+       4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+       8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+       c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      40:	0c 94 5f 03 	jmp	0x6be	; 0x6be <__vector_16>
+      44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+      64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+      68:	11 24       	eor	r1, r1
+      6a:	1f be       	out	0x3f, r1	; 63
+      6c:	cf ef       	ldi	r28, 0xFF	; 255
+      6e:	d8 e0       	ldi	r29, 0x08	; 8
+      70:	de bf       	out	0x3e, r29	; 62
+      72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+      74:	11 e0       	ldi	r17, 0x01	; 1
+      76:	a0 e0       	ldi	r26, 0x00	; 0
+      78:	b1 e0       	ldi	r27, 0x01	; 1
+      7a:	e8 e2       	ldi	r30, 0x28	; 40
+      7c:	f9 e1       	ldi	r31, 0x19	; 25
+      7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+      80:	05 90       	lpm	r0, Z+
+      82:	0d 92       	st	X+, r0
+      84:	a6 32       	cpi	r26, 0x26	; 38
+      86:	b1 07       	cpc	r27, r17
+      88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+      8a:	21 e0       	ldi	r18, 0x01	; 1
+      8c:	a6 e2       	ldi	r26, 0x26	; 38
+      8e:	b1 e0       	ldi	r27, 0x01	; 1
+      90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+      92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+      94:	a7 35       	cpi	r26, 0x57	; 87
+      96:	b2 07       	cpc	r27, r18
+      98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+      9a:	0e 94 e3 02 	call	0x5c6	; 0x5c6 <main>
+      9e:	0c 94 92 0c 	jmp	0x1924	; 0x1924 <_exit>
+
+000000a2 <__bad_interrupt>:
+      a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <displayHALTurnOff>:
+displayHALToggleDim()
+{
+	if (dim) {
+		dim = false;
+	} else {
+		dim = true;
+      a6:	42 98       	cbi	0x08, 2	; 8
+      a8:	43 98       	cbi	0x08, 3	; 8
+      aa:	58 98       	cbi	0x0b, 0	; 11
+      ac:	59 98       	cbi	0x0b, 1	; 11
+      ae:	28 9a       	sbi	0x05, 0	; 5
+      b0:	2a 9a       	sbi	0x05, 2	; 5
+      b2:	2b 9a       	sbi	0x05, 3	; 5
+      b4:	29 9a       	sbi	0x05, 1	; 5
+      b6:	08 95       	ret
+
+000000b8 <displayHALInit>:
+      b8:	3a 9a       	sbi	0x07, 2	; 7
+      ba:	3b 9a       	sbi	0x07, 3	; 7
+      bc:	50 9a       	sbi	0x0a, 0	; 10
+      be:	51 9a       	sbi	0x0a, 1	; 10
+      c0:	20 9a       	sbi	0x04, 0	; 4
+      c2:	22 9a       	sbi	0x04, 2	; 4
+      c4:	23 9a       	sbi	0x04, 3	; 4
+      c6:	21 9a       	sbi	0x04, 1	; 4
+      c8:	0e 94 53 00 	call	0xa6	; 0xa6 <displayHALTurnOff>
+      cc:	08 95       	ret
+
+000000ce <displayHAL100usStep>:
+      ce:	80 91 2a 01 	lds	r24, 0x012A	; 0x80012a <multiplexCounter.1888>
+      d2:	8f 5f       	subi	r24, 0xFF	; 255
+      d4:	80 93 2a 01 	sts	0x012A, r24	; 0x80012a <multiplexCounter.1888>
+      d8:	81 31       	cpi	r24, 0x11	; 17
+      da:	59 f5       	brne	.+86     	; 0x132 <displayHAL100usStep+0x64>
+      dc:	10 92 2a 01 	sts	0x012A, r1	; 0x80012a <multiplexCounter.1888>
+      e0:	0e 94 53 00 	call	0xa6	; 0xa6 <displayHALTurnOff>
+      e4:	80 91 2b 01 	lds	r24, 0x012B	; 0x80012b <dim>
+      e8:	88 23       	and	r24, r24
+      ea:	39 f0       	breq	.+14     	; 0xfa <displayHAL100usStep+0x2c>
+      ec:	80 91 29 01 	lds	r24, 0x0129	; 0x800129 <cntr.1891>
+      f0:	8f 5f       	subi	r24, 0xFF	; 255
+      f2:	80 93 29 01 	sts	0x0129, r24	; 0x800129 <cntr.1891>
+      f6:	80 ff       	sbrs	r24, 0
+      f8:	1c c0       	rjmp	.+56     	; 0x132 <displayHAL100usStep+0x64>
+      fa:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <currentTube.1889>
+      fe:	8f 5f       	subi	r24, 0xFF	; 255
+     100:	80 93 28 01 	sts	0x0128, r24	; 0x800128 <currentTube.1889>
+     104:	84 30       	cpi	r24, 0x04	; 4
+     106:	18 f0       	brcs	.+6      	; 0x10e <displayHAL100usStep+0x40>
+     108:	10 92 28 01 	sts	0x0128, r1	; 0x800128 <currentTube.1889>
+     10c:	02 c0       	rjmp	.+4      	; 0x112 <displayHAL100usStep+0x44>
+     10e:	81 11       	cpse	r24, r1
+     110:	01 c0       	rjmp	.+2      	; 0x114 <displayHAL100usStep+0x46>
+     112:	42 9a       	sbi	0x08, 2	; 8
+     114:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <currentTube.1889>
+     118:	81 30       	cpi	r24, 0x01	; 1
+     11a:	09 f4       	brne	.+2      	; 0x11e <displayHAL100usStep+0x50>
+     11c:	43 9a       	sbi	0x08, 3	; 8
+     11e:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <currentTube.1889>
+     122:	82 30       	cpi	r24, 0x02	; 2
+     124:	09 f4       	brne	.+2      	; 0x128 <displayHAL100usStep+0x5a>
+     126:	58 9a       	sbi	0x0b, 0	; 11
+     128:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <currentTube.1889>
+     12c:	83 30       	cpi	r24, 0x03	; 3
+     12e:	09 f4       	brne	.+2      	; 0x132 <displayHAL100usStep+0x64>
+     130:	59 9a       	sbi	0x0b, 1	; 11
+     132:	80 91 26 01 	lds	r24, 0x0126	; 0x800126 <__data_end>
+     136:	90 91 27 01 	lds	r25, 0x0127	; 0x800127 <__data_end+0x1>
+     13a:	01 96       	adiw	r24, 0x01	; 1
+     13c:	90 93 27 01 	sts	0x0127, r25	; 0x800127 <__data_end+0x1>
+     140:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <__data_end>
+     144:	8d 34       	cpi	r24, 0x4D	; 77
+     146:	92 40       	sbci	r25, 0x02	; 2
+     148:	58 f0       	brcs	.+22     	; 0x160 <displayHAL100usStep+0x92>
+     14a:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <stage>
+     14e:	82 31       	cpi	r24, 0x12	; 18
+     150:	18 f4       	brcc	.+6      	; 0x158 <displayHAL100usStep+0x8a>
+     152:	8f 5f       	subi	r24, 0xFF	; 255
+     154:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <stage>
+     158:	10 92 27 01 	sts	0x0127, r1	; 0x800127 <__data_end+0x1>
+     15c:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <__data_end>
+     160:	90 91 2a 01 	lds	r25, 0x012A	; 0x80012a <multiplexCounter.1888>
+     164:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <stage>
+     168:	98 17       	cp	r25, r24
+     16a:	58 f0       	brcs	.+22     	; 0x182 <displayHAL100usStep+0xb4>
+     16c:	e0 91 28 01 	lds	r30, 0x0128	; 0x800128 <currentTube.1889>
+     170:	f0 e0       	ldi	r31, 0x00	; 0
+     172:	e5 5f       	subi	r30, 0xF5	; 245
+     174:	fe 4f       	sbci	r31, 0xFE	; 254
+     176:	e0 81       	ld	r30, Z
+     178:	f0 e0       	ldi	r31, 0x00	; 0
+     17a:	e1 5f       	subi	r30, 0xF1	; 241
+     17c:	fe 4f       	sbci	r31, 0xFE	; 254
+     17e:	80 81       	ld	r24, Z
+     180:	0a c0       	rjmp	.+20     	; 0x196 <displayHAL100usStep+0xc8>
+     182:	e0 91 28 01 	lds	r30, 0x0128	; 0x800128 <currentTube.1889>
+     186:	f0 e0       	ldi	r31, 0x00	; 0
+     188:	e9 5f       	subi	r30, 0xF9	; 249
+     18a:	fe 4f       	sbci	r31, 0xFE	; 254
+     18c:	e0 81       	ld	r30, Z
+     18e:	f0 e0       	ldi	r31, 0x00	; 0
+     190:	e1 5f       	subi	r30, 0xF1	; 241
+     192:	fe 4f       	sbci	r31, 0xFE	; 254
+     194:	80 81       	ld	r24, Z
+     196:	80 fd       	sbrc	r24, 0
+     198:	02 c0       	rjmp	.+4      	; 0x19e <displayHAL100usStep+0xd0>
+     19a:	28 98       	cbi	0x05, 0	; 5
+     19c:	01 c0       	rjmp	.+2      	; 0x1a0 <displayHAL100usStep+0xd2>
+     19e:	28 9a       	sbi	0x05, 0	; 5
+     1a0:	81 fd       	sbrc	r24, 1
+     1a2:	02 c0       	rjmp	.+4      	; 0x1a8 <displayHAL100usStep+0xda>
+     1a4:	2a 98       	cbi	0x05, 2	; 5
+     1a6:	01 c0       	rjmp	.+2      	; 0x1aa <displayHAL100usStep+0xdc>
+     1a8:	2a 9a       	sbi	0x05, 2	; 5
+     1aa:	82 fd       	sbrc	r24, 2
+     1ac:	02 c0       	rjmp	.+4      	; 0x1b2 <displayHAL100usStep+0xe4>
+     1ae:	2b 98       	cbi	0x05, 3	; 5
+     1b0:	01 c0       	rjmp	.+2      	; 0x1b4 <displayHAL100usStep+0xe6>
+     1b2:	2b 9a       	sbi	0x05, 3	; 5
+     1b4:	83 fd       	sbrc	r24, 3
+     1b6:	02 c0       	rjmp	.+4      	; 0x1bc <displayHAL100usStep+0xee>
+     1b8:	29 98       	cbi	0x05, 1	; 5
+     1ba:	08 95       	ret
+     1bc:	29 9a       	sbi	0x05, 1	; 5
+     1be:	08 95       	ret
+
+000001c0 <displayHALSetDim>:
+     1c0:	80 93 2b 01 	sts	0x012B, r24	; 0x80012b <dim>
+     1c4:	08 95       	ret
+
+000001c6 <displayHALSetCrossfade>:
+	}
+}
+
+void
+displayHALSetCrossfade(unsigned char a, unsigned char b, unsigned char c, unsigned char d)
+{
+     1c6:	cf 92       	push	r12
+     1c8:	df 92       	push	r13
+     1ca:	ef 92       	push	r14
+     1cc:	ff 92       	push	r15
+	memcpy(displayContent, displayContent2, sizeof(displayContent));
+     1ce:	e7 e0       	ldi	r30, 0x07	; 7
+     1d0:	f1 e0       	ldi	r31, 0x01	; 1
+     1d2:	c0 80       	ld	r12, Z
+     1d4:	d1 80       	ldd	r13, Z+1	; 0x01
+     1d6:	e2 80       	ldd	r14, Z+2	; 0x02
+     1d8:	f3 80       	ldd	r15, Z+3	; 0x03
+     1da:	c0 92 0b 01 	sts	0x010B, r12	; 0x80010b <displayContent>
+     1de:	d0 92 0c 01 	sts	0x010C, r13	; 0x80010c <displayContent+0x1>
+     1e2:	e0 92 0d 01 	sts	0x010D, r14	; 0x80010d <displayContent+0x2>
+     1e6:	f0 92 0e 01 	sts	0x010E, r15	; 0x80010e <displayContent+0x3>
+	displayContent2[0] = a;
+     1ea:	80 83       	st	Z, r24
+	displayContent2[1] = b;
+     1ec:	61 83       	std	Z+1, r22	; 0x01
+	displayContent2[2] = c;
+     1ee:	42 83       	std	Z+2, r20	; 0x02
+	displayContent2[3] = d;
+     1f0:	23 83       	std	Z+3, r18	; 0x03
+	//if (!memcmp(displayContent2, displayContent, sizeof(displayContent))) {
+	    stage = 0;
+     1f2:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <stage>
+	//}
+}
+     1f6:	ff 90       	pop	r15
+     1f8:	ef 90       	pop	r14
+     1fa:	df 90       	pop	r13
+     1fc:	cf 90       	pop	r12
+     1fe:	08 95       	ret
+
+00000200 <displayHALSetImmediatly>:
+
+void
+displayHALSetImmediatly(unsigned char a, unsigned char b, unsigned char c, unsigned char d)
+{
+	stage = REFRESH_100US_INTERVAL_NUMBER;
+     200:	91 e1       	ldi	r25, 0x11	; 17
+     202:	90 93 06 01 	sts	0x0106, r25	; 0x800106 <stage>
+	displayContent2[0] = a;
+     206:	e7 e0       	ldi	r30, 0x07	; 7
+     208:	f1 e0       	ldi	r31, 0x01	; 1
+     20a:	80 83       	st	Z, r24
+	displayContent2[1] = b;
+     20c:	61 83       	std	Z+1, r22	; 0x01
+	displayContent2[2] = c;
+     20e:	42 83       	std	Z+2, r20	; 0x02
+	displayContent2[3] = d;
+     210:	23 83       	std	Z+3, r18	; 0x03
+     212:	08 95       	ret
+
+00000214 <displayHALTestNixies>:
+}
+
+void
+displayHALTestNixies()
+{
+     214:	0f 93       	push	r16
+     216:	1f 93       	push	r17
+     218:	cf 93       	push	r28
+     21a:	df 93       	push	r29
+	displayHALTurnOff();
+     21c:	0e 94 53 00 	call	0xa6	; 0xa6 <displayHALTurnOff>
+	TUBE1PORT |= 1<<TUBE1PIN;
+     220:	42 9a       	sbi	0x08, 2	; 8
+     222:	0f e0       	ldi	r16, 0x0F	; 15
+     224:	11 e0       	ldi	r17, 0x01	; 1
+     226:	c9 e1       	ldi	r28, 0x19	; 25
+     228:	d1 e0       	ldi	r29, 0x01	; 1
+     22a:	f8 01       	movw	r30, r16
+	unsigned char i;
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     22c:	81 91       	ld	r24, Z+
+		if (!(i & 0x1)) {
+     22e:	80 fd       	sbrc	r24, 0
+     230:	02 c0       	rjmp	.+4      	; 0x236 <displayHALTestNixies+0x22>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     232:	28 98       	cbi	0x05, 0	; 5
+     234:	01 c0       	rjmp	.+2      	; 0x238 <displayHALTestNixies+0x24>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     236:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     238:	81 fd       	sbrc	r24, 1
+     23a:	02 c0       	rjmp	.+4      	; 0x240 <displayHALTestNixies+0x2c>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     23c:	2a 98       	cbi	0x05, 2	; 5
+     23e:	01 c0       	rjmp	.+2      	; 0x242 <displayHALTestNixies+0x2e>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     240:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     242:	82 fd       	sbrc	r24, 2
+     244:	02 c0       	rjmp	.+4      	; 0x24a <displayHALTestNixies+0x36>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     246:	2b 98       	cbi	0x05, 3	; 5
+     248:	01 c0       	rjmp	.+2      	; 0x24c <displayHALTestNixies+0x38>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     24a:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     24c:	83 fd       	sbrc	r24, 3
+     24e:	02 c0       	rjmp	.+4      	; 0x254 <displayHALTestNixies+0x40>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     250:	29 98       	cbi	0x05, 1	; 5
+     252:	01 c0       	rjmp	.+2      	; 0x256 <displayHALTestNixies+0x42>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     254:	29 9a       	sbi	0x05, 1	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     256:	2f e7       	ldi	r18, 0x7F	; 127
+     258:	89 ea       	ldi	r24, 0xA9	; 169
+     25a:	93 e0       	ldi	r25, 0x03	; 3
+     25c:	21 50       	subi	r18, 0x01	; 1
+     25e:	80 40       	sbci	r24, 0x00	; 0
+     260:	90 40       	sbci	r25, 0x00	; 0
+     262:	e1 f7       	brne	.-8      	; 0x25c <displayHALTestNixies+0x48>
+     264:	00 c0       	rjmp	.+0      	; 0x266 <displayHALTestNixies+0x52>
+     266:	00 00       	nop
+displayHALTestNixies()
+{
+	displayHALTurnOff();
+	TUBE1PORT |= 1<<TUBE1PIN;
+	unsigned char i;
+	for (unsigned char j=0; j<10; j++) {
+     268:	ce 17       	cp	r28, r30
+     26a:	df 07       	cpc	r29, r31
+     26c:	f9 f6       	brne	.-66     	; 0x22c <displayHALTestNixies+0x18>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     26e:	0e 94 53 00 	call	0xa6	; 0xa6 <displayHALTurnOff>
+	TUBE2PORT |= 1<<TUBE2PIN;
+     272:	43 9a       	sbi	0x08, 3	; 8
+     274:	ef e0       	ldi	r30, 0x0F	; 15
+     276:	f1 e0       	ldi	r31, 0x01	; 1
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     278:	81 91       	ld	r24, Z+
+		if (!(i & 0x1)) {
+     27a:	80 fd       	sbrc	r24, 0
+     27c:	02 c0       	rjmp	.+4      	; 0x282 <displayHALTestNixies+0x6e>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     27e:	28 98       	cbi	0x05, 0	; 5
+     280:	01 c0       	rjmp	.+2      	; 0x284 <displayHALTestNixies+0x70>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     282:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     284:	81 fd       	sbrc	r24, 1
+     286:	02 c0       	rjmp	.+4      	; 0x28c <displayHALTestNixies+0x78>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     288:	2a 98       	cbi	0x05, 2	; 5
+     28a:	01 c0       	rjmp	.+2      	; 0x28e <displayHALTestNixies+0x7a>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     28c:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     28e:	82 fd       	sbrc	r24, 2
+     290:	02 c0       	rjmp	.+4      	; 0x296 <displayHALTestNixies+0x82>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     292:	2b 98       	cbi	0x05, 3	; 5
+     294:	01 c0       	rjmp	.+2      	; 0x298 <displayHALTestNixies+0x84>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     296:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     298:	83 fd       	sbrc	r24, 3
+     29a:	02 c0       	rjmp	.+4      	; 0x2a0 <displayHALTestNixies+0x8c>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     29c:	29 98       	cbi	0x05, 1	; 5
+     29e:	01 c0       	rjmp	.+2      	; 0x2a2 <displayHALTestNixies+0x8e>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     2a0:	29 9a       	sbi	0x05, 1	; 5
+     2a2:	2f e7       	ldi	r18, 0x7F	; 127
+     2a4:	89 ea       	ldi	r24, 0xA9	; 169
+     2a6:	93 e0       	ldi	r25, 0x03	; 3
+     2a8:	21 50       	subi	r18, 0x01	; 1
+     2aa:	80 40       	sbci	r24, 0x00	; 0
+     2ac:	90 40       	sbci	r25, 0x00	; 0
+     2ae:	e1 f7       	brne	.-8      	; 0x2a8 <displayHALTestNixies+0x94>
+     2b0:	00 c0       	rjmp	.+0      	; 0x2b2 <displayHALTestNixies+0x9e>
+     2b2:	00 00       	nop
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+	TUBE2PORT |= 1<<TUBE2PIN;
+	for (unsigned char j=0; j<10; j++) {
+     2b4:	ce 17       	cp	r28, r30
+     2b6:	df 07       	cpc	r29, r31
+     2b8:	f9 f6       	brne	.-66     	; 0x278 <displayHALTestNixies+0x64>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     2ba:	0e 94 53 00 	call	0xa6	; 0xa6 <displayHALTurnOff>
+	TUBE3PORT |= 1<<TUBE3PIN;
+     2be:	58 9a       	sbi	0x0b, 0	; 11
+     2c0:	ef e0       	ldi	r30, 0x0F	; 15
+     2c2:	f1 e0       	ldi	r31, 0x01	; 1
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     2c4:	81 91       	ld	r24, Z+
+		if (!(i & 0x1)) {
+     2c6:	80 fd       	sbrc	r24, 0
+     2c8:	02 c0       	rjmp	.+4      	; 0x2ce <displayHALTestNixies+0xba>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     2ca:	28 98       	cbi	0x05, 0	; 5
+     2cc:	01 c0       	rjmp	.+2      	; 0x2d0 <displayHALTestNixies+0xbc>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     2ce:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     2d0:	81 fd       	sbrc	r24, 1
+     2d2:	02 c0       	rjmp	.+4      	; 0x2d8 <displayHALTestNixies+0xc4>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     2d4:	2a 98       	cbi	0x05, 2	; 5
+     2d6:	01 c0       	rjmp	.+2      	; 0x2da <displayHALTestNixies+0xc6>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     2d8:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     2da:	82 fd       	sbrc	r24, 2
+     2dc:	02 c0       	rjmp	.+4      	; 0x2e2 <displayHALTestNixies+0xce>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     2de:	2b 98       	cbi	0x05, 3	; 5
+     2e0:	01 c0       	rjmp	.+2      	; 0x2e4 <displayHALTestNixies+0xd0>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     2e2:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     2e4:	83 fd       	sbrc	r24, 3
+     2e6:	02 c0       	rjmp	.+4      	; 0x2ec <displayHALTestNixies+0xd8>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     2e8:	29 98       	cbi	0x05, 1	; 5
+     2ea:	01 c0       	rjmp	.+2      	; 0x2ee <displayHALTestNixies+0xda>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     2ec:	29 9a       	sbi	0x05, 1	; 5
+     2ee:	2f e7       	ldi	r18, 0x7F	; 127
+     2f0:	89 ea       	ldi	r24, 0xA9	; 169
+     2f2:	93 e0       	ldi	r25, 0x03	; 3
+     2f4:	21 50       	subi	r18, 0x01	; 1
+     2f6:	80 40       	sbci	r24, 0x00	; 0
+     2f8:	90 40       	sbci	r25, 0x00	; 0
+     2fa:	e1 f7       	brne	.-8      	; 0x2f4 <displayHALTestNixies+0xe0>
+     2fc:	00 c0       	rjmp	.+0      	; 0x2fe <displayHALTestNixies+0xea>
+     2fe:	00 00       	nop
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+	TUBE3PORT |= 1<<TUBE3PIN;
+	for (unsigned char j=0; j<10; j++) {
+     300:	ce 17       	cp	r28, r30
+     302:	df 07       	cpc	r29, r31
+     304:	f9 f6       	brne	.-66     	; 0x2c4 <displayHALTestNixies+0xb0>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     306:	0e 94 53 00 	call	0xa6	; 0xa6 <displayHALTurnOff>
+	TUBE4PORT |= 1<<TUBE4PIN;
+     30a:	59 9a       	sbi	0x0b, 1	; 11
+	for (unsigned char j=0; j<10; j++) {
+		i = lookUpTable[j];
+     30c:	f8 01       	movw	r30, r16
+     30e:	81 91       	ld	r24, Z+
+     310:	8f 01       	movw	r16, r30
+		if (!(i & 0x1)) {
+     312:	80 fd       	sbrc	r24, 0
+     314:	02 c0       	rjmp	.+4      	; 0x31a <displayHALTestNixies+0x106>
+			INPUTAPORT &= ~(1<<INPUTAPIN);
+     316:	28 98       	cbi	0x05, 0	; 5
+     318:	01 c0       	rjmp	.+2      	; 0x31c <displayHALTestNixies+0x108>
+			} else {
+			INPUTAPORT |= 1<<INPUTAPIN;
+     31a:	28 9a       	sbi	0x05, 0	; 5
+		}
+		if (!(i & 0x2)) {
+     31c:	81 fd       	sbrc	r24, 1
+     31e:	02 c0       	rjmp	.+4      	; 0x324 <displayHALTestNixies+0x110>
+			INPUTBPORT &= ~(1<<INPUTBPIN);
+     320:	2a 98       	cbi	0x05, 2	; 5
+     322:	01 c0       	rjmp	.+2      	; 0x326 <displayHALTestNixies+0x112>
+			} else {
+			INPUTBPORT |= 1<<INPUTBPIN;
+     324:	2a 9a       	sbi	0x05, 2	; 5
+		}
+		if (!(i & 0x4)) {
+     326:	82 fd       	sbrc	r24, 2
+     328:	02 c0       	rjmp	.+4      	; 0x32e <displayHALTestNixies+0x11a>
+			INPUTCPORT &= ~(1<<INPUTCPIN);
+     32a:	2b 98       	cbi	0x05, 3	; 5
+     32c:	01 c0       	rjmp	.+2      	; 0x330 <displayHALTestNixies+0x11c>
+			} else {
+			INPUTCPORT |= 1<<INPUTCPIN;
+     32e:	2b 9a       	sbi	0x05, 3	; 5
+		}
+		if (!(i & 0x8)) {
+     330:	83 fd       	sbrc	r24, 3
+     332:	02 c0       	rjmp	.+4      	; 0x338 <displayHALTestNixies+0x124>
+			INPUTDPORT &= ~(1<<INPUTDPIN);
+     334:	29 98       	cbi	0x05, 1	; 5
+     336:	01 c0       	rjmp	.+2      	; 0x33a <displayHALTestNixies+0x126>
+			} else {
+			INPUTDPORT |= 1<<INPUTDPIN;
+     338:	29 9a       	sbi	0x05, 1	; 5
+     33a:	ff e7       	ldi	r31, 0x7F	; 127
+     33c:	29 ea       	ldi	r18, 0xA9	; 169
+     33e:	83 e0       	ldi	r24, 0x03	; 3
+     340:	f1 50       	subi	r31, 0x01	; 1
+     342:	20 40       	sbci	r18, 0x00	; 0
+     344:	80 40       	sbci	r24, 0x00	; 0
+     346:	e1 f7       	brne	.-8      	; 0x340 <displayHALTestNixies+0x12c>
+     348:	00 c0       	rjmp	.+0      	; 0x34a <displayHALTestNixies+0x136>
+     34a:	00 00       	nop
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+	TUBE4PORT |= 1<<TUBE4PIN;
+	for (unsigned char j=0; j<10; j++) {
+     34c:	0c 17       	cp	r16, r28
+     34e:	1d 07       	cpc	r17, r29
+     350:	e9 f6       	brne	.-70     	; 0x30c <displayHALTestNixies+0xf8>
+			INPUTDPORT |= 1<<INPUTDPIN;
+		}
+		_delay_ms(150);
+	}
+	
+	displayHALTurnOff();
+     352:	0e 94 53 00 	call	0xa6	; 0xa6 <displayHALTurnOff>
+     356:	df 91       	pop	r29
+     358:	cf 91       	pop	r28
+     35a:	1f 91       	pop	r17
+     35c:	0f 91       	pop	r16
+     35e:	08 95       	ret
+
+00000360 <ds1307getTime>:
+static inline void ds1307setTime(char *time);
+*/
+
+
+void ds1307getTime(char *time)
+{
+     360:	0f 93       	push	r16
+     362:	1f 93       	push	r17
+     364:	cf 93       	push	r28
+     366:	df 93       	push	r29
+     368:	00 d0       	rcall	.+0      	; 0x36a <ds1307getTime+0xa>
+     36a:	00 d0       	rcall	.+0      	; 0x36c <ds1307getTime+0xc>
+     36c:	cd b7       	in	r28, 0x3d	; 61
+     36e:	de b7       	in	r29, 0x3e	; 62
+     370:	8c 01       	movw	r16, r24
+	char getTimeMessage[3] = {0,0,0};
+     372:	19 82       	std	Y+1, r1	; 0x01
+     374:	1a 82       	std	Y+2, r1	; 0x02
+     376:	1b 82       	std	Y+3, r1	; 0x03
+	char addressSetMessage[1] = {0x0};
+     378:	1c 82       	std	Y+4, r1	; 0x04
+	
+	i2c_init();
+     37a:	0e 94 0f 02 	call	0x41e	; 0x41e <i2c_init>
+	i2c_transmit(ds1307_W, addressSetMessage, 1);
+     37e:	41 e0       	ldi	r20, 0x01	; 1
+     380:	50 e0       	ldi	r21, 0x00	; 0
+     382:	be 01       	movw	r22, r28
+     384:	6c 5f       	subi	r22, 0xFC	; 252
+     386:	7f 4f       	sbci	r23, 0xFF	; 255
+     388:	80 ed       	ldi	r24, 0xD0	; 208
+     38a:	0e 94 60 02 	call	0x4c0	; 0x4c0 <i2c_transmit>
+	i2c_receive(ds1307_R, getTimeMessage, 3);
+     38e:	43 e0       	ldi	r20, 0x03	; 3
+     390:	50 e0       	ldi	r21, 0x00	; 0
+     392:	be 01       	movw	r22, r28
+     394:	6f 5f       	subi	r22, 0xFF	; 255
+     396:	7f 4f       	sbci	r23, 0xFF	; 255
+     398:	81 ed       	ldi	r24, 0xD1	; 209
+     39a:	0e 94 8e 02 	call	0x51c	; 0x51c <i2c_receive>
+	
+	time[0] = getTimeMessage[0];
+     39e:	89 81       	ldd	r24, Y+1	; 0x01
+     3a0:	f8 01       	movw	r30, r16
+     3a2:	80 83       	st	Z, r24
+	time[1] = getTimeMessage[1];
+     3a4:	8a 81       	ldd	r24, Y+2	; 0x02
+     3a6:	81 83       	std	Z+1, r24	; 0x01
+	time[2] = getTimeMessage[2];
+     3a8:	8b 81       	ldd	r24, Y+3	; 0x03
+     3aa:	82 83       	std	Z+2, r24	; 0x02
+}
+     3ac:	0f 90       	pop	r0
+     3ae:	0f 90       	pop	r0
+     3b0:	0f 90       	pop	r0
+     3b2:	0f 90       	pop	r0
+     3b4:	df 91       	pop	r29
+     3b6:	cf 91       	pop	r28
+     3b8:	1f 91       	pop	r17
+     3ba:	0f 91       	pop	r16
+     3bc:	08 95       	ret
+
+000003be <ds1307setTime>:
+
+void ds1307setTime(char *time)
+{
+     3be:	cf 93       	push	r28
+     3c0:	df 93       	push	r29
+     3c2:	00 d0       	rcall	.+0      	; 0x3c4 <ds1307setTime+0x6>
+     3c4:	00 d0       	rcall	.+0      	; 0x3c6 <ds1307setTime+0x8>
+     3c6:	00 d0       	rcall	.+0      	; 0x3c8 <ds1307setTime+0xa>
+     3c8:	cd b7       	in	r28, 0x3d	; 61
+     3ca:	de b7       	in	r29, 0x3e	; 62
+     3cc:	fc 01       	movw	r30, r24
+	char s_time[4] = {0, time[0], time[1], time[2]};
+     3ce:	19 82       	std	Y+1, r1	; 0x01
+     3d0:	80 81       	ld	r24, Z
+     3d2:	8a 83       	std	Y+2, r24	; 0x02
+     3d4:	81 81       	ldd	r24, Z+1	; 0x01
+     3d6:	8b 83       	std	Y+3, r24	; 0x03
+     3d8:	82 81       	ldd	r24, Z+2	; 0x02
+     3da:	8c 83       	std	Y+4, r24	; 0x04
+	i2c_init();
+     3dc:	0e 94 0f 02 	call	0x41e	; 0x41e <i2c_init>
+	i2c_transmit(ds1307_W, s_time, 4);
+     3e0:	44 e0       	ldi	r20, 0x04	; 4
+     3e2:	50 e0       	ldi	r21, 0x00	; 0
+     3e4:	be 01       	movw	r22, r28
+     3e6:	6f 5f       	subi	r22, 0xFF	; 255
+     3e8:	7f 4f       	sbci	r23, 0xFF	; 255
+     3ea:	80 ed       	ldi	r24, 0xD0	; 208
+     3ec:	0e 94 60 02 	call	0x4c0	; 0x4c0 <i2c_transmit>
+	
+	char control[] = {0xE, 0b00011100};
+     3f0:	8e e0       	ldi	r24, 0x0E	; 14
+     3f2:	8d 83       	std	Y+5, r24	; 0x05
+     3f4:	8c e1       	ldi	r24, 0x1C	; 28
+     3f6:	8e 83       	std	Y+6, r24	; 0x06
+		
+	i2c_init();
+     3f8:	0e 94 0f 02 	call	0x41e	; 0x41e <i2c_init>
+	i2c_transmit(ds1307_W, control, 2);
+     3fc:	42 e0       	ldi	r20, 0x02	; 2
+     3fe:	50 e0       	ldi	r21, 0x00	; 0
+     400:	be 01       	movw	r22, r28
+     402:	6b 5f       	subi	r22, 0xFB	; 251
+     404:	7f 4f       	sbci	r23, 0xFF	; 255
+     406:	80 ed       	ldi	r24, 0xD0	; 208
+     408:	0e 94 60 02 	call	0x4c0	; 0x4c0 <i2c_transmit>
+}
+     40c:	26 96       	adiw	r28, 0x06	; 6
+     40e:	0f b6       	in	r0, 0x3f	; 63
+     410:	f8 94       	cli
+     412:	de bf       	out	0x3e, r29	; 62
+     414:	0f be       	out	0x3f, r0	; 63
+     416:	cd bf       	out	0x3d, r28	; 61
+     418:	df 91       	pop	r29
+     41a:	cf 91       	pop	r28
+     41c:	08 95       	ret
+
+0000041e <i2c_init>:
+#define Prescaler 1
+#define TWBR_val ((((F_CPU / F_SCL) / Prescaler) - 16 ) / 2)
+
+void i2c_init(void)
+{
+	TWBR = (char)TWBR_val;
+     41e:	88 e8       	ldi	r24, 0x88	; 136
+     420:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__DATA_REGION_ORIGIN__+0x58>
+     424:	08 95       	ret
+
+00000426 <i2c_start>:
+}
+
+char i2c_start(char address)
+{
+	// reset TWI control register
+	TWCR = 0;
+     426:	ec eb       	ldi	r30, 0xBC	; 188
+     428:	f0 e0       	ldi	r31, 0x00	; 0
+     42a:	10 82       	st	Z, r1
+	// transmit START condition
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+     42c:	94 ea       	ldi	r25, 0xA4	; 164
+     42e:	90 83       	st	Z, r25
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     430:	90 81       	ld	r25, Z
+     432:	99 23       	and	r25, r25
+     434:	ec f7       	brge	.-6      	; 0x430 <i2c_start+0xa>
+	
+	// check if the start condition was successfully transmitted
+	if((TWSR & 0xF8) != TW_START){ return 1; }
+     436:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__DATA_REGION_ORIGIN__+0x59>
+     43a:	98 7f       	andi	r25, 0xF8	; 248
+     43c:	98 30       	cpi	r25, 0x08	; 8
+     43e:	a1 f4       	brne	.+40     	; 0x468 <i2c_start+0x42>
+	
+	// load slave address into data register
+	TWDR = address;
+     440:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+	// start transmission of address
+	TWCR = (1<<TWINT) | (1<<TWEN);
+     444:	84 e8       	ldi	r24, 0x84	; 132
+     446:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     44a:	ec eb       	ldi	r30, 0xBC	; 188
+     44c:	f0 e0       	ldi	r31, 0x00	; 0
+     44e:	80 81       	ld	r24, Z
+     450:	88 23       	and	r24, r24
+     452:	ec f7       	brge	.-6      	; 0x44e <i2c_start+0x28>
+	
+	// check if the device has acknowledged the READ / WRITE mode
+	char twst = TW_STATUS & 0xF8;
+     454:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__DATA_REGION_ORIGIN__+0x59>
+     458:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+     45a:	98 31       	cpi	r25, 0x18	; 24
+     45c:	39 f0       	breq	.+14     	; 0x46c <i2c_start+0x46>
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+	
+	// check if the start condition was successfully transmitted
+	if((TWSR & 0xF8) != TW_START){ return 1; }
+     45e:	81 e0       	ldi	r24, 0x01	; 1
+     460:	90 34       	cpi	r25, 0x40	; 64
+     462:	29 f4       	brne	.+10     	; 0x46e <i2c_start+0x48>
+     464:	80 e0       	ldi	r24, 0x00	; 0
+     466:	08 95       	ret
+     468:	81 e0       	ldi	r24, 0x01	; 1
+     46a:	08 95       	ret
+	
+	// check if the device has acknowledged the READ / WRITE mode
+	char twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+	
+	return 0;
+     46c:	80 e0       	ldi	r24, 0x00	; 0
+}
+     46e:	08 95       	ret
+
+00000470 <i2c_write>:
+
+char i2c_write(char data)
+{
+	// load data into data register
+	TWDR = data;
+     470:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+	// start transmission of data
+	TWCR = (1<<TWINT) | (1<<TWEN);
+     474:	84 e8       	ldi	r24, 0x84	; 132
+     476:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     47a:	ec eb       	ldi	r30, 0xBC	; 188
+     47c:	f0 e0       	ldi	r31, 0x00	; 0
+     47e:	80 81       	ld	r24, Z
+     480:	88 23       	and	r24, r24
+     482:	ec f7       	brge	.-6      	; 0x47e <i2c_write+0xe>
+	
+	if( (TWSR & 0xF8) != TW_MT_DATA_ACK ){ return 1; }
+     484:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__DATA_REGION_ORIGIN__+0x59>
+     488:	98 7f       	andi	r25, 0xF8	; 248
+     48a:	81 e0       	ldi	r24, 0x01	; 1
+     48c:	98 32       	cpi	r25, 0x28	; 40
+     48e:	09 f4       	brne	.+2      	; 0x492 <i2c_write+0x22>
+     490:	80 e0       	ldi	r24, 0x00	; 0
+	
+	return 0;
+}
+     492:	08 95       	ret
+
+00000494 <i2c_read_ack>:
+
+char i2c_read_ack(void)
+{
+	
+	// start TWI module and acknowledge data after reception
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+     494:	84 ec       	ldi	r24, 0xC4	; 196
+     496:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     49a:	ec eb       	ldi	r30, 0xBC	; 188
+     49c:	f0 e0       	ldi	r31, 0x00	; 0
+     49e:	80 81       	ld	r24, Z
+     4a0:	88 23       	and	r24, r24
+     4a2:	ec f7       	brge	.-6      	; 0x49e <i2c_read_ack+0xa>
+	// return received data from TWDR
+	return TWDR;
+     4a4:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+}
+     4a8:	08 95       	ret
+
+000004aa <i2c_read_nack>:
+
+char i2c_read_nack(void)
+{
+	
+	// start receiving without acknowledging reception
+	TWCR = (1<<TWINT) | (1<<TWEN);
+     4aa:	84 e8       	ldi	r24, 0x84	; 132
+     4ac:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+	// wait for end of transmission
+	while( !(TWCR & (1<<TWINT)) );
+     4b0:	ec eb       	ldi	r30, 0xBC	; 188
+     4b2:	f0 e0       	ldi	r31, 0x00	; 0
+     4b4:	80 81       	ld	r24, Z
+     4b6:	88 23       	and	r24, r24
+     4b8:	ec f7       	brge	.-6      	; 0x4b4 <i2c_read_nack+0xa>
+	// return received data from TWDR
+	return TWDR;
+     4ba:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__DATA_REGION_ORIGIN__+0x5b>
+}
+     4be:	08 95       	ret
+
+000004c0 <i2c_transmit>:
+
+char i2c_transmit(char address, char* data, int length)
+{
+     4c0:	cf 92       	push	r12
+     4c2:	df 92       	push	r13
+     4c4:	ff 92       	push	r15
+     4c6:	0f 93       	push	r16
+     4c8:	1f 93       	push	r17
+     4ca:	cf 93       	push	r28
+     4cc:	df 93       	push	r29
+     4ce:	6b 01       	movw	r12, r22
+     4d0:	8a 01       	movw	r16, r20
+	if (i2c_start(address | I2C_WRITE)) return 1;
+     4d2:	0e 94 13 02 	call	0x426	; 0x426 <i2c_start>
+     4d6:	f8 2e       	mov	r15, r24
+     4d8:	81 11       	cpse	r24, r1
+     4da:	12 c0       	rjmp	.+36     	; 0x500 <i2c_transmit+0x40>
+	
+	for (uint16_t i = 0; i < length; i++)
+     4dc:	01 15       	cp	r16, r1
+     4de:	11 05       	cpc	r17, r1
+     4e0:	59 f0       	breq	.+22     	; 0x4f8 <i2c_transmit+0x38>
+     4e2:	e6 01       	movw	r28, r12
+     4e4:	0c 0d       	add	r16, r12
+     4e6:	1d 1d       	adc	r17, r13
+	{
+		if (i2c_write(data[i])) return 1;
+     4e8:	89 91       	ld	r24, Y+
+     4ea:	0e 94 38 02 	call	0x470	; 0x470 <i2c_write>
+     4ee:	81 11       	cpse	r24, r1
+     4f0:	0a c0       	rjmp	.+20     	; 0x506 <i2c_transmit+0x46>
+
+char i2c_transmit(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_WRITE)) return 1;
+	
+	for (uint16_t i = 0; i < length; i++)
+     4f2:	0c 17       	cp	r16, r28
+     4f4:	1d 07       	cpc	r17, r29
+     4f6:	c1 f7       	brne	.-16     	; 0x4e8 <i2c_transmit+0x28>
+}
+
+void i2c_stop(void)
+{
+	// transmit STOP condition
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+     4f8:	84 e9       	ldi	r24, 0x94	; 148
+     4fa:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+     4fe:	05 c0       	rjmp	.+10     	; 0x50a <i2c_transmit+0x4a>
+	return TWDR;
+}
+
+char i2c_transmit(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_WRITE)) return 1;
+     500:	ff 24       	eor	r15, r15
+     502:	f3 94       	inc	r15
+     504:	02 c0       	rjmp	.+4      	; 0x50a <i2c_transmit+0x4a>
+	
+	for (uint16_t i = 0; i < length; i++)
+	{
+		if (i2c_write(data[i])) return 1;
+     506:	ff 24       	eor	r15, r15
+     508:	f3 94       	inc	r15
+	}
+	
+	i2c_stop();
+	
+	return 0;
+}
+     50a:	8f 2d       	mov	r24, r15
+     50c:	df 91       	pop	r29
+     50e:	cf 91       	pop	r28
+     510:	1f 91       	pop	r17
+     512:	0f 91       	pop	r16
+     514:	ff 90       	pop	r15
+     516:	df 90       	pop	r13
+     518:	cf 90       	pop	r12
+     51a:	08 95       	ret
+
+0000051c <i2c_receive>:
+
+char i2c_receive(char address, char* data, int length)
+{
+     51c:	bf 92       	push	r11
+     51e:	cf 92       	push	r12
+     520:	df 92       	push	r13
+     522:	ef 92       	push	r14
+     524:	ff 92       	push	r15
+     526:	0f 93       	push	r16
+     528:	1f 93       	push	r17
+     52a:	cf 93       	push	r28
+     52c:	df 93       	push	r29
+     52e:	6b 01       	movw	r12, r22
+     530:	7a 01       	movw	r14, r20
+	if (i2c_start(address | I2C_READ)) return 1;
+     532:	81 60       	ori	r24, 0x01	; 1
+     534:	0e 94 13 02 	call	0x426	; 0x426 <i2c_start>
+     538:	b8 2e       	mov	r11, r24
+     53a:	81 11       	cpse	r24, r1
+     53c:	1d c0       	rjmp	.+58     	; 0x578 <i2c_receive+0x5c>
+	
+	for (uint16_t i = 0; i < (length-1); i++)
+     53e:	81 e0       	ldi	r24, 0x01	; 1
+     540:	e8 16       	cp	r14, r24
+     542:	f1 04       	cpc	r15, r1
+     544:	61 f0       	breq	.+24     	; 0x55e <i2c_receive+0x42>
+     546:	e6 01       	movw	r28, r12
+     548:	87 01       	movw	r16, r14
+     54a:	01 50       	subi	r16, 0x01	; 1
+     54c:	11 09       	sbc	r17, r1
+     54e:	0c 0d       	add	r16, r12
+     550:	1d 1d       	adc	r17, r13
+	{
+		data[i] = i2c_read_ack();
+     552:	0e 94 4a 02 	call	0x494	; 0x494 <i2c_read_ack>
+     556:	89 93       	st	Y+, r24
+
+char i2c_receive(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_READ)) return 1;
+	
+	for (uint16_t i = 0; i < (length-1); i++)
+     558:	0c 17       	cp	r16, r28
+     55a:	1d 07       	cpc	r17, r29
+     55c:	d1 f7       	brne	.-12     	; 0x552 <i2c_receive+0x36>
+	{
+		data[i] = i2c_read_ack();
+	}
+	data[(length-1)] = i2c_read_nack();
+     55e:	81 e0       	ldi	r24, 0x01	; 1
+     560:	e8 1a       	sub	r14, r24
+     562:	f1 08       	sbc	r15, r1
+     564:	e6 01       	movw	r28, r12
+     566:	ce 0d       	add	r28, r14
+     568:	df 1d       	adc	r29, r15
+     56a:	0e 94 55 02 	call	0x4aa	; 0x4aa <i2c_read_nack>
+     56e:	88 83       	st	Y, r24
+}
+
+void i2c_stop(void)
+{
+	// transmit STOP condition
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+     570:	84 e9       	ldi	r24, 0x94	; 148
+     572:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__DATA_REGION_ORIGIN__+0x5c>
+     576:	02 c0       	rjmp	.+4      	; 0x57c <i2c_receive+0x60>
+	return 0;
+}
+
+char i2c_receive(char address, char* data, int length)
+{
+	if (i2c_start(address | I2C_READ)) return 1;
+     578:	bb 24       	eor	r11, r11
+     57a:	b3 94       	inc	r11
+	data[(length-1)] = i2c_read_nack();
+	
+	i2c_stop();
+	
+	return 0;
+}
+     57c:	8b 2d       	mov	r24, r11
+     57e:	df 91       	pop	r29
+     580:	cf 91       	pop	r28
+     582:	1f 91       	pop	r17
+     584:	0f 91       	pop	r16
+     586:	ff 90       	pop	r15
+     588:	ef 90       	pop	r14
+     58a:	df 90       	pop	r13
+     58c:	cf 90       	pop	r12
+     58e:	bf 90       	pop	r11
+     590:	08 95       	ret
+
+00000592 <rc6callback>:
+extern OpenNixieTime openNixieTime;    // singleton time representation
+
+void
+rc6callback(RC6Decoder self)
+{
+	rc6CommandReceived = RC6DecoderGetCommand(self);
+     592:	0e 94 1b 0b 	call	0x1636	; 0x1636 <RC6DecoderGetCommand>
+     596:	80 93 1a 01 	sts	0x011A, r24	; 0x80011a <rc6CommandReceived>
+	if (mode == SET_TIME) {
+     59a:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     59e:	81 30       	cpi	r24, 0x01	; 1
+     5a0:	19 f4       	brne	.+6      	; 0x5a8 <rc6callback+0x16>
+		setTimeModeOnCommandReceived();
+     5a2:	0e 94 95 08 	call	0x112a	; 0x112a <setTimeModeOnCommandReceived>
+		return;
+     5a6:	08 95       	ret
+	}
+	
+	if (mode == DISPLAY_TIME) {
+     5a8:	81 11       	cpse	r24, r1
+     5aa:	03 c0       	rjmp	.+6      	; 0x5b2 <rc6callback+0x20>
+	    displayTimeModeOnCommandReceived();
+     5ac:	0e 94 7a 05 	call	0xaf4	; 0xaf4 <displayTimeModeOnCommandReceived>
+		return;
+     5b0:	08 95       	ret
+	}
+	
+	if (mode == SET_DIM) {
+     5b2:	82 30       	cpi	r24, 0x02	; 2
+     5b4:	19 f4       	brne	.+6      	; 0x5bc <rc6callback+0x2a>
+		setDimModeOnCommandReceived();
+     5b6:	0e 94 9a 07 	call	0xf34	; 0xf34 <setDimModeOnCommandReceived>
+		return;
+     5ba:	08 95       	ret
+	}
+	
+	if (mode == SET_CROSSFADE) {
+     5bc:	84 30       	cpi	r24, 0x04	; 4
+     5be:	11 f4       	brne	.+4      	; 0x5c4 <rc6callback+0x32>
+		setCrossfadeModeOnCommandReceived();
+     5c0:	0e 94 62 06 	call	0xcc4	; 0xcc4 <setCrossfadeModeOnCommandReceived>
+     5c4:	08 95       	ret
+
+000005c6 <main>:
+	}
+}
+
+int main(void)
+{
+	sysTickLimit = 31250;
+     5c6:	82 e1       	ldi	r24, 0x12	; 18
+     5c8:	9a e7       	ldi	r25, 0x7A	; 122
+     5ca:	90 93 47 01 	sts	0x0147, r25	; 0x800147 <sysTickLimit+0x1>
+     5ce:	80 93 46 01 	sts	0x0146, r24	; 0x800146 <sysTickLimit>
+	MCUSR = 0;
+     5d2:	14 be       	out	0x34, r1	; 52
+	wdt_reset();
+     5d4:	a8 95       	wdr
+		);
+	}
+	else
+	{
+        uint8_t register temp_reg;
+		__asm__ __volatile__ (
+     5d6:	0f b6       	in	r0, 0x3f	; 63
+     5d8:	f8 94       	cli
+     5da:	a8 95       	wdr
+     5dc:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+     5e0:	88 61       	ori	r24, 0x18	; 24
+     5e2:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+     5e6:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+     5ea:	0f be       	out	0x3f, r0	; 63
+	wdt_disable();
+	displayHALInit();
+     5ec:	0e 94 5c 00 	call	0xb8	; 0xb8 <displayHALInit>
+	TCCR0B |=  1<<CS00;
+     5f0:	85 b5       	in	r24, 0x25	; 37
+     5f2:	81 60       	ori	r24, 0x01	; 1
+     5f4:	85 bd       	out	0x25, r24	; 37
+	TIMSK0 |= 1;
+     5f6:	ee e6       	ldi	r30, 0x6E	; 110
+     5f8:	f0 e0       	ldi	r31, 0x00	; 0
+     5fa:	80 81       	ld	r24, Z
+     5fc:	81 60       	ori	r24, 0x01	; 1
+     5fe:	80 83       	st	Z, r24
+	
+	i2c_init();
+     600:	0e 94 0f 02 	call	0x41e	; 0x41e <i2c_init>
+
+	
+	displayHALTestNixies();
+     604:	0e 94 0a 01 	call	0x214	; 0x214 <displayHALTestNixies>
+	RC6HALInit();
+     608:	0e 94 24 0b 	call	0x1648	; 0x1648 <RC6HALInit>
+	rc6decoder = RC6DecoderCreate(rc6callback, RCHAL6GetPinState, RC6GetMicrosecondTimer, true);
+     60c:	21 e0       	ldi	r18, 0x01	; 1
+     60e:	44 e4       	ldi	r20, 0x44	; 68
+     610:	5b e0       	ldi	r21, 0x0B	; 11
+     612:	6b e2       	ldi	r22, 0x2B	; 43
+     614:	7b e0       	ldi	r23, 0x0B	; 11
+     616:	89 ec       	ldi	r24, 0xC9	; 201
+     618:	92 e0       	ldi	r25, 0x02	; 2
+     61a:	0e 94 f4 0a 	call	0x15e8	; 0x15e8 <RC6DecoderCreate>
+     61e:	90 93 33 01 	sts	0x0133, r25	; 0x800133 <rc6decoder+0x1>
+     622:	80 93 32 01 	sts	0x0132, r24	; 0x800132 <rc6decoder>
+
+	sei();
+     626:	78 94       	sei
+	mode = DISPLAY_TIME;
+     628:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <mode>
+
+	while (1)
+	{
+		if (mode == DISPLAY_TIME) {
+     62c:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     630:	81 11       	cpse	r24, r1
+     632:	0e c0       	rjmp	.+28     	; 0x650 <main+0x8a>
+			displayTimeModeOnEnter();
+     634:	0e 94 ce 03 	call	0x79c	; 0x79c <displayTimeModeOnEnter>
+			while (mode == DISPLAY_TIME) {
+     638:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     63c:	81 11       	cpse	r24, r1
+     63e:	06 c0       	rjmp	.+12     	; 0x64c <main+0x86>
+				displayTimeModeLoop();
+     640:	0e 94 5f 04 	call	0x8be	; 0x8be <displayTimeModeLoop>
+
+	while (1)
+	{
+		if (mode == DISPLAY_TIME) {
+			displayTimeModeOnEnter();
+			while (mode == DISPLAY_TIME) {
+     644:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     648:	88 23       	and	r24, r24
+     64a:	d1 f3       	breq	.-12     	; 0x640 <main+0x7a>
+				displayTimeModeLoop();
+			}
+			displayTimeModeOnExit();
+     64c:	0e 94 6e 05 	call	0xadc	; 0xadc <displayTimeModeOnExit>
+		}
+		
+		if (mode == SET_TIME) {
+     650:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     654:	81 30       	cpi	r24, 0x01	; 1
+     656:	71 f4       	brne	.+28     	; 0x674 <main+0xae>
+			setTimeModeOnEnter();
+     658:	0e 94 b5 07 	call	0xf6a	; 0xf6a <setTimeModeOnEnter>
+			while (mode == SET_TIME) {
+     65c:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     660:	81 30       	cpi	r24, 0x01	; 1
+     662:	31 f4       	brne	.+12     	; 0x670 <main+0xaa>
+				setTimeModeLoop();
+     664:	0e 94 c4 07 	call	0xf88	; 0xf88 <setTimeModeLoop>
+			displayTimeModeOnExit();
+		}
+		
+		if (mode == SET_TIME) {
+			setTimeModeOnEnter();
+			while (mode == SET_TIME) {
+     668:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     66c:	81 30       	cpi	r24, 0x01	; 1
+     66e:	d1 f3       	breq	.-12     	; 0x664 <main+0x9e>
+				setTimeModeLoop();
+			}
+			setTimeModeOnExit();
+     670:	0e 94 89 08 	call	0x1112	; 0x1112 <setTimeModeOnExit>
+		}
+
+		if (mode == SET_DIM) {
+     674:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     678:	82 30       	cpi	r24, 0x02	; 2
+     67a:	71 f4       	brne	.+28     	; 0x698 <main+0xd2>
+			setDimModeOnEnter();
+     67c:	0e 94 7d 06 	call	0xcfa	; 0xcfa <setDimModeOnEnter>
+			while (mode == SET_DIM) {
+     680:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     684:	82 30       	cpi	r24, 0x02	; 2
+     686:	31 f4       	brne	.+12     	; 0x694 <main+0xce>
+				setDimModeLoop();
+     688:	0e 94 bf 06 	call	0xd7e	; 0xd7e <setDimModeLoop>
+			setTimeModeOnExit();
+		}
+
+		if (mode == SET_DIM) {
+			setDimModeOnEnter();
+			while (mode == SET_DIM) {
+     68c:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     690:	82 30       	cpi	r24, 0x02	; 2
+     692:	d1 f3       	breq	.-12     	; 0x688 <main+0xc2>
+				setDimModeLoop();
+			}
+			setDimModeOnExit();
+     694:	0e 94 8d 07 	call	0xf1a	; 0xf1a <setDimModeOnExit>
+		}
+
+		if (mode == SET_CROSSFADE) {
+     698:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     69c:	84 30       	cpi	r24, 0x04	; 4
+     69e:	31 f6       	brne	.-116    	; 0x62c <main+0x66>
+			setCrossfadeModeOnEnter();
+     6a0:	0e 94 ba 05 	call	0xb74	; 0xb74 <setCrossfadeModeOnEnter>
+			while (mode == SET_CROSSFADE) {
+     6a4:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     6a8:	84 30       	cpi	r24, 0x04	; 4
+     6aa:	31 f4       	brne	.+12     	; 0x6b8 <main+0xf2>
+				setCrossfadeModeLoop();
+     6ac:	0e 94 d2 05 	call	0xba4	; 0xba4 <setCrossfadeModeLoop>
+			setDimModeOnExit();
+		}
+
+		if (mode == SET_CROSSFADE) {
+			setCrossfadeModeOnEnter();
+			while (mode == SET_CROSSFADE) {
+     6b0:	80 91 48 01 	lds	r24, 0x0148	; 0x800148 <mode>
+     6b4:	84 30       	cpi	r24, 0x04	; 4
+     6b6:	d1 f3       	breq	.-12     	; 0x6ac <main+0xe6>
+				setCrossfadeModeLoop();
+			}
+			setCrossfadeModeOnExit();
+     6b8:	0e 94 5b 06 	call	0xcb6	; 0xcb6 <setCrossfadeModeOnExit>
+     6bc:	b7 cf       	rjmp	.-146    	; 0x62c <main+0x66>
+
+000006be <__vector_16>:
+	free(rc6decoder);
+}
+
+
+ISR(TIMER0_OVF_vect)
+{
+     6be:	1f 92       	push	r1
+     6c0:	0f 92       	push	r0
+     6c2:	0f b6       	in	r0, 0x3f	; 63
+     6c4:	0f 92       	push	r0
+     6c6:	11 24       	eor	r1, r1
+     6c8:	2f 93       	push	r18
+     6ca:	3f 93       	push	r19
+     6cc:	4f 93       	push	r20
+     6ce:	5f 93       	push	r21
+     6d0:	6f 93       	push	r22
+     6d2:	7f 93       	push	r23
+     6d4:	8f 93       	push	r24
+     6d6:	9f 93       	push	r25
+     6d8:	af 93       	push	r26
+     6da:	bf 93       	push	r27
+     6dc:	ef 93       	push	r30
+     6de:	ff 93       	push	r31
+	static unsigned intCntr = 0;
+	static unsigned sysTickCntr = 0;
+	static unsigned sysTick100msCntr = 0;
+	
+	if (++intCntr == 3)
+     6e0:	80 91 30 01 	lds	r24, 0x0130	; 0x800130 <intCntr.2167>
+     6e4:	90 91 31 01 	lds	r25, 0x0131	; 0x800131 <intCntr.2167+0x1>
+     6e8:	01 96       	adiw	r24, 0x01	; 1
+     6ea:	90 93 31 01 	sts	0x0131, r25	; 0x800131 <intCntr.2167+0x1>
+     6ee:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <intCntr.2167>
+     6f2:	03 97       	sbiw	r24, 0x03	; 3
+     6f4:	31 f4       	brne	.+12     	; 0x702 <__vector_16+0x44>
+	{
+		displayHAL100usStep();
+     6f6:	0e 94 67 00 	call	0xce	; 0xce <displayHAL100usStep>
+		intCntr = 0;
+     6fa:	10 92 31 01 	sts	0x0131, r1	; 0x800131 <intCntr.2167+0x1>
+     6fe:	10 92 30 01 	sts	0x0130, r1	; 0x800130 <intCntr.2167>
+	}
+	
+	if (++sysTickCntr == sysTickLimit) {
+     702:	80 91 2e 01 	lds	r24, 0x012E	; 0x80012e <sysTickCntr.2168>
+     706:	90 91 2f 01 	lds	r25, 0x012F	; 0x80012f <sysTickCntr.2168+0x1>
+     70a:	01 96       	adiw	r24, 0x01	; 1
+     70c:	90 93 2f 01 	sts	0x012F, r25	; 0x80012f <sysTickCntr.2168+0x1>
+     710:	80 93 2e 01 	sts	0x012E, r24	; 0x80012e <sysTickCntr.2168>
+     714:	20 91 46 01 	lds	r18, 0x0146	; 0x800146 <sysTickLimit>
+     718:	30 91 47 01 	lds	r19, 0x0147	; 0x800147 <sysTickLimit+0x1>
+     71c:	82 17       	cp	r24, r18
+     71e:	93 07       	cpc	r25, r19
+     720:	79 f4       	brne	.+30     	; 0x740 <__vector_16+0x82>
+		sysTickCntr = 0;
+     722:	10 92 2f 01 	sts	0x012F, r1	; 0x80012f <sysTickCntr.2168+0x1>
+     726:	10 92 2e 01 	sts	0x012E, r1	; 0x80012e <sysTickCntr.2168>
+		sysTick++;
+     72a:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     72e:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     732:	01 96       	adiw	r24, 0x01	; 1
+     734:	90 93 4c 01 	sts	0x014C, r25	; 0x80014c <sysTick+0x1>
+     738:	80 93 4b 01 	sts	0x014B, r24	; 0x80014b <sysTick>
+		openNixieTimeTick();
+     73c:	0e 94 42 09 	call	0x1284	; 0x1284 <openNixieTimeTick>
+	}
+	
+	if (++sysTick100msCntr == 3124) {
+     740:	80 91 2c 01 	lds	r24, 0x012C	; 0x80012c <sysTick100msCntr.2169>
+     744:	90 91 2d 01 	lds	r25, 0x012D	; 0x80012d <sysTick100msCntr.2169+0x1>
+     748:	01 96       	adiw	r24, 0x01	; 1
+     74a:	84 33       	cpi	r24, 0x34	; 52
+     74c:	2c e0       	ldi	r18, 0x0C	; 12
+     74e:	92 07       	cpc	r25, r18
+     750:	29 f0       	breq	.+10     	; 0x75c <__vector_16+0x9e>
+     752:	90 93 2d 01 	sts	0x012D, r25	; 0x80012d <sysTick100msCntr.2169+0x1>
+     756:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <sysTick100msCntr.2169>
+     75a:	0d c0       	rjmp	.+26     	; 0x776 <__vector_16+0xb8>
+		sysTick100msCntr = 0;
+     75c:	10 92 2d 01 	sts	0x012D, r1	; 0x80012d <sysTick100msCntr.2169+0x1>
+     760:	10 92 2c 01 	sts	0x012C, r1	; 0x80012c <sysTick100msCntr.2169>
+		sysTick100ms++;
+     764:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <sysTick100ms>
+     768:	90 91 4a 01 	lds	r25, 0x014A	; 0x80014a <sysTick100ms+0x1>
+     76c:	01 96       	adiw	r24, 0x01	; 1
+     76e:	90 93 4a 01 	sts	0x014A, r25	; 0x80014a <sysTick100ms+0x1>
+     772:	80 93 49 01 	sts	0x0149, r24	; 0x800149 <sysTick100ms>
+	}
+
+	RC6HALDecoderStep();
+     776:	0e 94 33 0b 	call	0x1666	; 0x1666 <RC6HALDecoderStep>
+     77a:	ff 91       	pop	r31
+     77c:	ef 91       	pop	r30
+     77e:	bf 91       	pop	r27
+     780:	af 91       	pop	r26
+     782:	9f 91       	pop	r25
+     784:	8f 91       	pop	r24
+     786:	7f 91       	pop	r23
+     788:	6f 91       	pop	r22
+     78a:	5f 91       	pop	r21
+     78c:	4f 91       	pop	r20
+     78e:	3f 91       	pop	r19
+     790:	2f 91       	pop	r18
+     792:	0f 90       	pop	r0
+     794:	0f be       	out	0x3f, r0	; 63
+     796:	0f 90       	pop	r0
+     798:	1f 90       	pop	r1
+     79a:	18 95       	reti
+
+0000079c <displayTimeModeOnEnter>:
+EEMEM unsigned char crossfade;
+
+static void displayTimeModeCorrectTickLimit();
+
+void displayTimeModeOnEnter()
+{
+     79c:	1f 93       	push	r17
+     79e:	cf 93       	push	r28
+     7a0:	df 93       	push	r29
+	openNixieTimeGetHAL();
+     7a2:	0e 94 b0 08 	call	0x1160	; 0x1160 <openNixieTimeGetHAL>
+	displayHALSetCrossfade(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+     7a6:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     7aa:	cd ec       	ldi	r28, 0xCD	; 205
+     7ac:	8c 9f       	mul	r24, r28
+     7ae:	d1 2d       	mov	r29, r1
+     7b0:	11 24       	eor	r1, r1
+     7b2:	d6 95       	lsr	r29
+     7b4:	d6 95       	lsr	r29
+     7b6:	d6 95       	lsr	r29
+     7b8:	dd 0f       	add	r29, r29
+     7ba:	9d 2f       	mov	r25, r29
+     7bc:	99 0f       	add	r25, r25
+     7be:	99 0f       	add	r25, r25
+     7c0:	d9 0f       	add	r29, r25
+     7c2:	8d 1b       	sub	r24, r29
+     7c4:	d8 2f       	mov	r29, r24
+     7c6:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     7ca:	8c 9f       	mul	r24, r28
+     7cc:	11 2d       	mov	r17, r1
+     7ce:	11 24       	eor	r1, r1
+     7d0:	16 95       	lsr	r17
+     7d2:	16 95       	lsr	r17
+     7d4:	16 95       	lsr	r17
+     7d6:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     7da:	8c 9f       	mul	r24, r28
+     7dc:	c1 2d       	mov	r28, r1
+     7de:	11 24       	eor	r1, r1
+     7e0:	c6 95       	lsr	r28
+     7e2:	c6 95       	lsr	r28
+     7e4:	c6 95       	lsr	r28
+     7e6:	cc 0f       	add	r28, r28
+     7e8:	9c 2f       	mov	r25, r28
+     7ea:	99 0f       	add	r25, r25
+     7ec:	99 0f       	add	r25, r25
+     7ee:	c9 0f       	add	r28, r25
+     7f0:	8c 1b       	sub	r24, r28
+     7f2:	c8 2f       	mov	r28, r24
+     7f4:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     7f8:	8a 30       	cpi	r24, 0x0A	; 10
+     7fa:	50 f0       	brcs	.+20     	; 0x810 <displayTimeModeOnEnter+0x74>
+     7fc:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     800:	9d ec       	ldi	r25, 0xCD	; 205
+     802:	89 9f       	mul	r24, r25
+     804:	81 2d       	mov	r24, r1
+     806:	11 24       	eor	r1, r1
+     808:	86 95       	lsr	r24
+     80a:	86 95       	lsr	r24
+     80c:	86 95       	lsr	r24
+     80e:	01 c0       	rjmp	.+2      	; 0x812 <displayTimeModeOnEnter+0x76>
+     810:	8a e0       	ldi	r24, 0x0A	; 10
+     812:	2d 2f       	mov	r18, r29
+     814:	41 2f       	mov	r20, r17
+     816:	6c 2f       	mov	r22, r28
+     818:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <displayHALSetCrossfade>
+	dimStartHour_ram = eeprom_read_byte(&dimStartHour);
+     81c:	82 e0       	ldi	r24, 0x02	; 2
+     81e:	90 e0       	ldi	r25, 0x00	; 0
+     820:	0e 94 6a 0c 	call	0x18d4	; 0x18d4 <eeprom_read_byte>
+     824:	80 93 4f 01 	sts	0x014F, r24	; 0x80014f <dimStartHour_ram>
+	dimEndHour_ram = eeprom_read_byte(&dimEndHour);
+     828:	81 e0       	ldi	r24, 0x01	; 1
+     82a:	90 e0       	ldi	r25, 0x00	; 0
+     82c:	0e 94 6a 0c 	call	0x18d4	; 0x18d4 <eeprom_read_byte>
+     830:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <dimEndHour_ram>
+	crossfade_ram = eeprom_read_byte(&crossfade);
+     834:	80 e0       	ldi	r24, 0x00	; 0
+     836:	90 e0       	ldi	r25, 0x00	; 0
+     838:	0e 94 6a 0c 	call	0x18d4	; 0x18d4 <eeprom_read_byte>
+     83c:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <crossfade_ram>
+				: "r0"
+		);
+	}
+	else
+	{
+		__asm__ __volatile__ (
+     840:	99 e2       	ldi	r25, 0x29	; 41
+     842:	88 e1       	ldi	r24, 0x18	; 24
+     844:	0f b6       	in	r0, 0x3f	; 63
+     846:	f8 94       	cli
+     848:	a8 95       	wdr
+     84a:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+     84e:	0f be       	out	0x3f, r0	; 63
+     850:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__DATA_REGION_ORIGIN__>
+	wdt_enable(WDTO_8S);
+	wdt_reset();
+     854:	a8 95       	wdr
+}
+     856:	df 91       	pop	r29
+     858:	cf 91       	pop	r28
+     85a:	1f 91       	pop	r17
+     85c:	08 95       	ret
+
+0000085e <displayTimeModeHandleDim>:
+
+void displayTimeModeHandleDim()
+{
+	if (dimEndHour_ram - dimStartHour_ram >= 0) {
+     85e:	80 91 4d 01 	lds	r24, 0x014D	; 0x80014d <dimEndHour_ram>
+     862:	90 e0       	ldi	r25, 0x00	; 0
+     864:	20 91 4f 01 	lds	r18, 0x014F	; 0x80014f <dimStartHour_ram>
+     868:	82 1b       	sub	r24, r18
+     86a:	91 09       	sbc	r25, r1
+     86c:	a2 f0       	brmi	.+40     	; 0x896 <displayTimeModeHandleDim+0x38>
+		if (openNixieTimeGetHours() >= dimStartHour_ram && openNixieTimeGetHours() < dimEndHour_ram) {
+     86e:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     872:	90 91 4f 01 	lds	r25, 0x014F	; 0x80014f <dimStartHour_ram>
+     876:	89 17       	cp	r24, r25
+     878:	50 f0       	brcs	.+20     	; 0x88e <displayTimeModeHandleDim+0x30>
+     87a:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     87e:	90 91 4d 01 	lds	r25, 0x014D	; 0x80014d <dimEndHour_ram>
+     882:	89 17       	cp	r24, r25
+     884:	20 f4       	brcc	.+8      	; 0x88e <displayTimeModeHandleDim+0x30>
+			displayHALSetDim(true);
+     886:	81 e0       	ldi	r24, 0x01	; 1
+     888:	0e 94 e0 00 	call	0x1c0	; 0x1c0 <displayHALSetDim>
+     88c:	08 95       	ret
+		} else {
+			displayHALSetDim(false);
+     88e:	80 e0       	ldi	r24, 0x00	; 0
+     890:	0e 94 e0 00 	call	0x1c0	; 0x1c0 <displayHALSetDim>
+     894:	08 95       	ret
+		}
+	} else {
+		if(openNixieTimeGetHours() >= dimEndHour_ram && openNixieTimeGetHours() < dimStartHour_ram) {
+     896:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     89a:	90 91 4d 01 	lds	r25, 0x014D	; 0x80014d <dimEndHour_ram>
+     89e:	89 17       	cp	r24, r25
+     8a0:	50 f0       	brcs	.+20     	; 0x8b6 <displayTimeModeHandleDim+0x58>
+     8a2:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     8a6:	90 91 4f 01 	lds	r25, 0x014F	; 0x80014f <dimStartHour_ram>
+     8aa:	89 17       	cp	r24, r25
+     8ac:	20 f4       	brcc	.+8      	; 0x8b6 <displayTimeModeHandleDim+0x58>
+			displayHALSetDim(false);
+     8ae:	80 e0       	ldi	r24, 0x00	; 0
+     8b0:	0e 94 e0 00 	call	0x1c0	; 0x1c0 <displayHALSetDim>
+     8b4:	08 95       	ret
+		} else {
+			displayHALSetDim(true);
+     8b6:	81 e0       	ldi	r24, 0x01	; 1
+     8b8:	0e 94 e0 00 	call	0x1c0	; 0x1c0 <displayHALSetDim>
+     8bc:	08 95       	ret
+
+000008be <displayTimeModeLoop>:
+		}
+	}
+}
+
+void displayTimeModeLoop()
+{
+     8be:	ff 92       	push	r15
+     8c0:	0f 93       	push	r16
+     8c2:	1f 93       	push	r17
+     8c4:	cf 93       	push	r28
+     8c6:	df 93       	push	r29
+	static unsigned timeUpdate = 0;
+
+	if (sysTick - timeUpdate > 5) {
+     8c8:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     8cc:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     8d0:	20 91 34 01 	lds	r18, 0x0134	; 0x800134 <timeUpdate.1744>
+     8d4:	30 91 35 01 	lds	r19, 0x0135	; 0x800135 <timeUpdate.1744+0x1>
+     8d8:	82 1b       	sub	r24, r18
+     8da:	93 0b       	sbc	r25, r19
+     8dc:	06 97       	sbiw	r24, 0x06	; 6
+     8de:	08 f4       	brcc	.+2      	; 0x8e2 <displayTimeModeLoop+0x24>
+     8e0:	e9 c0       	rjmp	.+466    	; 0xab4 <__stack+0x1b5>
+		wdt_reset();
+     8e2:	a8 95       	wdr
+		timeUpdate = sysTick;
+     8e4:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     8e8:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     8ec:	90 93 35 01 	sts	0x0135, r25	; 0x800135 <timeUpdate.1744+0x1>
+     8f0:	80 93 34 01 	sts	0x0134, r24	; 0x800134 <timeUpdate.1744>
+        if (crossfade_ram) 
+     8f4:	80 91 4e 01 	lds	r24, 0x014E	; 0x80014e <crossfade_ram>
+     8f8:	88 23       	and	r24, r24
+     8fa:	e1 f1       	breq	.+120    	; 0x974 <__stack+0x75>
+		    displayHALSetCrossfade(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+     8fc:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     900:	cd ec       	ldi	r28, 0xCD	; 205
+     902:	8c 9f       	mul	r24, r28
+     904:	d1 2d       	mov	r29, r1
+     906:	11 24       	eor	r1, r1
+     908:	d6 95       	lsr	r29
+     90a:	d6 95       	lsr	r29
+     90c:	d6 95       	lsr	r29
+     90e:	dd 0f       	add	r29, r29
+     910:	9d 2f       	mov	r25, r29
+     912:	99 0f       	add	r25, r25
+     914:	99 0f       	add	r25, r25
+     916:	d9 0f       	add	r29, r25
+     918:	8d 1b       	sub	r24, r29
+     91a:	d8 2f       	mov	r29, r24
+     91c:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     920:	8c 9f       	mul	r24, r28
+     922:	11 2d       	mov	r17, r1
+     924:	11 24       	eor	r1, r1
+     926:	16 95       	lsr	r17
+     928:	16 95       	lsr	r17
+     92a:	16 95       	lsr	r17
+     92c:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     930:	8c 9f       	mul	r24, r28
+     932:	c1 2d       	mov	r28, r1
+     934:	11 24       	eor	r1, r1
+     936:	c6 95       	lsr	r28
+     938:	c6 95       	lsr	r28
+     93a:	c6 95       	lsr	r28
+     93c:	cc 0f       	add	r28, r28
+     93e:	9c 2f       	mov	r25, r28
+     940:	99 0f       	add	r25, r25
+     942:	99 0f       	add	r25, r25
+     944:	c9 0f       	add	r28, r25
+     946:	8c 1b       	sub	r24, r28
+     948:	c8 2f       	mov	r28, r24
+     94a:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     94e:	8a 30       	cpi	r24, 0x0A	; 10
+     950:	50 f0       	brcs	.+20     	; 0x966 <__stack+0x67>
+     952:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     956:	9d ec       	ldi	r25, 0xCD	; 205
+     958:	89 9f       	mul	r24, r25
+     95a:	81 2d       	mov	r24, r1
+     95c:	11 24       	eor	r1, r1
+     95e:	86 95       	lsr	r24
+     960:	86 95       	lsr	r24
+     962:	86 95       	lsr	r24
+     964:	01 c0       	rjmp	.+2      	; 0x968 <__stack+0x69>
+     966:	8a e0       	ldi	r24, 0x0A	; 10
+     968:	2d 2f       	mov	r18, r29
+     96a:	41 2f       	mov	r20, r17
+     96c:	6c 2f       	mov	r22, r28
+     96e:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <displayHALSetCrossfade>
+     972:	3b c0       	rjmp	.+118    	; 0x9ea <__stack+0xeb>
+		else
+		    displayHALSetImmediatly(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+     974:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     978:	cd ec       	ldi	r28, 0xCD	; 205
+     97a:	8c 9f       	mul	r24, r28
+     97c:	d1 2d       	mov	r29, r1
+     97e:	11 24       	eor	r1, r1
+     980:	d6 95       	lsr	r29
+     982:	d6 95       	lsr	r29
+     984:	d6 95       	lsr	r29
+     986:	dd 0f       	add	r29, r29
+     988:	9d 2f       	mov	r25, r29
+     98a:	99 0f       	add	r25, r25
+     98c:	99 0f       	add	r25, r25
+     98e:	d9 0f       	add	r29, r25
+     990:	8d 1b       	sub	r24, r29
+     992:	d8 2f       	mov	r29, r24
+     994:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     998:	8c 9f       	mul	r24, r28
+     99a:	11 2d       	mov	r17, r1
+     99c:	11 24       	eor	r1, r1
+     99e:	16 95       	lsr	r17
+     9a0:	16 95       	lsr	r17
+     9a2:	16 95       	lsr	r17
+     9a4:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     9a8:	8c 9f       	mul	r24, r28
+     9aa:	c1 2d       	mov	r28, r1
+     9ac:	11 24       	eor	r1, r1
+     9ae:	c6 95       	lsr	r28
+     9b0:	c6 95       	lsr	r28
+     9b2:	c6 95       	lsr	r28
+     9b4:	cc 0f       	add	r28, r28
+     9b6:	9c 2f       	mov	r25, r28
+     9b8:	99 0f       	add	r25, r25
+     9ba:	99 0f       	add	r25, r25
+     9bc:	c9 0f       	add	r28, r25
+     9be:	8c 1b       	sub	r24, r28
+     9c0:	c8 2f       	mov	r28, r24
+     9c2:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     9c6:	8a 30       	cpi	r24, 0x0A	; 10
+     9c8:	50 f0       	brcs	.+20     	; 0x9de <__stack+0xdf>
+     9ca:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     9ce:	9d ec       	ldi	r25, 0xCD	; 205
+     9d0:	89 9f       	mul	r24, r25
+     9d2:	81 2d       	mov	r24, r1
+     9d4:	11 24       	eor	r1, r1
+     9d6:	86 95       	lsr	r24
+     9d8:	86 95       	lsr	r24
+     9da:	86 95       	lsr	r24
+     9dc:	01 c0       	rjmp	.+2      	; 0x9e0 <__stack+0xe1>
+     9de:	8a e0       	ldi	r24, 0x0A	; 10
+     9e0:	2d 2f       	mov	r18, r29
+     9e2:	41 2f       	mov	r20, r17
+     9e4:	6c 2f       	mov	r22, r28
+     9e6:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+
+static void displayTimeModeCorrectTickLimit()
+{
+	static unsigned char lastCorrectionHour_20 = 90;
+	static unsigned char lastCorrectionHour_50 = 90;
+	unsigned char lastHour = openNixieTimeGetHours();
+     9ea:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     9ee:	c8 2f       	mov	r28, r24
+	unsigned char lastMinute = openNixieTimeGetMinutes();
+     9f0:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     9f4:	d8 2f       	mov	r29, r24
+	unsigned char lastSecond = openNixieTimeGetSeconds();
+     9f6:	0e 94 55 09 	call	0x12aa	; 0x12aa <openNixieTimeGetSeconds>
+     9fa:	08 2f       	mov	r16, r24
+	
+	if (((lastCorrectionHour_20 != lastHour) && (lastMinute == 20)) || ((lastCorrectionHour_50 != lastHour) && (lastMinute == 50))) {
+     9fc:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <lastCorrectionHour_20.1749>
+     a00:	c8 17       	cp	r28, r24
+     a02:	11 f0       	breq	.+4      	; 0xa08 <__stack+0x109>
+     a04:	d4 31       	cpi	r29, 0x14	; 20
+     a06:	49 f0       	breq	.+18     	; 0xa1a <__stack+0x11b>
+     a08:	80 91 1b 01 	lds	r24, 0x011B	; 0x80011b <lastCorrectionHour_50.1750>
+     a0c:	c8 17       	cp	r28, r24
+     a0e:	09 f4       	brne	.+2      	; 0xa12 <__stack+0x113>
+     a10:	4f c0       	rjmp	.+158    	; 0xab0 <__stack+0x1b1>
+     a12:	d2 33       	cpi	r29, 0x32	; 50
+     a14:	09 f0       	breq	.+2      	; 0xa18 <__stack+0x119>
+     a16:	4c c0       	rjmp	.+152    	; 0xab0 <__stack+0x1b1>
+     a18:	03 c0       	rjmp	.+6      	; 0xa20 <__stack+0x121>
+		if (lastMinute == 20)
+		    lastCorrectionHour_20 = lastHour;
+     a1a:	c0 93 1c 01 	sts	0x011C, r28	; 0x80011c <lastCorrectionHour_20.1749>
+     a1e:	02 c0       	rjmp	.+4      	; 0xa24 <__stack+0x125>
+		if (lastMinute == 50)
+			lastCorrectionHour_50 = lastHour;
+     a20:	c0 93 1b 01 	sts	0x011B, r28	; 0x80011b <lastCorrectionHour_50.1750>
+		openNixieTimeGetHAL();
+     a24:	0e 94 b0 08 	call	0x1160	; 0x1160 <openNixieTimeGetHAL>
+		unsigned char currentHour = openNixieTimeGetHours();
+     a28:	0e 94 52 09 	call	0x12a4	; 0x12a4 <openNixieTimeGetHours>
+     a2c:	f8 2e       	mov	r15, r24
+		unsigned char currentMinute = openNixieTimeGetMinutes();
+     a2e:	0e 94 4f 09 	call	0x129e	; 0x129e <openNixieTimeGetMinutes>
+     a32:	18 2f       	mov	r17, r24
+		unsigned char currentSecond = openNixieTimeGetSeconds();
+     a34:	0e 94 55 09 	call	0x12aa	; 0x12aa <openNixieTimeGetSeconds>
+		
+		if (currentHour != lastHour) {
+     a38:	cf 15       	cp	r28, r15
+     a3a:	39 f0       	breq	.+14     	; 0xa4a <__stack+0x14b>
+			sysTickLimit = 31250;  // reset...
+     a3c:	82 e1       	ldi	r24, 0x12	; 18
+     a3e:	9a e7       	ldi	r25, 0x7A	; 122
+     a40:	90 93 47 01 	sts	0x0147, r25	; 0x800147 <sysTickLimit+0x1>
+     a44:	80 93 46 01 	sts	0x0146, r24	; 0x800146 <sysTickLimit>
+     a48:	33 c0       	rjmp	.+102    	; 0xab0 <__stack+0x1b1>
+			return;    // ...too big difference, something is wrong
+		}
+		
+		int diff = ( (signed char)currentSecond - (signed char)lastSecond) + 60 * ( (signed char)currentMinute - (signed char)lastMinute);
+		sysTickLimit -= 18 * diff;
+     a4a:	41 2f       	mov	r20, r17
+     a4c:	11 0f       	add	r17, r17
+     a4e:	55 0b       	sbc	r21, r21
+     a50:	4d 1b       	sub	r20, r29
+     a52:	51 09       	sbc	r21, r1
+     a54:	d7 fd       	sbrc	r29, 7
+     a56:	53 95       	inc	r21
+     a58:	9c e3       	ldi	r25, 0x3C	; 60
+     a5a:	94 9f       	mul	r25, r20
+     a5c:	90 01       	movw	r18, r0
+     a5e:	95 9f       	mul	r25, r21
+     a60:	30 0d       	add	r19, r0
+     a62:	11 24       	eor	r1, r1
+     a64:	08 2e       	mov	r0, r24
+     a66:	00 0c       	add	r0, r0
+     a68:	99 0b       	sbc	r25, r25
+     a6a:	80 1b       	sub	r24, r16
+     a6c:	91 09       	sbc	r25, r1
+     a6e:	07 fd       	sbrc	r16, 7
+     a70:	93 95       	inc	r25
+     a72:	28 0f       	add	r18, r24
+     a74:	39 1f       	adc	r19, r25
+     a76:	6e ee       	ldi	r22, 0xEE	; 238
+     a78:	62 03       	mulsu	r22, r18
+     a7a:	a0 01       	movw	r20, r0
+     a7c:	63 9f       	mul	r22, r19
+     a7e:	50 0d       	add	r21, r0
+     a80:	11 24       	eor	r1, r1
+     a82:	80 91 46 01 	lds	r24, 0x0146	; 0x800146 <sysTickLimit>
+     a86:	90 91 47 01 	lds	r25, 0x0147	; 0x800147 <sysTickLimit+0x1>
+     a8a:	84 0f       	add	r24, r20
+     a8c:	95 1f       	adc	r25, r21
+		
+		if (sysTickLimit > 40000 || sysTickLimit < 20000) {
+     a8e:	9c 01       	movw	r18, r24
+     a90:	20 52       	subi	r18, 0x20	; 32
+     a92:	3e 44       	sbci	r19, 0x4E	; 78
+     a94:	21 32       	cpi	r18, 0x21	; 33
+     a96:	3e 44       	sbci	r19, 0x4E	; 78
+     a98:	28 f4       	brcc	.+10     	; 0xaa4 <__stack+0x1a5>
+			sysTickLimit = 31250;  // reset...
+			return;    // ...too big difference, something is wrong
+		}
+		
+		int diff = ( (signed char)currentSecond - (signed char)lastSecond) + 60 * ( (signed char)currentMinute - (signed char)lastMinute);
+		sysTickLimit -= 18 * diff;
+     a9a:	90 93 47 01 	sts	0x0147, r25	; 0x800147 <sysTickLimit+0x1>
+     a9e:	80 93 46 01 	sts	0x0146, r24	; 0x800146 <sysTickLimit>
+     aa2:	06 c0       	rjmp	.+12     	; 0xab0 <__stack+0x1b1>
+		
+		if (sysTickLimit > 40000 || sysTickLimit < 20000) {
+		 	sysTickLimit = 31250;  // reset, something is wrong.
+     aa4:	82 e1       	ldi	r24, 0x12	; 18
+     aa6:	9a e7       	ldi	r25, 0x7A	; 122
+     aa8:	90 93 47 01 	sts	0x0147, r25	; 0x800147 <sysTickLimit+0x1>
+     aac:	80 93 46 01 	sts	0x0146, r24	; 0x800146 <sysTickLimit>
+		    displayHALSetCrossfade(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+		else
+		    displayHALSetImmediatly(openNixieTimeGetHours()/10 ? openNixieTimeGetHours()/10 : 10, openNixieTimeGetHours()%10 ,openNixieTimeGetMinutes()/10, openNixieTimeGetMinutes()%10);
+		displayTimeModeCorrectTickLimit();
+		
+		displayTimeModeHandleDim();
+     ab0:	0e 94 2f 04 	call	0x85e	; 0x85e <displayTimeModeHandleDim>
+	}
+	
+	if (sysTick - timeoutTimer > 5) {
+     ab4:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     ab8:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     abc:	20 91 36 01 	lds	r18, 0x0136	; 0x800136 <timeoutTimer>
+     ac0:	30 91 37 01 	lds	r19, 0x0137	; 0x800137 <timeoutTimer+0x1>
+     ac4:	82 1b       	sub	r24, r18
+     ac6:	93 0b       	sbc	r25, r19
+     ac8:	06 97       	sbiw	r24, 0x06	; 6
+     aca:	10 f0       	brcs	.+4      	; 0xad0 <__stack+0x1d1>
+		subState = SUB1;
+     acc:	10 92 38 01 	sts	0x0138, r1	; 0x800138 <subState>
+	}
+}
+     ad0:	df 91       	pop	r29
+     ad2:	cf 91       	pop	r28
+     ad4:	1f 91       	pop	r17
+     ad6:	0f 91       	pop	r16
+     ad8:	ff 90       	pop	r15
+     ada:	08 95       	ret
+
+00000adc <displayTimeModeOnExit>:
+		);
+	}
+	else
+	{
+        uint8_t register temp_reg;
+		__asm__ __volatile__ (
+     adc:	0f b6       	in	r0, 0x3f	; 63
+     ade:	f8 94       	cli
+     ae0:	a8 95       	wdr
+     ae2:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+     ae6:	88 61       	ori	r24, 0x18	; 24
+     ae8:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+     aec:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+     af0:	0f be       	out	0x3f, r0	; 63
+     af2:	08 95       	ret
+
+00000af4 <displayTimeModeOnCommandReceived>:
+
+void
+displayTimeModeOnCommandReceived()
+{
+		
+	if (!RC6DecoderIsRepeated(rc6decoder)) {
+     af4:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     af8:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     afc:	0e 94 1e 0b 	call	0x163c	; 0x163c <RC6DecoderIsRepeated>
+     b00:	81 11       	cpse	r24, r1
+     b02:	31 c0       	rjmp	.+98     	; 0xb66 <displayTimeModeOnCommandReceived+0x72>
+		timeoutTimer = sysTick;
+     b04:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     b08:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     b0c:	90 93 37 01 	sts	0x0137, r25	; 0x800137 <timeoutTimer+0x1>
+     b10:	80 93 36 01 	sts	0x0136, r24	; 0x800136 <timeoutTimer>
+		
+		if (rc6CommandReceived == 9 && subState != SUB3) {
+     b14:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+     b18:	89 30       	cpi	r24, 0x09	; 9
+     b1a:	41 f4       	brne	.+16     	; 0xb2c <displayTimeModeOnCommandReceived+0x38>
+     b1c:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <subState>
+     b20:	82 30       	cpi	r24, 0x02	; 2
+     b22:	49 f0       	breq	.+18     	; 0xb36 <displayTimeModeOnCommandReceived+0x42>
+			subState++;
+     b24:	8f 5f       	subi	r24, 0xFF	; 255
+     b26:	80 93 38 01 	sts	0x0138, r24	; 0x800138 <subState>
+     b2a:	1d c0       	rjmp	.+58     	; 0xb66 <displayTimeModeOnCommandReceived+0x72>
+		}
+		
+		 else if (subState == SUB3 && rc6CommandReceived == 9) {
+     b2c:	90 91 38 01 	lds	r25, 0x0138	; 0x800138 <subState>
+     b30:	92 30       	cpi	r25, 0x02	; 2
+     b32:	b9 f4       	brne	.+46     	; 0xb62 <displayTimeModeOnCommandReceived+0x6e>
+     b34:	06 c0       	rjmp	.+12     	; 0xb42 <displayTimeModeOnCommandReceived+0x4e>
+			subState = SUB1;
+     b36:	10 92 38 01 	sts	0x0138, r1	; 0x800138 <subState>
+			mode = SET_TIME;
+     b3a:	81 e0       	ldi	r24, 0x01	; 1
+     b3c:	80 93 48 01 	sts	0x0148, r24	; 0x800148 <mode>
+     b40:	12 c0       	rjmp	.+36     	; 0xb66 <displayTimeModeOnCommandReceived+0x72>
+		}
+		
+		else if (subState == SUB3 && rc6CommandReceived == 8) {
+     b42:	88 30       	cpi	r24, 0x08	; 8
+     b44:	31 f4       	brne	.+12     	; 0xb52 <displayTimeModeOnCommandReceived+0x5e>
+			subState = SUB1;
+     b46:	10 92 38 01 	sts	0x0138, r1	; 0x800138 <subState>
+			mode = SET_DIM;
+     b4a:	82 e0       	ldi	r24, 0x02	; 2
+     b4c:	80 93 48 01 	sts	0x0148, r24	; 0x800148 <mode>
+     b50:	0a c0       	rjmp	.+20     	; 0xb66 <displayTimeModeOnCommandReceived+0x72>
+		}
+		
+		else if (subState == SUB3 && rc6CommandReceived == 7) {
+     b52:	87 30       	cpi	r24, 0x07	; 7
+     b54:	31 f4       	brne	.+12     	; 0xb62 <displayTimeModeOnCommandReceived+0x6e>
+			subState = SUB1;
+     b56:	10 92 38 01 	sts	0x0138, r1	; 0x800138 <subState>
+			mode = SET_CROSSFADE;
+     b5a:	84 e0       	ldi	r24, 0x04	; 4
+     b5c:	80 93 48 01 	sts	0x0148, r24	; 0x800148 <mode>
+     b60:	02 c0       	rjmp	.+4      	; 0xb66 <displayTimeModeOnCommandReceived+0x72>
+		}
+		
+		else {
+			subState = SUB1;
+     b62:	10 92 38 01 	sts	0x0138, r1	; 0x800138 <subState>
+		}
+	}
+
+
+	RC6DecoderUnlock(rc6decoder);
+     b66:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     b6a:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     b6e:	0e 94 21 0b 	call	0x1642	; 0x1642 <RC6DecoderUnlock>
+     b72:	08 95       	ret
+
+00000b74 <setCrossfadeModeOnEnter>:
+static bool received = false;
+
+void
+setCrossfadeModeOnEnter()
+{
+	timeoutTimer = sysTick;
+     b74:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     b78:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     b7c:	90 93 3d 01 	sts	0x013D, r25	; 0x80013d <timeoutTimer+0x1>
+     b80:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <timeoutTimer>
+	crossfade_ram = eeprom_read_byte(&crossfade);
+     b84:	80 e0       	ldi	r24, 0x00	; 0
+     b86:	90 e0       	ldi	r25, 0x00	; 0
+     b88:	0e 94 6a 0c 	call	0x18d4	; 0x18d4 <eeprom_read_byte>
+     b8c:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <crossfade_ram>
+	displayHALSetCrossfade(10, 10, 10, 10);
+     b90:	2a e0       	ldi	r18, 0x0A	; 10
+     b92:	4a e0       	ldi	r20, 0x0A	; 10
+     b94:	6a e0       	ldi	r22, 0x0A	; 10
+     b96:	8a e0       	ldi	r24, 0x0A	; 10
+     b98:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <displayHALSetCrossfade>
+	displayHALSetDim(false);
+     b9c:	80 e0       	ldi	r24, 0x00	; 0
+     b9e:	0e 94 e0 00 	call	0x1c0	; 0x1c0 <displayHALSetDim>
+     ba2:	08 95       	ret
+
+00000ba4 <setCrossfadeModeLoop>:
+}
+
+void
+setCrossfadeModeLoop()
+{
+     ba4:	cf 93       	push	r28
+	static unsigned timeUpdate = 0;
+	
+	if (sysTick - timeUpdate > 1) {
+     ba6:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     baa:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     bae:	20 91 39 01 	lds	r18, 0x0139	; 0x800139 <timeUpdate.1721>
+     bb2:	30 91 3a 01 	lds	r19, 0x013A	; 0x80013a <timeUpdate.1721+0x1>
+     bb6:	82 1b       	sub	r24, r18
+     bb8:	93 0b       	sbc	r25, r19
+     bba:	02 97       	sbiw	r24, 0x02	; 2
+     bbc:	08 f4       	brcc	.+2      	; 0xbc0 <setCrossfadeModeLoop+0x1c>
+     bbe:	47 c0       	rjmp	.+142    	; 0xc4e <setCrossfadeModeLoop+0xaa>
+		timeUpdate = sysTick;
+     bc0:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     bc4:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     bc8:	90 93 3a 01 	sts	0x013A, r25	; 0x80013a <timeUpdate.1721+0x1>
+     bcc:	80 93 39 01 	sts	0x0139, r24	; 0x800139 <timeUpdate.1721>
+		if (crossfade_ram) {
+     bd0:	80 91 4e 01 	lds	r24, 0x014E	; 0x80014e <crossfade_ram>
+     bd4:	88 23       	and	r24, r24
+     bd6:	f1 f0       	breq	.+60     	; 0xc14 <setCrossfadeModeLoop+0x70>
+			displayHALSetCrossfade(10, 10, openNixieTimeGetSeconds()/10, openNixieTimeGetSeconds()%10);
+     bd8:	0e 94 55 09 	call	0x12aa	; 0x12aa <openNixieTimeGetSeconds>
+     bdc:	c8 2f       	mov	r28, r24
+     bde:	0e 94 55 09 	call	0x12aa	; 0x12aa <openNixieTimeGetSeconds>
+     be2:	4d ec       	ldi	r20, 0xCD	; 205
+     be4:	c4 9f       	mul	r28, r20
+     be6:	91 2d       	mov	r25, r1
+     be8:	11 24       	eor	r1, r1
+     bea:	96 95       	lsr	r25
+     bec:	96 95       	lsr	r25
+     bee:	96 95       	lsr	r25
+     bf0:	99 0f       	add	r25, r25
+     bf2:	29 2f       	mov	r18, r25
+     bf4:	22 0f       	add	r18, r18
+     bf6:	22 0f       	add	r18, r18
+     bf8:	92 0f       	add	r25, r18
+     bfa:	2c 2f       	mov	r18, r28
+     bfc:	29 1b       	sub	r18, r25
+     bfe:	84 9f       	mul	r24, r20
+     c00:	41 2d       	mov	r20, r1
+     c02:	11 24       	eor	r1, r1
+     c04:	46 95       	lsr	r20
+     c06:	46 95       	lsr	r20
+     c08:	46 95       	lsr	r20
+     c0a:	6a e0       	ldi	r22, 0x0A	; 10
+     c0c:	8a e0       	ldi	r24, 0x0A	; 10
+     c0e:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <displayHALSetCrossfade>
+     c12:	1d c0       	rjmp	.+58     	; 0xc4e <setCrossfadeModeLoop+0xaa>
+			} else {
+			displayHALSetImmediatly(10, 10, openNixieTimeGetSeconds()/10, openNixieTimeGetSeconds()%10);
+     c14:	0e 94 55 09 	call	0x12aa	; 0x12aa <openNixieTimeGetSeconds>
+     c18:	c8 2f       	mov	r28, r24
+     c1a:	0e 94 55 09 	call	0x12aa	; 0x12aa <openNixieTimeGetSeconds>
+     c1e:	4d ec       	ldi	r20, 0xCD	; 205
+     c20:	c4 9f       	mul	r28, r20
+     c22:	91 2d       	mov	r25, r1
+     c24:	11 24       	eor	r1, r1
+     c26:	96 95       	lsr	r25
+     c28:	96 95       	lsr	r25
+     c2a:	96 95       	lsr	r25
+     c2c:	99 0f       	add	r25, r25
+     c2e:	29 2f       	mov	r18, r25
+     c30:	22 0f       	add	r18, r18
+     c32:	22 0f       	add	r18, r18
+     c34:	92 0f       	add	r25, r18
+     c36:	2c 2f       	mov	r18, r28
+     c38:	29 1b       	sub	r18, r25
+     c3a:	84 9f       	mul	r24, r20
+     c3c:	41 2d       	mov	r20, r1
+     c3e:	11 24       	eor	r1, r1
+     c40:	46 95       	lsr	r20
+     c42:	46 95       	lsr	r20
+     c44:	46 95       	lsr	r20
+     c46:	6a e0       	ldi	r22, 0x0A	; 10
+     c48:	8a e0       	ldi	r24, 0x0A	; 10
+     c4a:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+		}
+	}
+	
+	if (received) {
+     c4e:	80 91 3b 01 	lds	r24, 0x013B	; 0x80013b <received>
+     c52:	88 23       	and	r24, r24
+     c54:	d1 f0       	breq	.+52     	; 0xc8a <setCrossfadeModeLoop+0xe6>
+		received = false;
+     c56:	10 92 3b 01 	sts	0x013B, r1	; 0x80013b <received>
+		timeoutTimer = sysTick;
+     c5a:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     c5e:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     c62:	90 93 3d 01 	sts	0x013D, r25	; 0x80013d <timeoutTimer+0x1>
+     c66:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <timeoutTimer>
+		
+		if (rc6CommandReceived == 0) {
+     c6a:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+     c6e:	81 11       	cpse	r24, r1
+     c70:	03 c0       	rjmp	.+6      	; 0xc78 <setCrossfadeModeLoop+0xd4>
+			crossfade_ram = 0;
+     c72:	10 92 4e 01 	sts	0x014E, r1	; 0x80014e <crossfade_ram>
+     c76:	09 c0       	rjmp	.+18     	; 0xc8a <setCrossfadeModeLoop+0xe6>
+		}
+		
+		if (rc6CommandReceived == 1) {
+     c78:	81 30       	cpi	r24, 0x01	; 1
+     c7a:	19 f4       	brne	.+6      	; 0xc82 <setCrossfadeModeLoop+0xde>
+			crossfade_ram = 1;
+     c7c:	80 93 4e 01 	sts	0x014E, r24	; 0x80014e <crossfade_ram>
+     c80:	04 c0       	rjmp	.+8      	; 0xc8a <setCrossfadeModeLoop+0xe6>
+		}
+		
+		if (rc6CommandReceived == 2) {
+     c82:	82 30       	cpi	r24, 0x02	; 2
+     c84:	11 f4       	brne	.+4      	; 0xc8a <setCrossfadeModeLoop+0xe6>
+			mode = DISPLAY_TIME;
+     c86:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <mode>
+		}
+	}
+	RC6DecoderUnlock(rc6decoder);
+     c8a:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     c8e:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     c92:	0e 94 21 0b 	call	0x1642	; 0x1642 <RC6DecoderUnlock>
+	if (sysTick - timeoutTimer > 10) {
+     c96:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     c9a:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     c9e:	20 91 3c 01 	lds	r18, 0x013C	; 0x80013c <timeoutTimer>
+     ca2:	30 91 3d 01 	lds	r19, 0x013D	; 0x80013d <timeoutTimer+0x1>
+     ca6:	82 1b       	sub	r24, r18
+     ca8:	93 0b       	sbc	r25, r19
+     caa:	0b 97       	sbiw	r24, 0x0b	; 11
+     cac:	10 f0       	brcs	.+4      	; 0xcb2 <setCrossfadeModeLoop+0x10e>
+		mode = DISPLAY_TIME;
+     cae:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <mode>
+		return;
+	}
+}
+     cb2:	cf 91       	pop	r28
+     cb4:	08 95       	ret
+
+00000cb6 <setCrossfadeModeOnExit>:
+
+void
+setCrossfadeModeOnExit()
+{
+	eeprom_write_byte(&crossfade, crossfade_ram);
+     cb6:	60 91 4e 01 	lds	r22, 0x014E	; 0x80014e <crossfade_ram>
+     cba:	80 e0       	ldi	r24, 0x00	; 0
+     cbc:	90 e0       	ldi	r25, 0x00	; 0
+     cbe:	0e 94 84 0c 	call	0x1908	; 0x1908 <eeprom_write_byte>
+     cc2:	08 95       	ret
+
+00000cc4 <setCrossfadeModeOnCommandReceived>:
+}
+
+void
+setCrossfadeModeOnCommandReceived()
+{
+	if (!RC6DecoderIsRepeated(rc6decoder)) {
+     cc4:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     cc8:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     ccc:	0e 94 1e 0b 	call	0x163c	; 0x163c <RC6DecoderIsRepeated>
+     cd0:	81 11       	cpse	r24, r1
+     cd2:	04 c0       	rjmp	.+8      	; 0xcdc <setCrossfadeModeOnCommandReceived+0x18>
+		received = true;
+     cd4:	81 e0       	ldi	r24, 0x01	; 1
+     cd6:	80 93 3b 01 	sts	0x013B, r24	; 0x80013b <received>
+     cda:	06 c0       	rjmp	.+12     	; 0xce8 <setCrossfadeModeOnCommandReceived+0x24>
+		} else {
+		RC6DecoderUnlock(rc6decoder);
+     cdc:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     ce0:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     ce4:	0e 94 21 0b 	call	0x1642	; 0x1642 <RC6DecoderUnlock>
+	}
+	timeoutTimer = sysTick;
+     ce8:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     cec:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     cf0:	90 93 3d 01 	sts	0x013D, r25	; 0x80013d <timeoutTimer+0x1>
+     cf4:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <timeoutTimer>
+     cf8:	08 95       	ret
+
+00000cfa <setDimModeOnEnter>:
+static bool received = false;
+static unsigned timeoutTimer;
+
+void
+setDimModeOnEnter()
+{
+     cfa:	cf 93       	push	r28
+	dimStartHour_ram = eeprom_read_byte(&dimStartHour);
+     cfc:	82 e0       	ldi	r24, 0x02	; 2
+     cfe:	90 e0       	ldi	r25, 0x00	; 0
+     d00:	0e 94 6a 0c 	call	0x18d4	; 0x18d4 <eeprom_read_byte>
+     d04:	c8 2f       	mov	r28, r24
+     d06:	80 93 4f 01 	sts	0x014F, r24	; 0x80014f <dimStartHour_ram>
+	dimEndHour_ram = eeprom_read_byte(&dimEndHour);
+     d0a:	81 e0       	ldi	r24, 0x01	; 1
+     d0c:	90 e0       	ldi	r25, 0x00	; 0
+     d0e:	0e 94 6a 0c 	call	0x18d4	; 0x18d4 <eeprom_read_byte>
+     d12:	80 93 4d 01 	sts	0x014D, r24	; 0x80014d <dimEndHour_ram>
+	
+	displayHALSetImmediatly(dimStartHour_ram/10, dimStartHour_ram%10 ,dimEndHour_ram/10,dimEndHour_ram%10);
+     d16:	9d ec       	ldi	r25, 0xCD	; 205
+     d18:	89 9f       	mul	r24, r25
+     d1a:	41 2d       	mov	r20, r1
+     d1c:	11 24       	eor	r1, r1
+     d1e:	46 95       	lsr	r20
+     d20:	46 95       	lsr	r20
+     d22:	46 95       	lsr	r20
+     d24:	34 2f       	mov	r19, r20
+     d26:	33 0f       	add	r19, r19
+     d28:	23 2f       	mov	r18, r19
+     d2a:	22 0f       	add	r18, r18
+     d2c:	22 0f       	add	r18, r18
+     d2e:	23 0f       	add	r18, r19
+     d30:	82 1b       	sub	r24, r18
+     d32:	28 2f       	mov	r18, r24
+     d34:	c9 9f       	mul	r28, r25
+     d36:	81 2d       	mov	r24, r1
+     d38:	11 24       	eor	r1, r1
+     d3a:	86 95       	lsr	r24
+     d3c:	86 95       	lsr	r24
+     d3e:	86 95       	lsr	r24
+     d40:	38 2f       	mov	r19, r24
+     d42:	33 0f       	add	r19, r19
+     d44:	93 2f       	mov	r25, r19
+     d46:	99 0f       	add	r25, r25
+     d48:	99 0f       	add	r25, r25
+     d4a:	93 0f       	add	r25, r19
+     d4c:	6c 2f       	mov	r22, r28
+     d4e:	69 1b       	sub	r22, r25
+     d50:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+	subState = HRSTART_1;
+     d54:	10 92 41 01 	sts	0x0141, r1	; 0x800141 <subState>
+	hrStart1 = 10;
+     d58:	8a e0       	ldi	r24, 0x0A	; 10
+     d5a:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <hrStart1>
+	hrStart2 = 10;
+     d5e:	80 93 1f 01 	sts	0x011F, r24	; 0x80011f <hrStart2>
+	hrEnd1=10;
+     d62:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <hrEnd1>
+	hrEnd2=10;
+     d66:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <hrEnd2>
+	
+	timeoutTimer = sysTick;
+     d6a:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     d6e:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     d72:	90 93 3f 01 	sts	0x013F, r25	; 0x80013f <timeoutTimer+0x1>
+     d76:	80 93 3e 01 	sts	0x013E, r24	; 0x80013e <timeoutTimer>
+}
+     d7a:	cf 91       	pop	r28
+     d7c:	08 95       	ret
+
+00000d7e <setDimModeLoop>:
+
+void
+setDimModeLoop()
+{
+
+	if (sysTick - timeoutTimer > 10) {
+     d7e:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     d82:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     d86:	20 91 3e 01 	lds	r18, 0x013E	; 0x80013e <timeoutTimer>
+     d8a:	30 91 3f 01 	lds	r19, 0x013F	; 0x80013f <timeoutTimer+0x1>
+     d8e:	82 1b       	sub	r24, r18
+     d90:	93 0b       	sbc	r25, r19
+     d92:	0b 97       	sbiw	r24, 0x0b	; 11
+     d94:	18 f0       	brcs	.+6      	; 0xd9c <setDimModeLoop+0x1e>
+		mode = DISPLAY_TIME;
+     d96:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <mode>
+		return;
+     d9a:	08 95       	ret
+	}
+		
+	if (received) {
+     d9c:	80 91 40 01 	lds	r24, 0x0140	; 0x800140 <received>
+     da0:	88 23       	and	r24, r24
+     da2:	09 f4       	brne	.+2      	; 0xda6 <setDimModeLoop+0x28>
+     da4:	b9 c0       	rjmp	.+370    	; 0xf18 <setDimModeLoop+0x19a>
+		received = false;
+     da6:	10 92 40 01 	sts	0x0140, r1	; 0x800140 <received>
+		if (subState == HRSTART_1) {
+     daa:	80 91 41 01 	lds	r24, 0x0141	; 0x800141 <subState>
+     dae:	81 11       	cpse	r24, r1
+     db0:	1f c0       	rjmp	.+62     	; 0xdf0 <setDimModeLoop+0x72>
+			if (rc6CommandReceived >=0 && rc6CommandReceived <= 2) {
+     db2:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+     db6:	83 30       	cpi	r24, 0x03	; 3
+     db8:	30 f4       	brcc	.+12     	; 0xdc6 <setDimModeLoop+0x48>
+				hrStart1 = rc6CommandReceived;
+     dba:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <hrStart1>
+				subState++;
+     dbe:	81 e0       	ldi	r24, 0x01	; 1
+     dc0:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <subState>
+     dc4:	8d c0       	rjmp	.+282    	; 0xee0 <setDimModeLoop+0x162>
+				} else if (rc6CommandReceived >=0 && rc6CommandReceived <= 9) {
+     dc6:	8a 30       	cpi	r24, 0x0A	; 10
+     dc8:	08 f0       	brcs	.+2      	; 0xdcc <setDimModeLoop+0x4e>
+     dca:	8a c0       	rjmp	.+276    	; 0xee0 <setDimModeLoop+0x162>
+				displayHALSetImmediatly(rc6CommandReceived, hrStart2, hrEnd1, hrEnd2);
+     dcc:	20 91 1d 01 	lds	r18, 0x011D	; 0x80011d <hrEnd2>
+     dd0:	40 91 1e 01 	lds	r20, 0x011E	; 0x80011e <hrEnd1>
+     dd4:	60 91 1f 01 	lds	r22, 0x011F	; 0x80011f <hrStart2>
+     dd8:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+     ddc:	2f ef       	ldi	r18, 0xFF	; 255
+     dde:	80 e7       	ldi	r24, 0x70	; 112
+     de0:	92 e0       	ldi	r25, 0x02	; 2
+     de2:	21 50       	subi	r18, 0x01	; 1
+     de4:	80 40       	sbci	r24, 0x00	; 0
+     de6:	90 40       	sbci	r25, 0x00	; 0
+     de8:	e1 f7       	brne	.-8      	; 0xde2 <setDimModeLoop+0x64>
+     dea:	00 c0       	rjmp	.+0      	; 0xdec <setDimModeLoop+0x6e>
+     dec:	00 00       	nop
+     dee:	78 c0       	rjmp	.+240    	; 0xee0 <setDimModeLoop+0x162>
+				_delay_ms(100);
+			}
+		}
+			
+		else if (subState == HRSTART_2) {
+     df0:	81 30       	cpi	r24, 0x01	; 1
+     df2:	61 f5       	brne	.+88     	; 0xe4c <setDimModeLoop+0xce>
+			if ((hrStart1 >=0 && hrStart1 <= 1 && rc6CommandReceived >=0 && rc6CommandReceived <= 9) ||
+     df4:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <hrStart1>
+     df8:	82 30       	cpi	r24, 0x02	; 2
+     dfa:	28 f4       	brcc	.+10     	; 0xe06 <setDimModeLoop+0x88>
+     dfc:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <rc6CommandReceived>
+     e00:	9a 30       	cpi	r25, 0x0A	; 10
+     e02:	38 f0       	brcs	.+14     	; 0xe12 <setDimModeLoop+0x94>
+     e04:	81 c0       	rjmp	.+258    	; 0xf08 <setDimModeLoop+0x18a>
+     e06:	82 30       	cpi	r24, 0x02	; 2
+     e08:	61 f4       	brne	.+24     	; 0xe22 <setDimModeLoop+0xa4>
+			(hrStart1 == 2 && rc6CommandReceived >=0 && rc6CommandReceived <= 3)) {
+     e0a:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <rc6CommandReceived>
+     e0e:	94 30       	cpi	r25, 0x04	; 4
+     e10:	40 f4       	brcc	.+16     	; 0xe22 <setDimModeLoop+0xa4>
+				hrStart2 = rc6CommandReceived;
+     e12:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+     e16:	80 93 1f 01 	sts	0x011F, r24	; 0x80011f <hrStart2>
+				subState++;
+     e1a:	82 e0       	ldi	r24, 0x02	; 2
+     e1c:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <subState>
+     e20:	5f c0       	rjmp	.+190    	; 0xee0 <setDimModeLoop+0x162>
+				} else if (rc6CommandReceived >=0 && rc6CommandReceived <= 9) {
+     e22:	60 91 1a 01 	lds	r22, 0x011A	; 0x80011a <rc6CommandReceived>
+     e26:	6a 30       	cpi	r22, 0x0A	; 10
+     e28:	08 f0       	brcs	.+2      	; 0xe2c <setDimModeLoop+0xae>
+     e2a:	5a c0       	rjmp	.+180    	; 0xee0 <setDimModeLoop+0x162>
+				displayHALSetImmediatly(hrStart1, rc6CommandReceived, hrEnd1, hrEnd2);
+     e2c:	20 91 1d 01 	lds	r18, 0x011D	; 0x80011d <hrEnd2>
+     e30:	40 91 1e 01 	lds	r20, 0x011E	; 0x80011e <hrEnd1>
+     e34:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+     e38:	2f ef       	ldi	r18, 0xFF	; 255
+     e3a:	80 e7       	ldi	r24, 0x70	; 112
+     e3c:	92 e0       	ldi	r25, 0x02	; 2
+     e3e:	21 50       	subi	r18, 0x01	; 1
+     e40:	80 40       	sbci	r24, 0x00	; 0
+     e42:	90 40       	sbci	r25, 0x00	; 0
+     e44:	e1 f7       	brne	.-8      	; 0xe3e <setDimModeLoop+0xc0>
+     e46:	00 c0       	rjmp	.+0      	; 0xe48 <setDimModeLoop+0xca>
+     e48:	00 00       	nop
+     e4a:	4a c0       	rjmp	.+148    	; 0xee0 <setDimModeLoop+0x162>
+				_delay_ms(100);
+			}
+		}
+			
+		else if (subState == HREND_1) {
+     e4c:	82 30       	cpi	r24, 0x02	; 2
+     e4e:	f1 f4       	brne	.+60     	; 0xe8c <setDimModeLoop+0x10e>
+			if (rc6CommandReceived >=0 && rc6CommandReceived <= 2) {
+     e50:	40 91 1a 01 	lds	r20, 0x011A	; 0x80011a <rc6CommandReceived>
+     e54:	43 30       	cpi	r20, 0x03	; 3
+     e56:	30 f4       	brcc	.+12     	; 0xe64 <setDimModeLoop+0xe6>
+				hrEnd1 = rc6CommandReceived;
+     e58:	40 93 1e 01 	sts	0x011E, r20	; 0x80011e <hrEnd1>
+				subState++;
+     e5c:	83 e0       	ldi	r24, 0x03	; 3
+     e5e:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <subState>
+     e62:	3e c0       	rjmp	.+124    	; 0xee0 <setDimModeLoop+0x162>
+				} else if (rc6CommandReceived >=0 && rc6CommandReceived <= 9) {
+     e64:	4a 30       	cpi	r20, 0x0A	; 10
+     e66:	e0 f5       	brcc	.+120    	; 0xee0 <setDimModeLoop+0x162>
+				displayHALSetImmediatly(hrStart1, hrStart2, rc6CommandReceived, hrEnd2);
+     e68:	20 91 1d 01 	lds	r18, 0x011D	; 0x80011d <hrEnd2>
+     e6c:	60 91 1f 01 	lds	r22, 0x011F	; 0x80011f <hrStart2>
+     e70:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <hrStart1>
+     e74:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+     e78:	2f ef       	ldi	r18, 0xFF	; 255
+     e7a:	80 e7       	ldi	r24, 0x70	; 112
+     e7c:	92 e0       	ldi	r25, 0x02	; 2
+     e7e:	21 50       	subi	r18, 0x01	; 1
+     e80:	80 40       	sbci	r24, 0x00	; 0
+     e82:	90 40       	sbci	r25, 0x00	; 0
+     e84:	e1 f7       	brne	.-8      	; 0xe7e <setDimModeLoop+0x100>
+     e86:	00 c0       	rjmp	.+0      	; 0xe88 <setDimModeLoop+0x10a>
+     e88:	00 00       	nop
+     e8a:	2a c0       	rjmp	.+84     	; 0xee0 <setDimModeLoop+0x162>
+				_delay_ms(100);
+			}
+		}
+			
+		else if (subState == HREND_2) {
+     e8c:	83 30       	cpi	r24, 0x03	; 3
+     e8e:	41 f5       	brne	.+80     	; 0xee0 <setDimModeLoop+0x162>
+			if  ((hrEnd1 >=0 && hrEnd1 <= 1 && rc6CommandReceived >=0 && rc6CommandReceived <= 9) ||
+     e90:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <hrEnd1>
+     e94:	82 30       	cpi	r24, 0x02	; 2
+     e96:	20 f4       	brcc	.+8      	; 0xea0 <setDimModeLoop+0x122>
+     e98:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <rc6CommandReceived>
+     e9c:	9a 30       	cpi	r25, 0x0A	; 10
+     e9e:	30 f0       	brcs	.+12     	; 0xeac <setDimModeLoop+0x12e>
+     ea0:	82 30       	cpi	r24, 0x02	; 2
+     ea2:	f1 f4       	brne	.+60     	; 0xee0 <setDimModeLoop+0x162>
+			(hrEnd1 == 2 && rc6CommandReceived >=0 && rc6CommandReceived <= 3)) {
+     ea4:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <rc6CommandReceived>
+     ea8:	94 30       	cpi	r25, 0x04	; 4
+     eaa:	d0 f4       	brcc	.+52     	; 0xee0 <setDimModeLoop+0x162>
+				hrEnd2 = rc6CommandReceived;
+     eac:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <rc6CommandReceived>
+     eb0:	90 93 1d 01 	sts	0x011D, r25	; 0x80011d <hrEnd2>
+				dimStartHour_ram = 10*hrStart1 + hrStart2;
+     eb4:	20 91 20 01 	lds	r18, 0x0120	; 0x800120 <hrStart1>
+     eb8:	22 0f       	add	r18, r18
+     eba:	32 2f       	mov	r19, r18
+     ebc:	33 0f       	add	r19, r19
+     ebe:	33 0f       	add	r19, r19
+     ec0:	23 0f       	add	r18, r19
+     ec2:	30 91 1f 01 	lds	r19, 0x011F	; 0x80011f <hrStart2>
+     ec6:	23 0f       	add	r18, r19
+     ec8:	20 93 4f 01 	sts	0x014F, r18	; 0x80014f <dimStartHour_ram>
+				dimEndHour_ram = 10*hrEnd1 + hrEnd2;
+     ecc:	88 0f       	add	r24, r24
+     ece:	28 2f       	mov	r18, r24
+     ed0:	22 0f       	add	r18, r18
+     ed2:	22 0f       	add	r18, r18
+     ed4:	82 0f       	add	r24, r18
+     ed6:	98 0f       	add	r25, r24
+     ed8:	90 93 4d 01 	sts	0x014D, r25	; 0x80014d <dimEndHour_ram>
+				mode = DISPLAY_TIME;
+     edc:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <mode>
+			}
+		}
+		
+		rc6CommandReceived = 0xFF;
+     ee0:	8f ef       	ldi	r24, 0xFF	; 255
+     ee2:	80 93 1a 01 	sts	0x011A, r24	; 0x80011a <rc6CommandReceived>
+		displayHALSetImmediatly(hrStart1, hrStart2, hrEnd1, hrEnd2);
+     ee6:	20 91 1d 01 	lds	r18, 0x011D	; 0x80011d <hrEnd2>
+     eea:	40 91 1e 01 	lds	r20, 0x011E	; 0x80011e <hrEnd1>
+     eee:	60 91 1f 01 	lds	r22, 0x011F	; 0x80011f <hrStart2>
+     ef2:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <hrStart1>
+     ef6:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+		RC6DecoderUnlock(rc6decoder);
+     efa:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     efe:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     f02:	0e 94 21 0b 	call	0x1642	; 0x1642 <RC6DecoderUnlock>
+     f06:	08 95       	ret
+				_delay_ms(100);
+			}
+		}
+			
+		else if (subState == HRSTART_2) {
+			if ((hrStart1 >=0 && hrStart1 <= 1 && rc6CommandReceived >=0 && rc6CommandReceived <= 9) ||
+     f08:	82 30       	cpi	r24, 0x02	; 2
+     f0a:	51 f7       	brne	.-44     	; 0xee0 <setDimModeLoop+0x162>
+			(hrStart1 == 2 && rc6CommandReceived >=0 && rc6CommandReceived <= 3)) {
+     f0c:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+     f10:	84 30       	cpi	r24, 0x04	; 4
+     f12:	08 f4       	brcc	.+2      	; 0xf16 <setDimModeLoop+0x198>
+     f14:	7e cf       	rjmp	.-260    	; 0xe12 <setDimModeLoop+0x94>
+     f16:	e4 cf       	rjmp	.-56     	; 0xee0 <setDimModeLoop+0x162>
+     f18:	08 95       	ret
+
+00000f1a <setDimModeOnExit>:
+}
+
+void
+setDimModeOnExit()
+{
+	eeprom_update_byte(&dimStartHour, dimStartHour_ram);
+     f1a:	60 91 4f 01 	lds	r22, 0x014F	; 0x80014f <dimStartHour_ram>
+     f1e:	82 e0       	ldi	r24, 0x02	; 2
+     f20:	90 e0       	ldi	r25, 0x00	; 0
+     f22:	0e 94 72 0c 	call	0x18e4	; 0x18e4 <eeprom_update_byte>
+	eeprom_update_byte(&dimEndHour, dimEndHour_ram);
+     f26:	60 91 4d 01 	lds	r22, 0x014D	; 0x80014d <dimEndHour_ram>
+     f2a:	81 e0       	ldi	r24, 0x01	; 1
+     f2c:	90 e0       	ldi	r25, 0x00	; 0
+     f2e:	0e 94 72 0c 	call	0x18e4	; 0x18e4 <eeprom_update_byte>
+     f32:	08 95       	ret
+
+00000f34 <setDimModeOnCommandReceived>:
+}
+
+void
+setDimModeOnCommandReceived()
+{
+	if (!RC6DecoderIsRepeated(rc6decoder)) {
+     f34:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     f38:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     f3c:	0e 94 1e 0b 	call	0x163c	; 0x163c <RC6DecoderIsRepeated>
+     f40:	81 11       	cpse	r24, r1
+     f42:	04 c0       	rjmp	.+8      	; 0xf4c <setDimModeOnCommandReceived+0x18>
+		received = true;
+     f44:	81 e0       	ldi	r24, 0x01	; 1
+     f46:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <received>
+     f4a:	06 c0       	rjmp	.+12     	; 0xf58 <setDimModeOnCommandReceived+0x24>
+		} else {
+		RC6DecoderUnlock(rc6decoder);
+     f4c:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+     f50:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+     f54:	0e 94 21 0b 	call	0x1642	; 0x1642 <RC6DecoderUnlock>
+	}
+	timeoutTimer = sysTick;
+     f58:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     f5c:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     f60:	90 93 3f 01 	sts	0x013F, r25	; 0x80013f <timeoutTimer+0x1>
+     f64:	80 93 3e 01 	sts	0x013E, r24	; 0x80013e <timeoutTimer>
+     f68:	08 95       	ret
+
+00000f6a <setTimeModeOnEnter>:
+static bool received = false;
+static unsigned timeoutTimer;
+
+void setTimeModeOnEnter()
+{
+	displayHALSetImmediatly(10, 10, 10, 10);
+     f6a:	2a e0       	ldi	r18, 0x0A	; 10
+     f6c:	4a e0       	ldi	r20, 0x0A	; 10
+     f6e:	6a e0       	ldi	r22, 0x0A	; 10
+     f70:	8a e0       	ldi	r24, 0x0A	; 10
+     f72:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+	timeoutTimer = sysTick;
+     f76:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     f7a:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     f7e:	90 93 43 01 	sts	0x0143, r25	; 0x800143 <timeoutTimer+0x1>
+     f82:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <timeoutTimer>
+     f86:	08 95       	ret
+
+00000f88 <setTimeModeLoop>:
+}
+
+void setTimeModeLoop()
+{
+	if (sysTick - timeoutTimer > 10) {
+     f88:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+     f8c:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+     f90:	20 91 42 01 	lds	r18, 0x0142	; 0x800142 <timeoutTimer>
+     f94:	30 91 43 01 	lds	r19, 0x0143	; 0x800143 <timeoutTimer+0x1>
+     f98:	82 1b       	sub	r24, r18
+     f9a:	93 0b       	sbc	r25, r19
+     f9c:	0b 97       	sbiw	r24, 0x0b	; 11
+     f9e:	18 f0       	brcs	.+6      	; 0xfa6 <setTimeModeLoop+0x1e>
+		mode = DISPLAY_TIME;
+     fa0:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <mode>
+		return;
+     fa4:	08 95       	ret
+	}
+	
+	if (received) {
+     fa6:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <received>
+     faa:	88 23       	and	r24, r24
+     fac:	09 f4       	brne	.+2      	; 0xfb0 <setTimeModeLoop+0x28>
+     fae:	b0 c0       	rjmp	.+352    	; 0x1110 <setTimeModeLoop+0x188>
+		received = false;
+     fb0:	10 92 44 01 	sts	0x0144, r1	; 0x800144 <received>
+		if (subState == HR1) {
+     fb4:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <subState>
+     fb8:	81 11       	cpse	r24, r1
+     fba:	1f c0       	rjmp	.+62     	; 0xffa <setTimeModeLoop+0x72>
+			if (rc6CommandReceived >=0 && rc6CommandReceived <= 2) {
+     fbc:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+     fc0:	83 30       	cpi	r24, 0x03	; 3
+     fc2:	30 f4       	brcc	.+12     	; 0xfd0 <setTimeModeLoop+0x48>
+				hr1 = rc6CommandReceived;
+     fc4:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <hr1>
+				subState++;
+     fc8:	81 e0       	ldi	r24, 0x01	; 1
+     fca:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <subState>
+     fce:	84 c0       	rjmp	.+264    	; 0x10d8 <setTimeModeLoop+0x150>
+				} else if (rc6CommandReceived >=0 && rc6CommandReceived <= 9) {
+     fd0:	8a 30       	cpi	r24, 0x0A	; 10
+     fd2:	08 f0       	brcs	.+2      	; 0xfd6 <setTimeModeLoop+0x4e>
+     fd4:	81 c0       	rjmp	.+258    	; 0x10d8 <setTimeModeLoop+0x150>
+				displayHALSetImmediatly(rc6CommandReceived, hr2, min1, min2);
+     fd6:	20 91 21 01 	lds	r18, 0x0121	; 0x800121 <min2>
+     fda:	40 91 22 01 	lds	r20, 0x0122	; 0x800122 <min1>
+     fde:	60 91 23 01 	lds	r22, 0x0123	; 0x800123 <hr2>
+     fe2:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+     fe6:	2f ef       	ldi	r18, 0xFF	; 255
+     fe8:	80 e7       	ldi	r24, 0x70	; 112
+     fea:	92 e0       	ldi	r25, 0x02	; 2
+     fec:	21 50       	subi	r18, 0x01	; 1
+     fee:	80 40       	sbci	r24, 0x00	; 0
+     ff0:	90 40       	sbci	r25, 0x00	; 0
+     ff2:	e1 f7       	brne	.-8      	; 0xfec <setTimeModeLoop+0x64>
+     ff4:	00 c0       	rjmp	.+0      	; 0xff6 <setTimeModeLoop+0x6e>
+     ff6:	00 00       	nop
+     ff8:	6f c0       	rjmp	.+222    	; 0x10d8 <setTimeModeLoop+0x150>
+				_delay_ms(100);
+			}
+		}
+		
+		else if (subState == HR2) {
+     ffa:	81 30       	cpi	r24, 0x01	; 1
+     ffc:	61 f5       	brne	.+88     	; 0x1056 <setTimeModeLoop+0xce>
+			if ((hr1 >=0 && hr1 <= 1 && rc6CommandReceived >=0 && rc6CommandReceived <= 9) ||
+     ffe:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <hr1>
+    1002:	82 30       	cpi	r24, 0x02	; 2
+    1004:	28 f4       	brcc	.+10     	; 0x1010 <setTimeModeLoop+0x88>
+    1006:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <rc6CommandReceived>
+    100a:	9a 30       	cpi	r25, 0x0A	; 10
+    100c:	38 f0       	brcs	.+14     	; 0x101c <setTimeModeLoop+0x94>
+    100e:	78 c0       	rjmp	.+240    	; 0x1100 <setTimeModeLoop+0x178>
+    1010:	82 30       	cpi	r24, 0x02	; 2
+    1012:	61 f4       	brne	.+24     	; 0x102c <setTimeModeLoop+0xa4>
+			(hr1 == 2 && rc6CommandReceived >=0 && rc6CommandReceived <= 3)) {
+    1014:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <rc6CommandReceived>
+    1018:	94 30       	cpi	r25, 0x04	; 4
+    101a:	40 f4       	brcc	.+16     	; 0x102c <setTimeModeLoop+0xa4>
+				hr2 = rc6CommandReceived;
+    101c:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+    1020:	80 93 23 01 	sts	0x0123, r24	; 0x800123 <hr2>
+				subState++;
+    1024:	82 e0       	ldi	r24, 0x02	; 2
+    1026:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <subState>
+    102a:	56 c0       	rjmp	.+172    	; 0x10d8 <setTimeModeLoop+0x150>
+				} else if (rc6CommandReceived >=0 && rc6CommandReceived <= 9) {
+    102c:	60 91 1a 01 	lds	r22, 0x011A	; 0x80011a <rc6CommandReceived>
+    1030:	6a 30       	cpi	r22, 0x0A	; 10
+    1032:	08 f0       	brcs	.+2      	; 0x1036 <setTimeModeLoop+0xae>
+    1034:	51 c0       	rjmp	.+162    	; 0x10d8 <setTimeModeLoop+0x150>
+				displayHALSetImmediatly(hr1, rc6CommandReceived, min1, min2);
+    1036:	20 91 21 01 	lds	r18, 0x0121	; 0x800121 <min2>
+    103a:	40 91 22 01 	lds	r20, 0x0122	; 0x800122 <min1>
+    103e:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+    1042:	2f ef       	ldi	r18, 0xFF	; 255
+    1044:	80 e7       	ldi	r24, 0x70	; 112
+    1046:	92 e0       	ldi	r25, 0x02	; 2
+    1048:	21 50       	subi	r18, 0x01	; 1
+    104a:	80 40       	sbci	r24, 0x00	; 0
+    104c:	90 40       	sbci	r25, 0x00	; 0
+    104e:	e1 f7       	brne	.-8      	; 0x1048 <setTimeModeLoop+0xc0>
+    1050:	00 c0       	rjmp	.+0      	; 0x1052 <setTimeModeLoop+0xca>
+    1052:	00 00       	nop
+    1054:	41 c0       	rjmp	.+130    	; 0x10d8 <setTimeModeLoop+0x150>
+				_delay_ms(100);
+			}
+		}
+		
+		else if (subState == MIN1) {
+    1056:	82 30       	cpi	r24, 0x02	; 2
+    1058:	f1 f4       	brne	.+60     	; 0x1096 <setTimeModeLoop+0x10e>
+			if (rc6CommandReceived >=0 && rc6CommandReceived <= 5) {
+    105a:	40 91 1a 01 	lds	r20, 0x011A	; 0x80011a <rc6CommandReceived>
+    105e:	46 30       	cpi	r20, 0x06	; 6
+    1060:	30 f4       	brcc	.+12     	; 0x106e <setTimeModeLoop+0xe6>
+				min1 = rc6CommandReceived;
+    1062:	40 93 22 01 	sts	0x0122, r20	; 0x800122 <min1>
+				subState++;
+    1066:	83 e0       	ldi	r24, 0x03	; 3
+    1068:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <subState>
+    106c:	35 c0       	rjmp	.+106    	; 0x10d8 <setTimeModeLoop+0x150>
+				} else if (rc6CommandReceived >=0 && rc6CommandReceived <= 9) {
+    106e:	4a 30       	cpi	r20, 0x0A	; 10
+    1070:	98 f5       	brcc	.+102    	; 0x10d8 <setTimeModeLoop+0x150>
+				displayHALSetImmediatly(hr1, hr2, rc6CommandReceived, min2);
+    1072:	20 91 21 01 	lds	r18, 0x0121	; 0x800121 <min2>
+    1076:	60 91 23 01 	lds	r22, 0x0123	; 0x800123 <hr2>
+    107a:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <hr1>
+    107e:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+    1082:	2f ef       	ldi	r18, 0xFF	; 255
+    1084:	80 e7       	ldi	r24, 0x70	; 112
+    1086:	92 e0       	ldi	r25, 0x02	; 2
+    1088:	21 50       	subi	r18, 0x01	; 1
+    108a:	80 40       	sbci	r24, 0x00	; 0
+    108c:	90 40       	sbci	r25, 0x00	; 0
+    108e:	e1 f7       	brne	.-8      	; 0x1088 <setTimeModeLoop+0x100>
+    1090:	00 c0       	rjmp	.+0      	; 0x1092 <setTimeModeLoop+0x10a>
+    1092:	00 00       	nop
+    1094:	21 c0       	rjmp	.+66     	; 0x10d8 <setTimeModeLoop+0x150>
+				_delay_ms(100);
+			}
+		}
+		
+		else if (subState == MIN2) {
+    1096:	83 30       	cpi	r24, 0x03	; 3
+    1098:	f9 f4       	brne	.+62     	; 0x10d8 <setTimeModeLoop+0x150>
+			if (rc6CommandReceived >=0 && rc6CommandReceived <= 9) {
+    109a:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+    109e:	8a 30       	cpi	r24, 0x0A	; 10
+    10a0:	d8 f4       	brcc	.+54     	; 0x10d8 <setTimeModeLoop+0x150>
+				min2 = rc6CommandReceived;
+    10a2:	80 93 21 01 	sts	0x0121, r24	; 0x800121 <min2>
+				mode = DISPLAY_TIME;
+    10a6:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <mode>
+				openNixieTimeSet(hr1*10+hr2, min1*10+min2, 0);
+    10aa:	90 91 22 01 	lds	r25, 0x0122	; 0x800122 <min1>
+    10ae:	99 0f       	add	r25, r25
+    10b0:	69 2f       	mov	r22, r25
+    10b2:	66 0f       	add	r22, r22
+    10b4:	66 0f       	add	r22, r22
+    10b6:	69 0f       	add	r22, r25
+    10b8:	68 0f       	add	r22, r24
+    10ba:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <hr1>
+    10be:	88 0f       	add	r24, r24
+    10c0:	98 2f       	mov	r25, r24
+    10c2:	99 0f       	add	r25, r25
+    10c4:	99 0f       	add	r25, r25
+    10c6:	89 0f       	add	r24, r25
+    10c8:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <hr2>
+    10cc:	40 e0       	ldi	r20, 0x00	; 0
+    10ce:	89 0f       	add	r24, r25
+    10d0:	0e 94 58 09 	call	0x12b0	; 0x12b0 <openNixieTimeSet>
+				openNixieTimeStoreHAL();
+    10d4:	0e 94 e6 08 	call	0x11cc	; 0x11cc <openNixieTimeStoreHAL>
+			}
+		}
+		
+		rc6CommandReceived = 0xFF;
+    10d8:	8f ef       	ldi	r24, 0xFF	; 255
+    10da:	80 93 1a 01 	sts	0x011A, r24	; 0x80011a <rc6CommandReceived>
+		displayHALSetImmediatly(hr1, hr2, min1, min2);
+    10de:	20 91 21 01 	lds	r18, 0x0121	; 0x800121 <min2>
+    10e2:	40 91 22 01 	lds	r20, 0x0122	; 0x800122 <min1>
+    10e6:	60 91 23 01 	lds	r22, 0x0123	; 0x800123 <hr2>
+    10ea:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <hr1>
+    10ee:	0e 94 00 01 	call	0x200	; 0x200 <displayHALSetImmediatly>
+		RC6DecoderUnlock(rc6decoder);
+    10f2:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+    10f6:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+    10fa:	0e 94 21 0b 	call	0x1642	; 0x1642 <RC6DecoderUnlock>
+    10fe:	08 95       	ret
+				_delay_ms(100);
+			}
+		}
+		
+		else if (subState == HR2) {
+			if ((hr1 >=0 && hr1 <= 1 && rc6CommandReceived >=0 && rc6CommandReceived <= 9) ||
+    1100:	82 30       	cpi	r24, 0x02	; 2
+    1102:	51 f7       	brne	.-44     	; 0x10d8 <setTimeModeLoop+0x150>
+			(hr1 == 2 && rc6CommandReceived >=0 && rc6CommandReceived <= 3)) {
+    1104:	80 91 1a 01 	lds	r24, 0x011A	; 0x80011a <rc6CommandReceived>
+    1108:	84 30       	cpi	r24, 0x04	; 4
+    110a:	08 f4       	brcc	.+2      	; 0x110e <setTimeModeLoop+0x186>
+    110c:	87 cf       	rjmp	.-242    	; 0x101c <setTimeModeLoop+0x94>
+    110e:	e4 cf       	rjmp	.-56     	; 0x10d8 <setTimeModeLoop+0x150>
+    1110:	08 95       	ret
+
+00001112 <setTimeModeOnExit>:
+	}
+}
+
+void setTimeModeOnExit()
+{
+	hr1=10;
+    1112:	8a e0       	ldi	r24, 0x0A	; 10
+    1114:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <hr1>
+	hr2=10;
+    1118:	80 93 23 01 	sts	0x0123, r24	; 0x800123 <hr2>
+	min1=10;
+    111c:	80 93 22 01 	sts	0x0122, r24	; 0x800122 <min1>
+	min2=10;
+    1120:	80 93 21 01 	sts	0x0121, r24	; 0x800121 <min2>
+	subState=HR1;
+    1124:	10 92 45 01 	sts	0x0145, r1	; 0x800145 <subState>
+    1128:	08 95       	ret
+
+0000112a <setTimeModeOnCommandReceived>:
+}
+
+void
+setTimeModeOnCommandReceived()
+{
+	if (!RC6DecoderIsRepeated(rc6decoder)) {
+    112a:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+    112e:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+    1132:	0e 94 1e 0b 	call	0x163c	; 0x163c <RC6DecoderIsRepeated>
+    1136:	81 11       	cpse	r24, r1
+    1138:	04 c0       	rjmp	.+8      	; 0x1142 <setTimeModeOnCommandReceived+0x18>
+		received = true;
+    113a:	81 e0       	ldi	r24, 0x01	; 1
+    113c:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <received>
+    1140:	06 c0       	rjmp	.+12     	; 0x114e <setTimeModeOnCommandReceived+0x24>
+		} else {
+		RC6DecoderUnlock(rc6decoder);
+    1142:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+    1146:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+    114a:	0e 94 21 0b 	call	0x1642	; 0x1642 <RC6DecoderUnlock>
+	}
+	timeoutTimer = sysTick;
+    114e:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <sysTick>
+    1152:	90 91 4c 01 	lds	r25, 0x014C	; 0x80014c <sysTick+0x1>
+    1156:	90 93 43 01 	sts	0x0143, r25	; 0x800143 <timeoutTimer+0x1>
+    115a:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <timeoutTimer>
+    115e:	08 95       	ret
+
+00001160 <openNixieTimeGetHAL>:
+	}
+}
+
+void openNixieTimeResetSeconds()
+{
+	openNixieTime.seconds = 0;
+    1160:	cf 93       	push	r28
+    1162:	df 93       	push	r29
+    1164:	00 d0       	rcall	.+0      	; 0x1166 <openNixieTimeGetHAL+0x6>
+    1166:	1f 92       	push	r1
+    1168:	cd b7       	in	r28, 0x3d	; 61
+    116a:	de b7       	in	r29, 0x3e	; 62
+    116c:	ce 01       	movw	r24, r28
+    116e:	01 96       	adiw	r24, 0x01	; 1
+    1170:	0e 94 b0 01 	call	0x360	; 0x360 <ds1307getTime>
+    1174:	89 81       	ldd	r24, Y+1	; 0x01
+    1176:	98 2f       	mov	r25, r24
+    1178:	92 95       	swap	r25
+    117a:	9f 70       	andi	r25, 0x0F	; 15
+    117c:	99 0f       	add	r25, r25
+    117e:	29 2f       	mov	r18, r25
+    1180:	22 0f       	add	r18, r18
+    1182:	22 0f       	add	r18, r18
+    1184:	92 0f       	add	r25, r18
+    1186:	8f 70       	andi	r24, 0x0F	; 15
+    1188:	89 0f       	add	r24, r25
+    118a:	e0 e5       	ldi	r30, 0x50	; 80
+    118c:	f1 e0       	ldi	r31, 0x01	; 1
+    118e:	80 83       	st	Z, r24
+    1190:	8a 81       	ldd	r24, Y+2	; 0x02
+    1192:	98 2f       	mov	r25, r24
+    1194:	92 95       	swap	r25
+    1196:	9f 70       	andi	r25, 0x0F	; 15
+    1198:	99 0f       	add	r25, r25
+    119a:	29 2f       	mov	r18, r25
+    119c:	22 0f       	add	r18, r18
+    119e:	22 0f       	add	r18, r18
+    11a0:	92 0f       	add	r25, r18
+    11a2:	8f 70       	andi	r24, 0x0F	; 15
+    11a4:	89 0f       	add	r24, r25
+    11a6:	81 83       	std	Z+1, r24	; 0x01
+    11a8:	8b 81       	ldd	r24, Y+3	; 0x03
+    11aa:	98 2f       	mov	r25, r24
+    11ac:	92 95       	swap	r25
+    11ae:	9f 70       	andi	r25, 0x0F	; 15
+    11b0:	99 0f       	add	r25, r25
+    11b2:	29 2f       	mov	r18, r25
+    11b4:	22 0f       	add	r18, r18
+    11b6:	22 0f       	add	r18, r18
+    11b8:	92 0f       	add	r25, r18
+    11ba:	8f 70       	andi	r24, 0x0F	; 15
+    11bc:	89 0f       	add	r24, r25
+    11be:	82 83       	std	Z+2, r24	; 0x02
+    11c0:	0f 90       	pop	r0
+    11c2:	0f 90       	pop	r0
+    11c4:	0f 90       	pop	r0
+    11c6:	df 91       	pop	r29
+    11c8:	cf 91       	pop	r28
+    11ca:	08 95       	ret
+
+000011cc <openNixieTimeStoreHAL>:
+    11cc:	cf 93       	push	r28
+    11ce:	df 93       	push	r29
+    11d0:	00 d0       	rcall	.+0      	; 0x11d2 <openNixieTimeStoreHAL+0x6>
+    11d2:	1f 92       	push	r1
+    11d4:	cd b7       	in	r28, 0x3d	; 61
+    11d6:	de b7       	in	r29, 0x3e	; 62
+    11d8:	19 82       	std	Y+1, r1	; 0x01
+    11da:	e0 e5       	ldi	r30, 0x50	; 80
+    11dc:	f1 e0       	ldi	r31, 0x01	; 1
+    11de:	91 81       	ldd	r25, Z+1	; 0x01
+    11e0:	21 81       	ldd	r18, Z+1	; 0x01
+    11e2:	87 e6       	ldi	r24, 0x67	; 103
+    11e4:	98 02       	muls	r25, r24
+    11e6:	31 2d       	mov	r19, r1
+    11e8:	11 24       	eor	r1, r1
+    11ea:	35 95       	asr	r19
+    11ec:	35 95       	asr	r19
+    11ee:	97 fd       	sbrc	r25, 7
+    11f0:	33 95       	inc	r19
+    11f2:	28 02       	muls	r18, r24
+    11f4:	91 2d       	mov	r25, r1
+    11f6:	11 24       	eor	r1, r1
+    11f8:	95 95       	asr	r25
+    11fa:	95 95       	asr	r25
+    11fc:	27 fd       	sbrc	r18, 7
+    11fe:	93 95       	inc	r25
+    1200:	99 0f       	add	r25, r25
+    1202:	49 2f       	mov	r20, r25
+    1204:	44 0f       	add	r20, r20
+    1206:	44 0f       	add	r20, r20
+    1208:	94 0f       	add	r25, r20
+    120a:	29 1b       	sub	r18, r25
+    120c:	90 e1       	ldi	r25, 0x10	; 16
+    120e:	39 9f       	mul	r19, r25
+    1210:	20 0d       	add	r18, r0
+    1212:	11 24       	eor	r1, r1
+    1214:	2a 83       	std	Y+2, r18	; 0x02
+    1216:	32 81       	ldd	r19, Z+2	; 0x02
+    1218:	92 81       	ldd	r25, Z+2	; 0x02
+    121a:	38 02       	muls	r19, r24
+    121c:	21 2d       	mov	r18, r1
+    121e:	11 24       	eor	r1, r1
+    1220:	25 95       	asr	r18
+    1222:	25 95       	asr	r18
+    1224:	37 fd       	sbrc	r19, 7
+    1226:	23 95       	inc	r18
+    1228:	98 02       	muls	r25, r24
+    122a:	81 2d       	mov	r24, r1
+    122c:	11 24       	eor	r1, r1
+    122e:	85 95       	asr	r24
+    1230:	85 95       	asr	r24
+    1232:	97 fd       	sbrc	r25, 7
+    1234:	83 95       	inc	r24
+    1236:	88 0f       	add	r24, r24
+    1238:	38 2f       	mov	r19, r24
+    123a:	33 0f       	add	r19, r19
+    123c:	33 0f       	add	r19, r19
+    123e:	83 0f       	add	r24, r19
+    1240:	98 1b       	sub	r25, r24
+    1242:	80 e1       	ldi	r24, 0x10	; 16
+    1244:	28 9f       	mul	r18, r24
+    1246:	90 0d       	add	r25, r0
+    1248:	11 24       	eor	r1, r1
+    124a:	9b 83       	std	Y+3, r25	; 0x03
+    124c:	ce 01       	movw	r24, r28
+    124e:	01 96       	adiw	r24, 0x01	; 1
+    1250:	0e 94 df 01 	call	0x3be	; 0x3be <ds1307setTime>
+    1254:	0f 90       	pop	r0
+    1256:	0f 90       	pop	r0
+    1258:	0f 90       	pop	r0
+    125a:	df 91       	pop	r29
+    125c:	cf 91       	pop	r28
+    125e:	08 95       	ret
+
+00001260 <openNixieIncrementTime>:
+    1260:	e0 e5       	ldi	r30, 0x50	; 80
+    1262:	f1 e0       	ldi	r31, 0x01	; 1
+    1264:	81 81       	ldd	r24, Z+1	; 0x01
+    1266:	8f 5f       	subi	r24, 0xFF	; 255
+    1268:	81 83       	std	Z+1, r24	; 0x01
+    126a:	81 81       	ldd	r24, Z+1	; 0x01
+    126c:	8c 33       	cpi	r24, 0x3C	; 60
+    126e:	4c f0       	brlt	.+18     	; 0x1282 <openNixieIncrementTime+0x22>
+    1270:	11 82       	std	Z+1, r1	; 0x01
+    1272:	82 81       	ldd	r24, Z+2	; 0x02
+    1274:	8f 5f       	subi	r24, 0xFF	; 255
+    1276:	82 83       	std	Z+2, r24	; 0x02
+    1278:	82 81       	ldd	r24, Z+2	; 0x02
+    127a:	88 31       	cpi	r24, 0x18	; 24
+    127c:	14 f0       	brlt	.+4      	; 0x1282 <openNixieIncrementTime+0x22>
+    127e:	10 92 52 01 	sts	0x0152, r1	; 0x800152 <openNixieTime+0x2>
+    1282:	08 95       	ret
+
+00001284 <openNixieTimeTick>:
+    1284:	e0 e5       	ldi	r30, 0x50	; 80
+    1286:	f1 e0       	ldi	r31, 0x01	; 1
+    1288:	80 81       	ld	r24, Z
+    128a:	8f 5f       	subi	r24, 0xFF	; 255
+    128c:	80 83       	st	Z, r24
+    128e:	80 81       	ld	r24, Z
+    1290:	8c 33       	cpi	r24, 0x3C	; 60
+    1292:	24 f0       	brlt	.+8      	; 0x129c <openNixieTimeTick+0x18>
+    1294:	10 92 50 01 	sts	0x0150, r1	; 0x800150 <openNixieTime>
+    1298:	0e 94 30 09 	call	0x1260	; 0x1260 <openNixieIncrementTime>
+    129c:	08 95       	ret
+
+0000129e <openNixieTimeGetMinutes>:
+}
+
+char openNixieTimeGetMinutes()
+{
+	return openNixieTime.minutes;
+    129e:	80 91 51 01 	lds	r24, 0x0151	; 0x800151 <openNixieTime+0x1>
+}
+    12a2:	08 95       	ret
+
+000012a4 <openNixieTimeGetHours>:
+
+char openNixieTimeGetHours()
+{
+	return openNixieTime.hours;
+    12a4:	80 91 52 01 	lds	r24, 0x0152	; 0x800152 <openNixieTime+0x2>
+}
+    12a8:	08 95       	ret
+
+000012aa <openNixieTimeGetSeconds>:
+
+char openNixieTimeGetSeconds()
+{
+	return openNixieTime.seconds;
+    12aa:	80 91 50 01 	lds	r24, 0x0150	; 0x800150 <openNixieTime>
+}
+    12ae:	08 95       	ret
+
+000012b0 <openNixieTimeSet>:
+
+void openNixieTimeSet(char hours, char minutes, char seconds)
+{
+	if (seconds >= 0 && seconds < 60) {
+    12b0:	4c 33       	cpi	r20, 0x3C	; 60
+    12b2:	10 f4       	brcc	.+4      	; 0x12b8 <openNixieTimeSet+0x8>
+		openNixieTime.seconds = seconds;
+    12b4:	40 93 50 01 	sts	0x0150, r20	; 0x800150 <openNixieTime>
+	}
+	
+	if (minutes >= 0 && minutes < 60) {
+    12b8:	6c 33       	cpi	r22, 0x3C	; 60
+    12ba:	10 f4       	brcc	.+4      	; 0x12c0 <openNixieTimeSet+0x10>
+		openNixieTime.minutes = minutes;
+    12bc:	60 93 51 01 	sts	0x0151, r22	; 0x800151 <openNixieTime+0x1>
+	}
+		
+	if (hours >= 0 && hours < 24) {
+    12c0:	88 31       	cpi	r24, 0x18	; 24
+    12c2:	10 f4       	brcc	.+4      	; 0x12c8 <openNixieTimeSet+0x18>
+		openNixieTime.hours = hours;
+    12c4:	80 93 52 01 	sts	0x0152, r24	; 0x800152 <openNixieTime+0x2>
+    12c8:	08 95       	ret
+
+000012ca <RC6idle>:
+}
+
+unsigned char RC6DecoderGetControl (RC6Decoder self)
+{
+	return self->RC6_Control;
+}
+    12ca:	fc 01       	movw	r30, r24
+    12cc:	14 86       	std	Z+12, r1	; 0x0c
+    12ce:	16 82       	std	Z+6, r1	; 0x06
+    12d0:	17 82       	std	Z+7, r1	; 0x07
+    12d2:	10 82       	st	Z, r1
+    12d4:	13 82       	std	Z+3, r1	; 0x03
+    12d6:	08 95       	ret
+
+000012d8 <RC6DecoderOnPinChange>:
+    12d8:	0f 93       	push	r16
+    12da:	1f 93       	push	r17
+    12dc:	cf 93       	push	r28
+    12de:	df 93       	push	r29
+    12e0:	ec 01       	movw	r28, r24
+    12e2:	eb 89       	ldd	r30, Y+19	; 0x13
+    12e4:	fc 89       	ldd	r31, Y+20	; 0x14
+    12e6:	09 95       	icall
+    12e8:	2d 85       	ldd	r18, Y+13	; 0x0d
+    12ea:	3e 85       	ldd	r19, Y+14	; 0x0e
+    12ec:	8c 01       	movw	r16, r24
+    12ee:	02 1b       	sub	r16, r18
+    12f0:	13 0b       	sbc	r17, r19
+    12f2:	eb 89       	ldd	r30, Y+19	; 0x13
+    12f4:	fc 89       	ldd	r31, Y+20	; 0x14
+    12f6:	09 95       	icall
+    12f8:	9e 87       	std	Y+14, r25	; 0x0e
+    12fa:	8d 87       	std	Y+13, r24	; 0x0d
+    12fc:	8c 85       	ldd	r24, Y+12	; 0x0c
+    12fe:	81 11       	cpse	r24, r1
+    1300:	11 c0       	rjmp	.+34     	; 0x1324 <RC6DecoderOnPinChange+0x4c>
+    1302:	c8 01       	movw	r24, r16
+    1304:	8b 5c       	subi	r24, 0xCB	; 203
+    1306:	98 40       	sbci	r25, 0x08	; 8
+    1308:	8f 3a       	cpi	r24, 0xAF	; 175
+    130a:	94 40       	sbci	r25, 0x04	; 4
+    130c:	40 f4       	brcc	.+16     	; 0x131e <RC6DecoderOnPinChange+0x46>
+    130e:	e9 89       	ldd	r30, Y+17	; 0x11
+    1310:	fa 89       	ldd	r31, Y+18	; 0x12
+    1312:	09 95       	icall
+    1314:	88 23       	and	r24, r24
+    1316:	19 f0       	breq	.+6      	; 0x131e <RC6DecoderOnPinChange+0x46>
+    1318:	81 e0       	ldi	r24, 0x01	; 1
+    131a:	8c 87       	std	Y+12, r24	; 0x0c
+    131c:	60 c1       	rjmp	.+704    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    131e:	ce 01       	movw	r24, r28
+    1320:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    1324:	8c 85       	ldd	r24, Y+12	; 0x0c
+    1326:	81 30       	cpi	r24, 0x01	; 1
+    1328:	89 f4       	brne	.+34     	; 0x134c <RC6DecoderOnPinChange+0x74>
+    132a:	c8 01       	movw	r24, r16
+    132c:	8f 5e       	subi	r24, 0xEF	; 239
+    132e:	92 40       	sbci	r25, 0x02	; 2
+    1330:	8f 38       	cpi	r24, 0x8F	; 143
+    1332:	91 40       	sbci	r25, 0x01	; 1
+    1334:	40 f4       	brcc	.+16     	; 0x1346 <RC6DecoderOnPinChange+0x6e>
+    1336:	e9 89       	ldd	r30, Y+17	; 0x11
+    1338:	fa 89       	ldd	r31, Y+18	; 0x12
+    133a:	09 95       	icall
+    133c:	81 11       	cpse	r24, r1
+    133e:	03 c0       	rjmp	.+6      	; 0x1346 <RC6DecoderOnPinChange+0x6e>
+    1340:	82 e0       	ldi	r24, 0x02	; 2
+    1342:	8c 87       	std	Y+12, r24	; 0x0c
+    1344:	4c c1       	rjmp	.+664    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    1346:	ce 01       	movw	r24, r28
+    1348:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    134c:	8c 85       	ldd	r24, Y+12	; 0x0c
+    134e:	82 30       	cpi	r24, 0x02	; 2
+    1350:	89 f4       	brne	.+34     	; 0x1374 <RC6DecoderOnPinChange+0x9c>
+    1352:	c8 01       	movw	r24, r16
+    1354:	81 54       	subi	r24, 0x41	; 65
+    1356:	91 40       	sbci	r25, 0x01	; 1
+    1358:	8d 30       	cpi	r24, 0x0D	; 13
+    135a:	91 40       	sbci	r25, 0x01	; 1
+    135c:	40 f4       	brcc	.+16     	; 0x136e <RC6DecoderOnPinChange+0x96>
+    135e:	e9 89       	ldd	r30, Y+17	; 0x11
+    1360:	fa 89       	ldd	r31, Y+18	; 0x12
+    1362:	09 95       	icall
+    1364:	88 23       	and	r24, r24
+    1366:	19 f0       	breq	.+6      	; 0x136e <RC6DecoderOnPinChange+0x96>
+    1368:	83 e0       	ldi	r24, 0x03	; 3
+    136a:	8c 87       	std	Y+12, r24	; 0x0c
+    136c:	38 c1       	rjmp	.+624    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    136e:	ce 01       	movw	r24, r28
+    1370:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    1374:	8c 85       	ldd	r24, Y+12	; 0x0c
+    1376:	83 30       	cpi	r24, 0x03	; 3
+    1378:	89 f4       	brne	.+34     	; 0x139c <RC6DecoderOnPinChange+0xc4>
+    137a:	c8 01       	movw	r24, r16
+    137c:	8f 5e       	subi	r24, 0xEF	; 239
+    137e:	92 40       	sbci	r25, 0x02	; 2
+    1380:	8f 38       	cpi	r24, 0x8F	; 143
+    1382:	91 40       	sbci	r25, 0x01	; 1
+    1384:	40 f4       	brcc	.+16     	; 0x1396 <RC6DecoderOnPinChange+0xbe>
+    1386:	e9 89       	ldd	r30, Y+17	; 0x11
+    1388:	fa 89       	ldd	r31, Y+18	; 0x12
+    138a:	09 95       	icall
+    138c:	81 11       	cpse	r24, r1
+    138e:	03 c0       	rjmp	.+6      	; 0x1396 <RC6DecoderOnPinChange+0xbe>
+    1390:	84 e0       	ldi	r24, 0x04	; 4
+    1392:	8c 87       	std	Y+12, r24	; 0x0c
+    1394:	24 c1       	rjmp	.+584    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    1396:	ce 01       	movw	r24, r28
+    1398:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    139c:	8c 85       	ldd	r24, Y+12	; 0x0c
+    139e:	84 30       	cpi	r24, 0x04	; 4
+    13a0:	89 f4       	brne	.+34     	; 0x13c4 <RC6DecoderOnPinChange+0xec>
+    13a2:	c8 01       	movw	r24, r16
+    13a4:	81 54       	subi	r24, 0x41	; 65
+    13a6:	91 40       	sbci	r25, 0x01	; 1
+    13a8:	8d 30       	cpi	r24, 0x0D	; 13
+    13aa:	91 40       	sbci	r25, 0x01	; 1
+    13ac:	40 f4       	brcc	.+16     	; 0x13be <RC6DecoderOnPinChange+0xe6>
+    13ae:	e9 89       	ldd	r30, Y+17	; 0x11
+    13b0:	fa 89       	ldd	r31, Y+18	; 0x12
+    13b2:	09 95       	icall
+    13b4:	88 23       	and	r24, r24
+    13b6:	19 f0       	breq	.+6      	; 0x13be <RC6DecoderOnPinChange+0xe6>
+    13b8:	85 e0       	ldi	r24, 0x05	; 5
+    13ba:	8c 87       	std	Y+12, r24	; 0x0c
+    13bc:	10 c1       	rjmp	.+544    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    13be:	ce 01       	movw	r24, r28
+    13c0:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    13c4:	8c 85       	ldd	r24, Y+12	; 0x0c
+    13c6:	85 30       	cpi	r24, 0x05	; 5
+    13c8:	89 f4       	brne	.+34     	; 0x13ec <RC6DecoderOnPinChange+0x114>
+    13ca:	c8 01       	movw	r24, r16
+    13cc:	81 54       	subi	r24, 0x41	; 65
+    13ce:	91 40       	sbci	r25, 0x01	; 1
+    13d0:	8d 30       	cpi	r24, 0x0D	; 13
+    13d2:	91 40       	sbci	r25, 0x01	; 1
+    13d4:	40 f4       	brcc	.+16     	; 0x13e6 <RC6DecoderOnPinChange+0x10e>
+    13d6:	e9 89       	ldd	r30, Y+17	; 0x11
+    13d8:	fa 89       	ldd	r31, Y+18	; 0x12
+    13da:	09 95       	icall
+    13dc:	81 11       	cpse	r24, r1
+    13de:	03 c0       	rjmp	.+6      	; 0x13e6 <RC6DecoderOnPinChange+0x10e>
+    13e0:	86 e0       	ldi	r24, 0x06	; 6
+    13e2:	8c 87       	std	Y+12, r24	; 0x0c
+    13e4:	fc c0       	rjmp	.+504    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    13e6:	ce 01       	movw	r24, r28
+    13e8:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    13ec:	8c 85       	ldd	r24, Y+12	; 0x0c
+    13ee:	86 30       	cpi	r24, 0x06	; 6
+    13f0:	89 f4       	brne	.+34     	; 0x1414 <RC6DecoderOnPinChange+0x13c>
+    13f2:	c8 01       	movw	r24, r16
+    13f4:	81 54       	subi	r24, 0x41	; 65
+    13f6:	91 40       	sbci	r25, 0x01	; 1
+    13f8:	8d 30       	cpi	r24, 0x0D	; 13
+    13fa:	91 40       	sbci	r25, 0x01	; 1
+    13fc:	40 f4       	brcc	.+16     	; 0x140e <RC6DecoderOnPinChange+0x136>
+    13fe:	e9 89       	ldd	r30, Y+17	; 0x11
+    1400:	fa 89       	ldd	r31, Y+18	; 0x12
+    1402:	09 95       	icall
+    1404:	88 23       	and	r24, r24
+    1406:	19 f0       	breq	.+6      	; 0x140e <RC6DecoderOnPinChange+0x136>
+    1408:	87 e0       	ldi	r24, 0x07	; 7
+    140a:	8c 87       	std	Y+12, r24	; 0x0c
+    140c:	e8 c0       	rjmp	.+464    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    140e:	ce 01       	movw	r24, r28
+    1410:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    1414:	8c 85       	ldd	r24, Y+12	; 0x0c
+    1416:	87 30       	cpi	r24, 0x07	; 7
+    1418:	89 f4       	brne	.+34     	; 0x143c <RC6DecoderOnPinChange+0x164>
+    141a:	c8 01       	movw	r24, r16
+    141c:	81 54       	subi	r24, 0x41	; 65
+    141e:	91 40       	sbci	r25, 0x01	; 1
+    1420:	8d 30       	cpi	r24, 0x0D	; 13
+    1422:	91 40       	sbci	r25, 0x01	; 1
+    1424:	40 f4       	brcc	.+16     	; 0x1436 <RC6DecoderOnPinChange+0x15e>
+    1426:	e9 89       	ldd	r30, Y+17	; 0x11
+    1428:	fa 89       	ldd	r31, Y+18	; 0x12
+    142a:	09 95       	icall
+    142c:	81 11       	cpse	r24, r1
+    142e:	03 c0       	rjmp	.+6      	; 0x1436 <RC6DecoderOnPinChange+0x15e>
+    1430:	88 e0       	ldi	r24, 0x08	; 8
+    1432:	8c 87       	std	Y+12, r24	; 0x0c
+    1434:	d4 c0       	rjmp	.+424    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    1436:	ce 01       	movw	r24, r28
+    1438:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    143c:	8c 85       	ldd	r24, Y+12	; 0x0c
+    143e:	88 30       	cpi	r24, 0x08	; 8
+    1440:	11 f5       	brne	.+68     	; 0x1486 <RC6DecoderOnPinChange+0x1ae>
+    1442:	c8 01       	movw	r24, r16
+    1444:	81 54       	subi	r24, 0x41	; 65
+    1446:	91 40       	sbci	r25, 0x01	; 1
+    1448:	8d 30       	cpi	r24, 0x0D	; 13
+    144a:	91 40       	sbci	r25, 0x01	; 1
+    144c:	48 f4       	brcc	.+18     	; 0x1460 <RC6DecoderOnPinChange+0x188>
+    144e:	e9 89       	ldd	r30, Y+17	; 0x11
+    1450:	fa 89       	ldd	r31, Y+18	; 0x12
+    1452:	09 95       	icall
+    1454:	88 23       	and	r24, r24
+    1456:	21 f0       	breq	.+8      	; 0x1460 <RC6DecoderOnPinChange+0x188>
+    1458:	89 e0       	ldi	r24, 0x09	; 9
+    145a:	8c 87       	std	Y+12, r24	; 0x0c
+    145c:	18 86       	std	Y+8, r1	; 0x08
+    145e:	bf c0       	rjmp	.+382    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    1460:	c8 01       	movw	r24, r16
+    1462:	8f 52       	subi	r24, 0x2F	; 47
+    1464:	94 40       	sbci	r25, 0x04	; 4
+    1466:	8d 39       	cpi	r24, 0x9D	; 157
+    1468:	92 40       	sbci	r25, 0x02	; 2
+    146a:	50 f4       	brcc	.+20     	; 0x1480 <RC6DecoderOnPinChange+0x1a8>
+    146c:	e9 89       	ldd	r30, Y+17	; 0x11
+    146e:	fa 89       	ldd	r31, Y+18	; 0x12
+    1470:	09 95       	icall
+    1472:	88 23       	and	r24, r24
+    1474:	29 f0       	breq	.+10     	; 0x1480 <RC6DecoderOnPinChange+0x1a8>
+    1476:	8a e0       	ldi	r24, 0x0A	; 10
+    1478:	8c 87       	std	Y+12, r24	; 0x0c
+    147a:	81 e0       	ldi	r24, 0x01	; 1
+    147c:	88 87       	std	Y+8, r24	; 0x08
+    147e:	af c0       	rjmp	.+350    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    1480:	ce 01       	movw	r24, r28
+    1482:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    1486:	8c 85       	ldd	r24, Y+12	; 0x0c
+    1488:	89 30       	cpi	r24, 0x09	; 9
+    148a:	89 f4       	brne	.+34     	; 0x14ae <RC6DecoderOnPinChange+0x1d6>
+    148c:	c8 01       	movw	r24, r16
+    148e:	8f 5e       	subi	r24, 0xEF	; 239
+    1490:	92 40       	sbci	r25, 0x02	; 2
+    1492:	8f 38       	cpi	r24, 0x8F	; 143
+    1494:	91 40       	sbci	r25, 0x01	; 1
+    1496:	40 f4       	brcc	.+16     	; 0x14a8 <RC6DecoderOnPinChange+0x1d0>
+    1498:	e9 89       	ldd	r30, Y+17	; 0x11
+    149a:	fa 89       	ldd	r31, Y+18	; 0x12
+    149c:	09 95       	icall
+    149e:	81 11       	cpse	r24, r1
+    14a0:	03 c0       	rjmp	.+6      	; 0x14a8 <RC6DecoderOnPinChange+0x1d0>
+    14a2:	8a e0       	ldi	r24, 0x0A	; 10
+    14a4:	8c 87       	std	Y+12, r24	; 0x0c
+    14a6:	9b c0       	rjmp	.+310    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    14a8:	ce 01       	movw	r24, r28
+    14aa:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    14ae:	8c 85       	ldd	r24, Y+12	; 0x0c
+    14b0:	8a 30       	cpi	r24, 0x0A	; 10
+    14b2:	c9 f4       	brne	.+50     	; 0x14e6 <RC6DecoderOnPinChange+0x20e>
+    14b4:	c8 01       	movw	r24, r16
+    14b6:	8f 5e       	subi	r24, 0xEF	; 239
+    14b8:	92 40       	sbci	r25, 0x02	; 2
+    14ba:	8f 38       	cpi	r24, 0x8F	; 143
+    14bc:	91 40       	sbci	r25, 0x01	; 1
+    14be:	18 f4       	brcc	.+6      	; 0x14c6 <RC6DecoderOnPinChange+0x1ee>
+    14c0:	8b e0       	ldi	r24, 0x0B	; 11
+    14c2:	8c 87       	std	Y+12, r24	; 0x0c
+    14c4:	8c c0       	rjmp	.+280    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    14c6:	c8 01       	movw	r24, r16
+    14c8:	8f 52       	subi	r24, 0x2F	; 47
+    14ca:	94 40       	sbci	r25, 0x04	; 4
+    14cc:	8d 39       	cpi	r24, 0x9D	; 157
+    14ce:	92 40       	sbci	r25, 0x02	; 2
+    14d0:	38 f4       	brcc	.+14     	; 0x14e0 <RC6DecoderOnPinChange+0x208>
+    14d2:	8c e0       	ldi	r24, 0x0C	; 12
+    14d4:	8c 87       	std	Y+12, r24	; 0x0c
+    14d6:	81 e0       	ldi	r24, 0x01	; 1
+    14d8:	8e 83       	std	Y+6, r24	; 0x06
+    14da:	0f ee       	ldi	r16, 0xEF	; 239
+    14dc:	12 e0       	ldi	r17, 0x02	; 2
+    14de:	1f c0       	rjmp	.+62     	; 0x151e <RC6DecoderOnPinChange+0x246>
+    14e0:	ce 01       	movw	r24, r28
+    14e2:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    14e6:	8c 85       	ldd	r24, Y+12	; 0x0c
+    14e8:	8b 30       	cpi	r24, 0x0B	; 11
+    14ea:	a9 f4       	brne	.+42     	; 0x1516 <RC6DecoderOnPinChange+0x23e>
+    14ec:	c8 01       	movw	r24, r16
+    14ee:	81 54       	subi	r24, 0x41	; 65
+    14f0:	91 40       	sbci	r25, 0x01	; 1
+    14f2:	8d 30       	cpi	r24, 0x0D	; 13
+    14f4:	91 40       	sbci	r25, 0x01	; 1
+    14f6:	38 f4       	brcc	.+14     	; 0x1506 <RC6DecoderOnPinChange+0x22e>
+    14f8:	8c e0       	ldi	r24, 0x0C	; 12
+    14fa:	8c 87       	std	Y+12, r24	; 0x0c
+    14fc:	81 e0       	ldi	r24, 0x01	; 1
+    14fe:	8e 83       	std	Y+6, r24	; 0x06
+    1500:	0f ee       	ldi	r16, 0xEF	; 239
+    1502:	12 e0       	ldi	r17, 0x02	; 2
+    1504:	17 c0       	rjmp	.+46     	; 0x1534 <RC6DecoderOnPinChange+0x25c>
+    1506:	ce 01       	movw	r24, r28
+    1508:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    150c:	8c 85       	ldd	r24, Y+12	; 0x0c
+    150e:	8c 30       	cpi	r24, 0x0C	; 12
+    1510:	09 f0       	breq	.+2      	; 0x1514 <RC6DecoderOnPinChange+0x23c>
+    1512:	65 c0       	rjmp	.+202    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    1514:	0f c0       	rjmp	.+30     	; 0x1534 <RC6DecoderOnPinChange+0x25c>
+    1516:	8c 85       	ldd	r24, Y+12	; 0x0c
+    1518:	8c 30       	cpi	r24, 0x0C	; 12
+    151a:	09 f0       	breq	.+2      	; 0x151e <RC6DecoderOnPinChange+0x246>
+    151c:	60 c0       	rjmp	.+192    	; 0x15de <RC6DecoderOnPinChange+0x306>
+    151e:	c8 01       	movw	r24, r16
+    1520:	81 54       	subi	r24, 0x41	; 65
+    1522:	91 40       	sbci	r25, 0x01	; 1
+    1524:	8d 30       	cpi	r24, 0x0D	; 13
+    1526:	91 40       	sbci	r25, 0x01	; 1
+    1528:	28 f4       	brcc	.+10     	; 0x1534 <RC6DecoderOnPinChange+0x25c>
+    152a:	9e 81       	ldd	r25, Y+6	; 0x06
+    152c:	81 e0       	ldi	r24, 0x01	; 1
+    152e:	89 27       	eor	r24, r25
+    1530:	8e 83       	std	Y+6, r24	; 0x06
+    1532:	08 c0       	rjmp	.+16     	; 0x1544 <RC6DecoderOnPinChange+0x26c>
+    1534:	0f 5e       	subi	r16, 0xEF	; 239
+    1536:	12 40       	sbci	r17, 0x02	; 2
+    1538:	0f 38       	cpi	r16, 0x8F	; 143
+    153a:	11 40       	sbci	r17, 0x01	; 1
+    153c:	18 f0       	brcs	.+6      	; 0x1544 <RC6DecoderOnPinChange+0x26c>
+    153e:	ce 01       	movw	r24, r28
+    1540:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    1544:	8e 81       	ldd	r24, Y+6	; 0x06
+    1546:	88 23       	and	r24, r24
+    1548:	29 f1       	breq	.+74     	; 0x1594 <RC6DecoderOnPinChange+0x2bc>
+    154a:	8f 81       	ldd	r24, Y+7	; 0x07
+    154c:	88 30       	cpi	r24, 0x08	; 8
+    154e:	a0 f0       	brcs	.+40     	; 0x1578 <RC6DecoderOnPinChange+0x2a0>
+    1550:	88 81       	ld	r24, Y
+    1552:	88 0f       	add	r24, r24
+    1554:	88 83       	st	Y, r24
+    1556:	e9 89       	ldd	r30, Y+17	; 0x11
+    1558:	fa 89       	ldd	r31, Y+18	; 0x12
+    155a:	09 95       	icall
+    155c:	88 23       	and	r24, r24
+    155e:	19 f0       	breq	.+6      	; 0x1566 <RC6DecoderOnPinChange+0x28e>
+    1560:	88 81       	ld	r24, Y
+    1562:	8f 5f       	subi	r24, 0xFF	; 255
+    1564:	88 83       	st	Y, r24
+    1566:	8f 81       	ldd	r24, Y+7	; 0x07
+    1568:	8f 5f       	subi	r24, 0xFF	; 255
+    156a:	8f 83       	std	Y+7, r24	; 0x07
+    156c:	8e 81       	ldd	r24, Y+6	; 0x06
+    156e:	88 23       	and	r24, r24
+    1570:	89 f0       	breq	.+34     	; 0x1594 <RC6DecoderOnPinChange+0x2bc>
+    1572:	8f 81       	ldd	r24, Y+7	; 0x07
+    1574:	88 30       	cpi	r24, 0x08	; 8
+    1576:	70 f4       	brcc	.+28     	; 0x1594 <RC6DecoderOnPinChange+0x2bc>
+    1578:	8b 81       	ldd	r24, Y+3	; 0x03
+    157a:	88 0f       	add	r24, r24
+    157c:	8b 83       	std	Y+3, r24	; 0x03
+    157e:	e9 89       	ldd	r30, Y+17	; 0x11
+    1580:	fa 89       	ldd	r31, Y+18	; 0x12
+    1582:	09 95       	icall
+    1584:	88 23       	and	r24, r24
+    1586:	19 f0       	breq	.+6      	; 0x158e <RC6DecoderOnPinChange+0x2b6>
+    1588:	8b 81       	ldd	r24, Y+3	; 0x03
+    158a:	8f 5f       	subi	r24, 0xFF	; 255
+    158c:	8b 83       	std	Y+3, r24	; 0x03
+    158e:	8f 81       	ldd	r24, Y+7	; 0x07
+    1590:	8f 5f       	subi	r24, 0xFF	; 255
+    1592:	8f 83       	std	Y+7, r24	; 0x07
+    1594:	8f 81       	ldd	r24, Y+7	; 0x07
+    1596:	80 31       	cpi	r24, 0x10	; 16
+    1598:	11 f5       	brne	.+68     	; 0x15de <RC6DecoderOnPinChange+0x306>
+    159a:	8a 85       	ldd	r24, Y+10	; 0x0a
+    159c:	88 23       	and	r24, r24
+    159e:	19 f0       	breq	.+6      	; 0x15a6 <RC6DecoderOnPinChange+0x2ce>
+    15a0:	9b 85       	ldd	r25, Y+11	; 0x0b
+    15a2:	91 11       	cpse	r25, r1
+    15a4:	19 c0       	rjmp	.+50     	; 0x15d8 <RC6DecoderOnPinChange+0x300>
+    15a6:	98 81       	ld	r25, Y
+    15a8:	9a 83       	std	Y+2, r25	; 0x02
+    15aa:	2b 81       	ldd	r18, Y+3	; 0x03
+    15ac:	2c 83       	std	Y+4, r18	; 0x04
+    15ae:	28 85       	ldd	r18, Y+8	; 0x08
+    15b0:	39 85       	ldd	r19, Y+9	; 0x09
+    15b2:	23 13       	cpse	r18, r19
+    15b4:	06 c0       	rjmp	.+12     	; 0x15c2 <RC6DecoderOnPinChange+0x2ea>
+    15b6:	39 81       	ldd	r19, Y+1	; 0x01
+    15b8:	93 13       	cpse	r25, r19
+    15ba:	03 c0       	rjmp	.+6      	; 0x15c2 <RC6DecoderOnPinChange+0x2ea>
+    15bc:	31 e0       	ldi	r19, 0x01	; 1
+    15be:	3d 83       	std	Y+5, r19	; 0x05
+    15c0:	01 c0       	rjmp	.+2      	; 0x15c4 <RC6DecoderOnPinChange+0x2ec>
+    15c2:	1d 82       	std	Y+5, r1	; 0x05
+    15c4:	88 23       	and	r24, r24
+    15c6:	11 f0       	breq	.+4      	; 0x15cc <RC6DecoderOnPinChange+0x2f4>
+    15c8:	81 e0       	ldi	r24, 0x01	; 1
+    15ca:	8b 87       	std	Y+11, r24	; 0x0b
+    15cc:	99 83       	std	Y+1, r25	; 0x01
+    15ce:	29 87       	std	Y+9, r18	; 0x09
+    15d0:	ef 85       	ldd	r30, Y+15	; 0x0f
+    15d2:	f8 89       	ldd	r31, Y+16	; 0x10
+    15d4:	ce 01       	movw	r24, r28
+    15d6:	09 95       	icall
+    15d8:	ce 01       	movw	r24, r28
+    15da:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    15de:	df 91       	pop	r29
+    15e0:	cf 91       	pop	r28
+    15e2:	1f 91       	pop	r17
+    15e4:	0f 91       	pop	r16
+    15e6:	08 95       	ret
+
+000015e8 <RC6DecoderCreate>:
+    15e8:	af 92       	push	r10
+    15ea:	bf 92       	push	r11
+    15ec:	cf 92       	push	r12
+    15ee:	df 92       	push	r13
+    15f0:	ef 92       	push	r14
+    15f2:	ff 92       	push	r15
+    15f4:	1f 93       	push	r17
+    15f6:	cf 93       	push	r28
+    15f8:	df 93       	push	r29
+    15fa:	5c 01       	movw	r10, r24
+    15fc:	6b 01       	movw	r12, r22
+    15fe:	7a 01       	movw	r14, r20
+    1600:	12 2f       	mov	r17, r18
+    1602:	85 e1       	ldi	r24, 0x15	; 21
+    1604:	90 e0       	ldi	r25, 0x00	; 0
+    1606:	0e 94 49 0b 	call	0x1692	; 0x1692 <malloc>
+    160a:	ec 01       	movw	r28, r24
+    160c:	b8 8a       	std	Y+16, r11	; 0x10
+    160e:	af 86       	std	Y+15, r10	; 0x0f
+    1610:	da 8a       	std	Y+18, r13	; 0x12
+    1612:	c9 8a       	std	Y+17, r12	; 0x11
+    1614:	fc 8a       	std	Y+20, r15	; 0x14
+    1616:	eb 8a       	std	Y+19, r14	; 0x13
+    1618:	1a 87       	std	Y+10, r17	; 0x0a
+    161a:	0e 94 65 09 	call	0x12ca	; 0x12ca <RC6idle>
+    161e:	1b 86       	std	Y+11, r1	; 0x0b
+    1620:	ce 01       	movw	r24, r28
+    1622:	df 91       	pop	r29
+    1624:	cf 91       	pop	r28
+    1626:	1f 91       	pop	r17
+    1628:	ff 90       	pop	r15
+    162a:	ef 90       	pop	r14
+    162c:	df 90       	pop	r13
+    162e:	cf 90       	pop	r12
+    1630:	bf 90       	pop	r11
+    1632:	af 90       	pop	r10
+    1634:	08 95       	ret
+
+00001636 <RC6DecoderGetCommand>:
+
+unsigned char RC6DecoderGetCommand (RC6Decoder self)
+{
+	return self->RC6_Command;
+}
+    1636:	fc 01       	movw	r30, r24
+    1638:	82 81       	ldd	r24, Z+2	; 0x02
+    163a:	08 95       	ret
+
+0000163c <RC6DecoderIsRepeated>:
+
+unsigned char RC6DecoderIsRepeated (RC6Decoder self)
+{
+	return self->RC6Repeated;
+}
+    163c:	fc 01       	movw	r30, r24
+    163e:	85 81       	ldd	r24, Z+5	; 0x05
+    1640:	08 95       	ret
+
+00001642 <RC6DecoderUnlock>:
+
+void RC6DecoderUnlock(RC6Decoder self)
+{
+	self->isLocked = false;
+    1642:	fc 01       	movw	r30, r24
+    1644:	13 86       	std	Z+11, r1	; 0x0b
+    1646:	08 95       	ret
+
+00001648 <RC6HALInit>:
+extern RC6Decoder rc6decoder;
+
+void
+RC6HALInit()
+{
+    IRDDR &= ~(1<<IRPIN);	
+    1648:	53 98       	cbi	0x0a, 3	; 10
+	TCCR1B |= 1<<CS11;
+    164a:	e1 e8       	ldi	r30, 0x81	; 129
+    164c:	f0 e0       	ldi	r31, 0x00	; 0
+    164e:	80 81       	ld	r24, Z
+    1650:	82 60       	ori	r24, 0x02	; 2
+    1652:	80 83       	st	Z, r24
+    1654:	08 95       	ret
+
+00001656 <RCHAL6GetPinState>:
+}
+
+bool
+RCHAL6GetPinState()
+{
+	return IRPORT &= (1<<IRPIN);
+    1656:	99 b1       	in	r25, 0x09	; 9
+    1658:	98 70       	andi	r25, 0x08	; 8
+    165a:	99 b9       	out	0x09, r25	; 9
+    165c:	81 e0       	ldi	r24, 0x01	; 1
+    165e:	91 11       	cpse	r25, r1
+    1660:	01 c0       	rjmp	.+2      	; 0x1664 <RCHAL6GetPinState+0xe>
+    1662:	80 e0       	ldi	r24, 0x00	; 0
+}
+    1664:	08 95       	ret
+
+00001666 <RC6HALDecoderStep>:
+
+void
+RC6HALDecoderStep()
+{
+	static bool pinState = true;
+	if (RCHAL6GetPinState() != pinState) {
+    1666:	0e 94 2b 0b 	call	0x1656	; 0x1656 <RCHAL6GetPinState>
+    166a:	90 91 25 01 	lds	r25, 0x0125	; 0x800125 <pinState.1632>
+    166e:	89 17       	cp	r24, r25
+    1670:	51 f0       	breq	.+20     	; 0x1686 <RC6HALDecoderStep+0x20>
+		RC6DecoderOnPinChange(rc6decoder);
+    1672:	80 91 32 01 	lds	r24, 0x0132	; 0x800132 <rc6decoder>
+    1676:	90 91 33 01 	lds	r25, 0x0133	; 0x800133 <rc6decoder+0x1>
+    167a:	0e 94 6c 09 	call	0x12d8	; 0x12d8 <RC6DecoderOnPinChange>
+		pinState = RCHAL6GetPinState();
+    167e:	0e 94 2b 0b 	call	0x1656	; 0x1656 <RCHAL6GetPinState>
+    1682:	80 93 25 01 	sts	0x0125, r24	; 0x800125 <pinState.1632>
+    1686:	08 95       	ret
+
+00001688 <RC6GetMicrosecondTimer>:
+}
+
+unsigned int
+RC6GetMicrosecondTimer()
+{
+	return TCNT1;
+    1688:	80 91 84 00 	lds	r24, 0x0084	; 0x800084 <__DATA_REGION_ORIGIN__+0x24>
+    168c:	90 91 85 00 	lds	r25, 0x0085	; 0x800085 <__DATA_REGION_ORIGIN__+0x25>
+}
+    1690:	08 95       	ret
+
+00001692 <malloc>:
+    1692:	0f 93       	push	r16
+    1694:	1f 93       	push	r17
+    1696:	cf 93       	push	r28
+    1698:	df 93       	push	r29
+    169a:	82 30       	cpi	r24, 0x02	; 2
+    169c:	91 05       	cpc	r25, r1
+    169e:	10 f4       	brcc	.+4      	; 0x16a4 <malloc+0x12>
+    16a0:	82 e0       	ldi	r24, 0x02	; 2
+    16a2:	90 e0       	ldi	r25, 0x00	; 0
+    16a4:	e0 91 55 01 	lds	r30, 0x0155	; 0x800155 <__flp>
+    16a8:	f0 91 56 01 	lds	r31, 0x0156	; 0x800156 <__flp+0x1>
+    16ac:	20 e0       	ldi	r18, 0x00	; 0
+    16ae:	30 e0       	ldi	r19, 0x00	; 0
+    16b0:	a0 e0       	ldi	r26, 0x00	; 0
+    16b2:	b0 e0       	ldi	r27, 0x00	; 0
+    16b4:	30 97       	sbiw	r30, 0x00	; 0
+    16b6:	19 f1       	breq	.+70     	; 0x16fe <malloc+0x6c>
+    16b8:	40 81       	ld	r20, Z
+    16ba:	51 81       	ldd	r21, Z+1	; 0x01
+    16bc:	02 81       	ldd	r16, Z+2	; 0x02
+    16be:	13 81       	ldd	r17, Z+3	; 0x03
+    16c0:	48 17       	cp	r20, r24
+    16c2:	59 07       	cpc	r21, r25
+    16c4:	c8 f0       	brcs	.+50     	; 0x16f8 <malloc+0x66>
+    16c6:	84 17       	cp	r24, r20
+    16c8:	95 07       	cpc	r25, r21
+    16ca:	69 f4       	brne	.+26     	; 0x16e6 <malloc+0x54>
+    16cc:	10 97       	sbiw	r26, 0x00	; 0
+    16ce:	31 f0       	breq	.+12     	; 0x16dc <malloc+0x4a>
+    16d0:	12 96       	adiw	r26, 0x02	; 2
+    16d2:	0c 93       	st	X, r16
+    16d4:	12 97       	sbiw	r26, 0x02	; 2
+    16d6:	13 96       	adiw	r26, 0x03	; 3
+    16d8:	1c 93       	st	X, r17
+    16da:	27 c0       	rjmp	.+78     	; 0x172a <malloc+0x98>
+    16dc:	00 93 55 01 	sts	0x0155, r16	; 0x800155 <__flp>
+    16e0:	10 93 56 01 	sts	0x0156, r17	; 0x800156 <__flp+0x1>
+    16e4:	22 c0       	rjmp	.+68     	; 0x172a <malloc+0x98>
+    16e6:	21 15       	cp	r18, r1
+    16e8:	31 05       	cpc	r19, r1
+    16ea:	19 f0       	breq	.+6      	; 0x16f2 <malloc+0x60>
+    16ec:	42 17       	cp	r20, r18
+    16ee:	53 07       	cpc	r21, r19
+    16f0:	18 f4       	brcc	.+6      	; 0x16f8 <malloc+0x66>
+    16f2:	9a 01       	movw	r18, r20
+    16f4:	bd 01       	movw	r22, r26
+    16f6:	ef 01       	movw	r28, r30
+    16f8:	df 01       	movw	r26, r30
+    16fa:	f8 01       	movw	r30, r16
+    16fc:	db cf       	rjmp	.-74     	; 0x16b4 <malloc+0x22>
+    16fe:	21 15       	cp	r18, r1
+    1700:	31 05       	cpc	r19, r1
+    1702:	f9 f0       	breq	.+62     	; 0x1742 <malloc+0xb0>
+    1704:	28 1b       	sub	r18, r24
+    1706:	39 0b       	sbc	r19, r25
+    1708:	24 30       	cpi	r18, 0x04	; 4
+    170a:	31 05       	cpc	r19, r1
+    170c:	80 f4       	brcc	.+32     	; 0x172e <malloc+0x9c>
+    170e:	8a 81       	ldd	r24, Y+2	; 0x02
+    1710:	9b 81       	ldd	r25, Y+3	; 0x03
+    1712:	61 15       	cp	r22, r1
+    1714:	71 05       	cpc	r23, r1
+    1716:	21 f0       	breq	.+8      	; 0x1720 <malloc+0x8e>
+    1718:	fb 01       	movw	r30, r22
+    171a:	93 83       	std	Z+3, r25	; 0x03
+    171c:	82 83       	std	Z+2, r24	; 0x02
+    171e:	04 c0       	rjmp	.+8      	; 0x1728 <malloc+0x96>
+    1720:	90 93 56 01 	sts	0x0156, r25	; 0x800156 <__flp+0x1>
+    1724:	80 93 55 01 	sts	0x0155, r24	; 0x800155 <__flp>
+    1728:	fe 01       	movw	r30, r28
+    172a:	32 96       	adiw	r30, 0x02	; 2
+    172c:	44 c0       	rjmp	.+136    	; 0x17b6 <malloc+0x124>
+    172e:	fe 01       	movw	r30, r28
+    1730:	e2 0f       	add	r30, r18
+    1732:	f3 1f       	adc	r31, r19
+    1734:	81 93       	st	Z+, r24
+    1736:	91 93       	st	Z+, r25
+    1738:	22 50       	subi	r18, 0x02	; 2
+    173a:	31 09       	sbc	r19, r1
+    173c:	39 83       	std	Y+1, r19	; 0x01
+    173e:	28 83       	st	Y, r18
+    1740:	3a c0       	rjmp	.+116    	; 0x17b6 <malloc+0x124>
+    1742:	20 91 53 01 	lds	r18, 0x0153	; 0x800153 <__brkval>
+    1746:	30 91 54 01 	lds	r19, 0x0154	; 0x800154 <__brkval+0x1>
+    174a:	23 2b       	or	r18, r19
+    174c:	41 f4       	brne	.+16     	; 0x175e <malloc+0xcc>
+    174e:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__malloc_heap_start>
+    1752:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__malloc_heap_start+0x1>
+    1756:	30 93 54 01 	sts	0x0154, r19	; 0x800154 <__brkval+0x1>
+    175a:	20 93 53 01 	sts	0x0153, r18	; 0x800153 <__brkval>
+    175e:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__data_start>
+    1762:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__data_start+0x1>
+    1766:	21 15       	cp	r18, r1
+    1768:	31 05       	cpc	r19, r1
+    176a:	41 f4       	brne	.+16     	; 0x177c <malloc+0xea>
+    176c:	2d b7       	in	r18, 0x3d	; 61
+    176e:	3e b7       	in	r19, 0x3e	; 62
+    1770:	40 91 04 01 	lds	r20, 0x0104	; 0x800104 <__malloc_margin>
+    1774:	50 91 05 01 	lds	r21, 0x0105	; 0x800105 <__malloc_margin+0x1>
+    1778:	24 1b       	sub	r18, r20
+    177a:	35 0b       	sbc	r19, r21
+    177c:	e0 91 53 01 	lds	r30, 0x0153	; 0x800153 <__brkval>
+    1780:	f0 91 54 01 	lds	r31, 0x0154	; 0x800154 <__brkval+0x1>
+    1784:	e2 17       	cp	r30, r18
+    1786:	f3 07       	cpc	r31, r19
+    1788:	a0 f4       	brcc	.+40     	; 0x17b2 <malloc+0x120>
+    178a:	2e 1b       	sub	r18, r30
+    178c:	3f 0b       	sbc	r19, r31
+    178e:	28 17       	cp	r18, r24
+    1790:	39 07       	cpc	r19, r25
+    1792:	78 f0       	brcs	.+30     	; 0x17b2 <malloc+0x120>
+    1794:	ac 01       	movw	r20, r24
+    1796:	4e 5f       	subi	r20, 0xFE	; 254
+    1798:	5f 4f       	sbci	r21, 0xFF	; 255
+    179a:	24 17       	cp	r18, r20
+    179c:	35 07       	cpc	r19, r21
+    179e:	48 f0       	brcs	.+18     	; 0x17b2 <malloc+0x120>
+    17a0:	4e 0f       	add	r20, r30
+    17a2:	5f 1f       	adc	r21, r31
+    17a4:	50 93 54 01 	sts	0x0154, r21	; 0x800154 <__brkval+0x1>
+    17a8:	40 93 53 01 	sts	0x0153, r20	; 0x800153 <__brkval>
+    17ac:	81 93       	st	Z+, r24
+    17ae:	91 93       	st	Z+, r25
+    17b0:	02 c0       	rjmp	.+4      	; 0x17b6 <malloc+0x124>
+    17b2:	e0 e0       	ldi	r30, 0x00	; 0
+    17b4:	f0 e0       	ldi	r31, 0x00	; 0
+    17b6:	cf 01       	movw	r24, r30
+    17b8:	df 91       	pop	r29
+    17ba:	cf 91       	pop	r28
+    17bc:	1f 91       	pop	r17
+    17be:	0f 91       	pop	r16
+    17c0:	08 95       	ret
+
+000017c2 <free>:
+    17c2:	cf 93       	push	r28
+    17c4:	df 93       	push	r29
+    17c6:	00 97       	sbiw	r24, 0x00	; 0
+    17c8:	09 f4       	brne	.+2      	; 0x17cc <free+0xa>
+    17ca:	81 c0       	rjmp	.+258    	; 0x18ce <free+0x10c>
+    17cc:	fc 01       	movw	r30, r24
+    17ce:	32 97       	sbiw	r30, 0x02	; 2
+    17d0:	13 82       	std	Z+3, r1	; 0x03
+    17d2:	12 82       	std	Z+2, r1	; 0x02
+    17d4:	a0 91 55 01 	lds	r26, 0x0155	; 0x800155 <__flp>
+    17d8:	b0 91 56 01 	lds	r27, 0x0156	; 0x800156 <__flp+0x1>
+    17dc:	10 97       	sbiw	r26, 0x00	; 0
+    17de:	81 f4       	brne	.+32     	; 0x1800 <free+0x3e>
+    17e0:	20 81       	ld	r18, Z
+    17e2:	31 81       	ldd	r19, Z+1	; 0x01
+    17e4:	82 0f       	add	r24, r18
+    17e6:	93 1f       	adc	r25, r19
+    17e8:	20 91 53 01 	lds	r18, 0x0153	; 0x800153 <__brkval>
+    17ec:	30 91 54 01 	lds	r19, 0x0154	; 0x800154 <__brkval+0x1>
+    17f0:	28 17       	cp	r18, r24
+    17f2:	39 07       	cpc	r19, r25
+    17f4:	51 f5       	brne	.+84     	; 0x184a <free+0x88>
+    17f6:	f0 93 54 01 	sts	0x0154, r31	; 0x800154 <__brkval+0x1>
+    17fa:	e0 93 53 01 	sts	0x0153, r30	; 0x800153 <__brkval>
+    17fe:	67 c0       	rjmp	.+206    	; 0x18ce <free+0x10c>
+    1800:	ed 01       	movw	r28, r26
+    1802:	20 e0       	ldi	r18, 0x00	; 0
+    1804:	30 e0       	ldi	r19, 0x00	; 0
+    1806:	ce 17       	cp	r28, r30
+    1808:	df 07       	cpc	r29, r31
+    180a:	40 f4       	brcc	.+16     	; 0x181c <free+0x5a>
+    180c:	4a 81       	ldd	r20, Y+2	; 0x02
+    180e:	5b 81       	ldd	r21, Y+3	; 0x03
+    1810:	9e 01       	movw	r18, r28
+    1812:	41 15       	cp	r20, r1
+    1814:	51 05       	cpc	r21, r1
+    1816:	f1 f0       	breq	.+60     	; 0x1854 <free+0x92>
+    1818:	ea 01       	movw	r28, r20
+    181a:	f5 cf       	rjmp	.-22     	; 0x1806 <free+0x44>
+    181c:	d3 83       	std	Z+3, r29	; 0x03
+    181e:	c2 83       	std	Z+2, r28	; 0x02
+    1820:	40 81       	ld	r20, Z
+    1822:	51 81       	ldd	r21, Z+1	; 0x01
+    1824:	84 0f       	add	r24, r20
+    1826:	95 1f       	adc	r25, r21
+    1828:	c8 17       	cp	r28, r24
+    182a:	d9 07       	cpc	r29, r25
+    182c:	59 f4       	brne	.+22     	; 0x1844 <free+0x82>
+    182e:	88 81       	ld	r24, Y
+    1830:	99 81       	ldd	r25, Y+1	; 0x01
+    1832:	84 0f       	add	r24, r20
+    1834:	95 1f       	adc	r25, r21
+    1836:	02 96       	adiw	r24, 0x02	; 2
+    1838:	91 83       	std	Z+1, r25	; 0x01
+    183a:	80 83       	st	Z, r24
+    183c:	8a 81       	ldd	r24, Y+2	; 0x02
+    183e:	9b 81       	ldd	r25, Y+3	; 0x03
+    1840:	93 83       	std	Z+3, r25	; 0x03
+    1842:	82 83       	std	Z+2, r24	; 0x02
+    1844:	21 15       	cp	r18, r1
+    1846:	31 05       	cpc	r19, r1
+    1848:	29 f4       	brne	.+10     	; 0x1854 <free+0x92>
+    184a:	f0 93 56 01 	sts	0x0156, r31	; 0x800156 <__flp+0x1>
+    184e:	e0 93 55 01 	sts	0x0155, r30	; 0x800155 <__flp>
+    1852:	3d c0       	rjmp	.+122    	; 0x18ce <free+0x10c>
+    1854:	e9 01       	movw	r28, r18
+    1856:	fb 83       	std	Y+3, r31	; 0x03
+    1858:	ea 83       	std	Y+2, r30	; 0x02
+    185a:	49 91       	ld	r20, Y+
+    185c:	59 91       	ld	r21, Y+
+    185e:	c4 0f       	add	r28, r20
+    1860:	d5 1f       	adc	r29, r21
+    1862:	ec 17       	cp	r30, r28
+    1864:	fd 07       	cpc	r31, r29
+    1866:	61 f4       	brne	.+24     	; 0x1880 <free+0xbe>
+    1868:	80 81       	ld	r24, Z
+    186a:	91 81       	ldd	r25, Z+1	; 0x01
+    186c:	84 0f       	add	r24, r20
+    186e:	95 1f       	adc	r25, r21
+    1870:	02 96       	adiw	r24, 0x02	; 2
+    1872:	e9 01       	movw	r28, r18
+    1874:	99 83       	std	Y+1, r25	; 0x01
+    1876:	88 83       	st	Y, r24
+    1878:	82 81       	ldd	r24, Z+2	; 0x02
+    187a:	93 81       	ldd	r25, Z+3	; 0x03
+    187c:	9b 83       	std	Y+3, r25	; 0x03
+    187e:	8a 83       	std	Y+2, r24	; 0x02
+    1880:	e0 e0       	ldi	r30, 0x00	; 0
+    1882:	f0 e0       	ldi	r31, 0x00	; 0
+    1884:	12 96       	adiw	r26, 0x02	; 2
+    1886:	8d 91       	ld	r24, X+
+    1888:	9c 91       	ld	r25, X
+    188a:	13 97       	sbiw	r26, 0x03	; 3
+    188c:	00 97       	sbiw	r24, 0x00	; 0
+    188e:	19 f0       	breq	.+6      	; 0x1896 <free+0xd4>
+    1890:	fd 01       	movw	r30, r26
+    1892:	dc 01       	movw	r26, r24
+    1894:	f7 cf       	rjmp	.-18     	; 0x1884 <free+0xc2>
+    1896:	8d 91       	ld	r24, X+
+    1898:	9c 91       	ld	r25, X
+    189a:	11 97       	sbiw	r26, 0x01	; 1
+    189c:	9d 01       	movw	r18, r26
+    189e:	2e 5f       	subi	r18, 0xFE	; 254
+    18a0:	3f 4f       	sbci	r19, 0xFF	; 255
+    18a2:	82 0f       	add	r24, r18
+    18a4:	93 1f       	adc	r25, r19
+    18a6:	20 91 53 01 	lds	r18, 0x0153	; 0x800153 <__brkval>
+    18aa:	30 91 54 01 	lds	r19, 0x0154	; 0x800154 <__brkval+0x1>
+    18ae:	28 17       	cp	r18, r24
+    18b0:	39 07       	cpc	r19, r25
+    18b2:	69 f4       	brne	.+26     	; 0x18ce <free+0x10c>
+    18b4:	30 97       	sbiw	r30, 0x00	; 0
+    18b6:	29 f4       	brne	.+10     	; 0x18c2 <free+0x100>
+    18b8:	10 92 56 01 	sts	0x0156, r1	; 0x800156 <__flp+0x1>
+    18bc:	10 92 55 01 	sts	0x0155, r1	; 0x800155 <__flp>
+    18c0:	02 c0       	rjmp	.+4      	; 0x18c6 <free+0x104>
+    18c2:	13 82       	std	Z+3, r1	; 0x03
+    18c4:	12 82       	std	Z+2, r1	; 0x02
+    18c6:	b0 93 54 01 	sts	0x0154, r27	; 0x800154 <__brkval+0x1>
+    18ca:	a0 93 53 01 	sts	0x0153, r26	; 0x800153 <__brkval>
+    18ce:	df 91       	pop	r29
+    18d0:	cf 91       	pop	r28
+    18d2:	08 95       	ret
+
+000018d4 <eeprom_read_byte>:
+    18d4:	f9 99       	sbic	0x1f, 1	; 31
+    18d6:	fe cf       	rjmp	.-4      	; 0x18d4 <eeprom_read_byte>
+    18d8:	92 bd       	out	0x22, r25	; 34
+    18da:	81 bd       	out	0x21, r24	; 33
+    18dc:	f8 9a       	sbi	0x1f, 0	; 31
+    18de:	99 27       	eor	r25, r25
+    18e0:	80 b5       	in	r24, 0x20	; 32
+    18e2:	08 95       	ret
+
+000018e4 <eeprom_update_byte>:
+    18e4:	26 2f       	mov	r18, r22
+
+000018e6 <eeprom_update_r18>:
+    18e6:	f9 99       	sbic	0x1f, 1	; 31
+    18e8:	fe cf       	rjmp	.-4      	; 0x18e6 <eeprom_update_r18>
+    18ea:	92 bd       	out	0x22, r25	; 34
+    18ec:	81 bd       	out	0x21, r24	; 33
+    18ee:	f8 9a       	sbi	0x1f, 0	; 31
+    18f0:	01 97       	sbiw	r24, 0x01	; 1
+    18f2:	00 b4       	in	r0, 0x20	; 32
+    18f4:	02 16       	cp	r0, r18
+    18f6:	39 f0       	breq	.+14     	; 0x1906 <eeprom_update_r18+0x20>
+    18f8:	1f ba       	out	0x1f, r1	; 31
+    18fa:	20 bd       	out	0x20, r18	; 32
+    18fc:	0f b6       	in	r0, 0x3f	; 63
+    18fe:	f8 94       	cli
+    1900:	fa 9a       	sbi	0x1f, 2	; 31
+    1902:	f9 9a       	sbi	0x1f, 1	; 31
+    1904:	0f be       	out	0x3f, r0	; 63
+    1906:	08 95       	ret
+
+00001908 <eeprom_write_byte>:
+    1908:	26 2f       	mov	r18, r22
+
+0000190a <eeprom_write_r18>:
+    190a:	f9 99       	sbic	0x1f, 1	; 31
+    190c:	fe cf       	rjmp	.-4      	; 0x190a <eeprom_write_r18>
+    190e:	1f ba       	out	0x1f, r1	; 31
+    1910:	92 bd       	out	0x22, r25	; 34
+    1912:	81 bd       	out	0x21, r24	; 33
+    1914:	20 bd       	out	0x20, r18	; 32
+    1916:	0f b6       	in	r0, 0x3f	; 63
+    1918:	f8 94       	cli
+    191a:	fa 9a       	sbi	0x1f, 2	; 31
+    191c:	f9 9a       	sbi	0x1f, 1	; 31
+    191e:	0f be       	out	0x3f, r0	; 63
+    1920:	01 96       	adiw	r24, 0x01	; 1
+    1922:	08 95       	ret
+
+00001924 <_exit>:
+    1924:	f8 94       	cli
+
+00001926 <__stop_program>:
+    1926:	ff cf       	rjmp	.-2      	; 0x1926 <__stop_program>

@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name open_nixie_wemos)(type KiCad)(uri D:/Documents/KiCad/open-nixie_baseModule/wemos-d1-mini.pretty)(options "")(descr ""))
+  (lib (name open_nixie_dcJack)(type KiCad)(uri D:/Documents/KiCad/open-nixie_baseModule/open-nixie_baseModule_jack.pretty)(options "")(descr ""))
+  (lib (name open-nixie_baseModule)(type KiCad)(uri ${KIPRJMOD}/open-nixie_baseModule.pretty)(options "")(descr ""))
+)
