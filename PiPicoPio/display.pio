@@ -1,0 +1,33 @@
+.program display
+
+public entry_point:
+pull block
+.wrap_target
+    pull noblock
+    mov x, osr
+    jmp skip_delay
+main_loop:
+    nop [3]  // compensate pulling next block
+skip_delay:
+    out pins, 8
+    jmp !osre main_loop
+.wrap
+
+% c-sdk {
+static inline void display_program_init(PIO pio, uint sm, uint offset, uint pin) {
+    pio_sm_config c = display_program_get_default_config(offset);
+
+    // Map the state machine's OUT pin group to one pin, namely the `pin`
+    // parameter to this function.
+    sm_config_set_out_pins(&c, pin, 8);
+    sm_config_set_clkdiv(&c, 30000);
+
+    // Set this pin's GPIO function (connect PIO to the pad)
+    for (int i = pin; i < pin + 8; i++)
+        pio_gpio_init(pio, i);
+    // Set the pin direction to output at the PIO
+    pio_sm_set_consecutive_pindirs (pio, sm, pin, 8, true);
+    // Load our configuration, and jump to the start of the program
+    pio_sm_init(pio, sm, offset, &c);
+}
+%}
